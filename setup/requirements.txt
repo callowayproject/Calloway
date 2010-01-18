@@ -7,6 +7,7 @@
 -e git+http://github.com/justquick/django-tinymce.git#egg=tinymce
 -e git+http://github.com/justquick/django-tagging.git#egg=tagging
 -e hg+http://bitbucket.org/jespern/django-piston/#egg=piston
+-e git+http://github.com/justquick/django-reversion.git#egg=reversion
 
 django==1.1.1
 simplejson==2.0.9
