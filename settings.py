@@ -107,6 +107,14 @@ INSTALLED_APPS = (
     'pagination',
     'south',
     'django_extensions',
+    
+    'staff',
+    'stories',
+    'categories',
+    'mptt',
+    
+    'tinymce',
+    'tagging',
 )
 
 SOUTH_AUTO_FREEZE_APP = True
