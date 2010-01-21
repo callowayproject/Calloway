@@ -3,6 +3,7 @@
 -e git+http://opensource.washingtontimes.com/git/public/django-stories.git/#egg=stories
 -e git+http://opensource.washingtontimes.com/git/public/django-categories.git/#egg=categories
 -e git+http://opensource.washingtontimes.com/git/public/django-staff.git/#egg=staff
+-e git+http://opensource.washingtontimes.com/git/public/django-kamasutra.git/#egg=positions
 -e svn+http://django-mptt.googlecode.com/svn/trunk/#egg=mptt
 -e git+http://github.com/justquick/django-tinymce.git#egg=tinymce
 -e git+http://github.com/justquick/django-tagging.git#egg=tagging
