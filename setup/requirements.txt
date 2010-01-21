@@ -10,6 +10,26 @@
 -e hg+http://bitbucket.org/jespern/django-piston/#egg=piston
 -e git+http://github.com/justquick/django-reversion.git#egg=reversion
 
+# Necessary externals from old TWT
+-e svn+http://opensource.washingtontimes.com/projects/private/django-ap/#egg=ap
+-e svn+http://django-robots.googlecode.com/svn/trunk/#egg=robots
+# -e svn+http://django-openid.googlecode.com/svn/trunk/#egg=django_openid
+-e svn+http://opensource.washingtontimes.com/projects/public/django-clickpass/trunk/#egg=clickpass
+-e svn+http://opensource.washingtontimes.com/projects/private/django-livevalidation/trunk/#egg=livevalidation
+-e svn+http://opensource.washingtontimes.com/projects/private/hiermenu/trunk/#egg=hiermenu
+-e svn+http://feedjack.googlecode.com/svn/trunk/#egg=feedjack
+-e svn+http://opensource.washingtontimes.com/projects/private/django-apache-log/trunk/#egg=apache_log
+
+# Things im on the fence about
+#   -e svn+http://typogrify.googlecode.com/svn/trunk/#egg=typogrify
+#   profiles -r11 http://django-profiles.googlecode.com/svn/trunk/profiles
+#   supertagging http://opensource.washingtontimes.com/projects/public/django-supertagging/trunk/supertagging
+#   comment_utils -r92 http://django-comment-utils.googlecode.com/svn/trunk/comment_utils
+#   themes -r37 http://opensource.washingtontimes.com/projects/private/themes/trunk
+#   massmedia  http://opensource.washingtontimes.com/projects/public/django-massmedia/trunk/massmedia/
+#   apache_log -r11 http://opensource.washingtontimes.com/projects/private/django-apache-log/trunk/apache_log/
+
+
 django==1.1.1
 simplejson==2.0.9
 python-memcached==1.44
