@@ -112,6 +112,7 @@ INSTALLED_APPS = (
     'stories',
     'categories',
     'mptt',
+    'positions',
     
     'tinymce',
     'tagging',
