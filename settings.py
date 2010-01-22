@@ -117,6 +117,15 @@ INSTALLED_APPS = (
     'tinymce',
     'tagging',
     'reversion',
+    
+    'robots',
+    #'django_openid',
+    'clickpass',
+    'livevalidation',
+    'hiermenu',
+    #'apache_log',
+    'piston',
+    
 )
 
 SOUTH_AUTO_FREEZE_APP = True
