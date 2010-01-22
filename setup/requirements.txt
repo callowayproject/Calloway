@@ -11,6 +11,7 @@
 -e git+http://github.com/justquick/django-reversion.git#egg=reversion
 
 # Necessary externals from old TWT
+-e git+http://opensource.washingtontimes.com/git/public/django-news-sitemaps.git/#egg=news_sitemaps
 #-e svn+http://opensource.washingtontimes.com/projects/private/django-ap/#egg=ap
 -e svn+http://django-robots.googlecode.com/svn/trunk/#egg=robots
 # -e svn+http://django-openid.googlecode.com/svn/trunk/#egg=django_openid
