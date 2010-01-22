@@ -11,13 +11,13 @@
 -e git+http://github.com/justquick/django-reversion.git#egg=reversion
 
 # Necessary externals from old TWT
--e svn+http://opensource.washingtontimes.com/projects/private/django-ap/#egg=ap
+#-e svn+http://opensource.washingtontimes.com/projects/private/django-ap/#egg=ap
 -e svn+http://django-robots.googlecode.com/svn/trunk/#egg=robots
 # -e svn+http://django-openid.googlecode.com/svn/trunk/#egg=django_openid
 -e svn+http://opensource.washingtontimes.com/projects/public/django-clickpass/trunk/#egg=clickpass
 -e svn+http://opensource.washingtontimes.com/projects/private/django-livevalidation/trunk/#egg=livevalidation
 -e svn+http://opensource.washingtontimes.com/projects/private/hiermenu/trunk/#egg=hiermenu
--e svn+http://feedjack.googlecode.com/svn/trunk/#egg=feedjack
+#-e svn+http://feedjack.googlecode.com/svn/trunk/#egg=feedjack
 -e svn+http://opensource.washingtontimes.com/projects/private/django-apache-log/trunk/#egg=apache_log
 
 # Things im on the fence about
