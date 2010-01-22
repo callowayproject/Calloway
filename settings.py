@@ -113,11 +113,7 @@ INSTALLED_APPS = (
     'categories',
     'mptt',
     'positions',
-    
-    'tinymce',
-    'tagging',
-    'reversion',
-    
+    'news_sitemaps',
     'robots',
     #'django_openid',
     'clickpass',
@@ -126,6 +122,10 @@ INSTALLED_APPS = (
     #'apache_log',
     'piston',
     
+    # These need to be at the bottom
+    'tinymce',
+    'tagging',
+    'reversion',    
 )
 
 SOUTH_AUTO_FREEZE_APP = True
