@@ -8,6 +8,7 @@
 #   comment_utils -r92 http://django-comment-utils.googlecode.com/svn/trunk/comment_utils
 #   themes -r37 http://opensource.washingtontimes.com/projects/private/themes/trunk
 #   massmedia  http://opensource.washingtontimes.com/projects/public/django-massmedia/trunk/massmedia/
+# -e git+http://opensource.washingtontimes.com/git/private/saxotech.git/#egg=saxotech
 
 # API
 -e hg+http://bitbucket.org/jespern/django-piston/#egg=piston
