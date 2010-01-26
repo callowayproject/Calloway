@@ -1,0 +1,412 @@
+[
+  {
+    "pk": 408285, 
+    "model": "news.story", 
+    "fields": {
+      "origin": 4, 
+      "subhead": "", 
+      "print_page": null, 
+      "tease_photo": "", 
+      "default_framing": null, 
+      "themes": "", 
+      "print_edition": null, 
+      "lead_photo_has_headline": false, 
+      "primary_category": 2, 
+      "update_date": "2010-01-26 09:47:44", 
+      "story": "<story>\r\n\r\n<inline type=\"photo\" id=\"69297\" align=\"left\" />\r\n\r\n<p><![CDATA[\r\nPARIS (AP) -- A parliamentary panel that wants Muslim women to stop veiling their faces recommended Tuesday that France ban such garb in public facilities, including hospitals and mass transit, and a leading panel member said he foresees such an interdiction by the end of 2010.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe nearly 200-page report contains a panoply of measures intended to dissuade women from wearing all-enveloping veils in France. It also recommends refusing residence cards and citizenship to anyone with visible signs of a \"radical religious practice.\"\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nHowever, there is no call to outlaw such garments -- worn by a tiny minority of Muslims -- in private areas and in the street. A full ban was the major issue that divided the 32-member, multiparty panel which ultimately heeded warnings that a full ban risked being deemed unconstitutional and could even cause trouble in a country where Islam is the second-largest religion.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe report, which culminates six months of hearings, was formally presented to the president of the National Assembly, the lower house, Bernard Accoyer, and made public.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nConservative lawmaker Eric Raoult, the panel's No. 2 member, said later that he foresaw a limited ban in the public sector \"before the end of the year.\"\r\n]]></p>\r\n\r\n<p><![CDATA[\r\n\"We need maybe six months or a little more to explain what we want,\" he told The Associated Press, adding that \"by the end of 2010\" there could be such an interdiction.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nAccoyer was more vague but told a news conference that \"we can certainly find solutions in a brief time.\"\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nUniversities, hospitals, public transport and post offices would be among areas included in a limited ban on the all-encompassing veil.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nAs envisaged by the panel, such a ban would require that people show their faces when entering the facility and \"keep the face uncovered throughout their presence,\" the report says.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nFailure to do so would result \"in a refusal to deliver the service demanded.\" That means, for instance, that a woman seeking state funds commonly accorded to mothers would walk away empty-handed.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nA parliamentary resolution condemning such garb, with no legal weight and the easiest measure to pass, would be likely to precede concrete initiatives.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe veil is widely viewed in France as a gateway to extremism, an insult to gender equality and an offense to France's secular foundation. A 2004 French law bans Muslim headscarves from primary and secondary school classrooms.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe language in the report was carefully chosen in an effort to avoid offending France's estimated 5 million Muslims -- the largest such population in western Europe -- and accusations of discrimination. Muslim leaders have already complained that the debate over the full veil coupled with an ongoing debate on French national identity has left some Muslims feeling their religion is becoming a government target.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe panel went to work, taking testimony from more than 200 experts and others, after President Nicolas Sarkozy said in June that veils that hide the face are \"not welcome\" on French territory.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nSuch veils are thought to be worn by only several thousand Muslim women who, most often, pin a \"niqab\" across their faces, hiding all but the eyes. Worn with a long, dark robe, such clothing is customarily associated with Saudi Arabia and the Gulf states.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe report puts an emphasis on educating women who wear the robes in France about the rules of the Republic.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nAny action on the report would not come before March regional elections.\r\n]]></p>\r\n\r\n</story>", 
+      "print_headline": "", 
+      "headline": "French report wants limits on Muslim face veil", 
+      "dateline": null, 
+      "sites": [
+        1
+      ], 
+      "categories": [
+        26, 
+        1, 
+        249, 
+        2
+      ], 
+      "status": 1, 
+      "lead_photo": null, 
+      "kicker": "", 
+      "print_section": null, 
+      "one_off_byline": "Elaine Ganley ASSOCIATED PRESS", 
+      "bylines": [], 
+      "pub_date": "2010-01-26 09:45:33", 
+      "slug": "french-report-wants-limits-muslim-face-veil", 
+      "comment_status": 3, 
+      "tease": "A parliamentary panel that wants Muslim women to stop veiling their faces recommended Tuesday that France ban such garb in public facilities, including hospitals and mass transit.", 
+      "post_story_blurb": "", 
+      "publish_date": null, 
+      "pre_story_blurb": ""
+    }
+  }, 
+  {
+    "pk": 408284, 
+    "model": "news.story", 
+    "fields": {
+      "origin": 4, 
+      "subhead": "", 
+      "print_page": null, 
+      "tease_photo": "", 
+      "default_framing": null, 
+      "themes": "", 
+      "print_edition": null, 
+      "lead_photo_has_headline": false, 
+      "primary_category": 4, 
+      "update_date": "2010-01-26 09:41:57", 
+      "story": "<story>\r\n\r\n<inline type=\"photo\" id=\"69286\" align=\"left\" />\r\n\r\n<p><![CDATA[\r\nOfficials at the Smithsonian Institution said Monday that a popular young giant panda will leave Washington's National Zoo on Feb. 4 for China.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nSmithsonian Secretary Wayne Clough said Tai Shan would travel by FedEx to China, along with 3-year-old female panda Mei Lan from Zoo Atlanta.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nZoo officials announced in December that Tai Shan would be sent to China for breeding. He has been one of the biggest attractions at the zoo since his birth in 2005, but he is property of China.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nTai Shan's parents, Mei Xiang and Tian Tian are on a 10-year, $10 million loan that expires in December.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe last full day for visitors to see Tai Shan will be Feb. 3.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nChina lends pandas to four U.S. zoos -- in Atlanta, Washington, San Diego and Memphis, Tenn.\r\n]]></p>\r\n\r\n</story>", 
+      "print_headline": "", 
+      "headline": "Panda set to leave National Zoo", 
+      "dateline": null, 
+      "sites": [
+        1
+      ], 
+      "categories": [
+        1, 
+        4, 
+        3, 
+        2
+      ], 
+      "status": 1, 
+      "lead_photo": null, 
+      "kicker": "", 
+      "print_section": null, 
+      "one_off_byline": "Brett Zongker ASSOCIATED PRESS", 
+      "bylines": [], 
+      "pub_date": "2010-01-26 09:39:26", 
+      "slug": "panda-set-leave-national-zoo", 
+      "comment_status": 3, 
+      "tease": "Officials at the Smithsonian Institution said Monday that a popular young giant panda will leave Washington's National Zoo on Feb. 4 for China.", 
+      "post_story_blurb": "", 
+      "publish_date": null, 
+      "pre_story_blurb": ""
+    }
+  }, 
+  {
+    "pk": 408283, 
+    "model": "news.story", 
+    "fields": {
+      "origin": 4, 
+      "subhead": "", 
+      "print_page": null, 
+      "tease_photo": "", 
+      "default_framing": null, 
+      "themes": "", 
+      "print_edition": null, 
+      "lead_photo_has_headline": false, 
+      "primary_category": 4, 
+      "update_date": "2010-01-26 09:34:46", 
+      "story": "<story>\r\n\r\n<inline type=\"photo\" id=\"69296\" align=\"left\" />\r\n\r\n<p><![CDATA[\r\nRICHMOND -- Gov. Robert F. McDonnell has written some of the job-creation plans he unveiled in a speech a week ago into legislation that a Republican, a Democrat and an independent will sponsor.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nMr. McDonnell said in a press release late Monday afternoon that he will boost job-development program spending by about $50 million a year. He said he would offset the spending with cuts, a windfall from the state tax amnesty program, and savings from higher employee contributions to pension plans for new state workers.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nMonday's announcement mostly restated key points the newly inaugurated Republican governor made in his first State of the Commonwealth speech on Jan. 18 to a joint session of the General Assembly.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nAmong other things, the legislation would boost a governor's office fund for luring companies to Virginia by $12 million next year over what Democratic former Gov. Tim Kaine proposed in the budget he submitted last month.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nIt appropriates $2 million to open Virginia trade offices in China, India and the United Kingdom; boosts Virginia Tourism Corp. funding by $3.6 million; and adds $2 million to a fund to entice Hollywood to shoot movies in the state.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nTo pay for it, Mr. McDonnell proposes using $21 million the state netted from its tax amnesty program, savings of about $25 million from a requirement that new state hires pay a share into their pensions, and spending cuts. Many of those measures were in Mr. Kaine's proposed budget.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nState Sens. Chuck Colgan, a Democrat, and William Wampler, a Republican, will be the bill's Senate patrons, and conservative independent Lacey Putney of Bedford, chairman of the House Appropriations Committee, will introduce it in the House.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe changes are an effort by Mr. McDonnell to make good on the central pledge of his successful gubernatorial campaign: creating jobs at a time when Virginia's unemployment rate has more than doubled to nearly 7 percent. And he has to make the changes as he and the General Assembly reconcile a $4 billion revenue shortfall over the next two years.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\n\"The budget that I have inherited is dire, and it is unbalanced. We begin with nearly a billion dollar annual shortfall based on tax hike proposals that both parties have rejected. More spending cuts must be made,\" Mr. McDonnell said in the release.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nBut it would be even more costly, he reasoned, not to invest now in creating new jobs.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nMr. Kaine's budget may have been dire, and it was unpalatable to Republicans and many Democrats. But it was balanced, chiefly by cutting the $950 million annual cash payment the state made to cities and counties as reimbursement for revenue lost to the 12-year-old phaseout of the local tax on personal automobiles.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nA separate $1 billion-a-year income-tax increase Mr. Kaine proposed would have gone to local governments in return for the discontinued annual reimbursements. That bill, however, died last week in the House, with Democrats and Republicans both voting unanimously to kill it.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nInitial Democratic reaction to Monday's late-day press release was guarded but favorable.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nDelegate Ward L. Armstrong, Henry County Democrat, who is his party's leader in the House of Delegates, said he wasn't troubled that the Senate's senior Democrat was a co-sponsor for the GOP governor's first major budget legislation.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\n\"It gives me some level of comfort,\" Mr. Armstrong said.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nHe agreed with many of the ideas Mr. McDonnell offered, he said, including capturing savings and windfalls and targeted cuts. He was less charitable toward the proposal to boost employee contributions to the Virginia Retirement System.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\n\"You're looking at contributions from state employees, and they haven't had a raise. Clearly it eats into their income if they have to contribute more,\" Mr. Armstrong said.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nMr. Colgan, reached by telephone to discuss the legislation Monday night, said he could not speak and hung up.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nMr. McDonnell, Republican Lt. Gov. Bill Bolling and other senior administration officials plan to elaborate on the legislative package at a Tuesday news conference. Mr. McDonnell has given Mr. Bolling the duty of acting as the state's \"chief jobs-creation officer\" during his four-year term.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\n<em>Associated Press writer Larry O'Dell contributed to this report.</em>\r\n]]></p>\r\n\r\n</story>", 
+      "print_headline": "", 
+      "headline": "McDonnell plans to shift cash to jobs incentives", 
+      "dateline": null, 
+      "sites": [
+        1
+      ], 
+      "categories": [
+        1, 
+        4, 
+        5
+      ], 
+      "status": 1, 
+      "lead_photo": null, 
+      "kicker": "", 
+      "print_section": null, 
+      "one_off_byline": "Bob Lewis ASSOCIATED PRESS", 
+      "bylines": [], 
+      "pub_date": "2010-01-26 09:33:44", 
+      "slug": "mcdonnell-plans-shift-cash-jobs-incentives", 
+      "comment_status": 3, 
+      "tease": "Gov. Robert F. McDonnell has written some of the job-creation plans he unveiled in a speech a week ago into legislation that a Republican, a Democrat and an independent will sponsor.", 
+      "post_story_blurb": "", 
+      "publish_date": null, 
+      "pre_story_blurb": ""
+    }
+  }, 
+  {
+    "pk": 408282, 
+    "model": "news.story", 
+    "fields": {
+      "origin": 4, 
+      "subhead": "", 
+      "print_page": null, 
+      "tease_photo": "", 
+      "default_framing": null, 
+      "themes": "", 
+      "print_edition": null, 
+      "lead_photo_has_headline": false, 
+      "primary_category": 4, 
+      "update_date": "2010-01-26 09:22:38", 
+      "story": "<story>\r\n\r\n<p><![CDATA[\r\nAuthorities reopened a stretch of Georgia Avenue in Wheaton after being unable to identify the source of an odor in the area on Monday.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nCounty fire department spokesman Capt. Oscar Garcia said a manhole cover somehow crashed through the windshield of a car, striking the motorist on Monday afternoon. The driver was hospitalized with traumatic injuries.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nPolice who responded to that incident reported an unidentifiable odor in the area. As hazmat crews and utility companies investigated, they shut down Georgia Avenue between Plyers Mill Road and Dennis Avenue. Capt. Garcia said two of the three lanes would be reopened.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nCapt. Garcia said crews could not identify the source of the odor. Some residents in the area were evacuated as a precaution.\r\n]]></p>\r\n\r\n</story>", 
+      "print_headline": "", 
+      "headline": "Crews investigate Montgomery Co. odor", 
+      "dateline": null, 
+      "sites": [
+        1
+      ], 
+      "categories": [
+        4
+      ], 
+      "status": 1, 
+      "lead_photo": null, 
+      "kicker": "", 
+      "print_section": null, 
+      "one_off_byline": "ASSOCIATED PRESS", 
+      "bylines": [], 
+      "pub_date": "2010-01-26 09:20:01", 
+      "slug": "crews-investigate-montgomery-co-odor", 
+      "comment_status": 3, 
+      "tease": "Authorities said reopened a stretch of Georgia Avenue in Wheaton after being unable to identify the source of an odor in the area.\r\n\r\n", 
+      "post_story_blurb": "", 
+      "publish_date": null, 
+      "pre_story_blurb": ""
+    }
+  }, 
+  {
+    "pk": 408281, 
+    "model": "news.story", 
+    "fields": {
+      "origin": 4, 
+      "subhead": "", 
+      "print_page": null, 
+      "tease_photo": "", 
+      "default_framing": null, 
+      "themes": "", 
+      "print_edition": null, 
+      "lead_photo_has_headline": false, 
+      "primary_category": 5, 
+      "update_date": "2010-01-26 09:38:51", 
+      "story": "<story>\r\n\r\n<inline type=\"photo\" id=\"69295\" align=\"left\" />\r\n\r\n<p><![CDATA[\r\nWASHINGTON (AP) -- The Senate is likely to reject a White House-backed plan to establish a bipartisan task force to recommend steps to curb the deficit, even as lawmakers digest the news that President Barack Obama wants a three-year freeze in the domestic budgets they control.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nFresh numbers arriving Tuesday morning from the Congressional Budget Office are expected to bring continued bad news on the deficit, keeping the pressure on Obama and congressional Democrats to demonstrate they're serious about taking on the flood of red ink.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe spending freeze, expected to be proposed by Obama during the State of the Union address on Wednesday, would apply to a relatively small portion of the federal budget, affecting a $477 billion pot of money available for domestic agencies whose budgets are approved by Congress each year. Some of those agencies could get increases, others would have to face cuts; such programs got an almost 10 percent increase this year. The federal budget total was $3.5 trillion.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe freeze on so-called discretionary programs would have only a modest impact on a deficit expected to match last year's $1.4 trillion. The steps needed to really tackle the deficit include tax increases and curbs on benefit programs like Medicare, Medicaid and Social Security.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThat's the idea driving the Obama-backed plan to create a special task force to come up with a plan to curb the spiraling budget deficit. But the Senate sponsors of the plan say it's attracted too much opposition from the right and left to prevail.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nRepublicans say the panel -- it would try to develop a deficit reduction blueprint after the November elections for a vote before the new Congress convenes -- would lead to big tax hikes. Democratic opponents say they don't want to vote on proposals to cut benefit programs like Social Security without being able to shape the plan.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nObama's three-year spending freeze will be part of the budget Obama will submit Feb. 1, senior administration officials said, commenting on condition of anonymity to reveal unpublished details.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nIt's likely to confront opposition on Capitol Hill, where a handful of powerful lawmakers write 12 annual appropriations bills. They've gotten used to hefty increases but now are being asked to tighten their belts. House Appropriations Committee Chairman David Obey, D-Wis., declined to comment, his spokesman said.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe Pentagon, veterans programs, foreign aid and the Homeland Security Department would be exempt from the freeze.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe savings would be small at first, perhaps $10 billion to $15 billion, one official said. But over the coming decade, savings would add up to $250 billion.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe White House is under considerable pressure to cut deficits -- the red ink hit a record $1.4 trillion this year -- or at least keep them from growing. Encouraged by last week's Massachusetts Senate victory, Republicans are hitting hard on the issue, and polls show voters increasingly concerned.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nSen. John McCain, who lost to Obama in last year's presidential election, said he supports any attempt to cut discretionary domestic spending. \"We need to do so,\" he said Tuesday.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nBut in an appearance on ABC's \"Good Morning America,\" the Arizona Republican said Obama \"has got to veto bills that are laden with pork-barrel spending, earmarks.\"\r\n]]></p>\r\n\r\n</story>", 
+      "print_headline": "", 
+      "headline": "Senate likely to nix idea of deficit task force", 
+      "dateline": null, 
+      "sites": [
+        1
+      ], 
+      "categories": [
+        1, 
+        7, 
+        278, 
+        249, 
+        5
+      ], 
+      "status": 1, 
+      "lead_photo": null, 
+      "kicker": "", 
+      "print_section": null, 
+      "one_off_byline": "Andrew Taylor ASSOCIATED PRESS", 
+      "bylines": [], 
+      "pub_date": "2010-01-26 09:08:09", 
+      "slug": "senate-likely-reject-idea-deficit-task-force", 
+      "comment_status": 3, 
+      "tease": "The Senate is likely to reject a White House-backed plan to establish a bipartisan task force to recommend steps to curb the deficit, even as lawmakers digest the news that President Barack Obama wants a three-year freeze in the domestic budgets they control.", 
+      "post_story_blurb": "", 
+      "publish_date": null, 
+      "pre_story_blurb": ""
+    }
+  }, 
+  {
+    "pk": 408280, 
+    "model": "news.story", 
+    "fields": {
+      "origin": 4, 
+      "subhead": "", 
+      "print_page": null, 
+      "tease_photo": "", 
+      "default_framing": null, 
+      "themes": "", 
+      "print_edition": null, 
+      "lead_photo_has_headline": false, 
+      "primary_category": 6, 
+      "update_date": "2010-01-26 09:07:57", 
+      "story": "<story>\r\n\r\n<inline type=\"photo\" id=\"69294\" align=\"left\" />\r\n\r\n<p><![CDATA[\r\nSEOUL -- North Korea issued two no-sail zones near its disputed western sea border with South Korea, officials said Tuesday, a possible indication the country may be preparing to conduct missile tests.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe no-sail zones were designated just south of the western maritime border -- in South Korean-held waters -- from Monday through March 29, said a South Korean Defense Ministry official on condition of anonymity, citing department policy.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe YTN television network cited a military official as saying that the North designated the no-sail zones possibly to conduct missile tests or other military action.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nSouth Korea was trying to find out why the North made the no-sail-zone announcement. Pyongyang did the same in the past before carrying out missile tests and military maneuvers, the Defense Ministry official said. The North also has issued no-sail zones if bad weather was expected.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nOne of the zones is where navy ships from the two Koreas fought a brief yet bloody gunbattle in November that left one North Korean sailor dead and three others wounded, according to the Yonhap news agency. The Defense Ministry said it couldn't confirm the report.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe disputed sea border, drawn by the U.N. Command at the end of the Korean War, is a constant source of military tension between the Koreas, with Pyongyang insisting the line should be redrawn further south. The dispute also led to bloody naval skirmishes in 1999 and 2002.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nNorth Korea has sent mixed signals to the South recently. Pyongyang offered talks on restarting stalled joint-tour programs and a joint industrial complex in the North earlier this month.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nBut the communist North also has escalated its rhetoric with the powerful National Defense Commission threatening to attack the South and break off all dialogue over a reported South Korea contingency plan to handle turmoil in the North.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe two Koreas are still technically at war because their 1950-53 Korean War ended with an armistice, not a peace treaty.\r\n]]></p>\r\n\r\n</story>", 
+      "print_headline": "", 
+      "headline": "Report: N. Korea may be readying missile launch", 
+      "dateline": null, 
+      "sites": [
+        1
+      ], 
+      "categories": [
+        1, 
+        6, 
+        2
+      ], 
+      "status": 1, 
+      "lead_photo": null, 
+      "kicker": "", 
+      "print_section": null, 
+      "one_off_byline": "Hyung-jin Kim ASSOCIATED PRESS", 
+      "bylines": [], 
+      "pub_date": "2010-01-26 09:06:24", 
+      "slug": "report-n-korea-may-be-readying-missile-launch", 
+      "comment_status": 3, 
+      "tease": "North Korea issued two no-sail zones near its disputed western sea border with South Korea, officials said Tuesday, a possible indication the country may be preparing to conduct missile tests.", 
+      "post_story_blurb": "", 
+      "publish_date": null, 
+      "pre_story_blurb": ""
+    }
+  }, 
+  {
+    "pk": 408279, 
+    "model": "news.story", 
+    "fields": {
+      "origin": 4, 
+      "subhead": "", 
+      "print_page": null, 
+      "tease_photo": "", 
+      "default_framing": null, 
+      "themes": "", 
+      "print_edition": null, 
+      "lead_photo_has_headline": false, 
+      "primary_category": 6, 
+      "update_date": "2010-01-26 08:43:10", 
+      "story": "<story>\r\n\r\n<p><![CDATA[\r\nKABUL, Afghanistan -- A Taliban suicide car bomber struck near a military base in Afghanistan's capital Tuesday, wounding at least six people, Afghan and NATO officials said.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe militant group claimed responsibility for the attack in a text message to the Associated Press from a phone number commonly used by the insurgent group. The target was an international military convoy, the extremist group said.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nAn AP reporter at the scene saw the wreckage of a vehicle from afar. U.S. soldiers had blocked off access to the site right outside Camp Phoenix, an American base inside Kabul.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe attacker was driving a minibus laden with explosives that wounded at least six Afghan civilians when it went off, said Jamil Jumbish, the head of Afghanistan's criminal investigation unit. Mr. Jumbish said he had no reports of deaths but added that he did not know if there were any casualties among NATO forces.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nNATO forces confirmed an explosion about 5 p.m. local time outside the main gate of Camp Phoenix. A statement issued by the international military coalition said initial reports indicated it was a vehicle-born bomb but did not give further details.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nLt. Nico Melendez, a NATO spokesman, said he did not yet have reports of injuries.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe strike follows on a bold attack last week by Taliban militants on government buildings in the heart of Kabul. The Jan. 18 attack paralyzed the city for hours and left five civilians and Afghan security forces dead, along with the seven assailants.\r\n]]></p>\r\n\r\n</story>", 
+      "print_headline": "", 
+      "headline": "Bomb wounds 6 near U.S. base in Kabul", 
+      "dateline": null, 
+      "sites": [
+        1
+      ], 
+      "categories": [
+        1, 
+        249, 
+        6, 
+        2
+      ], 
+      "status": 1, 
+      "lead_photo": null, 
+      "kicker": "", 
+      "print_section": null, 
+      "one_off_byline": "ASSOCIATED PRESS", 
+      "bylines": [], 
+      "pub_date": "2010-01-26 08:41:36", 
+      "slug": "bomb-wounds-6-near-us-base-kabul", 
+      "comment_status": 3, 
+      "tease": "A Taliban suicide car bomber struck near a military base in Afghanistan's capital Tuesday, wounding at least six people, Afghan and NATO officials said.", 
+      "post_story_blurb": "", 
+      "publish_date": null, 
+      "pre_story_blurb": ""
+    }
+  }, 
+  {
+    "pk": 408278, 
+    "model": "news.story", 
+    "fields": {
+      "origin": 4, 
+      "subhead": "", 
+      "print_page": null, 
+      "tease_photo": "", 
+      "default_framing": null, 
+      "themes": "", 
+      "print_edition": null, 
+      "lead_photo_has_headline": false, 
+      "primary_category": 2, 
+      "update_date": "2010-01-26 08:32:27", 
+      "story": "<story>\r\n\r\n<inline type=\"photo\" id=\"69293\" align=\"left\" />\r\n\r\n<p><![CDATA[\r\nBEIRUT -- The pilot of an Ethiopian Airlines plane that crashed into the sea flew in the opposite direction from the path recommended by the control tower after taking off from Beirut in thunderstorms, Lebanon's transportation minister said Tuesday.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nAll 90 people on board were feared dead after the plane went down in flames minutes after takeoff at around 2:30 a.m. Monday, during a night of lightning and thunderstorms.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nTransportation Minister Ghazi Aridi said the pilot initially followed the tower's guidance but then abruptly changed course and went in the opposite direction.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\n\"They asked him to correct his path, but he did a very fast and strange turn before disappearing completely from the radar,\" Mr. Aridi told the Associated Press.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nIt was not immediately clear why the pilot veered off the recommended path. Like most other airliners, the Boeing 737 is equipped with its own onboard weather radar, which the pilot may have used to avoid flying into thunderheads rather than following the flight tower's recommendation.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\n\"Nobody is saying the pilot is to blame for not heeding orders,\" Mr. Aridi said. \"There could have been many reasons for what happened. . . . Only the black box can tell.\"\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nLebanese officials have ruled out terrorism or \"sabotage\" on the flight bound for the Ethiopian capital, Addis Ababa.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nNo survivors had been found more than 24 hours after the crash. Emergency workers have pulled bodies from the sea; the numbers reported so far range from a dozen to more than 20.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nEthiopian Airlines CEO Girma Wake said Tuesday some bodies were probably still in the plane.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\n\"We hope they will find trapped bodies in the fuselage,\" Mr. Wake said in Addis Ababa.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nSearchers were trying to find the plane's black box and flight data recorder, which are critical to determining the cause of the crash.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nOn Tuesday, rescue teams and equipment sent from the United Nations and countries including the United States and Cyprus were helping in the search. Conditions were chilly but relatively clear -- far better than Monday, when rain lashed the coast.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nPieces of the plane and other debris were washing ashore, and emergency crews pulled a large piece of the plane, about 3 feet long, from the water. A crew member, Safi Sultaneh, identified it as a piece of a wing.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nAn aviation analyst familiar with the investigation said Beirut air traffic control was guiding the Ethiopian flight through the thunderstorms for the first two to three minutes of its flight.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe official, who asked not to be identified because of the sensitivity of the matter, said this was standard procedure by Lebanese controllers to assist airliners departing from the airport in poor weather conditions.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nIt is unclear exactly what happened in the last two minutes of flight, the official said.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nPatrick Smith, a U.S.-based airline pilot and aviation writer, said there were many possible causes for the crash.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\n\"Had the plane encountered extreme turbulence, or had it suffered a powerful lightning strike that knocked out instruments while penetrating strong turbulence, then structural failure or loss of control, followed by an in-flight breakup, are possible causes.\"\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nEthiopian Airlines said late Monday that the pilot had more than 20 years of experience. It did not give the pilot's name or details of other aircraft the pilot had flown. It said the recovered bodies included those of Ethiopians and Lebanese.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe Lebanese army and witnesses say the plane was on fire shortly after takeoff. A defense official also said some witnesses reported the plane broke up into three pieces.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nAt the Government Hospital in Beirut, Red Cross workers brought in bodies covered with wool blankets as relatives gathered nearby. Marla Pietton, wife of the French ambassador to Lebanon, was among those on board, according to the French Embassy.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\n<em>Associated Press writers Elizabeth A. Kennedy in Beirut, Slobodan Lekic in Brussels and Katharine Houreld in Addis Ababa, Ethiopia, contributed to this report.</em>\r\n]]></p>\r\n\r\n</story>", 
+      "print_headline": "", 
+      "headline": "Pilot didn't follow Beirut tower's advice", 
+      "dateline": null, 
+      "sites": [
+        1
+      ], 
+      "categories": [
+        1, 
+        249, 
+        2
+      ], 
+      "status": 1, 
+      "lead_photo": null, 
+      "kicker": "", 
+      "print_section": null, 
+      "one_off_byline": "Bassem Mroue and Zeina Karam ASSOCIATED PRESS", 
+      "bylines": [], 
+      "pub_date": "2010-01-26 08:30:58", 
+      "slug": "pilot-didnt-follow-beirut-towers-advice", 
+      "comment_status": 3, 
+      "tease": "The pilot of an Ethiopian Airlines plane that crashed into the sea flew in the opposite direction from the path recommended by the control tower after taking off from Beirut in thunderstorms, Lebanon's transportation minister said Tuesday.\r\n", 
+      "post_story_blurb": "", 
+      "publish_date": null, 
+      "pre_story_blurb": ""
+    }
+  }, 
+  {
+    "pk": 408277, 
+    "model": "news.story", 
+    "fields": {
+      "origin": 4, 
+      "subhead": "", 
+      "print_page": null, 
+      "tease_photo": "", 
+      "default_framing": null, 
+      "themes": "", 
+      "print_edition": null, 
+      "lead_photo_has_headline": false, 
+      "primary_category": 4, 
+      "update_date": "2010-01-26 08:19:22", 
+      "story": "<story>\r\n\r\n<inline type=\"photo\" id=\"17886\" align=\"left\" />\r\n\r\n<p><![CDATA[\r\nROCKVILLE, Md. (AP) -- Two Metro workers were struck and killed by a maintenance vehicle along a track Tuesday, the latest in a string of fatalities since last year in the Washington area's commuter rail system.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nBoth workers were on a track when they were hit a few blocks from the Rockville Metro Station, Montgomery County Fire and Rescue spokesman Capt. Oscar Garcia said. One worker died at the scene and the other on the way to a hospital, Metro officials said.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nBoth men were automatic train technicians and the crash involved a large truck equipped to drive on the track when electricity is shut down, according to Metro spokeswoman Angela Gates.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe Metro system that links the capital with neighboring areas of Maryland and Virginia has seen a series of fatal accidents and mishaps since last year. The worst was a June crash that killed eight passengers and the train operator. Two other workers were killed in separate accidents last year.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nLast month, a team of inspectors were nearly hit by a train that Metro officials say was traveling too fast. Three workers were hurt in November when a train returning to a northern Virginia rail yard hit a parked train.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nFollowing the latest deaths, Red Line service was shut down between the Shady Grove and Twinbrook stations while the crash is investigated. Shuttles service was being provided between the stations.\r\n]]></p>\r\n\r\n</story>", 
+      "print_headline": "", 
+      "headline": "2 Metro workers killed in latest track accident", 
+      "dateline": null, 
+      "sites": [
+        1
+      ], 
+      "categories": [
+        4
+      ], 
+      "status": 1, 
+      "lead_photo": null, 
+      "kicker": "", 
+      "print_section": null, 
+      "one_off_byline": "ASSOCIATED PRESS", 
+      "bylines": [], 
+      "pub_date": "2010-01-26 08:16:30", 
+      "slug": "2-metro-workers-killed-latest-track-accident", 
+      "comment_status": 3, 
+      "tease": "Two Metro workers were struck and killed by a maintenance vehicle along a track Tuesday, the latest in a string of fatalities since last year in the Washington area's commuter rail system.", 
+      "post_story_blurb": "", 
+      "publish_date": null, 
+      "pre_story_blurb": ""
+    }
+  }, 
+  {
+    "pk": 408276, 
+    "model": "news.story", 
+    "fields": {
+      "origin": 4, 
+      "subhead": "", 
+      "print_page": null, 
+      "tease_photo": "", 
+      "default_framing": null, 
+      "themes": "", 
+      "print_edition": null, 
+      "lead_photo_has_headline": false, 
+      "primary_category": 4, 
+      "update_date": "2010-01-26 08:07:47", 
+      "story": "<story>\r\n\r\n<inline type=\"photo\" id=\"69292\" align=\"left\" />\r\n\r\n<p><![CDATA[\r\nANNAPOLIS, Maryland (AP) -- Former U.S. Sen. Charles McC. Mathias, a liberal Republican who championed civil rights and protection of the Chesapeake Bay during his 26 years in Washington, has died. He was 87.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nMathias died Monday at his home from complications of Parkinson's disease, said his sons Charles and Robert.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nMathias' career in Congress spanned the turbulent years of the Vietnam War and the civil rights movement, and he often found himself at odds with his party on those and other issues.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nIn retirement, Mathias broke with the Republican Party again in 2008 when he endorsed Sen. Barack Obama a week before the presidential election. He said the Democratic candidate was \"better suited to recharge America's economic health, restore its prestige abroad and inspire anew all people who cherish freedom and equality.\"\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nLeaders from both Democratic and Republican parties in Maryland described him as an influence on their careers.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\n\"He was a pioneer, a gentlemen, and a fierce advocate for the citizens of Maryland during his time in public life,\" said Former Republican Gov. Robert Ehrlich.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nMathias was elected to the U.S. House of Representatives in 1960 from a Maryland district and quickly gained a reputation for bucking the Republican Party. Election to the Senate followed eight years later.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nHe was a strong supporter of civil rights legislation and supported a federal ban on inexpensive handguns.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nWhen conservative Sen. Barry Goldwater won the Republican presidential nomination in 1964, Mathias would not endorse him by name, saying only that he supported all Republican candidates.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nMathias generally supported President Richard Nixon on economic issues, but opposed two of the president's conservative Supreme Court nominees and voted against the administration's attempts to weaken the 1965 voting rights acts.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nIn his home state, Mathias was considered to be the father of the massive state and federal program to clean up the Chesapeake Bay.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nIn 1973, he undertook a 450-mile tour of Maryland's portion of the bay, meeting with scientists, business leaders, conservationists, farmers and watermen. That tour laid the groundwork for a partnership among three states and the federal government to preserve the environment of the bay.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nMathias served three terms in the Senate before deciding not to seek re-election in 1986.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\n\"The season has arrived to shift to a new field of activity,\" he said in announcing his decision. While Mathias was often at odds with the Republican right, he said \"that was not significant\" in the decision. He also predicted \"the tide will come in again\" for Republican moderates and liberals.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nIn a 1993 interview, Mathias said he was particularly proud of his work on civil rights.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\n\"When I went to Congress, this was a segregated country. Now there is, at least, in law, no racial barriers,\" he said.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nBesides his sons, Mathias is survived by his wife, Ann Bradford Mathias, and two grandchildren.\r\n]]></p>\r\n\r\n</story>", 
+      "print_headline": "", 
+      "headline": "Ex-U.S. Sen. Charles Mathias of Maryland dies at 87 ", 
+      "dateline": null, 
+      "sites": [
+        1
+      ], 
+      "categories": [
+        4, 
+        5
+      ], 
+      "status": 1, 
+      "lead_photo": null, 
+      "kicker": "", 
+      "print_section": null, 
+      "one_off_byline": "ASSOCIATED PRESS", 
+      "bylines": [], 
+      "pub_date": "2010-01-26 08:06:30", 
+      "slug": "ex-us-sen-charles-mathias-maryland-dies-87", 
+      "comment_status": 3, 
+      "tease": "Former U.S. Sen. Charles McC. Mathias, a liberal Republican who championed civil rights and protection of the Chesapeake Bay during his 26 years in Washington, has died.", 
+      "post_story_blurb": "", 
+      "publish_date": null, 
+      "pre_story_blurb": ""
+    }
+  }
+]
