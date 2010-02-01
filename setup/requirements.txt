@@ -1,7 +1,6 @@
 # Things im on the fence about
 # -e svn+http://django-openid.googlecode.com/svn/trunk/#egg=django_openid
 # -e svn+http://opensource.washingtontimes.com/projects/public/django-clickpass/trunk/#egg=clickpass
-# -e svn+http://opensource.washingtontimes.com/projects/private/django-livevalidation/trunk/#egg=livevalidation
 # -e svn+http://feedjack.googlecode.com/svn/trunk/#egg=feedjack
 #  -e svn+http://opensource.washingtontimes.com/projects/private/hiermenu/trunk/#egg=hiermenu
 #   supertagging http://opensource.washingtontimes.com/projects/public/django-supertagging/trunk/supertagging
@@ -29,8 +28,8 @@ django-profiles>=0.2
   # nsearch
 
 # Comments
-  # mptt comments
-  # comment utils??
+-e git+http://github.com/justquick/django-mptt-comments.git#egg=mptt_comments
+  # markdown?
 
 # Content Helpers
 django-pagination==1.0.5
@@ -38,6 +37,7 @@ django-pagination==1.0.5
 -e git+http://github.com/justquick/django-tinymce.git#egg=tinymce
 -e git+http://github.com/justquick/django-reversion.git#egg=reversion
 http://typogrify.googlecode.com/files/typogrify-1.0.tar.gz
+-e svn+http://opensource.washingtontimes.com/projects/public/django-livevalidation/trunk/#egg=livevalidation
   # mobile
 -e git+http://opensource.washingtontimes.com/git/public/offensivecontent.git#egg=offensivecontent
   # sitemaps + news sitemaps
