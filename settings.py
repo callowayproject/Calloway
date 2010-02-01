@@ -156,6 +156,7 @@ TINYMCE_ADMIN_FIELDS = {
 
 REVERSION_MODELS = ('stories.story','flatpages.flatpage')
 
+PUBLICATION_NAME = 'The Washington Times'
 try:
     from local_settings import *
 except ImportError:
