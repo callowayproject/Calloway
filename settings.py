@@ -121,7 +121,7 @@ INSTALLED_APPS = (
     'hiermenu',
     #'apache_log',
     'piston',
-    
+    'offensivecontent',
     # These need to be at the bottom
     'tinymce',
     'tagging',
