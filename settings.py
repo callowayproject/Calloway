@@ -98,10 +98,12 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
+    'livevalidation', # keep me above admin    
     'django.contrib.admin',
     'django.contrib.flatpages',
     'django.contrib.humanize',
-    'django.contrib.redirects',
+    'django.contrib.comments',
+    'django.contrib.markup',
     'django_ext',
     'django_memcached',
     'pagination',
@@ -112,6 +114,7 @@ INSTALLED_APPS = (
     'stories',
     'categories',
     'mptt',
+    'mptt_comments',
     'positions',
     'news_sitemaps',
     'robots',
@@ -121,6 +124,7 @@ INSTALLED_APPS = (
     'hiermenu',
     #'apache_log',
     'piston',
+    'offensivecontent',
     
     # These need to be at the bottom
     'tinymce',
@@ -156,6 +160,7 @@ TINYMCE_ADMIN_FIELDS = {
 
 REVERSION_MODELS = ('stories.story','flatpages.flatpage')
 
+PUBLICATION_NAME = 'The Washington Times'
 try:
     from local_settings import *
 except ImportError:
