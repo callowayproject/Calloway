@@ -72,6 +72,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django_ext.middleware.UsernameInCookieMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.http.SetRemoteAddrFromForwardedFor',
     'django.middleware.gzip.GZipMiddleware',
