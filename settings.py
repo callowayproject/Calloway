@@ -81,6 +81,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
     'django.middleware.transaction.TransactionMiddleware',
     'pagination.middleware.PaginationMiddleware',
+    'ban.middleware.BanningMiddleware',
     'django.middleware.cache.FetchFromCacheMiddleware',
 )
 
@@ -125,6 +126,7 @@ INSTALLED_APPS = (
     #'apache_log',
     'piston',
     'offensivecontent',
+    'ban',
     
     # These need to be at the bottom
     'tinymce',
