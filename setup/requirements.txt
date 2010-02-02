@@ -1,7 +1,6 @@
 # Things im on the fence about
 # -e svn+http://django-openid.googlecode.com/svn/trunk/#egg=django_openid
 # -e svn+http://opensource.washingtontimes.com/projects/public/django-clickpass/trunk/#egg=clickpass
-# -e svn+http://opensource.washingtontimes.com/projects/private/hiermenu/trunk/#egg=hiermenu
 #   supertagging http://opensource.washingtontimes.com/projects/public/django-supertagging/trunk/supertagging
 #   themes -r37 http://opensource.washingtontimes.com/projects/private/themes/trunk
 
