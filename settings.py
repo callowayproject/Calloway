@@ -72,6 +72,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django_ext.middleware.UsernameInCookieMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.http.SetRemoteAddrFromForwardedFor',
     'django.middleware.gzip.GZipMiddleware',
@@ -81,6 +82,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
     'django.middleware.transaction.TransactionMiddleware',
     'pagination.middleware.PaginationMiddleware',
+    'ban.middleware.BanningMiddleware',
     'django.middleware.cache.FetchFromCacheMiddleware',
 )
 
@@ -125,6 +127,7 @@ INSTALLED_APPS = (
     #'apache_log',
     'piston',
     'offensivecontent',
+    'ban',
     
     # These need to be at the bottom
     'tinymce',

@@ -9,8 +9,8 @@
 
 # User - Management
 -e git+http://opensource.washingtontimes.com/git/public/django-staff.git/#egg=staff
-  # Ban
-  # username in cookie middleware
+-e git+http://github.com/justquick/django-ban.git#egg=ban
+ipcalc>=0.1
 django-profiles>=0.2
 
 # Content
