@@ -47,14 +47,15 @@ http://typogrify.googlecode.com/files/typogrify-1.0.tar.gz
 
 # Debugging
 django-debug-toolbar==0.7.0
-  # logjam
+-e git+http://github.com/justquick/django-logjam.git#egg=logjam
   # debug middleware
 
 # Caching
 python-memcached==1.44
 django-memcached==0.1.2
+-e git+http://github.com/justquick/python-varnish.git#egg=varnish
+-e git+http://github.com/justquick/django-varnish.git#egg=varnishapp
   # mintcache
-  # varnish
 
 # Misc Libraries
 -e svn+http://django-mptt.googlecode.com/svn/trunk/#egg=mptt

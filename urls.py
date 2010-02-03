@@ -22,6 +22,7 @@ sitemaps = {
 
 urlpatterns = patterns('',
     (r'^cache/', include('django_memcached.urls')),
+    (r'^admin/log/', include('logjam.urls')),
     (r'^admin/', include(admin.site.urls)),
     (r'^api/', include('api.urls')),
     (r'^news/', include('stories.urls')),
