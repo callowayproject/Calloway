@@ -26,10 +26,12 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
     (r'^api/', include('api.urls')),
     (r'^news/', include('stories.urls')),
+    (r'^frontendadmin/', include('frontendadmin.urls')),
     (r'^sitemap\.xml$', 'django.contrib.sitemaps.views.index', {'sitemaps': sitemaps}),
     (r'^sitemap-stories\.xml', 'news_sitemaps.views.news_sitemap', {'sitemaps': {'stories': sitemaps['stories']}}),    
     (r'^sitemap-(?P<section>.+)\.xml', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),
-    url(r'^robots\.txt', 'robots.views.rules_list', name='robots_rule_list'),
+    url(r'^robots.txt', 'robots.views.rules_list', name='robots_rule_list'),
+    (r'^$', 'django.views.generic.simple.direct_to_template', {'template':'base.html'}),    
 )
 
 if settings.DEBUG:

@@ -130,6 +130,7 @@ INSTALLED_APPS = (
     'ban',
     'logjam',
     'varnishapp',
+    'frontendadmin',
     
     # These need to be at the bottom
     'tinymce',

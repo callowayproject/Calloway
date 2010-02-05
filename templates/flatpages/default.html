@@ -1,0 +1,8 @@
+{% extends 'frontendadmin/base.html' %}
+{% block title %}{{ flatpage.title }}{% endblock %}
+{% block content_title %}{{ flatpage.title }}{% endblock %}
+{% block content %}
+    {% load frontendadmin_tags %}
+    <h3>{% frontendadmin_change flatpage 'Edit this page' %}</h3>
+    {{ flatpage.content }}
+{% endblock %}
