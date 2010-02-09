@@ -9,6 +9,7 @@ from news_sitemaps import NewsSitemap
 from stories.models import Story
 
 class StorySitemap(NewsSitemap):
+    limit = 5000
     def items(self):
         return Story.published.all()
         
@@ -23,8 +24,10 @@ sitemaps = {
 urlpatterns = patterns('',
     (r'^cache/', include('django_memcached.urls')),
     (r'^admin/log/', include('logjam.urls')),
+    (r'^admin/varnish/', include('varnishapp.urls')),
     (r'^admin/', include(admin.site.urls)),
     (r'^api/', include('api.urls')),
+    (r'^sitemaps/', include('news_sitemaps.urls')),
     (r'^news/', include('stories.urls')),
     (r'^frontendadmin/', include('frontendadmin.urls')),
     (r'^sitemap\.xml$', 'django.contrib.sitemaps.views.index', {'sitemaps': sitemaps}),
