@@ -4,8 +4,7 @@
 # -e svn+http://opensource.washingtontimes.com/projects/private/hiermenu/trunk/#egg=hiermenu
 #   supertagging http://opensource.washingtontimes.com/projects/public/django-supertagging/trunk/supertagging
 #   themes -r37 http://opensource.washingtontimes.com/projects/private/themes/trunk
-#   massmedia  http://opensource.washingtontimes.com/projects/public/django-massmedia/trunk/massmedia/
-# -e git+http://opensource.washingtontimes.com/git/private/saxotech.git/#egg=saxotech
+# django-pagination==1.0.5
 
 # API
 -e hg+http://bitbucket.org/jespern/django-piston/#egg=piston
@@ -18,7 +17,6 @@ django-profiles>=0.2
 
 # Content
 -e git+http://opensource.washingtontimes.com/git/public/django-stories.git/#egg=stories
--e svn+http://opensource.washingtontimes.com/projects/private/django-ap/#egg=ap
 -e svn+http://django-robots.googlecode.com/svn/trunk/#egg=robots
   # saxotech + middleware
 
@@ -30,16 +28,15 @@ django-profiles>=0.2
   # markdown?
 
 # Content Helpers
-django-pagination==1.0.5
 -e git+http://opensource.washingtontimes.com/git/public/django-kamasutra.git/#egg=positions
 -e git+http://github.com/justquick/django-tinymce.git#egg=tinymce
 -e git+http://github.com/justquick/django-reversion.git#egg=reversion
 http://typogrify.googlecode.com/files/typogrify-1.0.tar.gz
 -e svn+http://opensource.washingtontimes.com/projects/public/django-livevalidation/trunk/#egg=livevalidation
-  # mobile
 -e git+http://opensource.washingtontimes.com/git/public/offensivecontent.git#egg=offensivecontent
 -e git+http://opensource.washingtontimes.com/git/public/django-news-sitemaps.git/#egg=news_sitemaps
   # rss
+  # mobile
 
 # Taxonomies
 -e git+http://opensource.washingtontimes.com/git/public/django-categories.git/#egg=categories
@@ -52,7 +49,7 @@ django-debug-toolbar==0.7.0
 
 # Caching
 python-memcached==1.44
-django-memcached==0.1.2
+django-memcache-status==1.0.1
   # mintcache
   # varnish
 
@@ -67,9 +64,10 @@ django-uniform
 
 # Media
 setup/python-imaging_1.1.6-3.tar.gz
--e git+http://opensource.washingtontimes.com/git/public/django-staticmediamgr.git/
-  # media_utils
-  # gallery_upload
+-e git+http://opensource.washingtontimes.com/git/public/django-staticmediamgr.git/#egg=staticmediamgr
+-e git+http://opensource.washingtontimes.com/git/public/massmedia.git/#egg=massmedia
+# media_utils
+# gallery_upload
 
 # Database
 psycopg2
