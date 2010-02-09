@@ -1,8 +1,11 @@
 # Things im on the fence about
 # -e svn+http://django-openid.googlecode.com/svn/trunk/#egg=django_openid
 # -e svn+http://opensource.washingtontimes.com/projects/public/django-clickpass/trunk/#egg=clickpass
+# -e svn+http://opensource.washingtontimes.com/projects/private/hiermenu/trunk/#egg=hiermenu
 #   supertagging http://opensource.washingtontimes.com/projects/public/django-supertagging/trunk/supertagging
 #   themes -r37 http://opensource.washingtontimes.com/projects/private/themes/trunk
+#   massmedia  http://opensource.washingtontimes.com/projects/public/django-massmedia/trunk/massmedia/
+# -e git+http://opensource.washingtontimes.com/git/private/saxotech.git/#egg=saxotech
 
 # API
 -e hg+http://bitbucket.org/jespern/django-piston/#egg=piston
@@ -17,6 +20,7 @@ django-profiles>=0.2
 -e git+http://opensource.washingtontimes.com/git/public/django-stories.git/#egg=stories
 -e svn+http://opensource.washingtontimes.com/projects/private/django-ap/#egg=ap
 -e svn+http://django-robots.googlecode.com/svn/trunk/#egg=robots
+  # saxotech + middleware
 
 # search
   # nsearch
@@ -40,7 +44,6 @@ http://typogrify.googlecode.com/files/typogrify-1.0.tar.gz
 # Taxonomies
 -e git+http://opensource.washingtontimes.com/git/public/django-categories.git/#egg=categories
 -e git+http://github.com/justquick/django-tagging.git#egg=tagging
-django-treemenus
 
 # Debugging
 django-debug-toolbar==0.7.0
@@ -57,17 +60,16 @@ django-memcached==0.1.2
 -e svn+http://django-mptt.googlecode.com/svn/trunk/#egg=mptt
 django==1.1.1
 simplejson==2.0.9
--e git+http://github.com/django-extensions/django-extensions.git
+django-extensions==0.4.1
 python-dateutil==1.4.1
 ipython
 django-uniform
 
 # Media
 setup/python-imaging_1.1.6-3.tar.gz
--e git+http://opensource.washingtontimes.com/git/public/django-staticmediamgr.git/#egg=staticmediamgr
+-e git+http://opensource.washingtontimes.com/git/public/django-staticmediamgr.git/
   # media_utils
   # gallery_upload
--e git+http://opensource.washingtontimes.com/git/public/massmedia.git/#egg=massmedia
 
 # Database
 psycopg2

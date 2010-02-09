@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block extrahead %}
+    <script type="text/javascript" src="{{ MEDIA_URL }}js/tiny_mce/tiny_mce.js"></script>
+{% endblock %}
+
+{% block content_title %}{{ action|title }} {{ model_title }}{% endblock %}
+{% block title %}{{ action|title }} {{ model_title }}{% endblock %}
+
+{% block content %}
+    {% block frontendadmin_content %}
+    {% endblock %}
+{% endblock %}

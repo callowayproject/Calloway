@@ -1,8 +1,6 @@
 from piston.handler import BaseHandler
-from tagging.models import Tag, TaggedItem
+from tagging.models import Tag
 from django.db.models import get_model
-from django.core.urlresolvers import reverse
-from pprint import pprint
 
 class TagHandler(BaseHandler):
     allowed_methods = ('GET',)
