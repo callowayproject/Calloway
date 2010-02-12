@@ -72,6 +72,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django_ext.middleware.cookie.UsernameInCookieMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.http.SetRemoteAddrFromForwardedFor',
     'django.middleware.gzip.GZipMiddleware',
@@ -81,6 +82,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
     'django.middleware.transaction.TransactionMiddleware',
     'pagination.middleware.PaginationMiddleware',
+    'ban.middleware.DenyMiddleware',
     'django.middleware.cache.FetchFromCacheMiddleware',
 )
 
@@ -98,10 +100,12 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
+    'livevalidation', # keep me above admin    
     'django.contrib.admin',
     'django.contrib.flatpages',
     'django.contrib.humanize',
-    'django.contrib.redirects',
+    'django.contrib.comments',
+    'django.contrib.markup',
     'django_ext',
     'django_memcached',
     'pagination',
@@ -112,6 +116,7 @@ INSTALLED_APPS = (
     'stories',
     'categories',
     'mptt',
+    'mptt_comments',
     'positions',
     'news_sitemaps',
     'robots',
@@ -122,6 +127,11 @@ INSTALLED_APPS = (
     #'apache_log',
     'piston',
     'offensivecontent',
+    'ban',
+    'logjam',
+    'varnishapp',
+    'frontendadmin',
+    
     # These need to be at the bottom
     'tinymce',
     'tagging',
@@ -143,9 +153,8 @@ TINYMCE_DEFAULT_CONFIG = {
     'theme_advanced_buttons1' : "formatselect,bold,italic,underline,separator,bullist,numlist,separator,undo,separator,link,unlink,separator,charmap,image,paste,pasteword,separator,code,preview",
     'theme_advanced_buttons2' : "",
     'theme_advanced_buttons3' : "",
-    #'skin': 'thebigreason',
-	'theme_advanced_statusbar_location' : "bottom",
-	'width': "97%",
+    'theme_advanced_statusbar_location' : "bottom",
+    'width': "97%",
 }
 
 TINYMCE_ADMIN_FIELDS = {
@@ -155,6 +164,12 @@ TINYMCE_ADMIN_FIELDS = {
 }
 
 REVERSION_MODELS = ('stories.story','flatpages.flatpage')
+
+PUBLICATION_NAME = 'The Washington Times'
+
+VARNISH_WATCHED_MODELS = ('stories.story','flatpages.flatpage')
+
+VARNISH_MANAGEMENT_ADDRS = ()
 
 try:
     from local_settings import *

@@ -10,42 +10,45 @@ class Command(BaseCommand):
             for arg in args:
                 attr = 'migrate_%s' % arg
                 if not hasattr(self, attr):
-                    raise CommandError
-                getattr(self, attr)()
+                    raise CommandError('Migration routine for %r not found' % arg)
+                self.migrate(attr[8:], *getattr(self, attr)())
         else:
             for attr in dir(self):
                 if attr.startswith('migrate_'):
-                    getattr(self, attr)()
+                    self.migrate(attr[8:], *getattr(self, attr)())
 
     def get_fixture(self, name):
         adir = os.path.join(os.path.dirname(bombay.__file__), 'fixtures')
         for f in os.listdir(adir):
             if f.startswith(name):
                 return load(open(os.path.join(adir, f)))
+        raise IOError('Fixture %r not found' % name)
     
-    def migrate(self, model, mapping, objs, overrides={}):
+    def migrate(self, app, model, mapping, filters={}, attrs={}):
         new_objs = []
-        for obj in objs:
-            kw = {}
+        for obj in self.get_fixture(app):
+            kw = attrs.copy()
             for old,new in mapping.items():
-                v = obj['fields'][old]
-                if old in overrides:
-                    v = overrides[old](v)
-                kw[new] = v
+                value = obj['fields'][old]
+                if new in filters:
+                    value = filters[new](value)
+                kw[new] = value
             new_objs.append(model.objects.create(**kw))
         return new_objs
     
     def migrate_stories(self):
         from stories.models import Story
         
-        print self.migrate(Story, {
-            'headline': 'headline',
-            'pub_date': 'publish_date',
-            'story': 'body',
-            'sites': 'site',
-            'slug': 'slug'
-        }, self.get_fixture('stories'), {
-            'pub_date': lambda v: v.split()[0],
-            'sites': lambda v: Site.objects.get_current(),
-        })
+        return Story, {
+                'headline': 'headline',
+                'pub_date': 'publish_date',
+                'story': 'body',
+                'sites': 'site',
+                'slug': 'slug'
+            },{
+                'publish_date': lambda v: v.split()[0],
+                'site': lambda v: Site.objects.get_current(),
+            },{
+                'status':4
+            }
         
