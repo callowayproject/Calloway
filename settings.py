@@ -72,7 +72,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django_ext.middleware.UsernameInCookieMiddleware',
+    'django_ext.middleware.cookie.UsernameInCookieMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.http.SetRemoteAddrFromForwardedFor',
     'django.middleware.gzip.GZipMiddleware',
@@ -167,9 +167,9 @@ REVERSION_MODELS = ('stories.story','flatpages.flatpage')
 
 PUBLICATION_NAME = 'The Washington Times'
 
-VARNISH_MANAGEMENT_ADDRS = ()
-
 VARNISH_WATCHED_MODELS = ('stories.story','flatpages.flatpage')
+
+VARNISH_MANAGEMENT_ADDRS = ()
 
 try:
     from local_settings import *
