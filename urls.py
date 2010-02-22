@@ -8,6 +8,8 @@ admin.autodiscover()
 from news_sitemaps import NewsSitemap
 from stories.models import Story
 
+handler500 = 'django_ext.views.custom_server_error'
+
 class StorySitemap(NewsSitemap):
     limit = 5000
     def items(self):
