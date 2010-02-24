@@ -69,7 +69,7 @@ django-uniform
 
 # Media
 setup/python-imaging_1.1.6-3.tar.gz
--e git+http://opensource.washingtontimes.com/git/public/django-staticmediamgr.git/
+-e git+http://opensource.washingtontimes.com/git/public/django-staticmediamgr.git/#egg=staticmedia
   # media_utils
   # gallery_upload
 
