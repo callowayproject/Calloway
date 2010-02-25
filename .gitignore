@@ -2,6 +2,8 @@
 dev.db
 local_settings.py
 media/ugc
+media/
+media2/
 build/
 src/
 pip-log.txt
