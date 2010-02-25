@@ -63,10 +63,11 @@ django-memcached==0.1.2
 -e svn+http://django-mptt.googlecode.com/svn/trunk/#egg=mptt
 django==1.1.1
 simplejson==2.0.9
+south
 django-extensions==0.4.1
 python-dateutil==1.4.1
 ipython
-django-uniform
+# django-uniform
 
 # Media
 setup/python-imaging_1.1.6-3.tar.gz
