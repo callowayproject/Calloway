@@ -36,7 +36,7 @@ urlpatterns = patterns('',
     (r'^sitemap-stories\.xml', 'news_sitemaps.views.news_sitemap', {'sitemaps': {'stories': sitemaps['stories']}}),    
     (r'^sitemap-(?P<section>.+)\.xml', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),
     url(r'^robots.txt', 'robots.views.rules_list', name='robots_rule_list'),
-    (r'^$', 'django.views.generic.simple.direct_to_template', {'template':'base.html'}),    
+    (r'^$', 'django.views.generic.simple.direct_to_template', {'template':'homepage.html'}),    
 )
 
 if settings.DEBUG:
