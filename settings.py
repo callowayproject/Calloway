@@ -124,7 +124,6 @@ INSTALLED_APPS = (
     'news_sitemaps',
     'robots',
     #'django_openid',
-    #'clickpass',
     'livevalidation',
     'piston',
     'offensivecontent',
@@ -132,6 +131,10 @@ INSTALLED_APPS = (
     #'logjam',
     #'varnishapp',
     'frontendadmin',
+    'synagg',
+    'massmedia',
+    'native_tags',
+    'staticmediamgr',
     'typogrify',
     'offensivecontent',
     'versionedcache',
@@ -176,6 +179,14 @@ PUBLICATION_NAME = 'The Washington Times'
 VARNISH_WATCHED_MODELS = ('stories.story','flatpages.flatpage')
 
 VARNISH_MANAGEMENT_ADDRS = ()
+
+NATIVE_TAGS = (
+    'native_tags.contrib.generic_content',
+)
+
+STATIC_MEDIA_COPY_PATHS = (
+    {'from': 'media', 'to': 'media2'},
+)
 
 try:
     from local_settings import *

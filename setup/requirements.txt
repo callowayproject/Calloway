@@ -25,6 +25,10 @@ django-profiles>=0.2
 # Content
 -e git+http://opensource.washingtontimes.com/git/public/django-stories.git/#egg=stories
 -e svn+http://django-robots.googlecode.com/svn/trunk/#egg=robots
+-e git+http://github.com/justquick/django-frontendadmin.git#egg=frontendadmin
+-e git+http://github.com/justquick/django-synagg.git#egg=synagg
+-e git+http://opensource.washingtontimes.com/git/public/massmedia.git/#egg=massmedia
+  # saxotech + middleware
 
 # search
   # nsearch
@@ -35,6 +39,8 @@ django-haystack
   # markdown?
 
 # Content Helpers
+-e git+http://github.com/justquick/django-native-tags.git#egg=native_tags
+django-pagination==1.0.5
 -e git+http://opensource.washingtontimes.com/git/public/django-kamasutra.git/#egg=positions
 -e git+http://github.com/justquick/django-tinymce.git#egg=tinymce
 -e git+http://github.com/justquick/django-reversion.git#egg=reversion
@@ -65,20 +71,20 @@ django-memcache-status==1.0.1
 -e svn+http://django-mptt.googlecode.com/svn/trunk/#egg=mptt
 django==1.1.1
 simplejson==2.0.9
+south
 django-extensions==0.4.1
 django-admin-tools
 feedparser
 python-dateutil==1.4.1
 ipython
-django-uni-form
 BeautifulSoup
+# django-uniform
 
 # Media
 setup/python-imaging_1.1.6-3.tar.gz
--e git+http://opensource.washingtontimes.com/git/public/django-staticmediamgr.git/#egg=staticmediamgr
--e git+http://opensource.washingtontimes.com/git/public/massmedia.git/#egg=massmedia
-# media_utils
-# gallery_upload
+-e git+http://opensource.washingtontimes.com/git/public/django-staticmediamgr.git/#egg=staticmedia
+  # media_utils
+  # gallery_upload
 
 # Database
 psycopg2
