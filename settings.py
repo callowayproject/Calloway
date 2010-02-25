@@ -189,6 +189,9 @@ STATIC_MEDIA_COPY_PATHS = (
 )
 STATIC_MEDIA_COMPRESS_CSS = True
 STATIC_MEDIA_COMPRESS_JS = True
+
+ADMIN_TOOLS_MENU = 'menu.CustomMenu'
+
 try:
     from local_settings import *
 except ImportError:
