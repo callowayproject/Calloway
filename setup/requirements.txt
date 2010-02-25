@@ -22,6 +22,7 @@ django-profiles>=0.2
 -e svn+http://django-robots.googlecode.com/svn/trunk/#egg=robots
 -e git+http://github.com/justquick/django-frontendadmin.git#egg=frontendadmin
 -e git+http://github.com/justquick/django-synagg.git#egg=synagg
+-e git+http://opensource.washingtontimes.com/git/public/massmedia.git/#egg=massmedia
   # saxotech + middleware
 
 # search
@@ -32,6 +33,7 @@ django-profiles>=0.2
   # markdown?
 
 # Content Helpers
+-e git+http://github.com/justquick/django-native-tags.git#egg=native_tags
 django-pagination==1.0.5
 -e git+http://opensource.washingtontimes.com/git/public/django-kamasutra.git/#egg=positions
 -e git+http://github.com/justquick/django-tinymce.git#egg=tinymce

@@ -130,6 +130,8 @@ INSTALLED_APPS = (
     'varnishapp',
     'frontendadmin',
     'synagg',
+    'massmedia',
+    'native_tags',
     
     # These need to be at the bottom
     'tinymce',
@@ -169,6 +171,10 @@ PUBLICATION_NAME = 'The Washington Times'
 VARNISH_WATCHED_MODELS = ('stories.story','flatpages.flatpage')
 
 VARNISH_MANAGEMENT_ADDRS = ()
+
+NATIVE_TAGS = (
+    'native_tags.contrib.generic_content',
+)
 
 try:
     from local_settings import *
