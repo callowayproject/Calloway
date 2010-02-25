@@ -187,7 +187,8 @@ NATIVE_TAGS = (
 STATIC_MEDIA_COPY_PATHS = (
     {'from': 'media', 'to': 'media2'},
 )
-
+STATIC_MEDIA_COMPRESS_CSS = True
+STATIC_MEDIA_COMPRESS_JS = True
 try:
     from local_settings import *
 except ImportError:
