@@ -74,7 +74,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django_ext.middleware.cookie.UsernameInCookieMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.middleware.http.SetRemoteAddrFromForwardedFor',
     'django.middleware.gzip.GZipMiddleware',
     'django.middleware.http.ConditionalGetMiddleware',
     'django.middleware.doc.XViewMiddleware',
@@ -100,37 +99,42 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
-    'livevalidation', # keep me above admin    
+    'livevalidation', # keep me above admin
+    'admin_tools.theming', # keep me above admin
+    'admin_tools.menu', # keep me above admin
+    'admin_tools.dashboard', # keep me above admin
     'django.contrib.admin',
     'django.contrib.flatpages',
     'django.contrib.humanize',
     'django.contrib.comments',
     'django.contrib.markup',
+    'django.contrib.redirects',
     'django_ext',
     'django_memcached',
     'pagination',
-    'south',
     'django_extensions',
     
     'staff',
     'stories',
     'categories',
+    'editor',
     'mptt',
     'mptt_comments',
     'positions',
     'news_sitemaps',
     'robots',
     #'django_openid',
-    'clickpass',
+    #'clickpass',
     'livevalidation',
-    'hiermenu',
-    #'apache_log',
     'piston',
     'offensivecontent',
-    'ban',
-    'logjam',
-    'varnishapp',
+    #'ban',
+    #'logjam',
+    #'varnishapp',
     'frontendadmin',
+    'typogrify',
+    'offensivecontent',
+    'versionedcache',
     
     # These need to be at the bottom
     'tinymce',
@@ -142,7 +146,8 @@ SOUTH_AUTO_FREEZE_APP = True
 
 DJANGO_MEMCACHED_REQUIRE_STAFF = True
 
-CACHE_BACKEND = 'locmem:///'
+CACHE_BACKEND = 'versionedcache.backend://localhost:11211/'
+#CACHE_BACKEND = 'locmem:///'
 
 TINYMCE_DEFAULT_CONFIG = {
     'theme': "advanced",
@@ -154,7 +159,8 @@ TINYMCE_DEFAULT_CONFIG = {
     'theme_advanced_buttons2' : "",
     'theme_advanced_buttons3' : "",
     'theme_advanced_statusbar_location' : "bottom",
-    'width': "97%",
+    'width': "600",
+    'height': "600",
 }
 
 TINYMCE_ADMIN_FIELDS = {
@@ -175,3 +181,5 @@ try:
     from local_settings import *
 except ImportError:
     pass
+
+VERSION = '0.1'

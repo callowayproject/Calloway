@@ -15,13 +15,20 @@
 ipcalc>=0.1
 django-profiles>=0.2
 
+# Authentication
+# openid
+# oauth
+# Facebook
+# other websites
+
+
 # Content
 -e git+http://opensource.washingtontimes.com/git/public/django-stories.git/#egg=stories
 -e svn+http://django-robots.googlecode.com/svn/trunk/#egg=robots
-  # saxotech + middleware
 
 # search
   # nsearch
+django-haystack
 
 # Comments
 -e git+http://github.com/justquick/django-mptt-comments.git#egg=mptt_comments
@@ -35,32 +42,36 @@ http://typogrify.googlecode.com/files/typogrify-1.0.tar.gz
 -e svn+http://opensource.washingtontimes.com/projects/public/django-livevalidation/trunk/#egg=livevalidation
 -e git+http://opensource.washingtontimes.com/git/public/offensivecontent.git#egg=offensivecontent
 -e git+http://opensource.washingtontimes.com/git/public/django-news-sitemaps.git/#egg=news_sitemaps
+-e git+http://github.com/justquick/django-frontendadmin.git#egg=frontendadmin
   # rss
   # mobile
 
 # Taxonomies
 -e git+http://opensource.washingtontimes.com/git/public/django-categories.git/#egg=categories
 -e git+http://github.com/justquick/django-tagging.git#egg=tagging
+django-navbar
 
 # Debugging
 django-debug-toolbar==0.7.0
-  # logjam
-  # debug middleware
+-e git+http://github.com/justquick/django-logjam.git#egg=logjam
 
 # Caching
 python-memcached==1.44
 django-memcache-status==1.0.1
-  # mintcache
-  # varnish
+-e git+http://github.com/ella/django-versionedcache.git#egg=versionedcache
+-e git+http://github.com/justquick/django-varnish.git#egg=varnishapp
 
 # Misc Libraries
 -e svn+http://django-mptt.googlecode.com/svn/trunk/#egg=mptt
 django==1.1.1
 simplejson==2.0.9
 django-extensions==0.4.1
+django-admin-tools
+feedparser
 python-dateutil==1.4.1
 ipython
-django-uniform
+django-uni-form
+BeautifulSoup
 
 # Media
 setup/python-imaging_1.1.6-3.tar.gz
