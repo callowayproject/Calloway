@@ -69,6 +69,7 @@ south
 django-extensions==0.4.1
 python-dateutil==1.4.1
 ipython
+BeautifulSoup
 # django-uniform
 
 # Media
