@@ -54,7 +54,7 @@ http://typogrify.googlecode.com/files/typogrify-1.0.tar.gz
 # Taxonomies
 -e git+http://opensource.washingtontimes.com/git/public/django-categories.git/#egg=categories
 -e git+http://github.com/justquick/django-tagging.git#egg=tagging
-django-navbar
+-e svn+http://django-navbar.googlecode.com/svn/trunk/#egg=navbar
 
 # Debugging
 django-debug-toolbar==0.7.0
@@ -90,4 +90,4 @@ setup/python-imaging_1.1.6-3.tar.gz
   # gallery_upload
 
 # Database
-psycopg2
+# psycopg2

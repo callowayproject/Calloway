@@ -7,6 +7,14 @@
 	</head>
 	<body id="{% block body_id %}{% endblock %}" class="{% block body_class %}{% endblock %}">
 		<h1>{% block content_title %}{% endblock %}</h1>
+		<ul>
+			<li><a href="/">Home</a></li>
+			{% load category_tags %}
+			{% get_top_level_categories as categories %}
+			{% for category in categories %}
+				<li><a href="{{ category.get_absolute_url }}">{{ category.name }}</a></li>
+			{% endfor %}
+		</ul>
 		<div id="container">
 			{% block content %}{% endblock %}
 		</div>
