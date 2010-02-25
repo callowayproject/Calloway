@@ -131,6 +131,7 @@ INSTALLED_APPS = (
     'logjam',
     'varnishapp',
     'frontendadmin',
+    'synagg',
     
     # These need to be at the bottom
     'tinymce',

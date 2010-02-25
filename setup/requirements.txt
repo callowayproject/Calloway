@@ -21,6 +21,7 @@ django-profiles>=0.2
 -e svn+http://opensource.washingtontimes.com/projects/private/django-ap/#egg=ap
 -e svn+http://django-robots.googlecode.com/svn/trunk/#egg=robots
 -e git+http://github.com/justquick/django-frontendadmin.git#egg=frontendadmin
+-e git+http://github.com/justquick/django-synagg.git#egg=synagg
   # saxotech + middleware
 
 # search
