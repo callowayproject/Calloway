@@ -132,6 +132,7 @@ INSTALLED_APPS = (
     'synagg',
     'massmedia',
     'native_tags',
+    'staticmediamgr',
     
     # These need to be at the bottom
     'tinymce',
@@ -174,6 +175,10 @@ VARNISH_MANAGEMENT_ADDRS = ()
 
 NATIVE_TAGS = (
     'native_tags.contrib.generic_content',
+)
+
+STATIC_MEDIA_COPY_PATHS = (
+    {'from': 'media', 'to': 'media2'},
 )
 
 try:
