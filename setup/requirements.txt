@@ -64,7 +64,7 @@ django-debug-toolbar==0.7.0
 python-memcached==1.44
 django-memcache-status==1.0.1
 -e git+http://github.com/ella/django-versionedcache.git#egg=versionedcache
--e git+http://github.com/justquick/python-varnish.git#egg=varish
+-e git+http://github.com/justquick/python-varnish.git#egg=varnish
 -e git+http://github.com/justquick/django-varnish.git#egg=varnishapp
 
 # Misc Libraries
