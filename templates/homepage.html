@@ -5,4 +5,9 @@
 {% block content %}
 <div id="masthead"><p id="logo">Daily Times</p></div>
 
+	{% load native %}
+	{% get_latest_objects stories.story 10 update_date as latest %}
+	{% for object in latest %}
+		<p><a href="{{ object.get_absolute_url }}">{{ object.headline }}</a><br/>{{ object.teaser }}</p>
+	{% endfor %}
 {% endblock %}
