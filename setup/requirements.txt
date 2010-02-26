@@ -80,7 +80,8 @@ lxml
 pytidylib
 django-picklefield==0.1
 feedparser==4.1
-# django-uniform
+-e git+http://github.com/clintecker/django-google-analytics.git#egg=google_analytics
+django-uni-form>=0.7
 
 # Media
 setup/python-imaging_1.1.6-3.tar.gz
