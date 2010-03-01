@@ -54,7 +54,7 @@ http://typogrify.googlecode.com/files/typogrify-1.0.tar.gz
 # Taxonomies
 -e git+http://opensource.washingtontimes.com/git/public/django-categories.git/#egg=categories
 -e git+http://github.com/justquick/django-tagging.git#egg=tagging
-django-navbar
+-e svn+http://django-navbar.googlecode.com/svn/trunk/#egg=navbar
 
 # Debugging
 django-debug-toolbar==0.7.0
@@ -64,7 +64,7 @@ django-debug-toolbar==0.7.0
 python-memcached==1.44
 django-memcache-status==1.0.1
 -e git+http://github.com/ella/django-versionedcache.git#egg=versionedcache
--e git+http://github.com/justquick/python-varnish.git#egg=varish
+-e git+http://github.com/justquick/python-varnish.git#egg=varnish
 -e git+http://github.com/justquick/django-varnish.git#egg=varnishapp
 
 # Misc Libraries
@@ -81,7 +81,8 @@ lxml
 pytidylib
 django-picklefield==0.1
 feedparser==4.1
-# django-uniform
+-e git+http://github.com/clintecker/django-google-analytics.git#egg=google_analytics
+django-uni-form>=0.7
 
 # Media
 setup/python-imaging_1.1.6-3.tar.gz
@@ -90,4 +91,4 @@ setup/python-imaging_1.1.6-3.tar.gz
   # gallery_upload
 
 # Database
-psycopg2
+# psycopg2

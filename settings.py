@@ -138,6 +138,7 @@ INSTALLED_APPS = (
     'typogrify',
     'offensivecontent',
     'versionedcache',
+    'google_analytics',
     
     # These need to be at the bottom
     'tinymce',
