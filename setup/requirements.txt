@@ -20,6 +20,7 @@ django-profiles>=0.2
 # oauth
 # Facebook
 # other websites
+django-registration
 
 
 # Content
