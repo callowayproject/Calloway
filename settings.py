@@ -100,6 +100,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'livevalidation', # keep me above admin
+    'admin_tools', # for the media copying
     'admin_tools.theming', # keep me above admin
     'admin_tools.menu', # keep me above admin
     'admin_tools.dashboard', # keep me above admin
