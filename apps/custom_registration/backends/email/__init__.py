@@ -11,7 +11,7 @@ from django.template.loader import render_to_string
 from django.utils.hashcompat import sha_constructor
 
 from registration import signals
-from custom_registration.backends.email.forms import EmailRegistrationForm
+from forms import EmailRegistrationForm
 
 class EmailBackend(object):
     def register(self, request, **kwargs):
