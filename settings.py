@@ -144,7 +144,11 @@ INSTALLED_APPS = (
     # These need to be at the bottom
     'tinymce',
     'tagging',
-    'reversion',    
+    'reversion',
+    'registration',
+    'custom_registration',
+    'custom_profile',
+    'profiles',
 )
 
 SOUTH_AUTO_FREEZE_APP = True
