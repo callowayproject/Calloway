@@ -16,6 +16,20 @@ class Command(BaseCommand):
         else:
             self.create_all_demo_data()
     
+    def create_nav_bar(self):
+        from navbar.models import NavBarEntry
+        nav = [
+            {"name": "News", "parent": None, "title": "News stories by topic", "url": "/news/", "user_type": "E", "path_type": "A", "order": 0}, 
+            {"name": "Opinion", "parent": None, "title": "What we think about things", "url": "/opinion/", "user_type": "E", "path_type": "A", "order": 10},
+            {"name": "Galleries", "parent": None, "title": "Photo essays on current events", "url": "/photos/galleries/", "user_type": "E", "path_type": "A", "order": 20},
+            {"name": "Video", "parent": None, "title": "Video briefs", "url": "/video/", "user_type": "E", "path_type": "A", "order": 30},
+            {"name": "Topics", "parent": None, "title": "Collections of stories on popular topics", "url": "/topics/", "user_type": "E", "path_type": "A", "order": 40}
+        ]
+        for item in nav:
+            print "Creating Nav Bar Entry: %s" % (item['name'])
+            nav_entry = NavBarEntry(**item)
+            nav_entry.save()
+    
     def create_categories(self):
         test_file = os.path.abspath(os.path.join(fixtures_path, 'demo_categories.txt'))
         print "Creating categories from %s" % test_file
@@ -66,7 +80,7 @@ class Command(BaseCommand):
             chain.add(words)
 
         # Let's generate 10 random stories
-        for i in range(1):
+        for i in range(10):
             story_data = {'headline': " ".join(chain.random_output(15))}
             story_data['slug'] = slugify(story_data['headline'])[:30]
             
