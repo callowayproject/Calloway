@@ -85,6 +85,13 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.cache.FetchFromCacheMiddleware',
 )
 
+AUTHENTICATION_BACKENDS = (
+    'django_ext.caseinsensitiveauth.CaseInsensitiveModelBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+AUTH_PROFILE_MODULE = ''
+
 ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
@@ -128,7 +135,7 @@ INSTALLED_APPS = (
     'livevalidation',
     'piston',
     'offensivecontent',
-    #'ban',
+    'ban',
     #'logjam',
     #'varnishapp',
     'frontendadmin',
@@ -140,6 +147,7 @@ INSTALLED_APPS = (
     'offensivecontent',
     'versionedcache',
     'google_analytics',
+    'navbar',
     
     # These need to be at the bottom
     'tinymce',
@@ -147,7 +155,7 @@ INSTALLED_APPS = (
     'reversion',
     'registration',
     'custom_registration',
-    'custom_profile',
+    #'custom_profile',
     'profiles',
 )
 
@@ -180,7 +188,7 @@ TINYMCE_ADMIN_FIELDS = {
 
 REVERSION_MODELS = ('stories.story','flatpages.flatpage')
 
-PUBLICATION_NAME = 'The Washington Times'
+PUBLICATION_NAME = ''
 
 VARNISH_WATCHED_MODELS = ('stories.story','flatpages.flatpage')
 
