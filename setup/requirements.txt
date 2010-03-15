@@ -12,7 +12,6 @@
 # User - Management
 -e git+http://opensource.washingtontimes.com/git/public/django-staff.git/#egg=staff
 -e git+http://github.com/justquick/django-ban.git#egg=ban
-
 django-profiles>=0.2
 
 # Authentication
@@ -20,7 +19,7 @@ django-profiles>=0.2
 # oauth
 # Facebook
 # other websites
-django-registration
+-e hg+http://bitbucket.org/ubernostrum/django-registration/#egg=registration
 
 
 # Content
