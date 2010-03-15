@@ -15,30 +15,33 @@ class CustomMenu(Menu):
         #     AppListMenuItem(title='Applications')
         # )
         self.children.append(
-            MenuItem(title='My Content', 
+            MenuItem(title='Content', 
                 children=[
-                    MenuItem(title='Entries'),
-                    MenuItem(title='Neighborhoods'),
-                    MenuItem(title='Static Pages'),
-                    MenuItem(title='Breaking News'),
-                    MenuItem(title='Audio'),
+                    MenuItem(title='Audio Clips', url=reverse('admin:massmedia_audio_changelist')),
+                    MenuItem(title='Collections', url=reverse('admin:massmedia_collection_changelist')),
+                    MenuItem(title='Documents', url=reverse('admin:massmedia_document_changelist')),
+                    MenuItem(title='Images', url=reverse('admin:massmedia_image_changelist')),
+                    MenuItem(title='Stories', url=reverse('admin:stories_story_changelist')),
+                    MenuItem(title='Videos', url=reverse('admin:massmedia_video_changelist')),
                 ])
         )
         self.children.append(
             MenuItem(title='Organize', 
                 children=[
-                    MenuItem(title='Communties'),
-                    MenuItem(title='Slots'),
+                    MenuItem(title='Categories', url=reverse('admin:categories_category_changelist')),
+                    MenuItem(title='Navigation Bar', url=reverse('admin:navbar_navbarentry_changelist')),
+                    MenuItem(title='Postions', url=reverse('admin:positions_position_changelist')),
                 ])
         )
         self.children.append(
             MenuItem(title='Settings', 
                 children=[
                     MenuItem(title='Admin Menu'),
-                    MenuItem(title='SEP'),
-                    MenuItem(title='Sites'),
-                    MenuItem(title='Redirects'),
-                    MenuItem(title='Robots'),
+                    MenuItem(title='Analytics', url=reverse('admin:google_analytics_analytics_changelist')),
+                    MenuItem(title='Denied IPs', url=reverse('admin:ban_deniedip_changelist')),
+                    MenuItem(title='Redirects', url=reverse('admin:redirects_redirect_changelist')),
+                    MenuItem(title='Robots', url=reverse('admin:app_list', args=('robots',))),
+                    MenuItem(title='Syndication Feeds', url=reverse('admin:synagg_feed_changelist')),
                 ])
         )
         self.children.append(MenuItem(title='Comments'))
@@ -46,9 +49,8 @@ class CustomMenu(Menu):
         self.children.append(
             MenuItem(title='Users', 
                 children=[
-                    MenuItem(title='Users'),
-                    MenuItem(title='Staff Members'),
-                    MenuItem(title='Profiles'),
+                    MenuItem(title='Users', url=reverse('admin:auth_user_changelist')),
+                    # MenuItem(title='Profiles', url=reverse('admin:app_model_changelist')),
                 ])
         )
 
