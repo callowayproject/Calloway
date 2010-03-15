@@ -1,0 +1,107 @@
+@import url('reset.css');
+
+@import url('typography.css');
+
+@import url('modules.css');
+
+@import url('tables.css');
+
+@import url('forms.css');
+
+@import url('widgets.css');
+
+@import url('webkit-gradients.css');
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial,sans-serif;
+	font-size: .75em;
+	line-height: 1em;
+	color: #444;
+	background: #fff;
+}
+
+#header {
+	top: 0;
+	z-index: 1100;
+	width: 100%;
+	color: #eee;
+	font-size: .92em;
+	line-height: 1.17em;
+	font-weight: bold;
+	background: #333;
+}
+
+div.breadcrumbs {
+	padding: 5px 15px;
+	font-size: 1em;
+	color: #4d1410;
+}
+
+div.breadcrumbs a {
+	padding: .5em;
+	color: #213e4b;
+}
+
+#header ul#navigation-menu li ul {
+	-moz-box-shadow: 3px 3px 3px #666;
+	-webkit-box-shadow: 3px 3px 3px #666;
+	box-shadow: 3px 3px 3px #666;
+}
+
+div#content-main {
+	margin-top: 2em;
+}
+
+.object-tools {
+	float: left;
+	list-style: none outside none;
+	padding: 0;
+	font-size: 1em;
+}
+
+.object-tools li {
+	background: none;
+	display: block;
+	float: left;
+	height: 1.5em;
+	margin: 0 4px 0 0;
+	padding: 0;
+}
+
+.object-tools a:hover,.object-tools li:hover a, .object-tools a.addlink:hover, .object-tools li:hover a.addlink {
+	background: url("../img/admin/nav-bg.gif") repeat-x scroll center bottom white;
+	color: #4d1410;
+	border-color: #BBB #888 #888 #BBB;
+}
+
+.object-tools a:active,.object-tools li:active a, .object-tools a.addlink:active, .object-tools li:active a.addlink {
+	background: url("../img/admin/nav-bg-reverse.gif");
+	background-position: top;
+}
+
+.object-tools a:link, .object-tools a.addlink {
+	background: url("../img/admin/nav-bg.gif") repeat-x scroll center bottom white;
+	border-color: #DDD #AAA #AAA #DDD;
+	border-style: solid;
+	border-width: 1px;
+	padding: .4em 1em .3em 1em;
+	color: #213e4b;
+	font: .9em Arial,sans-serif;
+	font-weight: bold;
+	outline: medium none;
+	cursor: pointer;
+	display: inline-block;
+	margin-right: .1em;
+	overflow: visible;
+	position: relative;
+	text-align: center;
+	text-decoration: none!important;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+.module h2, .module caption, .inline-group h2 {
+	background: url("../img/admin/nav-bg.gif") repeat-x scroll center bottom transparent;
+}

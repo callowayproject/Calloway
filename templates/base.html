@@ -9,6 +9,31 @@
                 zoom: 1; /* trigger hasLayout */
             }
         </style><![endif]-->
+		<style type="text/css" media="screen">
+			/* Reset CSS */
+			html,body {
+			margin: 0;
+			padding: 0
+			}
+			h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,cite,code,img,small,strike,sub,sup,tt,dd,dl,dt,li,ol,ul,fieldset,form,label,legend,button,table,caption,tbody,tfoot,thead,tr,th,td {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-weight: normal;
+			font-style: normal;
+			font-size: 100%;
+			line-height: 1;
+			font-family: inherit;
+			text-align: left
+			}
+			table {
+			border-collapse: collapse;
+			border-spacing: 0
+			}
+			ol,ul {
+			list-style: none
+			}
+		</style>
         <link rel="stylesheet" href="{{ STATIC_URL }}css/base.css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}css/uni-form.css" />
         {% block extra_head_base %}
@@ -17,6 +42,7 @@
     </head>
     
     <body class="{% block body_class %}{% endblock %}">
+		<div id="wrapper">
         {% if site_wide_announcements %}
             <div id="site_wide_announcements">
                 <ul>
@@ -31,6 +57,7 @@
         {% endif %}
         
         {% block body_outer %}
+		<div id="pagecontainer">
         <div id="body">
             {% if messages %}
                 <ul id="messages">
@@ -42,11 +69,15 @@
                     {% endfor %}
                 </ul>
             {% endif %}
-            
-            {% block body %}
-            {% endblock %}
-            
-        </div>
+            {% block site_header %}{% endblock %}
+			{% block content_nav %}{% endblock %}
+			{% block member_opts %}{% endblock %}
+			{% block search %}{% endblock %}
+            {% block body %}{% endblock %}
+        </div> {# body #}
+		</div> {# pagecontainer #}
+		</div> {# wrapper #}
+
         {% endblock %}
         
         <div id="footer">{% block footer %}{% endblock %}</div>

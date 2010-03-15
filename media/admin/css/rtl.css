@@ -1,195 +1,178 @@
 body {
-    direction: rtl;
+	direction: rtl;
 }
 
-/* LOGIN */
-
 .login .form-row {
-    float: right;
+	float: right;
 }
 
 .login .form-row label {
-    float: right;
-    padding-left: 0.5em;
-    padding-right: 0;
-    text-align: left;
+	float: right;
+	padding-left: .5em;
+	padding-right: 0;
+	text-align: left;
 }
 
 .login .submit-row {
-    clear: both;
-    padding: 1em 9.4em 0 0;
+	clear: both;
+	padding: 1em 9.4em 0 0;
 }
-
-/* GLOBAL */
 
 th {
-    text-align: right;
+	text-align: right;
 }
 
-.module h2, .module caption {
-    text-align: right;
+.module h2,.module caption {
+	text-align: right;
 }
 
-.addlink, .changelink {
-    padding-left: 0px;
-    padding-right: 12px;
-    background-position: 100% 0.2em;
+.addlink,.changelink {
+	padding-left: 0;
+	padding-right: 12px;
+	background-position: 100% .2em;
 }
 
 .deletelink {
-    padding-left: 0px;
-    padding-right: 12px;
-    background-position: 100% 0.25em;
+	padding-left: 0;
+	padding-right: 12px;
+	background-position: 100% .25em;
 }
 
 .object-tools {
-    float: left;
+	float: left;
 }
 
-/* LAYOUT */
-
 #user-tools {
-    right: auto;
-    left: 0;
-    text-align: left;
+	right: auto;
+	left: 0;
+	text-align: left;
 }
 
 div.breadcrumbs {
-    text-align: right;
+	text-align: right;
 }
 
 #content-main {
-    float: right;
+	float: right;
 }
 
 #content-related {
-    float: left;
-    margin-left: -19em;
-    margin-right: auto;
+	float: left;
+	margin-left: -19em;
+	margin-right: auto;
 }
 
 .colMS {
-    margin-left: 20em !important;
-    margin-right: 10px !important;
+	margin-left: 20em!important;
+	margin-right: 10px!important;
 }
-
-/* dashboard styles */
 
 .dashboard .module table td a {
-    padding-left: .6em;
-    padding-right: 12px;
+	padding-left: .6em;
+	padding-right: 12px;
 }
 
-/* changelists styles */
-
 .change-list .filtered {
-    background: white url(../img/admin/changelist-bg_rtl.gif) top left repeat-y !important;
+	background: white url(../img/admin/changelist-bg_rtl.gif) top left repeat-y!important;
 }
 
 .change-list .filtered table {
-    border-left: 1px solid #ddd;
-    border-right: 0px none;
+	border-left: 1px solid #ddd;
+	border-right: 0 none;
 }
 
 #changelist-filter {
-    right: auto;
-    left: 0;
-    border-left: 0px none;
-    border-right: 1px solid #ddd;
+	right: auto;
+	left: 0;
+	border-left: 0 none;
+	border-right: 1px solid #ddd;
 }
 
-.change-list .filtered table, .change-list .filtered .paginator, .filtered #toolbar, .filtered div.xfull {
-    margin-right: 0px !important;
-    margin-left: 160px !important;
+.change-list .filtered table,.change-list .filtered .paginator,.filtered #toolbar,.filtered div.xfull {
+	margin-right: 0!important;
+	margin-left: 160px!important;
 }
 
 #changelist-filter li.selected {
-    border-left: 0px none;
-    padding-left: 0px;
-    margin-left: 0;
-    border-right: 5px solid #ccc;
-    padding-right: 5px;
-    margin-right: -10px;
+	border-left: 0 none;
+	padding-left: 0;
+	margin-left: 0;
+	border-right: 5px solid #ccc;
+	padding-right: 5px;
+	margin-right: -10px;
 }
 
-/* FORMS */
-
 .aligned label {
-    padding: 0 0 3px 1em;
-    float: right;
+	padding: 0;
+	3px 1em;float: right;
 }
 
 .submit-row {
-    text-align: left
+	text-align: left;
 }
 
 .submit-row p.deletelink-box {
-    float: right;
+	float: right;
 }
 
 .submit-row .deletelink {
-    background: url(../img/admin/icon_deletelink.gif) 0 50% no-repeat;
-    padding-right: 14px;
+	background: url(../img/admin/icon_deletelink.gif) 0 50% no-repeat;
+	padding-right: 14px;
 }
 
-.vDateField, .vTimeField {
-    margin-left: 2px;
+.vDateField,.vTimeField {
+	margin-left: 2px;
 }
 
 form ul.inline li {
-    float: right;
-    padding-right: 0;
-    padding-left: 7px;
+	float: right;
+	padding-right: 0;
+	padding-left: 7px;
 }
 
-input[type=submit].default, .submit-row input.default {
-    float: left;
+input[type=submit].default,.submit-row input.default {
+	float: left;
 }
 
 fieldset .field-box {
-    float: right;
-    margin-left: 20px;
+	float: right;
+	margin-left: 20px;
 }
 
 .errorlist li {
-    background-position: 100% .3em;
-    padding: 4px 25px 4px 5px;
+	background-position: 100% .3em;
+	padding: 4px 25px 4px 5px;
 }
 
 .errornote {
-    background-position: 100% .3em;
-    padding: 4px 25px 4px 5px;
+	background-position: 100% .3em;
+	padding: 4px 25px 4px 5px;
 }
 
-/* WIDGETS */
-
 .calendarnav-previous {
-    top: 0;
-    left: auto;
-    right: 0;
+	top: 0;
+	left: auto;
+	right: 0;
 }
 
 .calendarnav-next {
-    top: 0;
-    right: auto;
-    left: 0;
+	top: 0;
+	right: auto;
+	left: 0;
 }
 
-.calendar caption, .calendarbox h2 {
-    text-align: center;
+.calendar caption,.calendarbox h2 {
+	text-align: center;
 }
 
 .selector {
-    float: right;
+	float: right;
 }
 
 .selector .selector-filter {
-    text-align: right;
+	text-align: right;
 }
-
-/* MISC */
 
 .inline-related h2 {
-    text-align: right
+	text-align: right;
 }
-

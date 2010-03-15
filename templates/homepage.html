@@ -1,13 +1,842 @@
 {% extends "site_base.html" %}
 
 {% block head_title %}Home{% endblock %}
+{% block extra_head %}
+<style type="text/css" media="screen">
+/*
+ *
+ * The fonts included are copyrighted by the vendor listed below.
+ *
+ * @vendor:     Paul Lloyd
+ * @licenseurl: http://www.fontsquirrel.com/license/PlainBlack
+ *
+ *
+ */
 
-{% block content %}
-<div id="masthead"><p id="logo">Daily Times</p></div>
+@font-face {
+	font-family: 'PlainBlackNormal';
+	src: url('Plain_Black.eot');
+	src: local('PlainBlack Normal'), local('PlainBlack-Normal'), url('/media/images/Plain_Black.ttf') format('truetype');
+}
 
-	{% load native %}
-	{% get_latest_objects stories.story 10 update_date as latest %}
-	{% for object in latest %}
-		<p><a href="{{ object.get_absolute_url }}">{{ object.headline }}</a><br/>{{ object.teaser }}</p>
-	{% endfor %}
+@font-face {
+	font-family: 'PlainBlackWideNormal';
+	src: url('Plain_Black_Wide.eot');
+	src: local('PlainBlackWide Normal'), local('PlainBlackWide-Normal'), url('/media/images/Plain_Black_Wide.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'IncisedBlackNormal';
+	src: url('Incised_Black.eot');
+	src: local('IncisedBlack Normal'), local('IncisedBlack-Normal'), url('Incised_Black.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'IncisedBlackWideNormal';
+	src: url('Incised_Black_Wide.eot');
+	src: local('IncisedBlackWide Normal'), local('IncisedBlackWide-Normal'), url('Incised_Black_Wide.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'EmbossedBlackNormal';
+	src: url('Embossed_Black_Normal.eot');
+	src: local('EmbossedBlack Normal'), local('EmbossedBlack-Normal'), url('Embossed_Black_Normal.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'EmbossedBlackWideNormal';
+	src: url('Embossed_Black_Wide.eot');
+	src: local('EmbossedBlackWide Normal'), local('EmbossedBlackWide-Normal'), url('Embossed_Black_Wide.ttf') format('truetype');
+}
+
+
+a {
+color: #2daebf;
+text-decoration: underline;
+outline: 0;
+line-height: inherit
+}
+a:hover {
+color: #007d9a
+}
+a.muted {
+color: #777
+}
+a.muted:hover {
+color: #555
+}
+h1 a,h2 a,h3 a {
+color: #333;
+text-decoration: none;
+font-weight: bold
+}
+h4 a,h5 a {
+text-decoration: none;
+line-height: inherit;
+font-weight: bold
+}
+h3 a:hover {
+color: auto
+}
+h4 a:hover,h5 a:hover {
+text-decoration: underline
+}
+p a {
+line-height: inherit
+}
+h1,h2,h3,h4,h5,h6 {
+color: #333;
+font-weight: bold
+}
+h1,h2,h3 {
+letter-spacing: -1px
+}
+h1 {
+font-size: 45px;
+line-height: 1;
+margin: 0 0 9px
+}
+h2 {
+font-size: 30px;
+line-height: 1.2;
+margin: 9px 0
+}
+h3 {
+font-size: 24px;
+line-height: 1;
+margin: 3px 0 9px
+}
+h4 {
+font-size: 18px;
+line-height: 1;
+margin: 0
+}
+h5 {
+font-size: 14px;
+line-height: 18px
+}
+h6 {
+font-size: 13px;
+line-height: 18px
+}
+p {
+line-height: 18px;
+margin: 0 0 18px
+}
+p img {
+margin: 0
+}
+small {
+font-size: 90%;
+line-height: inherit;
+color: #777;
+font-weight: normal
+}
+blockquote,blockquote p {
+font-size: 18px;
+line-height: 24px;
+color: #555
+}
+blockquote {
+margin: 0 0 18px
+}
+blockquote.left {
+float: left;
+margin-right: 20px
+}
+blockquote.right {
+float: right;
+margin-left: 20px
+}
+blockquote p {
+margin: 0;
+padding: 0 0 9px
+}
+blockquote h5 {
+margin: 0
+}
+blockquote cite {
+display: block;
+padding: 0 0 9px;
+font-size: 13px;
+color: #999
+}
+blockquote cite a,blockquote cite a:visited {
+color: #555
+}
+blockquote cite a:hover {
+color: #555;
+text-decoration: none
+}
+hr {
+border: solid #ddd;
+border-width: 1px 0 0;
+clear: both;
+margin: 17px 0 18px;
+height: 0
+}
+code,pre {
+font: 12px/18px "Monaco", "Courier New", "Courier", monospace;
+color: #e33100
+}
+address {
+color: #333;
+line-height: 18px;
+margin: 0 0 18px
+}
+abbr,acronym {
+text-transform: uppercase;
+font-size: 90%;
+color: #222;
+border-bottom: 1px solid #ddd;
+cursor: help
+}
+abbr {
+text-transform: none
+}
+ul,ol {
+margin-bottom: 18px
+}
+ul {
+list-style: none outside
+}
+ol,ul.square,ul.circle,ul.disc {
+margin-left: 24px
+}
+ol {
+list-style: decimal;
+margin-left: 30px
+}
+ul.square {
+list-style: square outside
+}
+ul.circle {
+list-style: circle outside
+}
+ul.disc {
+list-style: disc outside
+}
+ul ul,ol ol {
+margin-left: 30px;
+margin-top: 4px;
+margin-bottom: 5px
+}
+li {
+line-height: 18px
+}
+
+.column-row,.row {
+margin: 0 0 18px -20px
+}
+.column,.columns {
+float: left;
+display: inline;
+margin: 0 0 0 20px
+}
+.one {
+width: 40px
+}
+.two {
+width: 100px
+}
+.three {
+width: 160px
+}
+.four {
+width: 220px
+}
+.five {
+width: 280px
+}
+.six {
+width: 340px
+}
+.seven {
+width: 400px
+}
+.eight {
+width: 460px
+}
+.nine {
+width: 520px
+}
+.ten {
+width: 580px
+}
+.eleven {
+width: 640px
+}
+.twelve {
+width: 700px
+}
+.thirteen {
+width: 760px
+}
+.fourteen {
+width: 820px
+}
+.fifteen {
+width: 880px
+}
+.sixteen {
+width: 940px
+}
+.one-half {
+width: 420px;
+padding-right: 10px
+}
+.one-third {
+width: 300px
+}
+.two-thirds {
+width: 620px
+}
+.last {
+margin: 0
+}
+.column-row:after,.row:after,.clearfix:after {
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden
+}
+* html .column-row,* html .row,* html .clearfix {
+height: 1%
+}
+.column-row,.row,.clearfix {
+display: inline-block
+}
+.column-row,.row,.clearfix {
+display: block
+}
+
+div#masthead {
+	margin-bottom: 15px;
+	text-align: center;
+	border-bottom: 5px solid #333;
+}
+div#masthead div {
+	border-top: 1px solid #ddd;
+}
+div#masthead p {
+	width: 25%;
+	text-align: center;
+	color: #777;
+	margin: -10px auto 37px;
+	padding: 0;
+	background: #fff;
+	font-size: 14px;
+}
+div#masthead p strong {
+	color: #333;
+}
+
+ul.topfeatures {
+	margin-bottom: 20px;
+	overflow: hidden;
+	padding-bottom: 14px;
+	border-bottom: 1px solid #ccc;
+}
+ul.topfeatures li {
+	float: left;
+	width: 222px;
+	color: #666;
+}
+ul.topfeatures li + li {
+	margin-left: 14px;
+	padding-left: 15px;
+	border-left: 1px solid #ddd;
+}
+	/* Place all stylesheet code here */
+	div#body, p {
+		font: normal 13px/18px "Georgia", "Cambria", Times New Roman, Times, serif;
+		color: #444;
+	}
+	p {
+		margin-bottom: 0;
+		padding-bottom: 18px;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	hr {
+		margin: 18px 0 17px;
+		border-color: #ccc;
+	}
+
+	div#header {
+		display: none;
+	}
+	div#wrapper {
+		padding: 36px 0 0;
+	}
+	div#pagecontainer {
+		position: relative;
+		margin: 0 auto;
+		padding: 0;
+		width: 980px;
+	}
+
+/* Change up our fonts */
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+h1 a, h2 a, h3 a {
+	font-weight: normal;
+}
+h1 a:hover, h2 a:hover, h3 a:hover {
+	color: #777;
+}
+h1 a:hover:after, h2 a:hover:after {
+	content: " \2192";
+}
+h1 {
+	font-size: 36px;
+	line-height: 1;
+}
+h2 {
+	margin-top: 0;
+}
+p.tease {
+	color: #777;
+	font-size: 16px;
+	line-height: 20px;
+	margin: 0;
+	padding-bottom: 20px;
+}
+blockquote {
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+blockquote p {
+	color: #999;
+	margin: 0;
+	padding: 0 0 18px;
+	font-size: 13px;
+	line-height: 18px;
+}
+blockquote p:before {
+	content: "\2018\2018";
+	display: block;
+	height: 18px;
+	position: relative;
+	top: -14px;
+	left: -5px;
+	font: bold 72px/1 "Arial", Helvetica, Helvetica Neue, Verdana, sans-serif;
+	vertical-align: ;
+	color: #bf2726 !important;
+	letter-spacing: -6px;
+}
+cite {
+	font-family: "Arial", Helvetica, Helvetica Neue, Verdana, sans-serif;
+}
+
+/* Create our new grid */
+div.five-column {
+	margin: 0;
+}
+div.five-column .column {
+	margin: 0;
+}
+div.five-column .column + .column {
+	margin-left: 15px;
+}
+div.five-column .one {
+	width: 184px;
+}
+div.five-column .two {
+	width: 383px;
+}
+div.five-column .three {
+	width: 582px;
+}
+div.five-column .four {
+	width: 781px;
+}
+div.five-column .padded,
+div.five-column .column + .column.padded {
+	margin-left: 7px;
+	padding-left: 7px;
+	border-left: 1px solid #ccc;
+}
+
+div.five-column .shaded {
+	background: #f5f5f5;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	padding: 15px;
+}
+div.five-column .shaded.one {
+	width: 154px;
+}
+
+/* Update our photos */
+div.photo {
+	background: none;
+	position: relative;
+	overflow: hidden;
+	line-height: 1;
+}
+div.photo img {
+	border: 0;
+	width: 100%;
+}
+div.photo p.caption {
+	font-family: "Arial", Helvetica, "Helvetica Neue", Verdana, sans-serif;
+	background: rgba(0,0,0,.75);
+	width: 98%;
+	padding: 9px 0 9px 2.5%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	font-size: 11px;
+	color: #fff;
+	opacity: 0;
+	-moz-opacity: 0;
+	filter: alpha(opacity=0);
+	-webkit-transition: opacity .5s linear;
+	-webkit-transition-delay: .2s;
+}
+div.photo p.caption strong {
+	color: #fff;
+}
+div.photo:hover p.caption {
+	opacity: 1;
+	-moz-opacity: 1;
+	filter: alpha(opacity=100);
+}
+
+/* Make it look newsy */
+div#masthead {
+	margin-bottom: 15px;
+	text-align: center;
+	border-bottom: 5px solid #333;
+}
+div#masthead img {
+	margin-bottom: 27px;
+	-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,.75)), to(rgba(0,0,0,1)));
+}
+div#masthead div {
+	border-top: 1px solid #ddd;
+}
+div#masthead p {
+	width: 25%;
+	text-align: center;
+	color: #777;
+	margin: -10px auto 37px;
+	padding: 0;
+	background: #fff;
+	font-size: 14px;
+}
+div#masthead p strong {
+	color: #333;
+}
+
+ul.featurettes {
+	margin-bottom: 20px;
+	overflow: hidden;
+	padding-bottom: 14px;
+	border-bottom: 1px solid #ccc;
+}
+ul.featurettes li {
+	float: left;
+	width: 222px;
+	color: #666;
+}
+ul.featurettes li + li {
+	margin-left: 14px;
+	padding-left: 15px;
+	border-left: 1px solid #ddd;
+}
+
+/* Get fancy with text columns */
+div.two-col, div.three-col {
+	-webkit-column-gap: 15px;
+	-moz-column-gap: 15px;
+}
+div.two-col {
+	-webkit-column-count: 2;
+	-moz-column-count: 2;
+}
+div.three-col {
+	-webkit-column-count: 3;
+	-moz-column-count: 3;
+}
+p.breaker {
+	-webkit-column-break-after: always;
+}
+div#mainStory p:first-child:first-letter {
+	font-size: 36px;
+	font-weight: bold;
+	float: left;
+	line-height: 1;
+	margin: 0 5px 0 0;
+}
+
+/* Briefings */
+dl.briefs {
+}
+dl.briefs dt {
+	font-size: 14px;
+}
+dl.briefs dd cite {
+	display: block;
+	color: #999;
+	font-size: 11px;
+}
+
+dl.top-stories {
+	margin-top: -9px;
+}
+dl.top-stories dd {
+	margin-bottom: 9px;
+}
+
+.more-link {
+	height:27px;
+	margin:0 0 18px;
+	width:100%;
+	padding: 0;
+}
+.more-link a {
+	padding: 3px 5px 2px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+.more-link a:hover {
+	color: #;
+}
+
+div.subscribe {
+	width: 150px;
+	float: right;
+	background: #f5f5f5;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	padding: 15px;
+	margin: 0 0 18px 15px;
+}
+div.subscribe ul {
+	margin-top: -9px;
+	margin-bottom: 0;
+}
+div.subscribe ul a {
+	display: block;
+	padding: 2px 0 2px 24px;
+	background-repeat: no-repeat;
+	background-position: 2px center;
+}
+div.subscribe ul .rss a {
+	background-image: url(images/playground/newspaper-layout/rss.gif);
+}
+div.subscribe ul .email a {
+	background-image: url(images/playground/newspaper-layout/email.gif);
+}
+div.subscribe ul .twitter a {
+	background-image: url(images/playground/newspaper-layout/twitter.gif);
+}
+
+div#popularStories {
+}
+div#popularStories div.column {
+	min-height: 144px;
+}
+div#popularStories p {
+	padding: 0;
+}
+div#popularStories p cite {
+	display: block;
+	color: #999;
+	font-size: 11px;
+}
+.ad {
+	background: #ddd;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	color: #bbb;
+	font-weight: bold;
+	font-size: 18px;
+	text-align: center;
+}
+
+.lrec {
+	width: 336px;
+	height: 280px;
+	margin: 0 0 18px;
+	line-height: 280px;
+}
+
+.ad-wrap {
+	margin: 0 0 17px;
+	padding: 17px 23px 0;
+	border: 1px solid #eee;
+}
+.ad-wrap cite {
+	display: block;
+	width: 35%;
+	font-size: 11px;
+	text-transform: uppercase;
+	color: #ccc;
+	padding: 0;
+	background: #fff;
+	margin: -24px auto 16px;
+	text-align: center;
+}
+
+/* Footer */
+div#siteInfo img {
+	display: block;
+	margin: 0;
+	line-height: 1;
+}
+div#siteInfo ul {
+	margin-bottom: 0;
+}
+div#siteInfo ul li {
+	margin: 0 0 5px;
+}
+div#siteInfo ul li strong {
+	float: left;
+}
+div#siteInfo ul li ul {
+	margin: 0 0 0 95px;
+}
+div#siteInfo ul li ul li {
+	display: inline;
+	margin: 0;
+	padding-right: 10px;
+}
+h1#logo {font: 38px/48px 'PlainBlackWideNormal', Arial, sans-serif;letter-spacing: 0;}
+
+div#popularStories p.section {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 4px;
+	font-family: Arial, "MS Trebuchet", sans-serif;
+	font-weight: bold;
+	color: #000;
+}
+
+.politics { background-color: #FFFAAF;}
+.opinion { background-color: #6BDDD0;}
+.local { background-color:#87DD9D;}
+.sports { background-color:#B4C1E9;}
+.culture { background-color:#D1AEDD;}
+
+
+</style>
+{% endblock %}
+{% block body %}
+<div id="content">
+	<ul class="topfeatures">
+		<li>
+			<a href="#">Gun rights lawyer gives hope to liberal causes</a>
+			<p>14th Amendment argument opens to gay rights, abortion</p>
+		</li>
+		<li>
+			<a href="#">Gun rights lawyer gives hope to liberal causes</a>
+			<p>14th Amendment argument opens to gay rights, abortion</p>
+		</li>
+		<li>
+			<a href="#">Gun rights lawyer gives hope to liberal causes</a>
+			<p>14th Amendment argument opens to gay rights, abortion</p>
+		</li>
+		<li>
+			<a href="#">Gun rights lawyer gives hope to liberal causes</a>
+			<p>14th Amendment argument opens to gay rights, abortion</p>
+		</li>
+	</ul>
+
+	<div class="five-column row">
+		<div class="three column" id="featureStory">
+			
+			<div class="photo">
+				<a href="#"><img src="/media/images/demoleadphoto.jpg" alt="" /></a> 
+				<p class="caption"><strong>CRITICAL COMMENTS:</strong> Secretary of State Hillary Rodham Clinton chats with Argentine President Christina Fernandez de Kirchner during their meeting at Casa Rosada in Buenos Aires on Monday. Last week, Mrs. Fernandez said "there were huge hopes for change in Latin America" when President Obama took office, but the reality has been a "hard blow on those expectations." (Associated Press)</p>
+			</div>
+			<h1>Clinton faces critical hosts in Latin America</h1>
+			<div class="two-col">
+				<p>Secretary of State Hillary Rodham Clinton added a last-minute stop in Argentina on Monday as part of her Latin American tour this week, amid complaints that she was ignoring countries critical of U.S. policies in the region.</p>
+				<p>The State Department attributed the change to the difficulty of spending the night in Chile, as originally planned, because of the extensive damage caused by Saturday's 8.8 magnitude earthquake there. Mrs. Clinton, who is bringing satellite telephone equipment to Chile, will make a brief stop in the capital, Santiago, Tuesday morning.</p>
+				<p>However, diplomats and analysts said, the choice of Argentina was no accident — but not only because of its proximity to Uruguay, where Mrs. Clinton was earlier in the day. Her initial decision to skip Argentina, which was fiercely defended by the Obama administration's top official for Latin America on Friday, was criticized by Argentine and other officials.</p>
+				<p>"This is about damage control," said Mark Weisbrot, co-director of the Center for Economic and Policy Research, a Washington think tank. "And not only in Argentina but in the entire region. People are disappointed that Obama hasn't paid as much attention to them as he promised and has continued [George W.] Bush's policies."</p>
+				{# <p>One of the administration's more outspoken critics has been Argentine President Christina Fernandez de Kirchner, who met with Mrs. Clinton on Monday night. Last week, Mrs. Fernandez said "there were huge hopes for change in Latin America" when Mr. Obama took office, but the reality has been a "hard blow on those expectations."</p> #}
+				{# <p>"No one expected a prince on a white horse, but there is a sense of missed opportunities," she said in an interview with CNN.</p> #}
+				{# <p>Mrs. Fernandez also criticized Mr. Obama's "weak" response to last year's coup in Honduras, which ousted President Manuel Zelaya. Although the administration opposed the coup, the fact that the initial White House statement failed to condemn it was badly received in the region, Mr. Weisbrot said.</p> #}
+				{# <p>Washington also supported Honduras' November elections, which Buenos Aires opposed, saying they were held under a dictatorship.</p> #}
+				{# <p>"We had a very frank exchange of views about our different perceptions of Honduras," Mrs. Clinton said after meeting with Mrs. Fernandez. "I appreciated the opportunity to explain why we believe that the free and fair elections, which have elected the new president in Honduras, means its time to turn the page."</p> #}
+				{# <p>Asked at a press conference why she changed her mind and decided to visit Argentina after all, she said only, "I'm very pleased that I had the opportunity for this meeting today."</p> #}
+				<p class="blue right">
+					<a href="#">Continue &rarr;</a>
+				</p>
+			</div>
+		</div>
+		<div class="two column">
+			<div class="aside">
+				<h4>Top Stories</h4>
+				<p>Breaking news as it happens around the Web.</p>
+				<dl class="briefs top-stories">
+					<dt><a href="http://www.lipsum.com/">Aliquam Erat Volutpat</a></dt>
+					<dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt erat nec venenatis pellentesque. <cite>5 minutes ago</cite></dd>
+					<dt><a href="">Nulla Cursus Lorem Vel Urna Luctus Tincidunt</a></dt>
+					<dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt erat nec venenatis pellentesque enim facilisis vehicula <cite>10 minutes ago</cite></dd>
+					<dt><a href="http://www.lipsum.com">Lorem Ipsum Dolor Sit Amet</a></dt>
+					<dd>Sed tincidunt erat nec venenatis pellentesque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. <cite>10 minutes ago</cite></dd>
+					<dt><a href="http://www.lipsum.com/">Aliquam Erat Volutpat</a></dt>
+					<dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt erat nec venenatis pellentesque. <cite>5 minutes ago</cite></dd>
+					<dt><a href="">Nulla Cursus Lorem Vel Urna Luctus Tincidunt</a></dt>
+					<dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt erat nec venenatis pellentesque enim facilisis vehicula <cite>10 minutes ago</cite></dd>
+					<dt><a href="http://www.lipsum.com">Lorem Ipsum Dolor Sit Amet</a></dt>
+					<dd>Sed tincidunt erat nec venenatis pellentesque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. <cite>10 minutes ago</cite></dd>
+				</dl>
+				<p class="blue more-link">
+					<a href="#">More top stories →</a>
+				</p>
+			</div>
+			<div class="ad-wrap">
+				<cite>Advertisement</cite>
+				<div class="lrec ad">LREC</div>
+			</div>
+		</div>
+	</div>
+	<hr />
+	<div class="five-column column-row" id="popularStories">
+		<div class="one column">
+			<p class="section politics">Politics</p>
+			<h5><a href="http://www.lipsum.com/">Aliquam Erat Volutpat</a></h5>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt erat nec venenatis pellentesque. <cite>5 minutes ago</cite></p>
+		</div>
+		<div class="one column padded">
+			<p class="section sports">Sports</p>
+			<h5><a href="">Nulla Cursus Lorem Vel Urna Luctus Tincidunt</a></h5>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt erat nec venenatis pellentesque enim facilisis vehicula <cite>10 minutes ago</cite></p>
+		</div>
+		<div class="one column padded">
+			<p class="section culture">Culture</p>
+			<h5><a href="http://www.lipsum.com">Lorem Ipsum Dolor Sit Amet</a></h5>
+			<p>Sed tincidunt erat nec venenatis pellentesque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. <cite>10 minutes ago</cite></p>
+		</div>
+		<div class="one column padded">
+			<p class="section local">Local</p>
+			<h5><a href="http://www.zurb.com">Nulla Cursus Lorem Vel Urna Luctus</a></h5>
+			<p>Sed tincidunt erat nec venenatis pellentesque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. <cite>10 minutes ago</cite></p>
+		</div>
+		<div class="one column padded">
+			<p class="section opinion">Opinion</p>
+			<h5><a href="http://www.lipsum.com">Nam Vehicula Porta Magna</a></h5>
+			<p>Nunc tempor orci a justo ornare interdum. Maecenas sed elit quis elit tincidunt consectetur ut nec. Praesent non purus tellus. <cite>1 hour ago</cite></p>
+		</div>
+	</div>
+	<hr />
+	
+</div>
+	{# {% load native %} #}
+	{# {% get_latest_objects stories.story 10 update_date as latest %} #}
+	{# {% for object in latest %} #}
+	{# 	<p><a href="{{ object.get_absolute_url }}">{{ object.headline }}</a><br/>{{ object.teaser }}</p> #}
+	{# {% endfor %} #}
 {% endblock %}
