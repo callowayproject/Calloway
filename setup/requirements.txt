@@ -73,7 +73,7 @@ django==1.1.1
 simplejson==2.0.9
 south
 django-extensions==0.4.1
-django-admin-tools
+django-admin-tools==0.2
 python-dateutil==1.4.1
 ipython
 BeautifulSoup
