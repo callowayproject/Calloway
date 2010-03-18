@@ -1,0 +1,5 @@
+#position-admin-widget{width:100%; margin:5px 0; display:block;}
+#position-admin-widget-items li{
+    margin:2px 3px; display:inline;
+}
+#position-admin-widget-items li .deletelink{cursor:pointer;}
