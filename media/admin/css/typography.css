@@ -103,108 +103,25 @@ a.related-lookup img {
 a.addlink,a.changelink,a.deletelink {
 	position: relative;
 	top: 0;
-	margin: 0;
-	-1px 10px;
-padding: 1px 0 0 14px;
+	margin: 0 -1px 10px;
+    padding: 1px 0 0 14px;
 	background-position: 0 50%;
 }
 
 a.addlink:link,a.addlink:visited {
-	background-image: url('../img/icons/icon-addlink.png');
-}
-
-a.addlink:hover,a.addlink:active {
-	background-image: url('../img/icons/icon-addlink-hover.png');
+	background-image: url('../img/admin/icon_addlink.gif');
 }
 
 a.changelink:link,a.changelink:visited {
-	background-image: url('../img/icons/icon-changelink.png');
-}
-
-a.changelink:hover,a.changelink:active {
-	background-image: url('../img/icons/icon-changelink-hover.png');
+	background-image: url('../img/admin/icon_changelink.gif');
 }
 
 a.deletelink {
 	margin: 0;
 }
 
-a.add-another {
-	position: relative;
-	top: -2px;
-	margin-left: 3px;
-	vertical-align: top;
-	font-size: 11px;
-	line-height: 16px;
-	background-position: 50% 50%;
-}
-
-a.add-another:link,a.add-another:visited {
-	background-image: url('../img/icons/icon-add_another.png');
-}
-
-a.add-another:hover,a.add-another:active {
-	background-image: url('../img/icons/icon-add_another-hover.png');
-}
-
-.change-list form table tbody td a.add-another,.change-list form table tbody th a.add-another {
-	position: relative;
-	top: -7px;
-}
-
-.radiolist.inline+a.add-another,.checkboxlist.inline+a.add-another {
-	margin-left: -4px;
-}
-
-a.related-lookup {
-	background-position: 5px 5px;
-}
-
-a.related-lookup:link,a.related-lookup:visited {
-	position: relative;
-	top: 1px;
-	padding: 6px 12px 5px;
-	line-height: 0!important;
-	background-image: url('../img/icons/icon-related_lookup.png');
-}
-
-a.related-lookup:hover,a.related-lookup:active {
-	background-image: url('../img/icons/icon-related_lookup-hover.png');
-}
-
-a.related-lookup+strong {
-	position: relative;
-	top: 1px;
-	left: -6px;
-	color: #555;
-	font-size: 11px;
-	font-weight: bold;
-}
-
 #changelist .result-list a.related-lookup {
 	top: -1px;
-}
-
-a.fb_show img {
-	width: 0;
-	height: 0;
-	opacity: 0;
-}
-
-a.fb_show {
-	background-position: 2px 3px;
-}
-
-a.fb_show:link,a.fb_show:visited {
-	position: relative;
-	padding: 7px 14px;
-	line-height: 0!important;
-	border: none;
-	background-image: url('../img/icons/icon-fb_show.png');
-}
-
-a.fb_show:hover,a.fb_show:active {
-	background-image: url('../img/icons/icon-fb_show-hover.png');
 }
 
 p {
@@ -212,8 +129,7 @@ p {
 }
 
 h1+p {
-	margin: 0;
-15px;
+	margin: 0 15px;
 }
 
 .object-history p {
