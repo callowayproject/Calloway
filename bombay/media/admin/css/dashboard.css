@@ -3,7 +3,16 @@
 }
 
 .dashboard-module ul.inline {
-    height: 3.5em !important;
+    height: 2em !important;
+}
+
+.dashboard-module ul li.odd {
+    background: #f5f5f5 !important;
+}
+
+.dashboard-module ul.inline li {
+    background: none !important;
+    margin: 0 !important;
 }
 
 .dashboard-module h2 {
