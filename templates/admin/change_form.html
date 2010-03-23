@@ -20,12 +20,12 @@
 {% block bodyclass %}{{ opts.app_label }}-{{ opts.object_name.lower }} change-form{% endblock %}
 
 {% block breadcrumbs %}{% if not is_popup %}
-<div class="breadcrumbs">
-    <a href="../../../">{% trans "Home" %}</a> &rsaquo;
-    <a href="../../">{{ app_label|capfirst|escape }}</a> &rsaquo; 
-    {% if has_change_permission %}<a href="../">{{ opts.verbose_name_plural|capfirst }}</a>{% else %}{{ opts.verbose_name_plural|capfirst }}{% endif %} &rsaquo; 
-    {% if add %}{% trans "Add" %} {{ opts.verbose_name }}{% else %}{{ original|truncatewords:"18" }}{% endif %}
-</div>
+{# <div class="breadcrumbs"> #}
+{#     <a href="../../../">{% trans "Home" %}</a> &rsaquo; #}
+{#     <a href="../../">{{ app_label|capfirst|escape }}</a> &rsaquo;  #}
+{#     {% if has_change_permission %}<a href="../">{{ opts.verbose_name_plural|capfirst }}</a>{% else %}{{ opts.verbose_name_plural|capfirst }}{% endif %} &rsaquo;  #}
+{#     {% if add %}{% trans "Add" %} {{ opts.verbose_name }}{% else %}{{ original|truncatewords:"18" }}{% endif %} #}
+{# </div> #}
 {% endif %}{% endblock %}
 
 {% block content %}<div id="content-main">
@@ -33,9 +33,9 @@
 {% if change %}{% if not is_popup %}
  <ul class="object-tools"><li><a href="history/" class="historylink">{% trans "History" %}</a></li>
  {% if has_absolute_url %}<li><a href="../../../r/{{ content_type_id }}/{{ object_id }}/" class="viewsitelink">{% trans "View on site" %}</a></li>{% endif%}
+ <li>{% include "admin/positions/selector.html" %}</li>
  </ul>
 {% endif %}{% endif %}
-{% include "admin/positions/selector.html" %}
 {% endblock %}
 <form {% if has_file_field %}enctype="multipart/form-data" {% endif %}action="{{ form_url }}" method="post" id="{{ opts.module_name }}_form">{% block form_top %}{% endblock %}
 <div>
