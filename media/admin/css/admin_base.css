@@ -12,6 +12,45 @@
 
 @import url('webkit-gradients.css');
 
+@import url('dashboard.css');
+
+ul.ui-menu li.ui-menu-item {
+    height: 2em;
+}
+
+ul.ui-widget {
+    font-size: 0.9em;
+}
+
+#position-admin-widget-items {
+    display: inline;
+}
+
+#position-admin-widget-items li {
+    float: right;
+    background:url("../img/admin/nav-bg.gif") repeat-x scroll center bottom white !important;
+    border-color:#DDDDDD #AAAAAA #AAAAAA #DDDDDD;
+    border-style:solid;
+    border-width:1px;
+    color:#213E4B;
+    display: inline-block;
+    padding:0.5em 1em 0.1em;
+    -moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	font: .9em Arial,sans-serif;
+	font-weight: bold;
+	margin: -4px 3px !important;
+}
+
+#position-admin-widget {
+    padding: 3px 0px;
+}
+
+#position-admin-widget-input label {
+    color:#213E4B;
+    font: bold 11px Arial,sans-serif !important;
+}
+
 body {
 	margin: 0;
 	padding: 0;
@@ -62,7 +101,7 @@ div#content-main {
 }
 
 .object-tools li {
-	background: none;
+	background: none !important;
 	display: block;
 	float: left;
 	height: 1.5em;
@@ -71,7 +110,7 @@ div#content-main {
 }
 
 .object-tools a:hover,.object-tools li:hover a, .object-tools a.addlink:hover, .object-tools li:hover a.addlink {
-	background: url("../img/admin/nav-bg.gif") repeat-x scroll center bottom white;
+	background: url("../img/admin/nav-bg.gif") repeat-x scroll center bottom white !important;
 	color: #4d1410;
 	border-color: #BBB #888 #888 #BBB;
 }
@@ -82,7 +121,7 @@ div#content-main {
 }
 
 .object-tools a:link, .object-tools a.addlink {
-	background: url("../img/admin/nav-bg.gif") repeat-x scroll center bottom white;
+	background: url("../img/admin/nav-bg.gif") repeat-x scroll center bottom white !important;
 	border-color: #DDD #AAA #AAA #DDD;
 	border-style: solid;
 	border-width: 1px;
