@@ -1,12 +1,5 @@
 #!/usr/bin/env python
 from django.core.management import execute_manager
-import os, sys
-
-PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), 'bombay'))
-sys.path.insert(0, os.path.join(PROJECT_ROOT,"apps"))
-sys.path.insert(0, os.path.join(PROJECT_ROOT,"lib"))
-sys.path.insert(0, PROJECT_ROOT)
-
 try:
     import settings # Assumed to be in the same directory.
 except ImportError:
