@@ -92,14 +92,6 @@ a.addlink,a.changelink,a.deletelink,a.add-another,a.related-lookup,a.fb_show {
 	background-color: transparent;
 }
 
-a.add-another img,a.related-lookup img {
-	opacity: 0;
-}
-
-a.related-lookup img {
-	display: none;
-}
-
 a.addlink,a.changelink,a.deletelink {
 	position: relative;
 	top: 0;
