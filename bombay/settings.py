@@ -206,6 +206,9 @@ STATIC_MEDIA_COMPRESS_JS = True
 
 ADMIN_TOOLS_MENU = 'menu.CustomMenu'
 
+STORY_RELATION_MODELS = ['massmedia.audio', 'massmedia.image', 'massmedia.document',
+    'massmedia.video', 'massmedia.collection', 'stories.story',]
+
 try:
     from local_settings import *
 except ImportError:
