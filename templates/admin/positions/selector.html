@@ -3,6 +3,17 @@
 {% get_content_positions content_type_id object_id as selected_positions %}
 <script type="text/javascript">
 	function update_positions(ct){
+		$("#selector").autocomplete({
+    		source:"/position_management/widget/data/{{ content_type_id}}/{{object_id}}/",
+    		minLength: 2,
+    		select: function(event, ui) {
+    		    $.get("/position_management/add/"+ ui.item.value +"/{{ content_type_id }}/{{ object_id }}/",function(){
+					$('<div class="position"><span class="deletelink" id=pos_'+ui.item.value+'>&nbsp;</span>'+ui.item.value+'</div>').appendTo("#position-admin-widget-items");
+					update_positions($("#position-admin-widget-items div").size());
+					$("#selector").focus().val('');
+				});
+    		}
+    	});
 		switch(ct)
 		{
 		case 0:
@@ -23,18 +34,6 @@
 		});
 	}
     $(function() {
-        var availableTags = [{% for position in app_positions %}"{{ position.name }}",{% endfor %}];
-        $("#selector").autocomplete({
-    		source: availableTags,
-    		minLength: 2,
-    		select: function(event, ui) {
-    		    $.get("/position_management/add/"+ ui.item.value +"/{{ content_type_id }}/{{ object_id }}/",function(){
-					$('<div class="position"><span class="deletelink" id=pos_'+ui.item.value+'>&nbsp;</span>'+ui.item.value+'</div>').appendTo("#position-admin-widget-items");
-					update_positions($("#position-admin-widget-items div").size());
-					$("#selector").focus().val('');
-				});
-    		}
-    	});
 		update_positions($("#position-admin-widget-items div").size());
 		$("#selector").focus(function(){
 			$('#position-admin-widget-items').fadeIn('fast');
