@@ -8,11 +8,25 @@
     		source: availableTags,
     		minLength: 2,
     		select: function(event, ui) {
-    		    $.get("/position_management/add/"+ ui.item.value +"/{{ content_type_id }}/{{ object_id }}/");
-                $('<div class="position"><span class="deletelink" id=pos_"'+ui.item.value+'">&nbsp;</span>'+ui.item.value+'</li>').appendTo("#position-admin-widget-items");
-				$("#position-admin-widget-items li .deletelink").bind('click',function(){
-					$.get($(this).attr('rel'));
-					$(this).parent().remove();
+    		    $.get("/position_management/add/"+ ui.item.value +"/{{ content_type_id }}/{{ object_id }}/",function(){
+					$('<div class="position"><span class="deletelink" id=pos_"'+ui.item.value+'">&nbsp;</span>'+ui.item.value+'</li>').appendTo("#position-admin-widget-items");
+					$("#position-admin-widget-items li .deletelink").bind('click',function(){
+						$.get($(this).attr('rel'));
+						$(this).parent().remove();
+					});
+					var ct = $("#position-admin-widget-items div").size();
+					switch(ct)
+					{
+					case 0:
+					  $('.position-admin-widget-count').empty().append('No positions selected')
+					  break;
+					case 1:
+					  $('.position-admin-widget-count').empty().append(ct + ' position selected')
+					  break;
+					default:
+					  $('.position-admin-widget-count').empty().append(ct + ' positions selected')
+					}
+					$("#selector").focus().val('');
 				});
     		}
     	});
