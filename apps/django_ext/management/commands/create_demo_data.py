@@ -16,6 +16,12 @@ class Command(BaseCommand):
         else:
             self.create_all_demo_data()
     
+    def create_all_demo_data(self):
+        self.create_nav_bar()
+        self.create_categories()
+        self.create_staff()
+        self.create_stories()
+    
     def create_nav_bar(self):
         from navbar.models import NavBarEntry
         nav = [
