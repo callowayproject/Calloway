@@ -1,0 +1,12 @@
+django>=1.1.1
+south>=0.6.2
+simplejson==2.0.9
+python-memcached==1.44
+django-memcached==0.1.2
+django-pagination==1.0.5
+django-debug-toolbar==0.7.0
+django-extensions==0.4.1
+python-dateutil==1.4.1
+setup/python-imaging_1.1.6-3.tar.gz
+psycopg2
+ipython

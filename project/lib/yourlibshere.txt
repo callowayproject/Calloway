@@ -1,0 +1,2 @@
+# Put python libraries here. Libraries are generic python packages. 
+# (Ones that Django doesn't need to have in INSTALLED_APPS)

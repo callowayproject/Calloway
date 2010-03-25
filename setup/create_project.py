@@ -1,6 +1,16 @@
 #!/usr/bin/env python
 
-import os, random, subprocess, getpass
+import os, random, subprocess, sys
+
+HAS_VENV = bool(subprocess.Popen(['which','virtualenv'], stdout=subprocess.PIPE).communicate()[0])
+if not HAS_VENV:
+    print "virtualenv is required to run this script. Please install it with\n  easy_install virtualenv\n\nor\n\n  pip virtualenv"
+    sys.exit(1)
+
+HAS_VENVW = bool(subprocess.Popen(['which','virtualenvwrapper_bashrc'], stdout=subprocess.PIPE).communicate()[0])
+if not HAS_VENVW:
+    print "virtualenvwrapper is required to run this script. Please install it with\n  easy_install virtualenvwrapper\n\nor\n\n  pip virtualenvwrapper"
+    sys.exit(1)
 
 CHARS = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'
 BLACKLIST = (
@@ -9,7 +19,9 @@ BLACKLIST = (
     'admin/css',
     'admin/img',
     'admin/js',
-    '/.git/'
+    '/.git/',
+    '.svn',
+    '.hg',
 )
 
 def replace(repl, text):
@@ -18,23 +30,9 @@ def replace(repl, text):
         text = text.replace('$$$$%s$$$$' % (key,), value)
     return text
 
-def main():
-    repl = {}
-    
-    cur_user = os.getlogin()
-    
-    pn = raw_input('Project name: ')
-    repl['PROJECT_NAME'] = pn
-    
-    repl['NAME'] = raw_input('Administrator name  [%s]: ' % cur_user) or cur_user
-    repl['EMAIL_ADDRESS'] = raw_input('Administrator e-mail address: ')
-    
-    repl['SECRET_KEY'] = ''.join([random.choice(CHARS) for i in xrange(50)])
-    
-    dest_dir = raw_input('Destination directory (currently at %s): ' % (os.getcwd(),)) or os.getcwd()
-    dest_dir =  os.path.realpath(os.path.expanduser(dest_dir))
-    dest = os.path.join(dest_dir, repl['PROJECT_NAME'])
-    
+
+
+def main(repl, dest):
     os.makedirs(dest)
     
     for root, dirs, files in os.walk('./skel/'):
@@ -55,10 +53,7 @@ def main():
                 data = replace(repl, data)
             open(dest_fn, 'w').write(data)
             os.chmod(dest_fn, os.stat(source_fn)[0])
-    repl['virtenv'] = raw_input('Virtual environment name (e.g. %s): ' % pn) or pn
     
-    print "Bootstrapping the virtual envirionment..."
-    subprocess.call(['%s/setup/_bootstrap.sh' % dest,], shell=True)
     print "Making the virtual environment (%s)..." % repl['virtenv']
     create_env_cmds = [
         'source virtualenvwrapper_bashrc', 
@@ -80,4 +75,62 @@ def main():
         env=os.environ, executable='/bin/bash', shell=True)
 
 if __name__ == '__main__':
-    main()
+    from optparse import OptionParser
+    parser = OptionParser()
+    
+    parser.add_option("-a", "--admin", dest="name", default=os.getlogin(), help="The name of the administrator.")
+    parser.add_option("-e", "--email", dest="email_address", help="The email address of the administrator.")
+    parser.add_option("-n", "--name", dest="project_name", help="The name of the project.")
+    parser.add_option("-v", "--virtenv", dest="virtenv", help="The name of the virtualenv.")
+    parser.add_option("-d", "--dest", dest="destination", help="Where to put the new project.")
+    parser.add_option("-t", "--template", dest="template", help="The project template to use as a basis for the new project.")
+    (options, args) = parser.parse_args()
+    
+    repl = {}
+    
+    cur_user = os.getlogin()
+    
+    if options.project_name:
+        repl['PROJECT_NAME'] = options.project_name
+    elif len(args) > 0:
+        repl['PROJECT_NAME'] = args[0]
+    
+    while not repl['PROJECT_NAME']:
+        repl['PROJECT_NAME'] = raw_input('Project name: ')
+    
+    if options.name:
+        repl['NAME'] = options.name
+    
+    while not repl['NAME']:
+        repl['NAME'] = raw_input('Administrator name  [%s]: ' % cur_user) or cur_user
+    
+    if options.email_address:
+        repl['EMAIL_ADDRESS'] = options.email_address
+    
+    while not repl['EMAIL_ADDRESS']:
+        repl['EMAIL_ADDRESS'] = raw_input('Administrator e-mail address: ')
+    
+    repl['SECRET_KEY'] = ''.join([random.choice(CHARS) for i in xrange(50)])
+    
+    if options.destination:
+        dest_dir = options.destination
+    
+    while not dest_dir:
+        dest_dir = raw_input('Destination directory (currently at %s): ' % (os.getcwd(),)) or os.getcwd()
+    dest_dir =  os.path.realpath(os.path.expanduser(dest_dir))
+    dest = os.path.join(dest_dir, repl['PROJECT_NAME'])
+    
+    if options.template:
+        templ_dir = options.template
+    
+    while not templ_dir:
+        templ_dir = raw_input('Project template directory: ')
+        
+    if options.virtenv:
+        repl['virtenv'] = options.virtenv
+    
+    repl['virtenv'] = None
+    while not repl['virtenv']:
+        repl['virtenv'] = raw_input('Virtual environment name (e.g. %s): ' % repl['PROJECT_NAME']) or repl['PROJECT_NAME']
+    
+    main(repl, dest)

@@ -1,13 +1,5 @@
 from django.conf.urls.defaults import *
 from django.conf import settings
-from django.contrib import admin
-
-admin.autodiscover()
-
-handler500 = 'django_ext.views.custom_server_error'
-
-sitemaps = {
-}
 
 urlpatterns = patterns('',
     (r'^cache/', include('django_memcached.urls')),

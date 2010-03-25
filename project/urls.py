@@ -1,8 +1,12 @@
 from django.conf.urls.defaults import *
+from django.contrib import admin
 
-# Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+admin.autodiscover()
+
+handler500 = 'bombay.django_ext.views.custom_server_error'
+
+sitemaps = {
+}
 
 urlpatterns = patterns('',
     # Example:

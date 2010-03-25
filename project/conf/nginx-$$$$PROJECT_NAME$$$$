@@ -1,0 +1,20 @@
+server {
+    listen       80;
+    server_name  media-$$$$DEV_APP_HOST$$$$;
+    access_log   /var/log/nginx/media-$$$$DEV_APP_HOST$$$$.access.log;
+    location     / {
+        autoindex on;
+        index     index.html;
+        root      /var/code/$$$$PROJECT_NAME$$$$/media;
+        expires   max;
+    }
+}
+server {
+    listen       80;
+    server_name  $$$$DEV_APP_HOST$$$$;
+    access_log   /var/log/nginx/$$$$DEV_APP_HOST$$$$.access.log;
+    location     / {
+        proxy_pass  http://webcluster;
+        include     /var/code/$$$$PROJECT_NAME$$$$/conf/proxy.conf;
+    }
+}
