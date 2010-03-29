@@ -32,13 +32,16 @@ def replace(repl, text):
 
 
 
-def main(repl, dest):
-    os.makedirs(dest)
+def main(repl, dest, templ_dir):
+    try:
+        os.makedirs(dest)
+    except OSError:
+        pass
     
-    for root, dirs, files in os.walk('./skel/'):
+    for root, dirs, files in os.walk(templ_dir):
         for filename in files:
             source_fn = os.path.join(root, filename)
-            dest_fn = replace(repl, os.path.join(dest, root.replace('./skel/', ''), replace(repl, filename)))
+            dest_fn = replace(repl, os.path.join(dest, root.replace(templ_dir, ''), replace(repl, filename)))
             try:
                 os.makedirs(os.path.dirname(dest_fn))
             except OSError:
@@ -72,7 +75,7 @@ def main(repl, dest):
     print "Installing requirements..."
     subprocess.call(['$WORKON_HOME/%s/bin/pip install -r %s' \
         % (repl['virtenv'], os.path.join(dest, 'setup', 'requirements.txt'))],
-        env=os.environ, executable='/bin/bash', shell=True)
+        env=os.environ, executable='/bin/bash', shell=True, cwd=dest)
 
 if __name__ == '__main__':
     from optparse import OptionParser
@@ -86,7 +89,12 @@ if __name__ == '__main__':
     parser.add_option("-t", "--template", dest="template", help="The project template to use as a basis for the new project.")
     (options, args) = parser.parse_args()
     
-    repl = {}
+    repl = {
+        'EMAIL_ADDRESS':None, 
+        'PROJECT_NAME':None,
+        'NAME':None,}
+    dest_dir = None
+    templ_dir = None
     
     cur_user = os.getlogin()
     
@@ -125,7 +133,9 @@ if __name__ == '__main__':
     
     while not templ_dir:
         templ_dir = raw_input('Project template directory: ')
-        
+    templ_dir = os.path.realpath(os.path.expanduser(templ_dir))
+    if templ_dir[-1] != '/':
+        templ_dir = templ_dir + "/"
     if options.virtenv:
         repl['virtenv'] = options.virtenv
     
@@ -133,4 +143,4 @@ if __name__ == '__main__':
     while not repl['virtenv']:
         repl['virtenv'] = raw_input('Virtual environment name (e.g. %s): ' % repl['PROJECT_NAME']) or repl['PROJECT_NAME']
     
-    main(repl, dest)
+    main(repl, dest, templ_dir)
