@@ -9,13 +9,8 @@ sitemaps = {
 }
 
 urlpatterns = patterns('',
-    # Example:
-    # (r'^project/', include('project.foo.urls')),
-
-    # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
-    # to INSTALLED_APPS to enable admin documentation:
-    # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    # (r'^admin/', include(admin.site.urls)),
+    (r'^admin/', include(admin.site.urls)),
 )
+from bombay.urls import urlpatterns as bombay_patterns
+
+urlpatterns += bombay_patterns
