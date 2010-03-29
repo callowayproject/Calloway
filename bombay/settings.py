@@ -72,7 +72,7 @@ APPS_ADMIN = (
     'django.contrib.admin',
 )
 APPS_BOMBAY_DEFAULT = (
-    'bombay.django_ext',
+    'django_ext',
     'django_memcached',
     'pagination',
     'django_extensions',
