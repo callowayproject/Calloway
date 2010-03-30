@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load analytics %}
-{% block site_header %}<div id="masthead"><a href="/"><img src="{{ STATIC_URL }}images/effingtontimeslogo.png" height="73" width="529" alt="The Effington Times"></a></div>{% endblock %}
+{% block site_header %}<div id="masthead"><a href="/"><img src="{{ MEDIA_URL }}/img/effingtontimeslogo.img" height="73" width="529" alt="The Effington Times"></a></div>{% endblock %}
 {% block content_nav %}{% endblock %}
 {% block member_opts %}{% if user.is_authenticated %}
 <p>Hello {{ user.first_name }}!</p>
@@ -17,13 +17,12 @@
 	<li><a href="{% url auth_login %}">Sign In</a></li>
 	<li><a href="{% url registration_register %}">Join</a></li>
 </ul>
-{% endif %}
-{% endblock %}
+{% endif %}{% endblock %}
 {% block search %}{% endblock %}
 
 {% block footer %}
 <div class="legal">
-    {% trans "&copy; 2010 The Effington Times Company LLC" %}
+    {% trans "&copy; 2010 &lt;your company here&gt;" %}
     {# - <a href="{% url about %}">{% trans "About" %}</a> #}
     {# - <a href="{% url terms %}">{% trans "Terms of Service" %}</a> #}
     {# - <a href="{% url privacy %}">{% trans "Privacy Policy" %}</a> #}

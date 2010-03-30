@@ -31,10 +31,7 @@ TIME_ZONE = 'America/New_York'
 LANGUAGE_CODE = 'en-us'
 USE_I18N = True
 
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'media')
-MEDIA_ROOT = os.path.join(STATIC_ROOT, 'ugc')
-MEDIA_URL = '/media/ugc/'
-STATIC_URL = '/media/'
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 
 AUTH_PROFILE_MODULE = ''
 
