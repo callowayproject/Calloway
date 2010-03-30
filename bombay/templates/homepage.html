@@ -1,5 +1,5 @@
 {% extends "site_base.html" %}
-
+{% load position_tags %}
 {% block head_title %}Home{% endblock %}
 {% block extra_head %}
 <style type="text/css" media="screen">
@@ -684,44 +684,25 @@ div#popularStories p.section {
 {% endblock %}
 {% block body %}
 <div id="content">
+	{% get_position_content home_topfeatures as topstories %}
 	<ul class="topfeatures">
-		<li>
-			<a href="#">Gun rights lawyer gives hope to liberal causes</a>
-			<p>14th Amendment argument opens to gay rights, abortion</p>
-		</li>
-		<li>
-			<a href="#">Gun rights lawyer gives hope to liberal causes</a>
-			<p>14th Amendment argument opens to gay rights, abortion</p>
-		</li>
-		<li>
-			<a href="#">Gun rights lawyer gives hope to liberal causes</a>
-			<p>14th Amendment argument opens to gay rights, abortion</p>
-		</li>
-		<li>
-			<a href="#">Gun rights lawyer gives hope to liberal causes</a>
-			<p>14th Amendment argument opens to gay rights, abortion</p>
-		</li>
+		{% for item in topstories %}
+			<li>
+				<a href="{{ item.get_absolute_url }}">{{ item.headline }}</a>
+				<p>{{ item.teaser }}</p>
+			</li>
+		{% endfor %}
 	</ul>
-
+	{% get_position_content home_feature as feature %}
 	<div class="five-column row">
 		<div class="three column" id="featureStory">
-			
 			<div class="photo">
 				<a href="#"><img src="/media/images/demoleadphoto.jpg" alt="" /></a> 
 				<p class="caption"><strong>CRITICAL COMMENTS:</strong> Secretary of State Hillary Rodham Clinton chats with Argentine President Christina Fernandez de Kirchner during their meeting at Casa Rosada in Buenos Aires on Monday. Last week, Mrs. Fernandez said "there were huge hopes for change in Latin America" when President Obama took office, but the reality has been a "hard blow on those expectations." (Associated Press)</p>
 			</div>
-			<h1>Clinton faces critical hosts in Latin America</h1>
+			<h1>{{ feature.0.headline }}</h1>
 			<div class="two-col">
-				<p>Secretary of State Hillary Rodham Clinton added a last-minute stop in Argentina on Monday as part of her Latin American tour this week, amid complaints that she was ignoring countries critical of U.S. policies in the region.</p>
-				<p>The State Department attributed the change to the difficulty of spending the night in Chile, as originally planned, because of the extensive damage caused by Saturday's 8.8 magnitude earthquake there. Mrs. Clinton, who is bringing satellite telephone equipment to Chile, will make a brief stop in the capital, Santiago, Tuesday morning.</p>
-				<p>However, diplomats and analysts said, the choice of Argentina was no accident — but not only because of its proximity to Uruguay, where Mrs. Clinton was earlier in the day. Her initial decision to skip Argentina, which was fiercely defended by the Obama administration's top official for Latin America on Friday, was criticized by Argentine and other officials.</p>
-				<p>"This is about damage control," said Mark Weisbrot, co-director of the Center for Economic and Policy Research, a Washington think tank. "And not only in Argentina but in the entire region. People are disappointed that Obama hasn't paid as much attention to them as he promised and has continued [George W.] Bush's policies."</p>
-				{# <p>One of the administration's more outspoken critics has been Argentine President Christina Fernandez de Kirchner, who met with Mrs. Clinton on Monday night. Last week, Mrs. Fernandez said "there were huge hopes for change in Latin America" when Mr. Obama took office, but the reality has been a "hard blow on those expectations."</p> #}
-				{# <p>"No one expected a prince on a white horse, but there is a sense of missed opportunities," she said in an interview with CNN.</p> #}
-				{# <p>Mrs. Fernandez also criticized Mr. Obama's "weak" response to last year's coup in Honduras, which ousted President Manuel Zelaya. Although the administration opposed the coup, the fact that the initial White House statement failed to condemn it was badly received in the region, Mr. Weisbrot said.</p> #}
-				{# <p>Washington also supported Honduras' November elections, which Buenos Aires opposed, saying they were held under a dictatorship.</p> #}
-				{# <p>"We had a very frank exchange of views about our different perceptions of Honduras," Mrs. Clinton said after meeting with Mrs. Fernandez. "I appreciated the opportunity to explain why we believe that the free and fair elections, which have elected the new president in Honduras, means its time to turn the page."</p> #}
-				{# <p>Asked at a press conference why she changed her mind and decided to visit Argentina after all, she said only, "I'm very pleased that I had the opportunity for this meeting today."</p> #}
+				{{ feature.0.paragraphs|slice:":4"|safeseq|join:"" }}
 				<p class="blue right">
 					<a href="#">Continue &rarr;</a>
 				</p>

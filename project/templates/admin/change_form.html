@@ -3,12 +3,12 @@
 
 {% block extrahead %}{{ block.super }}
 
-<link rel="stylesheet" href="/media/admin/css/smoothness/jquery-ui-1.8rc3.custom.css" type="text/css" media="screen" title="no title" charset="utf-8">
-<link rel="stylesheet" href="/media/admin/css/positions.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="{{ STATIC_URL }}admin/css/smoothness/jquery-ui-1.8rc3.custom.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="{{ STATIC_URL }}admin/css/positions.css" type="text/css" media="screen" title="no title" charset="utf-8">
 
 <script type="text/javascript" src="../../../jsi18n/"></script>
-<script src="/media/admin/js/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="/media/admin/js/jquery-ui-1.8rc3.custom.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{ STATIC_URL }}admin/js/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{ STATIC_URL }}admin/js/jquery-ui-1.8rc3.custom.min.js" type="text/javascript" charset="utf-8"></script>
 
 {{ media }}
 {% endblock %}

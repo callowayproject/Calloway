@@ -6,7 +6,8 @@ BOMBAY_ROOT = os.path.abspath(os.path.dirname(__file__))
 SITE_ID = 1
 APPEND_SLASH = True
 
-MEDIA_URL = 'http://127.0.0.1:8000/media/'
+MEDIA_URL = '/media/ugc/'
+STATIC_URL = '/media/'
 ADMIN_MEDIA_PREFIX = '/admin-media/admin/'
 
 # List of callables that know how to import templates from various sources.
@@ -21,6 +22,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.i18n',
     'django.core.context_processors.media',
     'django.core.context_processors.request',
+    'staticmediamgr.context_processor.static_url',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -162,3 +164,4 @@ ADMIN_TOOLS_MENU = 'bombay.menu.CustomMenu'
 STORY_RELATION_MODELS = ['massmedia.audio', 'massmedia.image', 'massmedia.document',
     'massmedia.video', 'massmedia.collection', 'stories.story',]
 
+STORY_PAGINATION = True
