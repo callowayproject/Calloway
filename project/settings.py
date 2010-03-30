@@ -35,23 +35,40 @@ MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 
 AUTH_PROFILE_MODULE = ''
 
-PUBLICATION_NAME = 'The Example Times'
+PUBLICATION_NAME = 'The Effington Times'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(PROJECT_ROOT, 'templates'),
-) + BOMBAY_ROOT
+) + BOMBAY_TEMPLATE_DIRS
 
 CACHE_BACKEND = 'versionedcache.backend://localhost:11211/'
 
-
 STATIC_MEDIA_COPY_PATHS = (
+    {'from': os.path.join(BOMBAY_ROOT, 'media'), 'to': 'media2'},
     {'from': 'media', 'to': 'media2'},
 )
+
 STATIC_MEDIA_COMPRESS_CSS = True
 STATIC_MEDIA_COMPRESS_JS = True
+
+INSTALLED_APPS = APPS_CORE + \
+    APPS_ADMIN + \
+    APPS_STAFF + \
+    APPS_REVERSION + \
+    APPS_STORIES + \
+    APPS_BOMBAY_DEFAULT + \
+    APPS_MPTT + \
+    APPS_CATEGORIES + \
+    APPS_COMMENT_UTILS + \
+    APPS_FRONTEND_ADMIN + \
+    APPS_MEDIA + \
+    APPS_UTILS + \
+    APPS_REGISTRATION + \
+    APPS_TINYMCE 
+
 
 try:
     from local_settings import *
