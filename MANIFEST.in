@@ -1,0 +1,19 @@
+recursive-include doc_src *
+recursive-include docs *
+
+recursive-include bombay/apps/*/templates *.html *.xml
+recursive-include bombay/apps/*/fixtures *.json *.xml
+recursive-include bombay/apps/*/media *
+
+recursive-include bombay/bin *
+recursive-include bombay/conf *
+recursive-include bombay/fixtures *
+recursive-include bombay/setup *
+recursive-include bombay/media *
+recursive-include bombay/templates *.html *.xml
+
+prune example
+prune project
+
+include LICENSE
+include README.txt

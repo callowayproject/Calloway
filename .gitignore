@@ -12,5 +12,6 @@ media/js/*.r*.js
 media/css/*.r*.css
 *DS_Store
 *.egg-info
-media2/
 externals
+MANIFEST
+dist/

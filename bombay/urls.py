@@ -20,10 +20,3 @@ urlpatterns = patterns('',
     url(r'^robots.txt', 'robots.views.rules_list', name='robots_rule_list'),
     (r'^$', 'django.views.generic.simple.direct_to_template', {'template':'homepage.html'}),    
 )
-
-import os
-if settings.DEBUG:
-    urlpatterns += patterns('',
-        (r'^media/(?P<path>.*)$', 'django.views.static.serve',
-            {'document_root': os.path.join(os.path.dirname(__file__), 'media2')}),
-    )
