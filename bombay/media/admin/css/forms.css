@@ -393,7 +393,7 @@ overflow: auto!important;
 	margin-left: 2px;
 }
 
-input[type=submit],input[type=button],button {
+input[type=submit],input[type=button],input[type=reset],button {
 	background: url("../img/admin/nav-bg.gif") repeat-x scroll center bottom white;
 	border-color: #DDD #AAA #AAA #DDD;
 	border-style: solid;
@@ -416,7 +416,7 @@ input[type=submit],input[type=button],button {
 
 @media screen and(-webkit-min-device-pixel-ratio:0) {
 
-input[type=submit],input[type=button],button {
+input[type=submit],input[type=button],input[type=reset],button {
 	padding: 5px 8px 4px;
 }
 
@@ -435,7 +435,7 @@ input[type=submit],input[type=button],button {
 	-webkit-border-radius: 5px;
 }
 
-input[type=submit].default,input[type=button].default,button.default {
+input[type=submit].default,input[type=button].default,input[type=reset].default,button.default {
 	background: url("../img/admin/default-bg.gif") repeat-x scroll center bottom #7CA0C7;
 	border: 1px solid #5B80B2;
 	border-color: #71a2e2 #47658d #47658d #71a2e2;
@@ -471,7 +471,7 @@ input[type=submit].default,input[type=button].default,button.default {
 	background: #ddd;
 }
 
-input[type=submit]:hover,input[type=submit]:active,input[type=submit].default:hover,input[type=submit].default:active,input[type=button]:hover,input[type=button]:active,button:hover,button:active,.submit-row a.deletelink:hover,.submit-row a.deletelink:active,.submit-row a.cancellink:hover,.submit-row a.cancellink:active {
+input[type=submit]:hover,input[type=submit]:active,input[type=submit].default:hover,input[type=submit].default:active,input[type=button]:hover,input[type=button]:active,input[type=reset]:hover,input[type=reset]:active,input[type=reset].default:hover,input[type=reset].default:active,button:hover,button:active,.submit-row a.deletelink:hover,.submit-row a.deletelink:active,.submit-row a.cancellink:hover,.submit-row a.cancellink:active {
 	color: #4d1410;
 	border-color: #BBB #888 #888 #BBB;
 }
