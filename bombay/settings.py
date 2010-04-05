@@ -21,6 +21,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.i18n',
     'django.core.context_processors.media',
     'django.core.context_processors.request',
+    'staticmediamgr.context_processor.static_url',
 )
 
 MIDDLEWARE_CLASSES = (

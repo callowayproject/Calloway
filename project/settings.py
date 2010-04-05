@@ -31,7 +31,10 @@ TIME_ZONE = 'America/New_York'
 LANGUAGE_CODE = 'en-us'
 USE_I18N = True
 
-MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'media')
+MEDIA_ROOT = os.path.join(STATIC_ROOT, 'ugc')
+MEDIA_URL = '/media/ugc/'
+STATIC_URL = '/media/'
 
 AUTH_PROFILE_MODULE = ''
 
@@ -45,14 +48,6 @@ TEMPLATE_DIRS = (
 ) + BOMBAY_TEMPLATE_DIRS
 
 CACHE_BACKEND = 'versionedcache.backend://localhost:11211/'
-
-STATIC_MEDIA_COPY_PATHS = (
-    {'from': os.path.join(BOMBAY_ROOT, 'media'), 'to': 'media2'},
-    {'from': 'media', 'to': 'media2'},
-)
-
-STATIC_MEDIA_COMPRESS_CSS = True
-STATIC_MEDIA_COMPRESS_JS = True
 
 INSTALLED_APPS = APPS_CORE + \
     APPS_ADMIN + \
@@ -69,6 +64,20 @@ INSTALLED_APPS = APPS_CORE + \
     APPS_REGISTRATION + \
     APPS_TINYMCE 
 
+ADMIN_TOOLS_THEMING_CSS = os.path.join(STATIC_ROOT, 'admin', 'css', 'theming.css')
+
+TINYMCE_JS_URL = '%sjs/tiny_mce/tiny_mce.js' % STATIC_URL
+
+TINYMCE_JS_ROOT = os.path.join(STATIC_ROOT, 'js/tiny_mce')
+
+STATIC_MEDIA_COPY_PATHS = (
+    {'from': os.path.join(BOMBAY_ROOT, 'media'), 'to': 'media2'},
+    {'from': 'media', 'to': 'media2'},
+)
+
+STATIC_MEDIA_COMPRESS_CSS = False
+STATIC_MEDIA_COMPRESS_JS = False
+STATIC_MEDIA_APP_MEDIA_PATH = os.path.join(PROJECT_ROOT, 'media2')
 
 try:
     from local_settings import *
