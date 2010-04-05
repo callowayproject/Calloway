@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load analytics %}
-{% block site_header %}<div id="masthead"><a href="/"><img src="{{ MEDIA_URL }}/img/effingtontimeslogo.img" height="73" width="529" alt="The Effington Times"></a></div>{% endblock %}
+{% block site_header %}<div id="masthead"><a href="/"><img src="{{ MEDIA_URL }}/images/effingtontimeslogo.png" height="73" width="529" alt="The Effington Times"></a></div>{% endblock %}
 {% block content_nav %}{% endblock %}
 {% block member_opts %}{% if user.is_authenticated %}
 <p>Hello {{ user.first_name }}!</p>
