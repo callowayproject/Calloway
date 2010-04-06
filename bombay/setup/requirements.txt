@@ -29,6 +29,7 @@ django-profiles>=0.2
 -e git+http://github.com/justquick/django-frontendadmin.git#egg=frontendadmin
 -e git+http://github.com/justquick/django-synagg.git#egg=synagg
 -e git+http://opensource.washingtontimes.com/git/public/massmedia.git/#egg=massmedia
+-e git+http://opensource.washingtontimes.com/git/public/viewpoint.git/#egg=viewpoint
   # saxotech + middleware
 
 # search
