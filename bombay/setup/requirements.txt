@@ -85,6 +85,7 @@ feedparser==4.1
 django-uni-form>=0.7
 
 # Media
+sorl-thumbnail
 setup/python-imaging_1.1.6-3.tar.gz
 -e git+http://opensource.washingtontimes.com/git/public/django-staticmediamgr.git/#egg=staticmedia
   # media_utils
