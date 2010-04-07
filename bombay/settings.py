@@ -95,6 +95,7 @@ APPS_STORIES = ( # Suggested: APPS_TINYMCE, APPS_REVERSION
     'stories',
     'positions',
     'news_sitemaps',
+    'viewpoint',
 )
 APPS_CATEGORIES = ( # Requires APPS_MPTT
     'categories',
