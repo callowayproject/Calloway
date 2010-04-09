@@ -215,9 +215,10 @@ input.vDateField+span a:first-child,input.vTimeField+span a:first-child {
 	vertical-align: baseline;
 }
 
-a[id^="calendarlink"] img,a[id^="clocklink"] img {
-	display: none;
+/*a[id^="calendarlink"] img,a[id^="clocklink"] img {
+    display: none;
 }
+*/
 
 a[id^="calendarlink"],a[id^="clocklink"] {
 	margin-right: 0;
@@ -226,21 +227,21 @@ a[id^="calendarlink"],a[id^="clocklink"] {
 }
 
 a[id^="calendarlink"]:link,a[id^="calendarlink"]:visited {
-	background-image: url('../img/icons/icon-calendar.png');
+	background-image: url('../img/admin/icon_calendar.gif');
 }
 
-a[id^="calendarlink"]:hover,a[id^="calendarlink"]:active {
-	background-image: url('../img/icons/icon-calendar-hover.png');
+/*a[id^="calendarlink"]:hover,a[id^="calendarlink"]:active {
+    background-image: url('../img/admin/icon_calendar-hover.gif');
 }
-
+*/
 a[id^="clocklink"]:link,a[id^="clocklink"]:visited {
-	background-image: url('../img/icons/icon-clock.png');
+	background-image: url('../img/admin/icon_clock.gif');
 }
 
-a[id^="clocklink"]:hover,a[id^="clocklink"]:active {
-	background-image: url('../img/icons/icon-clock-hover.png');
+/*a[id^="clocklink"]:hover,a[id^="clocklink"]:active {
+    background-image: url('../img/admin/icon-clock-hover.png');
 }
-
+*/
 .module.calendarbox,.module.clockbox {
 	position: absolute;
 	margin: 5px;
