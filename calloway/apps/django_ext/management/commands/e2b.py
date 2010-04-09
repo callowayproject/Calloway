@@ -2,7 +2,7 @@ import os
 from django.core.management.base import BaseCommand, CommandError
 from django.utils.simplejson import load
 from django.contrib.sites.models import Site
-import bombay
+import calloway
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
@@ -18,7 +18,7 @@ class Command(BaseCommand):
                     self.migrate(attr[8:], *getattr(self, attr)())
 
     def get_fixture(self, name):
-        adir = os.path.join(os.path.dirname(bombay.__file__), 'fixtures')
+        adir = os.path.join(os.path.dirname(calloway.__file__), 'fixtures')
         for f in os.listdir(adir):
             if f.startswith(name):
                 return load(open(os.path.join(adir, f)))

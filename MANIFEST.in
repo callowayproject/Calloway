@@ -1,16 +1,16 @@
 recursive-include doc_src *
 recursive-include docs *
 
-recursive-include bombay/apps/*/templates *.html *.xml
-recursive-include bombay/apps/*/fixtures *.json *.xml
-recursive-include bombay/apps/*/media *
+recursive-include calloway/apps/*/templates *.html *.xml
+recursive-include calloway/apps/*/fixtures *.json *.xml
+recursive-include calloway/apps/*/media *
 
-recursive-include bombay/bin *
-recursive-include bombay/conf *
-recursive-include bombay/fixtures *
-recursive-include bombay/setup *
-recursive-include bombay/media *
-recursive-include bombay/templates *.html *.xml
+recursive-include calloway/bin *
+recursive-include calloway/conf *
+recursive-include calloway/fixtures *
+recursive-include calloway/setup *
+recursive-include calloway/media *
+recursive-include calloway/templates *.html *.xml
 
 prune example
 prune project

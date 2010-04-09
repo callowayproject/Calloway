@@ -94,12 +94,12 @@ package_data = find_package_data(exclude_directories=excluded_directories)
 
 
 setup(
-    name = "Bombay",
-    version = __import__('bombay').get_version().replace(' ', '-'),
-    url = 'http://opensource.washingtontimes.com/projects/bombay/',
+    name = "Calloway",
+    version = __import__('calloway').get_version().replace(' ', '-'),
+    url = 'http://opensource.washingtontimes.com/projects/calloway/',
     author = 'The Washington Times Web Devs',
     author_email = 'webdev@washingtontimes.com',
-    description = 'A news CMS from the Washington Times',
+    description = 'A news website builder from the Washington Times',
     packages = find_packages(),
     package_data=package_data,
     include_package_data = True,
