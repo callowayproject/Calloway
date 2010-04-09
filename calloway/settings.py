@@ -1,7 +1,7 @@
 import os
 import sys
 
-BOMBAY_ROOT = os.path.abspath(os.path.dirname(__file__))
+CALLOWAY_ROOT = os.path.abspath(os.path.dirname(__file__))
 
 SITE_ID = 1
 APPEND_SLASH = True
@@ -53,8 +53,8 @@ AUTHENTICATION_BACKENDS = (
 
 ROOT_URLCONF = 'urls'
 
-BOMBAY_TEMPLATE_DIRS = (
-    os.path.join(BOMBAY_ROOT, 'templates'),
+CALLOWAY_TEMPLATE_DIRS = (
+    os.path.join(CALLOWAY_ROOT, 'templates'),
 )
 
 APPS_CORE = ( # Suggested: APPS_TINYMCE, APPS_REVERSION (for flatpages)
@@ -76,7 +76,7 @@ APPS_ADMIN = (
     'admin_tools.dashboard', # keep me above admin
     'django.contrib.admin',
 )
-APPS_BOMBAY_DEFAULT = (
+APPS_CALLOWAY_DEFAULT = (
     'django_ext',
     'django_memcached',
     'pagination',
@@ -164,7 +164,7 @@ NATIVE_TAGS = (
     'native_tags.contrib.generic_content',
 )
 
-ADMIN_TOOLS_MENU = 'bombay.menu.CustomMenu'
+ADMIN_TOOLS_MENU = 'calloway.menu.CustomMenu'
 
 STORY_RELATION_MODELS = ['massmedia.audio', 'massmedia.image', 'massmedia.document',
     'massmedia.video', 'massmedia.collection', 'stories.story',]

@@ -5,7 +5,7 @@ from django.conf import settings
 
 admin.autodiscover()
 
-handler500 = 'bombay.django_ext.views.custom_server_error'
+handler500 = 'calloway.django_ext.views.custom_server_error'
 
 sitemaps = {
 }
@@ -13,9 +13,9 @@ sitemaps = {
 urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
 )
-from bombay.urls import urlpatterns as bombay_patterns
+from calloway.urls import urlpatterns as calloway_patterns
 
-urlpatterns += bombay_patterns
+urlpatterns += calloway_patterns
 
 if settings.DEBUG:
     urlpatterns += patterns('',

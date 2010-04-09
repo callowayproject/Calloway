@@ -1,17 +1,17 @@
 # Django settings for project project.
 
-import bombay
+import calloway
 import os
 import sys
 
-BOMBAY_ROOT = os.path.abspath(os.path.dirname(bombay.__file__))
-sys.path.insert(0, os.path.join(BOMBAY_ROOT, 'apps'))
+CALLOWAY_ROOT = os.path.abspath(os.path.dirname(calloway.__file__))
+sys.path.insert(0, os.path.join(CALLOWAY_ROOT, 'apps'))
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-from bombay.settings import *
+from calloway.settings import *
 
 ADMINS = (
     ('$$$$NAME$$$$', '$$$$EMAIL_ADDRESS$$$$'),
@@ -45,7 +45,7 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(PROJECT_ROOT, 'templates'),
-) + BOMBAY_TEMPLATE_DIRS
+) + CALLOWAY_TEMPLATE_DIRS
 
 CACHE_BACKEND = 'versionedcache.backend://localhost:11211/'
 
@@ -54,7 +54,7 @@ INSTALLED_APPS = APPS_CORE + \
     APPS_STAFF + \
     APPS_REVERSION + \
     APPS_STORIES + \
-    APPS_BOMBAY_DEFAULT + \
+    APPS_CALLOWAY_DEFAULT + \
     APPS_MPTT + \
     APPS_CATEGORIES + \
     APPS_COMMENT_UTILS + \
@@ -71,7 +71,7 @@ TINYMCE_JS_URL = '%sjs/tiny_mce/tiny_mce.js' % STATIC_URL
 TINYMCE_JS_ROOT = os.path.join(STATIC_ROOT, 'js/tiny_mce')
 
 STATIC_MEDIA_COPY_PATHS = (
-    {'from': os.path.join(BOMBAY_ROOT, 'media'), 'to': 'media2'},
+    {'from': os.path.join(CALLOWAY_ROOT, 'media'), 'to': 'media2'},
     {'from': 'media', 'to': 'media2'},
 )
 

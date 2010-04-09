@@ -4,7 +4,7 @@ from admin_tools.menu.models import *
 
 # to activate your custom menu add the following to your settings.py:
 #
-# ADMIN_TOOLS_MENU = 'bombay.menu.CustomMenu'
+# ADMIN_TOOLS_MENU = 'calloway.menu.CustomMenu'
 class CustomMenu(Menu):
     def __init__(self, **kwargs):
         super(CustomMenu, self).__init__(**kwargs)
