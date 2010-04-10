@@ -1,3 +1,5 @@
+--extra-index-url=http://opensource.washingtontimes.com/pypi/
+
 # API
 django-piston==0.2.2
 
