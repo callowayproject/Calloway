@@ -1,16 +1,9 @@
-# Things im on the fence about
-# -e svn+http://django-openid.googlecode.com/svn/trunk/#egg=django_openid
-# -e svn+http://opensource.washingtontimes.com/projects/public/django-clickpass/trunk/#egg=clickpass
-#   supertagging http://opensource.washingtontimes.com/projects/public/django-supertagging/trunk/supertagging
-#   themes -r37 http://opensource.washingtontimes.com/projects/private/themes/trunk
-# django-pagination==1.0.5
-
 # API
--e hg+http://bitbucket.org/jespern/django-piston/#egg=piston
+django-piston==0.2.2
 
 # User - Management
 -e git+http://opensource.washingtontimes.com/git/public/django-staff.git/#egg=staff
--e git+http://github.com/justquick/django-ban.git#egg=ban
+django-ban
 ipcalc>=0.1
 django-profiles>=0.2
 
@@ -19,32 +12,30 @@ django-profiles>=0.2
 # oauth
 # Facebook
 # other websites
--e hg+http://bitbucket.org/ubernostrum/django-registration/#egg=registration
-
+#-e hg+http://bitbucket.org/ubernostrum/django-registration/#egg=registration
+http://bitbucket.org/ubernostrum/django-registration/downloads/django-registration-0.8-alpha-1.tar.gz
 
 # Content
--e git+http://opensource.washingtontimes.com/git/public/django-stories.git/#egg=stories
--e svn+http://django-robots.googlecode.com/svn/trunk/#egg=robots
--e git+http://github.com/justquick/django-frontendadmin.git#egg=frontendadmin
--e git+http://github.com/justquick/django-synagg.git#egg=synagg
--e git+http://opensource.washingtontimes.com/git/public/massmedia.git/#egg=massmedia
--e git+http://opensource.washingtontimes.com/git/public/viewpoint.git/#egg=viewpoint
-  # saxotech + middleware
+django-stories
+django-robots
+django-frontendadmin
+django-synagg
+django-massmedia
+viewpoint
 
 # search
-  # nsearch
 django-haystack
 
 # Comments
--e git+http://github.com/justquick/django-mptt-comments.git#egg=mptt_comments
+django-mptt-comments
   # markdown?
 
 # Content Helpers
 -e git+http://github.com/justquick/django-native-tags.git#egg=native_tags
 django-pagination==1.0.5
 -e git+http://opensource.washingtontimes.com/git/public/django-kamasutra.git/#egg=positions
--e git+http://github.com/justquick/django-tinymce.git#egg=tinymce
--e git+http://github.com/justquick/django-reversion.git#egg=reversion
+django-tinymce>=1.5.1
+django-reversion==1.2.1
 http://typogrify.googlecode.com/files/typogrify-1.0.tar.gz
 -e svn+http://opensource.washingtontimes.com/projects/public/django-livevalidation/trunk/#egg=livevalidation
 -e git+http://opensource.washingtontimes.com/git/public/offensivecontent.git#egg=offensivecontent
@@ -53,9 +44,9 @@ http://typogrify.googlecode.com/files/typogrify-1.0.tar.gz
   # mobile
 
 # Taxonomies
--e git+http://opensource.washingtontimes.com/git/public/django-categories.git/#egg=categories
--e git+http://github.com/justquick/django-tagging.git#egg=tagging
--e svn+http://django-navbar.googlecode.com/svn/trunk/#egg=navbar
+django-categories
+django-tagging
+django-navbar==0.3.0
 
 # Debugging
 django-debug-toolbar==0.7.0
@@ -69,14 +60,14 @@ django-memcache-status==1.0.1
 -e git+http://github.com/justquick/django-varnish.git#egg=varnishapp
 
 # Misc Libraries
--e svn+http://django-mptt.googlecode.com/svn/trunk/#egg=mptt
+django-mptt==0.3_pre
 django==1.1.1
 simplejson==2.0.9
 django-extensions==0.4.1
 django-admin-tools==0.2
 python-dateutil==1.4.1
-ipython
-BeautifulSoup
+django-mptt>0.2.1
+BeautifulSoup==3.0.8
 lxml
 pytidylib
 django-picklefield==0.1
@@ -90,6 +81,3 @@ setup/python-imaging_1.1.6-3.tar.gz
 -e git+http://opensource.washingtontimes.com/git/public/django-staticmediamgr.git/#egg=staticmedia
   # media_utils
   # gallery_upload
-
-# Database
-# psycopg2
