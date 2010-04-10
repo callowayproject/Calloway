@@ -12,8 +12,6 @@ standard_exclude = ('*.py', '*.pyc', '*~', '.*', '*.bak')
 standard_exclude_directories = ('.*', 'CVS', '_darcs', './build',
                                 './dist', 'EGG-INFO', '*.egg-info')
 
-try:
-    reqs = read('requirements.txt')
 # Copied from paste/util/finddata.py
 def find_package_data(where='.', package='', exclude=standard_exclude,
         exclude_directories=standard_exclude_directories,
