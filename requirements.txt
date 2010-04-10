@@ -1,0 +1,85 @@
+--extra-index-url=http://opensource.washingtontimes.com/pypi/
+
+# API
+django-piston==0.2.2
+
+# User - Management
+-e git+http://opensource.washingtontimes.com/git/public/django-staff.git/#egg=staff
+django-ban
+ipcalc>=0.1
+django-profiles>=0.2
+
+# Authentication
+# openid
+# oauth
+# Facebook
+# other websites
+#-e hg+http://bitbucket.org/ubernostrum/django-registration/#egg=registration
+http://bitbucket.org/ubernostrum/django-registration/downloads/django-registration-0.8-alpha-1.tar.gz
+
+# Content
+django-stories
+django-robots
+django-frontendadmin
+django-synagg
+django-massmedia
+viewpoint
+
+# search
+django-haystack
+
+# Comments
+django-mptt-comments
+  # markdown?
+
+# Content Helpers
+-e git+http://github.com/justquick/django-native-tags.git#egg=native_tags
+django-pagination==1.0.5
+-e git+http://opensource.washingtontimes.com/git/public/django-kamasutra.git/#egg=positions
+django-tinymce>=1.5.1
+django-reversion==1.2.1
+http://typogrify.googlecode.com/files/typogrify-1.0.tar.gz
+-e svn+http://opensource.washingtontimes.com/projects/public/django-livevalidation/trunk/#egg=livevalidation
+-e git+http://opensource.washingtontimes.com/git/public/offensivecontent.git#egg=offensivecontent
+-e git+http://opensource.washingtontimes.com/git/public/django-news-sitemaps.git/#egg=news_sitemaps
+  # rss
+  # mobile
+
+# Taxonomies
+django-categories
+django-tagging
+django-navbar==0.3.0
+
+# Debugging
+django-debug-toolbar==0.7.0
+-e git+http://github.com/justquick/django-logjam.git#egg=logjam
+
+# Caching
+python-memcached==1.44
+django-memcache-status==1.0.1
+-e git+http://github.com/ella/django-versionedcache.git#egg=versionedcache
+-e git+http://github.com/justquick/python-varnish.git#egg=varnish
+-e git+http://github.com/justquick/django-varnish.git#egg=varnishapp
+
+# Misc Libraries
+django-mptt==0.3_pre
+django==1.1.1
+simplejson==2.0.9
+django-extensions==0.4.1
+django-admin-tools==0.2
+python-dateutil==1.4.1
+django-mptt>0.2.1
+BeautifulSoup==3.0.8
+lxml
+pytidylib
+django-picklefield==0.1
+feedparser==4.1
+-e git+http://github.com/clintecker/django-google-analytics.git#egg=google_analytics
+django-uni-form>=0.7
+
+# Media
+sorl-thumbnail
+setup/python-imaging_1.1.6-3.tar.gz
+-e git+http://opensource.washingtontimes.com/git/public/django-staticmediamgr.git/#egg=staticmedia
+  # media_utils
+  # gallery_upload

@@ -1,5 +1,4 @@
 import os, sys
-from distutils.core import setup
 from fnmatch import fnmatchcase
 from distutils.util import convert_path
 from setuptools import setup, find_packages
@@ -12,7 +11,7 @@ def read(*path):
 standard_exclude = ('*.py', '*.pyc', '*~', '.*', '*.bak')
 standard_exclude_directories = ('.*', 'CVS', '_darcs', './build',
                                 './dist', 'EGG-INFO', '*.egg-info')
- 
+
 # Copied from paste/util/finddata.py
 def find_package_data(where='.', package='', exclude=standard_exclude,
         exclude_directories=standard_exclude_directories,
@@ -94,7 +93,7 @@ package_data = find_package_data(exclude_directories=excluded_directories)
 
 
 setup(
-    name = "Calloway",
+    name = "calloway",
     version = __import__('calloway').get_version().replace(' ', '-'),
     url = 'http://opensource.washingtontimes.com/projects/calloway/',
     author = 'The Washington Times Web Devs',
