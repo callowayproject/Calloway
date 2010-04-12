@@ -33,11 +33,12 @@ class Command(BaseCommand):
                 if new in filters:
                     value = filters[new](value)
                 kw[new] = value
-            new_objs.append(model.objects.create(**kw))
+            new_objs.append(model.objects.get_or_create(**kw)[0])
         return new_objs
     
     def migrate_stories(self):
         from stories.models import Story
+        from categories.models import Category
         
         return Story, {
                 'headline': 'headline',
@@ -49,6 +50,7 @@ class Command(BaseCommand):
                 'publish_date': lambda v: v.split()[0],
                 'site': lambda v: Site.objects.get_current(),
             },{
-                'status':4
+                'status':4,
+                'primary_category': Category.objects.get_or_create(name='Uncategoriezed')[0]
             }
         
