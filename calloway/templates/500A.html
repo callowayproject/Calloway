@@ -1,0 +1,8 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+	<h1>There was a problem with your request. Please try again later.</h1>
+	{% if trace %}
+		<div style="border:1px solid #DFDFDF; padding:5px; background-color:#EFEFEF;">{{ trace|linebreaks }}</div>
+	{% endif %}
+{% endblock %}
