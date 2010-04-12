@@ -36,7 +36,7 @@ django-mptt-comments
 -e git+http://github.com/justquick/django-native-tags.git#egg=native_tags
 django-pagination==1.0.5
 -e git+http://opensource.washingtontimes.com/git/public/django-kamasutra.git/#egg=positions
-django-tinymce>=1.5.1
+django-tinymce==1.5.1beta1
 django-reversion==1.2.1
 http://typogrify.googlecode.com/files/typogrify-1.0.tar.gz
 -e svn+http://opensource.washingtontimes.com/projects/public/django-livevalidation/trunk/#egg=livevalidation
@@ -62,14 +62,13 @@ django-memcache-status==1.0.1
 -e git+http://github.com/justquick/django-varnish.git#egg=varnishapp
 
 # Misc Libraries
-django-mptt==0.3_pre
+django-mptt==0.3-pre
 django==1.1.1
 simplejson==2.0.9
 django-extensions==0.4.1
 django-admin-tools==0.2
 python-dateutil==1.4.1
-django-mptt>0.2.1
-BeautifulSoup==3.0.8
+BeautifulSoup
 lxml
 pytidylib
 django-picklefield==0.1
