@@ -25,6 +25,7 @@ django-synagg
 django-massmedia
 viewpoint
 -e git+http://opensource.washingtontimes.com/git/public/pollit.git#egg=pollit
+-e git+http://opensource.washingtontimes.com/git/public/pullquote.git#egg=pullquote
 
 # search
 django-haystack
