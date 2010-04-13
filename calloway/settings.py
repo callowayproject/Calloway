@@ -104,6 +104,7 @@ APPS_CATEGORIES = ( # Requires APPS_MPTT
 APPS_COMMENT_UTILS = ( # Requires APPS_MPTT
     'mptt_comments',
     'offensivecontent',
+    'pollit',
 )
 APPS_FRONTEND_ADMIN = (
     'livevalidation',
