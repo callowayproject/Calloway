@@ -96,6 +96,7 @@ APPS_STORIES = ( # Suggested: APPS_TINYMCE, APPS_REVERSION
     'positions',
     'news_sitemaps',
     'viewpoint',
+    'pullquote',
 )
 APPS_CATEGORIES = ( # Requires APPS_MPTT
     'categories',
@@ -104,6 +105,7 @@ APPS_CATEGORIES = ( # Requires APPS_MPTT
 APPS_COMMENT_UTILS = ( # Requires APPS_MPTT
     'mptt_comments',
     'offensivecontent',
+    'pollit',
 )
 APPS_FRONTEND_ADMIN = (
     'livevalidation',
