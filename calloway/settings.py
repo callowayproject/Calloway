@@ -170,5 +170,5 @@ NATIVE_TAGS = (
 ADMIN_TOOLS_MENU = 'calloway.menu.CustomMenu'
 
 STORY_RELATION_MODELS = ['massmedia.audio', 'massmedia.image', 'massmedia.document',
-    'massmedia.video', 'massmedia.collection', 'stories.story',]
+    'massmedia.video', 'massmedia.collection', 'stories.story','viewpoint.entry','viewpoint.blog','pullquote.quote',]
 
