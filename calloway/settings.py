@@ -126,6 +126,7 @@ APPS_UTILS = (
     'google_analytics',
     'navbar',
     'synagg',
+    'critic',
 )
 APPS_REGISTRATION = (
     'registration',
