@@ -16,17 +16,23 @@ from registration.models import RegistrationProfile
 from registration.backends.default import DefaultBackend
 from forms import EmailRegistrationForm
 
-class EmailAuthenticationBackend(ModelBackend):
+class EmailOrUserNameAuthenticationBackend(ModelBackend):
     """
-    Authenticates a user against a email address.
+    Authenticates a user against a username or email address.
     """
     def authenticate(self, username=None, password=None):
         try:
-            user = User.objects.get(email=username.lower())
-            return super(EmailAuthenticationBackend, self).authenticate(user.username, password)
+            user = User.objects.get(username=username)
+            if user.check_password(password):
+                return user
         except User.DoesNotExist:
-            return None
-    
+            try:
+                user = User.objects.get(email__iexact=username)
+                if user.check_password(password):
+                    return user
+            except User.DoesNotExist:
+                return None
+        return None
 
 
 class EmailBackend(DefaultBackend):
