@@ -1,412 +1,229 @@
 [
-  {
-    "pk": 408285, 
-    "model": "news.story", 
-    "fields": {
-      "origin": 4, 
-      "subhead": "", 
-      "print_page": null, 
-      "tease_photo": "", 
-      "default_framing": null, 
-      "themes": "", 
-      "print_edition": null, 
-      "lead_photo_has_headline": false, 
-      "primary_category": 2, 
-      "update_date": "2010-01-26 09:47:44", 
-      "story": "<story>\r\n\r\n<inline type=\"photo\" id=\"69297\" align=\"left\" />\r\n\r\n<p><![CDATA[\r\nPARIS (AP) -- A parliamentary panel that wants Muslim women to stop veiling their faces recommended Tuesday that France ban such garb in public facilities, including hospitals and mass transit, and a leading panel member said he foresees such an interdiction by the end of 2010.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe nearly 200-page report contains a panoply of measures intended to dissuade women from wearing all-enveloping veils in France. It also recommends refusing residence cards and citizenship to anyone with visible signs of a \"radical religious practice.\"\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nHowever, there is no call to outlaw such garments -- worn by a tiny minority of Muslims -- in private areas and in the street. A full ban was the major issue that divided the 32-member, multiparty panel which ultimately heeded warnings that a full ban risked being deemed unconstitutional and could even cause trouble in a country where Islam is the second-largest religion.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe report, which culminates six months of hearings, was formally presented to the president of the National Assembly, the lower house, Bernard Accoyer, and made public.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nConservative lawmaker Eric Raoult, the panel's No. 2 member, said later that he foresaw a limited ban in the public sector \"before the end of the year.\"\r\n]]></p>\r\n\r\n<p><![CDATA[\r\n\"We need maybe six months or a little more to explain what we want,\" he told The Associated Press, adding that \"by the end of 2010\" there could be such an interdiction.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nAccoyer was more vague but told a news conference that \"we can certainly find solutions in a brief time.\"\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nUniversities, hospitals, public transport and post offices would be among areas included in a limited ban on the all-encompassing veil.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nAs envisaged by the panel, such a ban would require that people show their faces when entering the facility and \"keep the face uncovered throughout their presence,\" the report says.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nFailure to do so would result \"in a refusal to deliver the service demanded.\" That means, for instance, that a woman seeking state funds commonly accorded to mothers would walk away empty-handed.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nA parliamentary resolution condemning such garb, with no legal weight and the easiest measure to pass, would be likely to precede concrete initiatives.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe veil is widely viewed in France as a gateway to extremism, an insult to gender equality and an offense to France's secular foundation. A 2004 French law bans Muslim headscarves from primary and secondary school classrooms.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe language in the report was carefully chosen in an effort to avoid offending France's estimated 5 million Muslims -- the largest such population in western Europe -- and accusations of discrimination. Muslim leaders have already complained that the debate over the full veil coupled with an ongoing debate on French national identity has left some Muslims feeling their religion is becoming a government target.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe panel went to work, taking testimony from more than 200 experts and others, after President Nicolas Sarkozy said in June that veils that hide the face are \"not welcome\" on French territory.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nSuch veils are thought to be worn by only several thousand Muslim women who, most often, pin a \"niqab\" across their faces, hiding all but the eyes. Worn with a long, dark robe, such clothing is customarily associated with Saudi Arabia and the Gulf states.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe report puts an emphasis on educating women who wear the robes in France about the rules of the Republic.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nAny action on the report would not come before March regional elections.\r\n]]></p>\r\n\r\n</story>", 
-      "print_headline": "", 
-      "headline": "French report wants limits on Muslim face veil", 
-      "dateline": null, 
-      "sites": [
-        1
-      ], 
-      "categories": [
-        26, 
-        1, 
-        249, 
-        2
-      ], 
-      "status": 1, 
-      "lead_photo": null, 
-      "kicker": "", 
-      "print_section": null, 
-      "one_off_byline": "Elaine Ganley ASSOCIATED PRESS", 
-      "bylines": [], 
-      "pub_date": "2010-01-26 09:45:33", 
-      "slug": "french-report-wants-limits-muslim-face-veil", 
-      "comment_status": 3, 
-      "tease": "A parliamentary panel that wants Muslim women to stop veiling their faces recommended Tuesday that France ban such garb in public facilities, including hospitals and mass transit.", 
-      "post_story_blurb": "", 
-      "publish_date": null, 
-      "pre_story_blurb": ""
-    }
-  }, 
-  {
-    "pk": 408284, 
-    "model": "news.story", 
-    "fields": {
-      "origin": 4, 
-      "subhead": "", 
-      "print_page": null, 
-      "tease_photo": "", 
-      "default_framing": null, 
-      "themes": "", 
-      "print_edition": null, 
-      "lead_photo_has_headline": false, 
-      "primary_category": 4, 
-      "update_date": "2010-01-26 09:41:57", 
-      "story": "<story>\r\n\r\n<inline type=\"photo\" id=\"69286\" align=\"left\" />\r\n\r\n<p><![CDATA[\r\nOfficials at the Smithsonian Institution said Monday that a popular young giant panda will leave Washington's National Zoo on Feb. 4 for China.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nSmithsonian Secretary Wayne Clough said Tai Shan would travel by FedEx to China, along with 3-year-old female panda Mei Lan from Zoo Atlanta.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nZoo officials announced in December that Tai Shan would be sent to China for breeding. He has been one of the biggest attractions at the zoo since his birth in 2005, but he is property of China.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nTai Shan's parents, Mei Xiang and Tian Tian are on a 10-year, $10 million loan that expires in December.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe last full day for visitors to see Tai Shan will be Feb. 3.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nChina lends pandas to four U.S. zoos -- in Atlanta, Washington, San Diego and Memphis, Tenn.\r\n]]></p>\r\n\r\n</story>", 
-      "print_headline": "", 
-      "headline": "Panda set to leave National Zoo", 
-      "dateline": null, 
-      "sites": [
-        1
-      ], 
-      "categories": [
-        1, 
-        4, 
-        3, 
-        2
-      ], 
-      "status": 1, 
-      "lead_photo": null, 
-      "kicker": "", 
-      "print_section": null, 
-      "one_off_byline": "Brett Zongker ASSOCIATED PRESS", 
-      "bylines": [], 
-      "pub_date": "2010-01-26 09:39:26", 
-      "slug": "panda-set-leave-national-zoo", 
-      "comment_status": 3, 
-      "tease": "Officials at the Smithsonian Institution said Monday that a popular young giant panda will leave Washington's National Zoo on Feb. 4 for China.", 
-      "post_story_blurb": "", 
-      "publish_date": null, 
-      "pre_story_blurb": ""
-    }
-  }, 
-  {
-    "pk": 408283, 
-    "model": "news.story", 
-    "fields": {
-      "origin": 4, 
-      "subhead": "", 
-      "print_page": null, 
-      "tease_photo": "", 
-      "default_framing": null, 
-      "themes": "", 
-      "print_edition": null, 
-      "lead_photo_has_headline": false, 
-      "primary_category": 4, 
-      "update_date": "2010-01-26 09:34:46", 
-      "story": "<story>\r\n\r\n<inline type=\"photo\" id=\"69296\" align=\"left\" />\r\n\r\n<p><![CDATA[\r\nRICHMOND -- Gov. Robert F. McDonnell has written some of the job-creation plans he unveiled in a speech a week ago into legislation that a Republican, a Democrat and an independent will sponsor.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nMr. McDonnell said in a press release late Monday afternoon that he will boost job-development program spending by about $50 million a year. He said he would offset the spending with cuts, a windfall from the state tax amnesty program, and savings from higher employee contributions to pension plans for new state workers.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nMonday's announcement mostly restated key points the newly inaugurated Republican governor made in his first State of the Commonwealth speech on Jan. 18 to a joint session of the General Assembly.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nAmong other things, the legislation would boost a governor's office fund for luring companies to Virginia by $12 million next year over what Democratic former Gov. Tim Kaine proposed in the budget he submitted last month.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nIt appropriates $2 million to open Virginia trade offices in China, India and the United Kingdom; boosts Virginia Tourism Corp. funding by $3.6 million; and adds $2 million to a fund to entice Hollywood to shoot movies in the state.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nTo pay for it, Mr. McDonnell proposes using $21 million the state netted from its tax amnesty program, savings of about $25 million from a requirement that new state hires pay a share into their pensions, and spending cuts. Many of those measures were in Mr. Kaine's proposed budget.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nState Sens. Chuck Colgan, a Democrat, and William Wampler, a Republican, will be the bill's Senate patrons, and conservative independent Lacey Putney of Bedford, chairman of the House Appropriations Committee, will introduce it in the House.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe changes are an effort by Mr. McDonnell to make good on the central pledge of his successful gubernatorial campaign: creating jobs at a time when Virginia's unemployment rate has more than doubled to nearly 7 percent. And he has to make the changes as he and the General Assembly reconcile a $4 billion revenue shortfall over the next two years.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\n\"The budget that I have inherited is dire, and it is unbalanced. We begin with nearly a billion dollar annual shortfall based on tax hike proposals that both parties have rejected. More spending cuts must be made,\" Mr. McDonnell said in the release.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nBut it would be even more costly, he reasoned, not to invest now in creating new jobs.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nMr. Kaine's budget may have been dire, and it was unpalatable to Republicans and many Democrats. But it was balanced, chiefly by cutting the $950 million annual cash payment the state made to cities and counties as reimbursement for revenue lost to the 12-year-old phaseout of the local tax on personal automobiles.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nA separate $1 billion-a-year income-tax increase Mr. Kaine proposed would have gone to local governments in return for the discontinued annual reimbursements. That bill, however, died last week in the House, with Democrats and Republicans both voting unanimously to kill it.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nInitial Democratic reaction to Monday's late-day press release was guarded but favorable.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nDelegate Ward L. Armstrong, Henry County Democrat, who is his party's leader in the House of Delegates, said he wasn't troubled that the Senate's senior Democrat was a co-sponsor for the GOP governor's first major budget legislation.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\n\"It gives me some level of comfort,\" Mr. Armstrong said.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nHe agreed with many of the ideas Mr. McDonnell offered, he said, including capturing savings and windfalls and targeted cuts. He was less charitable toward the proposal to boost employee contributions to the Virginia Retirement System.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\n\"You're looking at contributions from state employees, and they haven't had a raise. Clearly it eats into their income if they have to contribute more,\" Mr. Armstrong said.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nMr. Colgan, reached by telephone to discuss the legislation Monday night, said he could not speak and hung up.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nMr. McDonnell, Republican Lt. Gov. Bill Bolling and other senior administration officials plan to elaborate on the legislative package at a Tuesday news conference. Mr. McDonnell has given Mr. Bolling the duty of acting as the state's \"chief jobs-creation officer\" during his four-year term.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\n<em>Associated Press writer Larry O'Dell contributed to this report.</em>\r\n]]></p>\r\n\r\n</story>", 
-      "print_headline": "", 
-      "headline": "McDonnell plans to shift cash to jobs incentives", 
-      "dateline": null, 
-      "sites": [
-        1
-      ], 
-      "categories": [
-        1, 
-        4, 
-        5
-      ], 
-      "status": 1, 
-      "lead_photo": null, 
-      "kicker": "", 
-      "print_section": null, 
-      "one_off_byline": "Bob Lewis ASSOCIATED PRESS", 
-      "bylines": [], 
-      "pub_date": "2010-01-26 09:33:44", 
-      "slug": "mcdonnell-plans-shift-cash-jobs-incentives", 
-      "comment_status": 3, 
-      "tease": "Gov. Robert F. McDonnell has written some of the job-creation plans he unveiled in a speech a week ago into legislation that a Republican, a Democrat and an independent will sponsor.", 
-      "post_story_blurb": "", 
-      "publish_date": null, 
-      "pre_story_blurb": ""
-    }
-  }, 
-  {
-    "pk": 408282, 
-    "model": "news.story", 
-    "fields": {
-      "origin": 4, 
-      "subhead": "", 
-      "print_page": null, 
-      "tease_photo": "", 
-      "default_framing": null, 
-      "themes": "", 
-      "print_edition": null, 
-      "lead_photo_has_headline": false, 
-      "primary_category": 4, 
-      "update_date": "2010-01-26 09:22:38", 
-      "story": "<story>\r\n\r\n<p><![CDATA[\r\nAuthorities reopened a stretch of Georgia Avenue in Wheaton after being unable to identify the source of an odor in the area on Monday.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nCounty fire department spokesman Capt. Oscar Garcia said a manhole cover somehow crashed through the windshield of a car, striking the motorist on Monday afternoon. The driver was hospitalized with traumatic injuries.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nPolice who responded to that incident reported an unidentifiable odor in the area. As hazmat crews and utility companies investigated, they shut down Georgia Avenue between Plyers Mill Road and Dennis Avenue. Capt. Garcia said two of the three lanes would be reopened.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nCapt. Garcia said crews could not identify the source of the odor. Some residents in the area were evacuated as a precaution.\r\n]]></p>\r\n\r\n</story>", 
-      "print_headline": "", 
-      "headline": "Crews investigate Montgomery Co. odor", 
-      "dateline": null, 
-      "sites": [
-        1
-      ], 
-      "categories": [
-        4
-      ], 
-      "status": 1, 
-      "lead_photo": null, 
-      "kicker": "", 
-      "print_section": null, 
-      "one_off_byline": "ASSOCIATED PRESS", 
-      "bylines": [], 
-      "pub_date": "2010-01-26 09:20:01", 
-      "slug": "crews-investigate-montgomery-co-odor", 
-      "comment_status": 3, 
-      "tease": "Authorities said reopened a stretch of Georgia Avenue in Wheaton after being unable to identify the source of an odor in the area.\r\n\r\n", 
-      "post_story_blurb": "", 
-      "publish_date": null, 
-      "pre_story_blurb": ""
-    }
-  }, 
-  {
-    "pk": 408281, 
-    "model": "news.story", 
-    "fields": {
-      "origin": 4, 
-      "subhead": "", 
-      "print_page": null, 
-      "tease_photo": "", 
-      "default_framing": null, 
-      "themes": "", 
-      "print_edition": null, 
-      "lead_photo_has_headline": false, 
-      "primary_category": 5, 
-      "update_date": "2010-01-26 09:38:51", 
-      "story": "<story>\r\n\r\n<inline type=\"photo\" id=\"69295\" align=\"left\" />\r\n\r\n<p><![CDATA[\r\nWASHINGTON (AP) -- The Senate is likely to reject a White House-backed plan to establish a bipartisan task force to recommend steps to curb the deficit, even as lawmakers digest the news that President Barack Obama wants a three-year freeze in the domestic budgets they control.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nFresh numbers arriving Tuesday morning from the Congressional Budget Office are expected to bring continued bad news on the deficit, keeping the pressure on Obama and congressional Democrats to demonstrate they're serious about taking on the flood of red ink.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe spending freeze, expected to be proposed by Obama during the State of the Union address on Wednesday, would apply to a relatively small portion of the federal budget, affecting a $477 billion pot of money available for domestic agencies whose budgets are approved by Congress each year. Some of those agencies could get increases, others would have to face cuts; such programs got an almost 10 percent increase this year. The federal budget total was $3.5 trillion.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe freeze on so-called discretionary programs would have only a modest impact on a deficit expected to match last year's $1.4 trillion. The steps needed to really tackle the deficit include tax increases and curbs on benefit programs like Medicare, Medicaid and Social Security.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThat's the idea driving the Obama-backed plan to create a special task force to come up with a plan to curb the spiraling budget deficit. But the Senate sponsors of the plan say it's attracted too much opposition from the right and left to prevail.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nRepublicans say the panel -- it would try to develop a deficit reduction blueprint after the November elections for a vote before the new Congress convenes -- would lead to big tax hikes. Democratic opponents say they don't want to vote on proposals to cut benefit programs like Social Security without being able to shape the plan.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nObama's three-year spending freeze will be part of the budget Obama will submit Feb. 1, senior administration officials said, commenting on condition of anonymity to reveal unpublished details.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nIt's likely to confront opposition on Capitol Hill, where a handful of powerful lawmakers write 12 annual appropriations bills. They've gotten used to hefty increases but now are being asked to tighten their belts. House Appropriations Committee Chairman David Obey, D-Wis., declined to comment, his spokesman said.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe Pentagon, veterans programs, foreign aid and the Homeland Security Department would be exempt from the freeze.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe savings would be small at first, perhaps $10 billion to $15 billion, one official said. But over the coming decade, savings would add up to $250 billion.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe White House is under considerable pressure to cut deficits -- the red ink hit a record $1.4 trillion this year -- or at least keep them from growing. Encouraged by last week's Massachusetts Senate victory, Republicans are hitting hard on the issue, and polls show voters increasingly concerned.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nSen. John McCain, who lost to Obama in last year's presidential election, said he supports any attempt to cut discretionary domestic spending. \"We need to do so,\" he said Tuesday.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nBut in an appearance on ABC's \"Good Morning America,\" the Arizona Republican said Obama \"has got to veto bills that are laden with pork-barrel spending, earmarks.\"\r\n]]></p>\r\n\r\n</story>", 
-      "print_headline": "", 
-      "headline": "Senate likely to nix idea of deficit task force", 
-      "dateline": null, 
-      "sites": [
-        1
-      ], 
-      "categories": [
-        1, 
-        7, 
-        278, 
-        249, 
-        5
-      ], 
-      "status": 1, 
-      "lead_photo": null, 
-      "kicker": "", 
-      "print_section": null, 
-      "one_off_byline": "Andrew Taylor ASSOCIATED PRESS", 
-      "bylines": [], 
-      "pub_date": "2010-01-26 09:08:09", 
-      "slug": "senate-likely-reject-idea-deficit-task-force", 
-      "comment_status": 3, 
-      "tease": "The Senate is likely to reject a White House-backed plan to establish a bipartisan task force to recommend steps to curb the deficit, even as lawmakers digest the news that President Barack Obama wants a three-year freeze in the domestic budgets they control.", 
-      "post_story_blurb": "", 
-      "publish_date": null, 
-      "pre_story_blurb": ""
-    }
-  }, 
-  {
-    "pk": 408280, 
-    "model": "news.story", 
-    "fields": {
-      "origin": 4, 
-      "subhead": "", 
-      "print_page": null, 
-      "tease_photo": "", 
-      "default_framing": null, 
-      "themes": "", 
-      "print_edition": null, 
-      "lead_photo_has_headline": false, 
-      "primary_category": 6, 
-      "update_date": "2010-01-26 09:07:57", 
-      "story": "<story>\r\n\r\n<inline type=\"photo\" id=\"69294\" align=\"left\" />\r\n\r\n<p><![CDATA[\r\nSEOUL -- North Korea issued two no-sail zones near its disputed western sea border with South Korea, officials said Tuesday, a possible indication the country may be preparing to conduct missile tests.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe no-sail zones were designated just south of the western maritime border -- in South Korean-held waters -- from Monday through March 29, said a South Korean Defense Ministry official on condition of anonymity, citing department policy.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe YTN television network cited a military official as saying that the North designated the no-sail zones possibly to conduct missile tests or other military action.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nSouth Korea was trying to find out why the North made the no-sail-zone announcement. Pyongyang did the same in the past before carrying out missile tests and military maneuvers, the Defense Ministry official said. The North also has issued no-sail zones if bad weather was expected.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nOne of the zones is where navy ships from the two Koreas fought a brief yet bloody gunbattle in November that left one North Korean sailor dead and three others wounded, according to the Yonhap news agency. The Defense Ministry said it couldn't confirm the report.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe disputed sea border, drawn by the U.N. Command at the end of the Korean War, is a constant source of military tension between the Koreas, with Pyongyang insisting the line should be redrawn further south. The dispute also led to bloody naval skirmishes in 1999 and 2002.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nNorth Korea has sent mixed signals to the South recently. Pyongyang offered talks on restarting stalled joint-tour programs and a joint industrial complex in the North earlier this month.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nBut the communist North also has escalated its rhetoric with the powerful National Defense Commission threatening to attack the South and break off all dialogue over a reported South Korea contingency plan to handle turmoil in the North.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe two Koreas are still technically at war because their 1950-53 Korean War ended with an armistice, not a peace treaty.\r\n]]></p>\r\n\r\n</story>", 
-      "print_headline": "", 
-      "headline": "Report: N. Korea may be readying missile launch", 
-      "dateline": null, 
-      "sites": [
-        1
-      ], 
-      "categories": [
-        1, 
-        6, 
-        2
-      ], 
-      "status": 1, 
-      "lead_photo": null, 
-      "kicker": "", 
-      "print_section": null, 
-      "one_off_byline": "Hyung-jin Kim ASSOCIATED PRESS", 
-      "bylines": [], 
-      "pub_date": "2010-01-26 09:06:24", 
-      "slug": "report-n-korea-may-be-readying-missile-launch", 
-      "comment_status": 3, 
-      "tease": "North Korea issued two no-sail zones near its disputed western sea border with South Korea, officials said Tuesday, a possible indication the country may be preparing to conduct missile tests.", 
-      "post_story_blurb": "", 
-      "publish_date": null, 
-      "pre_story_blurb": ""
-    }
-  }, 
-  {
-    "pk": 408279, 
-    "model": "news.story", 
-    "fields": {
-      "origin": 4, 
-      "subhead": "", 
-      "print_page": null, 
-      "tease_photo": "", 
-      "default_framing": null, 
-      "themes": "", 
-      "print_edition": null, 
-      "lead_photo_has_headline": false, 
-      "primary_category": 6, 
-      "update_date": "2010-01-26 08:43:10", 
-      "story": "<story>\r\n\r\n<p><![CDATA[\r\nKABUL, Afghanistan -- A Taliban suicide car bomber struck near a military base in Afghanistan's capital Tuesday, wounding at least six people, Afghan and NATO officials said.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe militant group claimed responsibility for the attack in a text message to the Associated Press from a phone number commonly used by the insurgent group. The target was an international military convoy, the extremist group said.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nAn AP reporter at the scene saw the wreckage of a vehicle from afar. U.S. soldiers had blocked off access to the site right outside Camp Phoenix, an American base inside Kabul.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe attacker was driving a minibus laden with explosives that wounded at least six Afghan civilians when it went off, said Jamil Jumbish, the head of Afghanistan's criminal investigation unit. Mr. Jumbish said he had no reports of deaths but added that he did not know if there were any casualties among NATO forces.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nNATO forces confirmed an explosion about 5 p.m. local time outside the main gate of Camp Phoenix. A statement issued by the international military coalition said initial reports indicated it was a vehicle-born bomb but did not give further details.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nLt. Nico Melendez, a NATO spokesman, said he did not yet have reports of injuries.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe strike follows on a bold attack last week by Taliban militants on government buildings in the heart of Kabul. The Jan. 18 attack paralyzed the city for hours and left five civilians and Afghan security forces dead, along with the seven assailants.\r\n]]></p>\r\n\r\n</story>", 
-      "print_headline": "", 
-      "headline": "Bomb wounds 6 near U.S. base in Kabul", 
-      "dateline": null, 
-      "sites": [
-        1
-      ], 
-      "categories": [
-        1, 
-        249, 
-        6, 
-        2
-      ], 
-      "status": 1, 
-      "lead_photo": null, 
-      "kicker": "", 
-      "print_section": null, 
-      "one_off_byline": "ASSOCIATED PRESS", 
-      "bylines": [], 
-      "pub_date": "2010-01-26 08:41:36", 
-      "slug": "bomb-wounds-6-near-us-base-kabul", 
-      "comment_status": 3, 
-      "tease": "A Taliban suicide car bomber struck near a military base in Afghanistan's capital Tuesday, wounding at least six people, Afghan and NATO officials said.", 
-      "post_story_blurb": "", 
-      "publish_date": null, 
-      "pre_story_blurb": ""
-    }
-  }, 
-  {
-    "pk": 408278, 
-    "model": "news.story", 
-    "fields": {
-      "origin": 4, 
-      "subhead": "", 
-      "print_page": null, 
-      "tease_photo": "", 
-      "default_framing": null, 
-      "themes": "", 
-      "print_edition": null, 
-      "lead_photo_has_headline": false, 
-      "primary_category": 2, 
-      "update_date": "2010-01-26 08:32:27", 
-      "story": "<story>\r\n\r\n<inline type=\"photo\" id=\"69293\" align=\"left\" />\r\n\r\n<p><![CDATA[\r\nBEIRUT -- The pilot of an Ethiopian Airlines plane that crashed into the sea flew in the opposite direction from the path recommended by the control tower after taking off from Beirut in thunderstorms, Lebanon's transportation minister said Tuesday.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nAll 90 people on board were feared dead after the plane went down in flames minutes after takeoff at around 2:30 a.m. Monday, during a night of lightning and thunderstorms.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nTransportation Minister Ghazi Aridi said the pilot initially followed the tower's guidance but then abruptly changed course and went in the opposite direction.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\n\"They asked him to correct his path, but he did a very fast and strange turn before disappearing completely from the radar,\" Mr. Aridi told the Associated Press.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nIt was not immediately clear why the pilot veered off the recommended path. Like most other airliners, the Boeing 737 is equipped with its own onboard weather radar, which the pilot may have used to avoid flying into thunderheads rather than following the flight tower's recommendation.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\n\"Nobody is saying the pilot is to blame for not heeding orders,\" Mr. Aridi said. \"There could have been many reasons for what happened. . . . Only the black box can tell.\"\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nLebanese officials have ruled out terrorism or \"sabotage\" on the flight bound for the Ethiopian capital, Addis Ababa.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nNo survivors had been found more than 24 hours after the crash. Emergency workers have pulled bodies from the sea; the numbers reported so far range from a dozen to more than 20.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nEthiopian Airlines CEO Girma Wake said Tuesday some bodies were probably still in the plane.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\n\"We hope they will find trapped bodies in the fuselage,\" Mr. Wake said in Addis Ababa.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nSearchers were trying to find the plane's black box and flight data recorder, which are critical to determining the cause of the crash.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nOn Tuesday, rescue teams and equipment sent from the United Nations and countries including the United States and Cyprus were helping in the search. Conditions were chilly but relatively clear -- far better than Monday, when rain lashed the coast.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nPieces of the plane and other debris were washing ashore, and emergency crews pulled a large piece of the plane, about 3 feet long, from the water. A crew member, Safi Sultaneh, identified it as a piece of a wing.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nAn aviation analyst familiar with the investigation said Beirut air traffic control was guiding the Ethiopian flight through the thunderstorms for the first two to three minutes of its flight.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe official, who asked not to be identified because of the sensitivity of the matter, said this was standard procedure by Lebanese controllers to assist airliners departing from the airport in poor weather conditions.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nIt is unclear exactly what happened in the last two minutes of flight, the official said.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nPatrick Smith, a U.S.-based airline pilot and aviation writer, said there were many possible causes for the crash.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\n\"Had the plane encountered extreme turbulence, or had it suffered a powerful lightning strike that knocked out instruments while penetrating strong turbulence, then structural failure or loss of control, followed by an in-flight breakup, are possible causes.\"\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nEthiopian Airlines said late Monday that the pilot had more than 20 years of experience. It did not give the pilot's name or details of other aircraft the pilot had flown. It said the recovered bodies included those of Ethiopians and Lebanese.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe Lebanese army and witnesses say the plane was on fire shortly after takeoff. A defense official also said some witnesses reported the plane broke up into three pieces.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nAt the Government Hospital in Beirut, Red Cross workers brought in bodies covered with wool blankets as relatives gathered nearby. Marla Pietton, wife of the French ambassador to Lebanon, was among those on board, according to the French Embassy.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\n<em>Associated Press writers Elizabeth A. Kennedy in Beirut, Slobodan Lekic in Brussels and Katharine Houreld in Addis Ababa, Ethiopia, contributed to this report.</em>\r\n]]></p>\r\n\r\n</story>", 
-      "print_headline": "", 
-      "headline": "Pilot didn't follow Beirut tower's advice", 
-      "dateline": null, 
-      "sites": [
-        1
-      ], 
-      "categories": [
-        1, 
-        249, 
-        2
-      ], 
-      "status": 1, 
-      "lead_photo": null, 
-      "kicker": "", 
-      "print_section": null, 
-      "one_off_byline": "Bassem Mroue and Zeina Karam ASSOCIATED PRESS", 
-      "bylines": [], 
-      "pub_date": "2010-01-26 08:30:58", 
-      "slug": "pilot-didnt-follow-beirut-towers-advice", 
-      "comment_status": 3, 
-      "tease": "The pilot of an Ethiopian Airlines plane that crashed into the sea flew in the opposite direction from the path recommended by the control tower after taking off from Beirut in thunderstorms, Lebanon's transportation minister said Tuesday.\r\n", 
-      "post_story_blurb": "", 
-      "publish_date": null, 
-      "pre_story_blurb": ""
-    }
-  }, 
-  {
-    "pk": 408277, 
-    "model": "news.story", 
-    "fields": {
-      "origin": 4, 
-      "subhead": "", 
-      "print_page": null, 
-      "tease_photo": "", 
-      "default_framing": null, 
-      "themes": "", 
-      "print_edition": null, 
-      "lead_photo_has_headline": false, 
-      "primary_category": 4, 
-      "update_date": "2010-01-26 08:19:22", 
-      "story": "<story>\r\n\r\n<inline type=\"photo\" id=\"17886\" align=\"left\" />\r\n\r\n<p><![CDATA[\r\nROCKVILLE, Md. (AP) -- Two Metro workers were struck and killed by a maintenance vehicle along a track Tuesday, the latest in a string of fatalities since last year in the Washington area's commuter rail system.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nBoth workers were on a track when they were hit a few blocks from the Rockville Metro Station, Montgomery County Fire and Rescue spokesman Capt. Oscar Garcia said. One worker died at the scene and the other on the way to a hospital, Metro officials said.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nBoth men were automatic train technicians and the crash involved a large truck equipped to drive on the track when electricity is shut down, according to Metro spokeswoman Angela Gates.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nThe Metro system that links the capital with neighboring areas of Maryland and Virginia has seen a series of fatal accidents and mishaps since last year. The worst was a June crash that killed eight passengers and the train operator. Two other workers were killed in separate accidents last year.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nLast month, a team of inspectors were nearly hit by a train that Metro officials say was traveling too fast. Three workers were hurt in November when a train returning to a northern Virginia rail yard hit a parked train.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nFollowing the latest deaths, Red Line service was shut down between the Shady Grove and Twinbrook stations while the crash is investigated. Shuttles service was being provided between the stations.\r\n]]></p>\r\n\r\n</story>", 
-      "print_headline": "", 
-      "headline": "2 Metro workers killed in latest track accident", 
-      "dateline": null, 
-      "sites": [
-        1
-      ], 
-      "categories": [
-        4
-      ], 
-      "status": 1, 
-      "lead_photo": null, 
-      "kicker": "", 
-      "print_section": null, 
-      "one_off_byline": "ASSOCIATED PRESS", 
-      "bylines": [], 
-      "pub_date": "2010-01-26 08:16:30", 
-      "slug": "2-metro-workers-killed-latest-track-accident", 
-      "comment_status": 3, 
-      "tease": "Two Metro workers were struck and killed by a maintenance vehicle along a track Tuesday, the latest in a string of fatalities since last year in the Washington area's commuter rail system.", 
-      "post_story_blurb": "", 
-      "publish_date": null, 
-      "pre_story_blurb": ""
-    }
-  }, 
-  {
-    "pk": 408276, 
-    "model": "news.story", 
-    "fields": {
-      "origin": 4, 
-      "subhead": "", 
-      "print_page": null, 
-      "tease_photo": "", 
-      "default_framing": null, 
-      "themes": "", 
-      "print_edition": null, 
-      "lead_photo_has_headline": false, 
-      "primary_category": 4, 
-      "update_date": "2010-01-26 08:07:47", 
-      "story": "<story>\r\n\r\n<inline type=\"photo\" id=\"69292\" align=\"left\" />\r\n\r\n<p><![CDATA[\r\nANNAPOLIS, Maryland (AP) -- Former U.S. Sen. Charles McC. Mathias, a liberal Republican who championed civil rights and protection of the Chesapeake Bay during his 26 years in Washington, has died. He was 87.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nMathias died Monday at his home from complications of Parkinson's disease, said his sons Charles and Robert.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nMathias' career in Congress spanned the turbulent years of the Vietnam War and the civil rights movement, and he often found himself at odds with his party on those and other issues.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nIn retirement, Mathias broke with the Republican Party again in 2008 when he endorsed Sen. Barack Obama a week before the presidential election. He said the Democratic candidate was \"better suited to recharge America's economic health, restore its prestige abroad and inspire anew all people who cherish freedom and equality.\"\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nLeaders from both Democratic and Republican parties in Maryland described him as an influence on their careers.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\n\"He was a pioneer, a gentlemen, and a fierce advocate for the citizens of Maryland during his time in public life,\" said Former Republican Gov. Robert Ehrlich.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nMathias was elected to the U.S. House of Representatives in 1960 from a Maryland district and quickly gained a reputation for bucking the Republican Party. Election to the Senate followed eight years later.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nHe was a strong supporter of civil rights legislation and supported a federal ban on inexpensive handguns.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nWhen conservative Sen. Barry Goldwater won the Republican presidential nomination in 1964, Mathias would not endorse him by name, saying only that he supported all Republican candidates.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nMathias generally supported President Richard Nixon on economic issues, but opposed two of the president's conservative Supreme Court nominees and voted against the administration's attempts to weaken the 1965 voting rights acts.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nIn his home state, Mathias was considered to be the father of the massive state and federal program to clean up the Chesapeake Bay.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nIn 1973, he undertook a 450-mile tour of Maryland's portion of the bay, meeting with scientists, business leaders, conservationists, farmers and watermen. That tour laid the groundwork for a partnership among three states and the federal government to preserve the environment of the bay.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nMathias served three terms in the Senate before deciding not to seek re-election in 1986.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\n\"The season has arrived to shift to a new field of activity,\" he said in announcing his decision. While Mathias was often at odds with the Republican right, he said \"that was not significant\" in the decision. He also predicted \"the tide will come in again\" for Republican moderates and liberals.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nIn a 1993 interview, Mathias said he was particularly proud of his work on civil rights.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\n\"When I went to Congress, this was a segregated country. Now there is, at least, in law, no racial barriers,\" he said.\r\n]]></p>\r\n\r\n<p><![CDATA[\r\nBesides his sons, Mathias is survived by his wife, Ann Bradford Mathias, and two grandchildren.\r\n]]></p>\r\n\r\n</story>", 
-      "print_headline": "", 
-      "headline": "Ex-U.S. Sen. Charles Mathias of Maryland dies at 87 ", 
-      "dateline": null, 
-      "sites": [
-        1
-      ], 
-      "categories": [
-        4, 
-        5
-      ], 
-      "status": 1, 
-      "lead_photo": null, 
-      "kicker": "", 
-      "print_section": null, 
-      "one_off_byline": "ASSOCIATED PRESS", 
-      "bylines": [], 
-      "pub_date": "2010-01-26 08:06:30", 
-      "slug": "ex-us-sen-charles-mathias-maryland-dies-87", 
-      "comment_status": 3, 
-      "tease": "Former U.S. Sen. Charles McC. Mathias, a liberal Republican who championed civil rights and protection of the Chesapeake Bay during his 26 years in Washington, has died.", 
-      "post_story_blurb": "", 
-      "publish_date": null, 
-      "pre_story_blurb": ""
-    }
-  }
+{
+"pk": 407415, 
+"model": "news.story", 
+"fields": {
+"origin": 2, 
+"subhead": "", 
+"print_page": null, 
+"tease_photo": "", 
+"default_framing": null, 
+"themes": "steffen w. schmidt;lost;white house;obama;congress", 
+"print_edition": null, 
+"lead_photo_has_headline": false, 
+"primary_category": 5, 
+"update_date": null, 
+"story": "\n\n<p>\nThe State of the Union address may be going the way of the NFL's Super Bowl, another January tradition that has become a February fixture.\n</p>\n\n<p>\nNo date has been set for the president's annual address to Congress, but with Democrats hoping for a health care bill in hand first, the affair could be pushed until the first week in February or later &#8212; marking the latest date for a standard address in modern history.\n</p>\n\n<p>\n\"Soon\" was the short answer that White House press secretary Robert Gibbs gave reporters last week, though he helpfully ruled out Feb. 2, the Tuesday that ABC is supposed to air the final season premiere of its show \"Lost.\"\n</p>\n\n<p>\n\"I don't foresee a scenario in which millions of people who hope to finally get some conclusion with 'Lost' are pre-empted by the president,\" he assured ABC's reporters at his daily briefing.\n</p>\n\n<p>\nState of the Union dates have been slipping steadily. In the 1930s, the president gave his annual address to Congress during the first week in January. By the 1960s, that had slipped to the second week, and by the 1980s, it was regularly hitting the end of January.\n</p>\n\n<p>\nThis year, Mr. Obama's search for a date stems from the White House's desire to have a major legislative accomplishment to tout &#8212; in this case, health care.\n</p>\n\n<p>\nSteffen W. Schmidt, known as \"Dr. Politics,\" said Mr. Obama needs to have a pony before he can have a dog-and-pony show.\n</p>\n\n\n\n<p>\n\"You and I and everybody else knows why, and that's that you kind of want to at least have gotten something from health care reform out there so you have bragging points,\" said Mr. Schmidt, a professor of political science at Iowa State University and host of the state public radio's \"Dr. Politics\" program.\n</p>\n\n<p>\nMr. Gibbs denied that the timing is tied to the legislative agenda, but he didn't say anything more about the considerations.\n</p>\n\n<p>\nThe Constitution requires the president to periodically deliver a report to Congress about the state of the nation. Presidents Washington and John Adams gave theirs in person annually, but Thomas Jefferson submitted his in writing &#8212; a tradition that lasted until President Wilson returned to delivering the speech in person.\n</p>\n\n<p>\nThe address typically is timed to the beginning of the year's legislative session. With Congress opening its session later each year, the date of the presidential address has slipped, too, said Betty K. Koed, associate historian for the Senate.\n</p>\n\n<p>\nPresident Roosevelt delivered his State of the Union address on Jan. 3 in 1934, Jan. 4 in 1935 and Jan. 3 in 1936. By President Kennedy's administration, it had slipped to Jan. 30 in 1961, Jan. 11 in 1962 and Jan. 14 in 1963. President Reagan delivered all of his State of the Union addresses during the last week in January or later.\n</p>\n\n<p>\nComplicating matters, newly inaugurated &#8212; or re-inaugurated &#8212; presidents often delivered both an inaugural address on Jan. 20 and a later address to Congress, which occasionally slipped into February. President Obama's address to Congress last year was on Feb. 24, the latest ever.\n</p>\n\n<p>\nIn 1986, Mr. Reagan delivered his address on Feb. 4. The date was delayed a week because of the Space Shuttle Challenger explosion in late January.\n</p>\n\n<p>\nThe speech has become a chance for the president to give marching orders to Congress at the beginning of each session. Mr. Schmidt said waiting too long can be dangerous \"because Congress will already start doing its mischief on its own.\"\n</p>\n\n<p>\nBut, he said, Mr. Obama has already had great success in bending Congress to his will, so his speech this year will be less of an agenda setter and more of a chance to tout action.\n</p>\n\n<p>\nCongress has to extend an invitation to the president, though it does so in consultation with the White House, which seems firmly in control of the decision this year.\n</p>\n\n<p>\nIn recent years, it's been tradition to deliver the address in the middle of the week. Gerhard Peters, co-founder of the American Presidency Project, said that's because Congress usually works Tuesday through Thursday. Lawmakers must be in session to receive the president.\n</p>\n\n<p>\nMr. Peters also said presidents are more likely now to try to avoid conflicts with TV networks' scheduling, such as the premiere of \"Lost.\"\n</p>\n\n<p>\n\"It's funny, but it's also a very important point,\" he said. \"The president's ability to use television to connect with the public really sort of peaked by the '70s and '80s. Now with cable television and especially the Internet, we can distract ourselves so easily.\"\n</p>\n\n<p>\nAnd indeed, the ratings have been erratic.\n</p>\n\n<p>\nThe last regular State of the Union, President Bush's 2008 address, drew 37.5 million viewers, while Mr. Obama's own post-inaugural address last year garnered 52.4 million. Mr. Bush's 2003 address, which preceded the Iraq war, drew an audience of 62.1 million.\n</p>\n\n\n\n<p>\nStill, with the health care issue resolved one way or another next year, Mr. Peters predicted a return to normal.\n</p>\n\n<p>\n\"I would be surprised if next year the State of the Union is in February,\" he said. \"I would expect it to be right around middle to late January.\"\n</p>\n\n\n\n", 
+"print_headline": "", 
+"headline": "Obama in no rush for State of Union", 
+"dateline": null, 
+"sites": [
+1
+], 
+"categories": [
+1, 
+151, 
+249, 
+5, 
+269
+], 
+"status": 1, 
+"lead_photo": null, 
+"kicker": "", 
+"print_section": null, 
+"one_off_byline": "", 
+"bylines": [
+23
+], 
+"pub_date": "2010-01-12 05:01:09", 
+"slug": "obama-in-no-rush-for-state-of-union", 
+"comment_status": 3, 
+"tease": "The State of the Union address may be going the way of the NFL's Super Bowl, another January tradition that has become a February fixture.", 
+"post_story_blurb": "", 
+"publish_date": null, 
+"pre_story_blurb": ""
+}
+}, 
+{
+"pk": 407388, 
+"model": "news.story", 
+"fields": {
+"origin": 2, 
+"subhead": "China has hit U.S. for defense systems", 
+"print_page": null, 
+"tease_photo": "", 
+"default_framing": null, 
+"themes": "chinese military;xinhua news agency;rick fisher;taiwan;united states;beijing", 
+"print_edition": null, 
+"lead_photo_has_headline": false, 
+"primary_category": 2, 
+"update_date": null, 
+"story": "\n\n\n\n<p>\nChina conducted a successful test Monday of a missile-defense interceptor, revealing for the first time its development of an anti-missile system, something Beijing has criticized the United States for doing.\n</p>\n\n<p>\nThe Chinese state-run Xinhua News Agency stated in a three-sentence dispatch that the test of \"ground-based, midcourse missile interception technology\" was carried out \"within its territory.\"\n</p>\n\n<p>\n\"The test has achieved the expected objective,\" the report said, noting that it was \"defensive in nature and is not targeted at any country.\" No other details of the test were released.\n</p>\n\n<p>\nRick Fisher, a specialist on the Chinese military, said the announcement of the missile-defense test was unusual since China conducts missile tests on a weekly basis but rarely publicizes them.\n</p>\n\n<p>\n\"The big news here is that they are actually reporting, however brief, on a missile test,\" Mr. Fisher said. \"This appears to be a new trend.\"\n</p>\n\n<p>\nIn recent days, Beijing has stepped up rhetoric denouncing U.S. arms sales to Taiwan, including Raytheon Co.'s sale of Patriot missile-defense systems.\n</p>\n\n<p>\nChina's government also has frequently criticized U.S. missile-defense development and, along with Russia, has sought to restrict missile defenses in United Nations forums.\n</p>\n\n<p>\nChinese Foreign Minister Yang Jiechi told a U.N. disarmament conference in August that \"countries should neither develop missile-defense systems that undermine global strategic stability nor deploy weapons in outer space.\"\n</p>\n\n<p>\nMr. Fisher, with the International Assessment and Strategy Center, said a recent published report by a senior Chinese military officer outlining China's aerospace doctrine made clear that \"the air force will be developing a missile-defense mission.\" The missile-defense program is part of a military unit called Second Artillery Corps.\n</p>\n\n<p>\nMr. Fisher, who has written reports on Chinese missile defenses, said he thinks China will deploy a substantial nationwide missile-defense system by the mid-2020s.\n</p>\n\n<p>\n\"This will constitute the ultimate irony and face slap given China's very loud and vocal opposition to U.S. missile defenses in late 1990s and early this decade,\" Mr. Fisher said.\n</p>\n\n<p>\nAsked about China's test and its past opposition to U.S. missile defenses, Chinese Embassy spokeswoman Xi Yanchun repeated that \"so far, I know that the test is defensive in nature and is not targeted at any country.\"\n</p>\n\n<p>\nMark Stokes, a former Air Force officer and specialist on the Chinese military, said China has been investing resources for missile-defense technologies and ground-based space surveillance since the late 1980s.\n</p>\n\n<p>\n\"It's unclear how sophisticated the test was or what was used as a target,\" said Mr. Stokes, with Project 2049 Institute, a research group.\n</p>\n\n<p>\nHowever, he noted that \"there's likely a linkage between China's anti-satellite and missile-defense interceptor programs\" because both use similar technology.\n</p>\n\n<p>\nMr. Stokes said China's complaints about U.S. missile-defense sales to Taiwan are dubious considering Beijing's large-scale conventional ballistic missile buildup against Taiwan. More than 1,000 missiles are now deployed near Taiwan.\n</p>\n\n<p>\n\"If authorities in Beijing find the sale of U.S. missile defenses to Taiwan to be against China's interests, maybe political authorities in Beijing should reduce the missile threat,\" he said.\n</p>\n\n<p>\nIn January 2007, China fired a ground-based missile into space and successfully destroyed a weather satellite. This anti-satellite system, which remains couched in secrecy, could be adapted by China for a nationwide anti-ballistic-missile system, Mr. Fisher said.\n</p>\n\n<p>\nThe Pentagon's latest annual report to Congress on China's military, released last spring, made no mention of Beijing's development of missile defenses, despite providing details on an array of new Chinese weapons, including missiles, submarines, aircraft and cyberwarfare capabilities.\n</p>\n\n<p>\nThe announcement of the missile-defense test also coincided with a Xinhua report warning that U.S. arms sales to Taiwan are harming U.S.-Chinese relations.\n</p>\n\n<p>\nThe Pentagon announced a $970 million contract to sell Patriot PAC-3 missiles to Taiwan in a Jan. 6 statement. The Xinhua report noted that the contract with Lockheed Martin Corp. was part of an arms package first approved by President Bush's administration in October 2008.\n</p>\n\n<p>\n\"Profound lessons should be drawn from history,\" the report said. \"All previous U.S. arms sales to Taiwan have caused great damage to the Sino-U.S. relations and blocked their stable and smooth development.\"\n</p>\n\n<p>\nChina cut off military relations with the Pentagon after the October 2008 arms package to Taiwan was announced, although Beijing has been gradually resuming military ties.\n</p>\n\n", 
+"print_headline": "", 
+"headline": "Beijing reports successful missile test", 
+"dateline": null, 
+"sites": [
+1
+], 
+"categories": [
+1, 
+151, 
+249, 
+6, 
+2
+], 
+"status": 1, 
+"lead_photo": null, 
+"kicker": "China", 
+"print_section": null, 
+"one_off_byline": "", 
+"bylines": [
+57
+], 
+"pub_date": "2010-01-12 05:01:08", 
+"slug": "beijing-reports-successful-missile-test", 
+"comment_status": 3, 
+"tease": "China conducted a successful test Monday of a missile-defense interceptor, revealing for the first time its development of an anti-missile system.", 
+"post_story_blurb": "", 
+"publish_date": null, 
+"pre_story_blurb": ""
+}
+}, 
+{
+"pk": 407384, 
+"model": "news.story", 
+"fields": {
+"origin": 2, 
+"subhead": "Calls goal to combat terrorism a 'sham'", 
+"print_page": null, 
+"tease_photo": "", 
+"default_framing": null, 
+"themes": "american society;islamic circle of north america;abraham h. foxman;imam mahdi bray;anti-defamation league", 
+"print_edition": null, 
+"lead_photo_has_headline": false, 
+"primary_category": 3, 
+"update_date": null, 
+"story": "\n\n<p>\nA major Jewish organization accused several Muslim groups on Monday of using an Islamic summit in Chicago as a platform for extremist and anti-Semitic invective instead of its stated purpose to combat the increasing radicalization of Muslim-American youths.\n</p>\n\n<p>\nBased on transcripts or tapes obtained from a Dec. 23-27 convocation of the Muslim American Society (MAS) and the Islamic Circle of North America (ICNA) meeting at a Hyatt hotel downtown, the Anti-Defamation League said the gathering \"served as a forum for religious scholars and political activists to rail against Jews, call for the eradication of the state of Israel and accuse the United States government as waging a war against Muslims at home and abroad.\"\n</p>\n\n<p>\nThe conference, which was the eighth annual gathering for the two groups, was a \"sham,\" the ADL said, in terms of its stated intent to combat the increasing involvement of young Muslims in terrorism.\n</p>\n\n<p>\n\"It is shocking that this conference, identified by some major Muslim-American groups as the venue to start the process of reform at a time of growing attacks and threats by American Muslim extremists, was a sham and nothing more than a cover for the dissemination of hateful anti-American and anti-Israel views and anti-Semitism,\" said Abraham H. Foxman, ADL national director.\n</p>\n\n<p>\nAs advertised on mahdibray.net, the conference added a workshop for disenfranchised Muslim youths to interact with about 20 older Islamic scholars after five young American Muslims were arrested in Pakistan last month for connecting with extremist Islamic groups.\n</p>\n\n<p>\nImam Mahdi Bray, executive director of MAS Freedom, had posted a statement saying that the conference would \"focus on positive solutions involving issues of hate, violence and intolerance.\"\n</p>\n\n<p>\nMr. Bray agreed that some remarks at the conference &#8212; which had 4,000 attendees and 100 speakers &#8212; were \"over the top\" and that he had complained to the chairman of one session. But he said his group denounced any such statements.\n</p>\n\n<p>\n\"We take any attack on the Jewish community or anti-Semitism as serious,\" the imam said. \"If there were any speakers who were anti-Semitic, they were totally rejected by us.\"\n</p>\n\n<p>\nThe ADL said the conference provided cover for anti-Semitic rants. It said that Rafiq Jaber, former president of the Islamic Association of Palestine, described Jews to the audience as \"the worst kind of people,\" who came to Jerusalem \"with false pretenses.\"\n</p>\n\n<p>\nThe ADL cited Hamed Ghazali, chairman of the MAS Council of Islamic Schools and professor at the Islamic American University in Michigan, as telling the audience in Arabic that \"Allah gave us the Jews\" as the primary historical and religious example of those who \"take the wrong path.\"\n</p>\n\n<p>\nOther speakers &#8212; specifically Egyptian Sheik Raghib Al Serjani &#8212; argued that the eradication of the state of Israel is a religious duty, the ADL said.\n</p>\n\n\n\n<p>\nMaterials sold at the convention, the ADL said, included books and CDs by anti-Semitic sheiks such as Yusuf al-Qaradawi, a leading Muslim Brotherhood leader based in Qatar who is known for terrorist connections.\n</p>\n\n<p>\nAnother radical cleric whose wares were available at the conference was Anwar al-Awlaki, a U.S.-born Muslim cleric who has encouraged American Muslims to wage jihad against the U.S. He has been tied to Fort Hood shooting suspect Maj. Nidal Hasan and Umar Farouk Abdulmutallab, the Nigerian accused of trying to blow up a Detroit-bound plane on Christmas Day.\n</p>\n\n<p>\nBut Mr. Bray said the conference's program committee disinvited two radical Islamist speakers &#8212; one an Egyptian and the other a Palestinian &#8212; he called Mr. Foxman's use of the word \"sham\" as \"totally inaccurate.\"\n</p>\n\n<p>\n\"We brought in 700 youth from across the country to refute the views held by al-Awlaki,\" Mr. Bray said. \"The ADL didn't mention our interfaith program either. As for the books and materials, we had a bazaar with 300 vendors. There was no way we could police everything that was published there just as the ADL would not be able to stop groups at one of their conferences from posting Islamophobic materials.\"\n</p>\n\n<p>\nNevertheless, he said Monday afternoon, he was drafting a letter to Mr. Foxman inviting him to a face-to-face meeting.\n</p>\n\n<p>\n\"We hope they will meet,\" he said. \"We have good relationships with other Jewish organizations.\"\n</p>\n\n<p>\nNaeem Baig, a spokesman for Jamaica, N.Y.-based ICNA, said he was not at the four-day gathering and could not comment on the speakers, but \"our organization condemns all kinds of extremism and fanaticism and all kinds of hate.\"\n</p>\n\n", 
+"print_headline": "", 
+"headline": "Jewish group rips Islamic summit", 
+"dateline": null, 
+"sites": [
+1
+], 
+"categories": [
+1, 
+151, 
+247, 
+249, 
+3
+], 
+"status": 1, 
+"lead_photo": null, 
+"kicker": "Religion", 
+"print_section": null, 
+"one_off_byline": "", 
+"bylines": [
+24
+], 
+"pub_date": "2010-01-12 05:01:07", 
+"slug": "jewish-group-rips-islamic-summit-as-anti-semitic", 
+"comment_status": 3, 
+"tease": "A major Jewish organization accused several Muslim groups on Monday of using an Islamic summit in Chicago as a platform for extremist and anti-Semitic invective instead of its stated purpose to combat the increasing radicalization of Muslim-American youths.", 
+"post_story_blurb": "", 
+"publish_date": null, 
+"pre_story_blurb": ""
+}
+}, 
+{
+"pk": 407417, 
+"model": "news.story", 
+"fields": {
+"origin": 2, 
+"subhead": "Navy doctor gives warning", 
+"print_page": null, 
+"tease_photo": "", 
+"default_framing": null, 
+"themes": "iraq;army;ptsd;adam boyle", 
+"print_edition": null, 
+"lead_photo_has_headline": false, 
+"primary_category": 3, 
+"update_date": null, 
+"story": "\n\n<p>\nIn 2007, a high-ranking Navy doctor sent a sobering warning to colleagues: The service may be discharging soldiers for misconduct when in fact they are merely displaying symptoms of post-traumatic stress disorder.\n</p>\n\n<p>\nBy doing so, the anonymous doctor noted in a memo to other medical administrators, the service may be denying those troops their rights to Veterans Affairs benefits &#8212; including treatment for medical conditions they incurred while serving on the battlefield.\n</p>\n\n\n\n<p>\nIn the future, any military personnel facing dismissal for misconduct after a deployment should be screened first for PTSD, the memo said. The recommendation was never implemented.\n</p>\n\n<p>\nHigh-ranking Navy doctors who oversee medical care for the Marines say such screenings would help avoid sending troops back into society without the ability to get treatment for combat-induced illness from the very government that dispatched them to the battlefield.\n</p>\n\n<p>\n\"Post-deployment misconduct, especially in a Marine who has previously served honorably, may indicate an unrecognized and unhealed line-of-duty stress injury that deserves expeditious medical evaluation and, when indicated, appropriate treatment,\" said the memo, a copy of which was obtained by The Washington Times.\n</p>\n\n\n\n<p>\nThe Pentagon confirmed the memo's authenticity, but could provide no further information on the author or the names of the recipients. Veterans' mental health issues have come under increasing scrutiny during the years of the war on terrorism. The latest example is Monday's release of a government study showing a dramatic increase in suicides among young veterans.\n</p>\n\n<p>\nThe PTSD memo also warned, \"If adjudication of misconduct charges results in a less-than-honorable discharge, the Marine may lose eligibility for ongoing treatment in the Veterans Administration health care system.\"\n</p>\n\n<p>\nThe memo recommended that screening for all troops facing misconduct discharges be implemented by May 1, 2007, but that recommendation was never followed.\n</p>\n\n<p>\n\"There is not a formal process or directive that I am aware of where [troops discharged for misconduct] must be screened,\" The Times was told by Frederick \"Fritz\" Kass, the director of clinical programs for the Marine Corps.\n</p>\n\n<p>\nMr. Kass said the document raises the issue of \"service members who are given adverse separation discharges who are at risk of not being eligible for treatment in the VA system.\"\n</p>\n\n<p>\n\"It appears it was to make others aware of that as they move forward,\" he said.\n</p>\n\n<p>\n<strong>Problems continue</strong>\n</p>\n\n<p>\nThe Pentagon's ability to diagnose and care for its own has come under renewed scrutiny since May 11, when, authorities say, Army Sgt. John Russell killed five fellow soldiers at a stress clinic in Iraq.\n</p>\n\n<p>\nSgt. Russell's father has said his son, who served three tours in Iraq, feared that he was being ousted from the military after being sent to the clinic by a commanding officer with whom he had fought and was told to surrender his gun.\n</p>\n\n<p>\nNo one knows how many more Sgt. Russells are out there, or how many have been discharged for misconduct, but two sets of statistics hint at the potential scale of the problem.\n</p>\n\n<p>\nThe Army told The Washington Times that 27,973 troops from that branch alone have been dismissed from service on punitive discharges from October 2002, the start of fiscal 2003 and just before the Iraq war began, to May 2009. Close to half &#8212; almost 12,700 &#8212; were ousted in fiscal 2003.\n</p>\n\n<p>\nA good portion of those who have seen combat duty can be expected to have PTSD. The 2008 Rand Corp. study, which found that one in every five Iraq and Afghanistan veterans suffers from PTSD or major depression, also determined that rates of PTSD were highest in the Army and the Marines and that 45 percent of those surveyed said they had seen dead or seriously injured noncombatants.\n</p>\n\n<p>\n<strong>What's being done</strong>\n</p>\n\n<p>\nOne of the soldiers is Special Operations Command Sgt. Adam Boyle.\n</p>\n\n<p>\nSgt. Boyle was thrown out of the Army because of a \"pattern of misconduct,\" even though he had been diagnosed with PTSD. As a combat veteran who served two tours in Iraq, Sgt. Boyle began experiencing intense pangs of guilt and anger and was diagnosed with post-traumatic stress disorder at a stress clinic in Iraq.\n</p>\n\n<p>\n\"I was always in the field before then,\" he recalled. \"I did everything you can imagine from patrols to raids to capturing enemy POWs, interrogations, reconnaissance by fire. Everything you can imagine that put me in harm's way, and I was OK with it.\"\n</p>\n\n<p>\nThe bad feelings began to set in after two of his buddies were killed, one of them newly married with a child. \"Those deaths haunted me, the idea of their families back home without them,\" he said.\n</p>\n\n<p>\nAfter his diagnosis, Sgt. Boyle was sent to North Carolina's Fort Bragg, an assignment he resented because he thought he should be fighting the war. At Fort Bragg, he was given heavy antidepressants and sleeping aids that he said caused him to oversleep and miss formation on several occasions, a major transgression in the military.\n</p>\n\n<p>\nHe wanted to return to Iraq to fight, but the medications barred him from more deployments and he became miserable and agitated. Sgt. Boyle went on to spar with commanding officers who, he said, were unaware of his combat experience. He drank heavily, couldn't control his rage and ended up in trouble with the law.\n</p>\n\n<p>\nHe reached the tipping point when he experienced a flashback while supervising a session at the firing range at Fort Bragg.\n</p>\n\n<p>\n\"I was supposed to be keeping an eye on [the soldiers], keep them safe and doing the right thing,\" Sgt. Boyle recalled. \"At one point, I went into a flashback into a firefight, and I was in Iraq. And during that flashback, I zoned out and forgot what I was doing.\n</p>\n\n<p>\n\"I snapped out of it and realized I missed the whole firing sequence, and it scared the hell out of me. I can't operate as a soldier if I can't concentrate on a firing range like that. That helped me realize I had to get out.\"\n</p>\n\n<p>\nAt that point, in consultation with his psychiatrist, Sgt. Boyle began seeking a medical discharge based on his PTSD. But the process was slow; he was allotted only one hour per month with his psychiatrist to plan proceedings and receive counseling for his existing problems.\n</p>\n\n<p>\nSome of those problems were documented in a domestic violence complaint filed by a former girlfriend who said Sgt. Boyle assaulted her, although she never brought charges.\n</p>\n\n<p>\n\"His command has been contacted numerous times by myself and friends trying to get Adam's behavior under control,\" she said in the complaint. \"I would like to see him get serious help and be removed from anyone else he could cause harm to.\"\n</p>\n\n<p>\nSgt. Boyle became so intoxicated and disorderly during a weekend getaway that police were called. When they attempted to restrain him, he fought back. \"I wrestled with the cops,\" Sgt. Boyle said. \"I don't know if it's part of my Iraq issues or not, but I couldn't handle being restrained.\"\n</p>\n\n<p>\nA judge ultimately dismissed the charges, but Sgt. Boyle said that incident was \"the straw that broke the camel's back\" for the Army, which found his behavior unacceptable.\n</p>\n\n<p>\nEven though he was being considered for medical discharge, he was ousted with a general discharge based on misconduct.\n</p>\n\n<p>\n\"Mr. Boyle demonstrated a repetitive pattern of misconduct in civil jurisdictions,\" Carol Darby, chief of media and community relations for the Army's Special Operations Command, said about Sgt. Boyle's dismissal. \"During that same time frame, he was actively receiving medical attention.\n</p>\n\n<p>\n\"Nowhere in our four major criteria for PTSD does it allow for breaking the law,\" she said.\n</p>\n\n<p>\nSgt. Boyle said he was scheduled to receive a general discharge with \"other-than-honorable\" conditions, but has been fighting to have it changed to \"under honorable conditions.\"\n</p>\n\n<p>\nStill, the general discharge isn't as good as an \"honorable discharge\" or \"medical discharge,\" which would guarantee him access to medical and compensation benefits. He also must repay the Army the $18,500 enlistment bonus he received for signing up for his second tour of duty.\n</p>\n\n<p>\nLawyer Jason Perry has taken on Sgt. Boyle's case pro bono and is working to have the dismissal upgraded to a medical discharge.\n</p>\n\n<p>\nVeterans Affairs does provide some counseling services for Sgt. Boyle, but the burden is on him to prove that his injuries were combat-induced. He will be able to access medical care much more easily if Mr. Perry succeeds in having his discharge upgraded.\n</p>\n\n<p>\n<strong>Ominous prediction</strong>\n</p>\n\n<p>\nVeterans' advocate and lawyer Carissa Picard has been on a one-woman mission to raise awareness about troops being ousted from service as a result of deployment-induced mental health issues.\n</p>\n\n<p>\n\"Rather than treating that soldier as if they are treating him [for] a war injury, they treat that soldier with derision,\" Ms. Picard said.\n</p>\n\n<p>\nShe got a bad feeling after reading in September 2008 that post-deployment soldier Spc. Jody Michael Wirawan had fatally shot his commanding officer and then turned his gun on himself.\n</p>\n\n<p>\n\"If we are going to continue to engage in these prolonged military conflicts overseas, then mental health care has to be made a priority,\" she said in a posting to Bloggernews.com. \"It has to be generously funded by Congress and aggressively utilized by the Department of Defense. If we don't, then this won't be the last time you will read a headline like this.\"\n</p>\n\n<p>\nHer grim prediction was borne out eight months later when Sgt. Russell opened fire on fellow soldiers at a stress clinic in Iraq.\n</p>\n\n\n\n<p>\nWhen asked what he thought of Sgt. Russell's crimes, Sgt. Boyle said, \"I know exactly what's going on. There's been more than a few times I had very unpleasant thoughts dealing with the chain of command.\n</p>\n\n<p>\n\"Putting myself in that position, dealing with what I was dealing with at Fort Bragg, if I took that scenario and moved it to Iraq, I can't imagine what that situation would be like. That's a scary thought.\"\n</p>\n\n<p>\nSgt. Boyle added: \"Good soldiers shouldn't have to go through that, especially if they are out in Iraq risking their lives and then to expect there's not going to be ramifications. That's like taking a good dog and beating it constantly, and it bites you, and you don't understand why.\"\n</p>\n\n<p>\n<strong>Not alone</strong>\n</p>\n\n<p>\nBart Stichman, co-executive director of the National Veterans Legal Services Program, said his office sees \"a certain number of cases\" in which the military has failed to properly discern between PTSD and misconduct.\n</p>\n\n<p>\n\"We have clients that fall into that pattern,\" Mr. Stichman said. \"They have PTSD, and they don't get adequate treatment, and when they don't get treatment they act out. They use drugs or alcohol, and the military discharges them for misconduct.\"\n</p>\n\n<p>\nMr. Stichman added that this presumes that the military perfectly diagnoses PTSD, a disorder that can be difficult to discern. In the meantime, any untreated service member still shows the symptoms, including acting out in ways that can lead to misconduct and other legal charges.\n</p>\n\n<p>\n\"This is a subset of that, based on a subjective judgment,\" Mr. Stichman said of his PTSD cases. \"You and I could look at a case and say this misconduct is due to a mental disorder, and someone else will say, 'Sure, he had a mental disorder, but his misconduct wasn't due to his mental disorder.'\"\n</p>\n\n<p>\n<strong>What's being done</strong>\n</p>\n\n<p>\nThe government took aggressive action to diagnose and treat veterans suffering from PTSD in 2007 after a flurry of studies, recommendations and reports addressing veterans' care, including the bipartisan commission to investigate Walter Reed Army Medical Center, led by former Senate Majority Leader Bob Dole and former Health and Human Services Secretary Donna E. Shalala.\n</p>\n\n<p>\nOn Monday, the Veterans Affairs Department released preliminary data showing that the suicide rate of young veterans, most of whom likely served in Iraq or Afghanistan, has risen by more than one-fourth.\n</p>\n\n<p>\nThe suicide rate among 18- to 29-year-old men who have left active military duty rose from 44.99 suicides per 100,000 men in 2005 to 56.77 in 2007, based on Centers for Disease Control and Prevention figures taken from 16 states.\n</p>\n\n<p>\nThe active military is seeing the same problem, with the Army cataloging a record number of suicides last year.\n</p>\n\n<p>\n\"Why do we know so much about suicides but still know so little about how to prevent them?\" VA Secretary Eric Shinseki told a suicide prevention conference Monday in Washington, according to wire service reports. \"Simple question, but we continue to be challenged.\"\n</p>\n\n<p>\nAmong the many centers that address mental health issues are the Defense and Veterans Brain Injury Center, the Center for Deployment Psychology, the Deployment Health Clinical Center, the Center for the Study of Traumatic Stress, the National Center for Telehealth and Technology, and the National Intrepid Center of Excellence that's scheduled to open later this year.\n</p>\n\n<p>\nYet those centers won't necessarily benefit military personnel like Sgt. Boyle.\n</p>\n\n<p>\n\"Instead of being honorably retired, he's now an ex-soldier with a general discharge and no guaranteed access to health care or treatment,\" said his attorney, Mr. Perry.\n</p>\n\n", 
+"print_headline": "", 
+"headline": "Military misconduct may be symptom of stress disorder", 
+"dateline": null, 
+"sites": [
+1
+], 
+"categories": [
+32, 
+1, 
+151, 
+249, 
+3, 
+6
+], 
+"status": 1, 
+"lead_photo": null, 
+"kicker": "Veterans", 
+"print_section": null, 
+"one_off_byline": "", 
+"bylines": [
+250
+], 
+"pub_date": "2010-01-12 05:01:06", 
+"slug": "misconduct-may-be-symptom-of-stress-disorder", 
+"comment_status": 3, 
+"tease": "In 2007, a high-ranking Navy doctor sent a sobering warning to colleagues: The service may be discharging soldiers for misconduct when in fact they are merely displaying symptoms of post-traumatic stress disorder.", 
+"post_story_blurb": "", 
+"publish_date": null, 
+"pre_story_blurb": ""
+}
+}, 
+{
+"pk": 407383, 
+"model": "news.story", 
+"fields": {
+"origin": 2, 
+"subhead": "Critics note cost, bigger 'nanny state'", 
+"print_page": null, 
+"tease_photo": "", 
+"default_framing": null, 
+"themes": "david olds;nurse-family partnership", 
+"print_edition": null, 
+"lead_photo_has_headline": false, 
+"primary_category": 32, 
+"update_date": null, 
+"story": "\n\n<p>\nIt's a scenario repeated thousands of times in the past 30 years: A young, poor, pregnant woman agrees to have a nurse visit her in her home.\n</p>\n\n<p>\nThe nurse talks about good nutrition, giving up cigarettes and preparing for childbirth.\n</p>\n\n<p>\nAfter the baby is born and for two more years, the nurse visits once or twice a month to help the young mother cope with the daily demands of a growing child.\n</p>\n\n<p>\nThis maternal home-visit service is on its way to becoming a massive federal program, thanks to President Obama and his administration's push for health care reform.\n</p>\n\n<p>\nBut, as with any grass-roots approach that burgeons into a federal program, criticisms emerge. Concerns with this home-visit program range from its likely $1 billion price tag to the idea of Uncle Sam doing \"in-home family planning\" in poor neighborhoods.\n</p>\n\n<p>\nAs a candidate, Mr. Obama touted the Nurse-Family Partnership (NFP), founded in the late 1970s by psychologist David Olds.\n</p>\n\n<p>\n\"This program saves money,\" Mr. Obama said in 2007. \"It raises healthy babies and creates better parents. It reduced childhood injuries and unintended pregnancies, increased father involvement and women's employment, reduced use of welfare and food stamps, and increased children's school readiness. And it produced more than $28,000 in net savings for every high-risk family enrolled in the program.\n</p>\n\n<p>\n\"I will expand the Nurse-Family Partnership to provide at-home nurse visits for up to 570,000 first-time mothers each year,\" Mr. Obama promised. \"We can do this. Our God is big enough for that.\"\n</p>\n\n<p>\nThe Obama administration kept its word. Its first budget called for a home-visitation program for new mothers costing $8.6 billion over 10 years. The home-visit program is now embedded in health care reform, costing $750 million over five years in the House bill and $1.5 billion in the Senate bill. The bills are being merged.\n</p>\n\n<p>\nThe Denver-based NFP has many supporters, including nine major foundations. Twenty-eight states use NFP, with almost 20,000 families enrolled.\n</p>\n\n<p>\nHowever, the home visit program is viewed with suspicion in some quarters.\n</p>\n\n<p>\nThe House Republican Conference initially derided the House provision for its \"billions for babysitters,\" but seems to have backed off that claim, reportedly because of some Republicans' support for NFP.\n</p>\n\n<p>\nOther critics are animated by the specter of a \"nanny state\" and displacement of parental rights.\n</p>\n\n<p>\nThe program could increase \"matriarchal dominance\" in poor neighborhoods already awash with absent-father homes, said Gordon E. Finley, a psychology professor at Florida International University who writes on gender roles.\n</p>\n\n\n\n<p>\nMost nurses are women, he said, so it would mean more women advising women, without necessarily considering the fathers. And because nursing is a female-dominated sector, the program means more jobs for women, but not men.\n</p>\n\n<p>\nThe program may bring \"biases of the medical community into the home,\" said E. Christian Brugger, an ethicist and senior fellow at Culture of Life Foundation. The medical community, for instance, has a bias against large families - women in maternity wards who have delivered a second child are \"routinely asked\" whether they want to be sterilized, he said.\n</p>\n\n<p>\nThe House bill also stipulates that home-visiting professionals will, when appropriate, \"provide referrals to other programs serving children and families.\"\n</p>\n\n<p>\n\"Given the pro-abortion biases of the administration pushing this reform and of like-minded members of the health care industry, it is highly likely that such referrals will routinely include &#8230; Planned Parenthood and other abortion-providing institutions,\" Mr. Brugger said. \"This is a serious concern to all who oppose the federal government getting involved in the counseling, referring or funding of abortions.\"\n</p>\n\n<p>\nThe House bill's goal of home visits \"increasing birth intervals between pregnancies\" alarms James Harden, president and chief executive of CompassCare Pregnancy Services in Rochester, N.Y.\n</p>\n\n<p>\n\"'Increasing birth intervals' is a very loaded phrase, and where it goes in the future, no one can know,\" Mr. Harden said. \"What is the birth interval? Is it two years between children? Three years between children? Five years between two children? From my perspective, [increasing] birth intervals relates to a backdoor approach to population control.\"\n</p>\n\n<p>\nNFP spokesman Julian Kesner strongly disputed such an idea.\n</p>\n\n<p>\nThere has been \"no documented situation\" in which a nurse has told a mother to get pregnant or not to get pregnant, he said.\n</p>\n\n<p>\nMothers in one NFP study site did have longer birth intervals (average 28 months) between first and second children, compared with other mothers, but \"that's a byproduct of trying to teach the moms some personal responsibility. &#8230; The vast majority of these pregnancies are unplanned.\"\n</p>\n\n<p>\nThe program is entirely voluntary, Mr. Kesner added, and when it comes to future pregnancies, the nurses' goal is to get the women to \"think it out better, plan for the future.\"\n</p>\n\n<p>\nMeanwhile, a new cautionary note about the NFP appeared last week in a study in the Archives of Pediatrics &amp; Adolescent Medicine, a publication affiliated with the Journal of the American Medical Association.\n</p>\n\n<p>\nThe study looked at the 19-year-old children of New York mothers who received home visits from nurses when the children were born.\n</p>\n\n<p>\nThe daughters of the nurse-visited mothers were less likely to have been in trouble with the law than daughters of mothers who did not get the visits, said Cornell University researcher John Eckenrode and his colleagues. This means NFP \"has the potential to produce lasting changes\" for girls in reducing crime, they wrote.\n</p>\n\n<p>\nHowever, the nurse-visit program had no effect on the women's sons. Mr. Olds, NFP founder and professor of pediatrics at the University of Colorado in Denver, called the gender disparity disappointing.\n</p>\n\n<p>\nStill, there is great enthusiasm for the NFP and home-visit programs among politicians, academics, child-welfare advocates and the mothers.\n</p>\n\n<p>\n\"They always say babies don't come with instruction manuals,\" a Pennsylvania mother named Andrea told NFP, \"but if there was one, the Nurse-Family Partnership program would be it.\"\n</p>\n\n", 
+"print_headline": "", 
+"headline": "Obama plan funds nurse visits to new moms", 
+"dateline": null, 
+"sites": [
+1
+], 
+"categories": [
+32, 
+1, 
+151, 
+249, 
+3, 
+5
+], 
+"status": 1, 
+"lead_photo": null, 
+"kicker": "Health care", 
+"print_section": null, 
+"one_off_byline": "", 
+"bylines": [
+73
+], 
+"pub_date": "2010-01-12 05:01:05", 
+"slug": "obama-plan-funds-nurse-visits-to-new-moms", 
+"comment_status": 3, 
+"tease": "It's a scenario repeated thousands of times in the past 30 years: A young, poor, pregnant woman agrees to have a nurse visit her in her home.", 
+"post_story_blurb": "", 
+"publish_date": null, 
+"pre_story_blurb": ""
+}
+}
 ]
