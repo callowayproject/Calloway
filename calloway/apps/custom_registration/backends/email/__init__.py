@@ -7,14 +7,29 @@ from django.contrib.sites.models import Site
 from django.contrib.auth import authenticate
 from django.contrib.auth import login
 from django.contrib.auth.models import User
+from django.contrib.auth.backends import ModelBackend
 from django.template.loader import render_to_string
 from django.utils.hashcompat import sha_constructor
 
 from registration import signals
 from registration.models import RegistrationProfile
+from registration.backends.default import DefaultBackend
 from forms import EmailRegistrationForm
 
-class EmailBackend(object):
+class EmailAuthenticationBackend(ModelBackend):
+    """
+    Authenticates a user against a email address.
+    """
+    def authenticate(self, username=None, password=None):
+        try:
+            user = User.objects.get(email=username.lower())
+            return super(EmailAuthenticationBackend, self).authenticate(user.username, password)
+        except User.DoesNotExist:
+            return None
+    
+
+
+class EmailBackend(DefaultBackend):
     def register(self, request, **kwargs):
         """
         Create and immediately log in a new user.
@@ -51,15 +66,15 @@ class EmailBackend(object):
         # Create the registration profile, this is still needed because
         # the user still needs to activate there account for further users
         # after 3 days
-        registration_profile = RegistrationProfile.objects.create_profile(user)
+        registration_profile = RegistrationProfile.objects.create_profile(new_user)
         
         # Authenticate and login the new user automatically
-        new_user = authenticate(username=username, password=password)
-        login(request, new_user)
+        auth_user = authenticate(username=username, password=password)
+        login(request, auth_user)
         
         # Create a profile instance for the new user if 
         # AUTH_PROFILE_MODULE is specified in settings
-        if hasattr(settings, 'AUTH_PROFILE_MODULE'):
+        if hasattr(settings, 'AUTH_PROFILE_MODULE') and getattr(settings, 'AUTH_PROFILE_MODULE'):
             app_label, model_name = settings.AUTH_PROFILE_MODULE.split('.')
             model = models.get_model(app_label, model_name)
             try:
@@ -69,7 +84,7 @@ class EmailBackend(object):
                 profile.save()   
                 
         # Custom send activation email
-        self.send_activation_email(user, registration_profile, password, site)  
+        self.send_activation_email(new_user, registration_profile, password, site)  
         
         # Send user_registered signal
         signals.user_registered.send(sender=self.__class__,
@@ -94,7 +109,13 @@ class EmailBackend(object):
         
         message = render_to_string('registration/email/emails/password.txt',
                                    ctx_dict)
-        user.email_user(subject, message, settings.DEFAULT_FROM_EMAIL)
+                                   
+        print settings.DEFAULT_FROM_EMAIL
+        try:
+            user.email_user(subject, message, settings.DEFAULT_FROM_EMAIL)
+        except Exception, e:
+            print e
+            
 
     def registration_allowed(self, request):
         """
@@ -122,5 +143,4 @@ class EmailBackend(object):
         return ("/", (), {})
         #return (user.get_absolute_url(), (), {})
 
-    def post_activation_redirect(self, request, user):
-        raise NotImplementedError
+
