@@ -10,6 +10,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.backends import ModelBackend
 from django.template.loader import render_to_string
 from django.utils.hashcompat import sha_constructor
+from django.core.mail import send_mail
 
 from registration import signals
 from registration.models import RegistrationProfile
@@ -71,7 +72,8 @@ class EmailBackend(DefaultBackend):
         # Create the registration profile, this is still needed because
         # the user still needs to activate there account for further users
         # after 3 days
-        registration_profile = RegistrationProfile.objects.create_profile(new_user)
+        registration_profile = RegistrationProfile.objects.create_profile(
+            new_user)
         
         # Authenticate and login the new user automatically
         auth_user = authenticate(username=username, password=password)
@@ -94,7 +96,8 @@ class EmailBackend(DefaultBackend):
                 profile.save()   
                 
         # Custom send activation email
-        self.send_activation_email(new_user, registration_profile, password, site)  
+        self.send_activation_email(
+            new_user, registration_profile, password, site)  
         
         # Send user_registered signal
         signals.user_registered.send(sender=self.__class__,
@@ -112,19 +115,19 @@ class EmailBackend(DefaultBackend):
                      'activation_key': profile.activation_key,
                      'expiration_days': settings.ACCOUNT_ACTIVATION_DAYS}
                      
-        subject = render_to_string('registration/email/emails/password_subject.txt',
-                                   ctx_dict)
+        subject = render_to_string(
+            'registration/email/emails/password_subject.txt',
+            ctx_dict)
         # Email subject *must not* contain newlines
         subject = ''.join(subject.splitlines())
         
         message = render_to_string('registration/email/emails/password.txt',
                                    ctx_dict)
                                    
-        print settings.DEFAULT_FROM_EMAIL
         try:
             user.email_user(subject, message, settings.DEFAULT_FROM_EMAIL)
-        except Exception, e:
-            print e
+        except:
+            pass
             
 
     def registration_allowed(self, request):
@@ -154,3 +157,31 @@ class EmailBackend(DefaultBackend):
         #return (user.get_absolute_url(), (), {})
 
 
+def handle_expired_accounts():
+    """
+    Check of expired accounts.
+    """        
+    for profile in RegistrationProfile.objects.all():
+        # if registration profile is expired, deactive user.
+        if profile.activation_key_expired():
+            user = profile.user
+            user.is_active = False
+            user.save()
+            
+            # Send an email notifing user of there account becoming inactive.
+            try:
+                site = Site.objects.get_current()
+                ctx_dict = { 'site': site, 
+                             'activation_key': profile.activation_key}
+                     
+                subject = render_to_string(
+                    'registration/email/emails/account_expired_subject.txt',
+                    ctx_dict)
+                subject = ''.join(subject.splitlines())
+        
+                message = render_to_string(
+                    'registration/email/emails/account_expired.txt',
+                    ctx_dict)
+                user.email_user(subject, message, settings.DEFAULT_FROM_EMAIL)
+            except:
+                pass
