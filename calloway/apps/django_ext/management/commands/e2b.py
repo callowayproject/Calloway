@@ -2,9 +2,11 @@ import os
 from django.core.management.base import BaseCommand, CommandError
 from django.utils.simplejson import load
 from django.contrib.sites.models import Site
+from django.contrib.auth.models import User
 from django.db.models import get_model
 from categories.models import Category
 from staff.models import StaffMember
+from stories.models import Story
 import calloway
 
 class Command(BaseCommand):
@@ -21,7 +23,7 @@ class Command(BaseCommand):
                     self.migrate(attr[8:], *getattr(self, attr)())
 
     def get_fixture(self, name):
-        adir = os.path.join(os.path.dirname(calloway.__file__), 'fixtures')
+        adir = 'fixtures'
         for f in os.listdir(adir):
             if f.startswith(name):
                 return load(open(os.path.join(adir, f)))
@@ -38,13 +40,28 @@ class Command(BaseCommand):
                 if new in filters:
                     value = filters[new](value)
                 kw[new] = value
-            for k,func in related.items():
-                if k in kw:
-                    related[k] = func(kw.pop(k))
+            
+            rel = {}
+            for k in kw:
+                if k in related:
+                    rel[k] = related[k](kw[k])
+            
+            for k in rel:
+                kw.pop(k)
+                
+            if model == StaffMember:
+                kw['user'] = User.objects.get_or_create(
+                        username = 'staff-%s' % kw['pk'],
+                        is_active=kw['is_active'],
+                        email=kw['email'],
+                        first_name=kw['first_name'],
+                        last_name=kw['last_name'])[0]
+            elif model == Story:
+                kw
             o = model.objects.get_or_create(**kw)[0]
-            for k,v in related.items():
+            for k,v in rel.items():
                 for i in v:
-                    getattr(o, k).objects.add(v)
+                    getattr(o, k).add(i)
             new_objs.append(o)
         return new_objs
     
@@ -87,7 +104,7 @@ class Command(BaseCommand):
                 'categories': lambda v: None
             },{
             }, {
-                'categories': lambda l: map(c, l),
+                'categories': lambda l: map(c, l or []),
                 'authors': lambda l: map(a, l)
         }
         
