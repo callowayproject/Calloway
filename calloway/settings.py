@@ -7,7 +7,7 @@ SITE_ID = 1
 APPEND_SLASH = True
 
 MEDIA_URL = 'http://127.0.0.1:8000/media/'
-ADMIN_MEDIA_PREFIX = '/admin-media/admin/'
+ADMIN_MEDIA_PREFIX = '/admin-media/'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -96,6 +96,7 @@ APPS_STORIES = ( # Suggested: APPS_TINYMCE, APPS_REVERSION
     'positions',
     'news_sitemaps',
     'viewpoint',
+    'pullquote',
 )
 APPS_CATEGORIES = ( # Requires APPS_MPTT
     'categories',
@@ -104,6 +105,7 @@ APPS_CATEGORIES = ( # Requires APPS_MPTT
 APPS_COMMENT_UTILS = ( # Requires APPS_MPTT
     'mptt_comments',
     'offensivecontent',
+    'pollit',
 )
 APPS_FRONTEND_ADMIN = (
     'livevalidation',
@@ -125,6 +127,7 @@ APPS_UTILS = (
     'navbar',
     'synagg',
     'uni_form',
+    'critic',
 )
 APPS_REGISTRATION = (
     'registration',
@@ -168,5 +171,5 @@ NATIVE_TAGS = (
 ADMIN_TOOLS_MENU = 'calloway.menu.CustomMenu'
 
 STORY_RELATION_MODELS = ['massmedia.audio', 'massmedia.image', 'massmedia.document',
-    'massmedia.video', 'massmedia.collection', 'stories.story',]
+    'massmedia.video', 'massmedia.collection', 'stories.story','viewpoint.entry','viewpoint.blog',]
 

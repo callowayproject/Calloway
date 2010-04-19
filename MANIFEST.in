@@ -1,19 +1,15 @@
 recursive-include doc_src *
 recursive-include docs *
 
-recursive-include calloway/apps/*/templates *.html *.xml
-recursive-include calloway/apps/*/fixtures *.json *.xml
-recursive-include calloway/apps/*/media *
-
-recursive-include calloway/bin *
-recursive-include calloway/conf *
-recursive-include calloway/fixtures *
-recursive-include calloway/setup *
-recursive-include calloway/media *
-recursive-include calloway/templates *.html *.xml
-
-prune example
-prune project
+recursive-include calloway/apps *.sh *.html *.xml *.json *.gif *.png *.css *.txt *.py
+recursive-include calloway/bin *.sh
+recursive-include calloway/fixtures *.json
+recursive-include calloway/media *.html *.xml *.json *.gif *.png *.css *.txt
+recursive-include calloway/templates *.html *.xml *.json *.txt
 
 include LICENSE
-include README.txt
+include README
+include *.txt
+
+prune project
+prune calloway_test
