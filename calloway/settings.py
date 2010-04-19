@@ -7,7 +7,7 @@ SITE_ID = 1
 APPEND_SLASH = True
 
 MEDIA_URL = 'http://127.0.0.1:8000/media/'
-ADMIN_MEDIA_PREFIX = '/admin-media/admin/'
+ADMIN_MEDIA_PREFIX = '/admin-media/'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (

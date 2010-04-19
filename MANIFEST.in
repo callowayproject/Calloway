@@ -9,6 +9,7 @@ recursive-include calloway/templates *.html *.xml *.json *.txt
 
 include LICENSE
 include README
+include *.txt
 
 prune project
 prune calloway_test
