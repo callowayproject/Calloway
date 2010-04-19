@@ -23,15 +23,14 @@ class EmailOrUserNameAuthenticationBackend(ModelBackend):
     def authenticate(self, username=None, password=None):
         try:
             user = User.objects.get(username=username)
-            if user.check_password(password):
-                return user
         except User.DoesNotExist:
             try:
                 user = User.objects.get(email__iexact=username)
-                if user.check_password(password):
-                    return user
             except User.DoesNotExist:
                 return None
+                
+        if user and user.check_password(password):
+            return user
         return None
 
 
@@ -77,6 +76,11 @@ class EmailBackend(DefaultBackend):
         # Authenticate and login the new user automatically
         auth_user = authenticate(username=username, password=password)
         login(request, auth_user)
+        
+        # Set the expiration to when the users browser closes so user
+        # is forced to log in upon next visit, this should force the user
+        # to check there email for there generated password.
+        request.session.set_expiry(0)
         
         # Create a profile instance for the new user if 
         # AUTH_PROFILE_MODULE is specified in settings
