@@ -13,7 +13,7 @@ from django.utils.hashcompat import sha_constructor
 from django.core.mail import send_mail
 
 from registration import signals
-from registration.models import RegistrationProfile
+from registration.models import RegistrationProfile, SHA1_RE
 from registration.backends.default import DefaultBackend
 from forms import EmailRegistrationForm
 
@@ -36,6 +36,45 @@ class EmailOrUserNameAuthenticationBackend(ModelBackend):
 
 
 class EmailBackend(DefaultBackend):
+    """
+    Allow registration with email address. Upon suppling only an email
+    address, the user will have an active account and be logged in. User
+    will then have a certain amount of days in which there account will 
+    stay active.
+    
+    User's session will be set to 0 (browser close) timer, from which then
+    they will have to view the sent email to retrieve the generated password.
+    
+    User's account will become inactive after the specified days have passed.
+    From there they will need to click an activation link, sent initially with
+    there generated password, in order to keep account active.
+    
+    A managment command is provided to check if accounts have passed the
+    expiration date and will set user as inactive.
+    
+        [custom_registration.managment.commands.check_expired_accounts.py]
+        
+        ./manage.py check_expired_accounts
+    """
+    def activate(self, request, activation_key):
+        """
+        Override default activation process. This will activate the user
+        even if its passed its expiration date.
+        """  
+        if SHA1_RE.search(activation_key):
+            try:
+                profile = RegistrationProfile.objects.get(activation_key=activation_key)
+            except RegistrationProfile.DoesNotExist:
+                return False
+                
+            user = profile.user
+            user.is_active = True
+            user.save()
+            profile.activation_key = RegistrationProfile.ACTIVATED
+            profile.save()
+            return user
+        return False  
+    
     def register(self, request, **kwargs):
         """
         Create and immediately log in a new user.
