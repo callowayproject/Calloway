@@ -6,17 +6,32 @@ from django.contrib.auth.models import User
 from django.db.models import get_model
 from categories.models import Category
 from staff.models import StaffMember
-from stories.models import Story
 import calloway
 
 class Command(BaseCommand):
+    
+    def story(s):
+        return s
+    
+    def entries(**kwargs):
+        return 'viewpoint.entry', {
+            'body': kwargs.pop('body'),
+            'author': kwargs.pop('author'),
+            'slug': kwargs.pop('slug'),
+            'title': kwargs.pop('title'),
+            'summary': kwargs.pop('tease'),
+            'pub_date': kwargs.pop('pub_date'),
+        }
+    
+    mapping = {
+        'news.story': 'stories.story',
+        'weblogs.entry': 'viewpoint.entry',
+    }
+    
     def handle(self, *args, **options):
-        if len(args):
+        if not len(args):
             for arg in args:
-                attr = 'migrate_%s' % arg
-                if not hasattr(self, attr):
-                    raise CommandError('Migration routine for %r not found' % arg)
-                self.migrate(attr[8:], *getattr(self, attr)())
+                self.migrate(arg)
         else:
             for attr in dir(self):
                 if attr.startswith('migrate_'):
@@ -29,41 +44,54 @@ class Command(BaseCommand):
                 return load(open(os.path.join(adir, f)))
         raise IOError('Fixture %r not found' % name)
     
-    def migrate(self, app, model, mapping, filters={}, attrs={}, related={}):
+    def migrate(self, app):
         new_objs = []
-        model = get_model(*model.split('.'))
         for obj in self.get_fixture(app):
-            kw = attrs.copy()
-            kw['pk'] = obj['pk']
-            for old,new in mapping.items():
-                value = obj['fields'].get(old,None)
-                if new in filters:
-                    value = filters[new](value)
-                kw[new] = value
+            m = self.mapping[obj['model']].split('.')
+            model = get_model(*m)
             
-            rel = {}
-            for k in kw:
-                if k in related:
-                    rel[k] = related[k](kw[k])
-            
-            for k in rel:
-                kw.pop(k)
-                
-            if model == StaffMember:
-                kw['user'] = User.objects.get_or_create(
-                        username = 'staff-%s' % kw['pk'],
-                        is_active=kw['is_active'],
-                        email=kw['email'],
-                        first_name=kw['first_name'],
-                        last_name=kw['last_name'])[0]
-            elif model == Story:
-                kw
+            kw,rel = getattr(self, m[-1])(**obj['fields'])
+            if not 'pk' in kw:
+                kw['pk'] = obj['pk']
+            #for old,new in mapping.items():
+            #    value = obj['fields'].get(old, None)
+            #    if new in filters:
+            #        value = filters[new](value)
+            #    kw[new] = value
+            #
+            #rel = {}
+            #for k in kw:
+            #    if k in related:
+            #        rel[k] = related[k](kw[k])
+            #
+            #for k in rel:
+            #    kw.pop(k)
+            #
+            #if model == StaffMember:
+            #    kw['user'] = User.objects.get_or_create(
+            #            username = 'staff-%s' % kw['pk'],
+            #            is_active=kw['is_active'],
+            #            email=kw['email'],
+            #            first_name=kw['first_name'],
+            #            last_name=kw['last_name'])[0]
+
             o = model.objects.get_or_create(**kw)[0]
             for k,v in rel.items():
                 for i in v:
                     getattr(o, k).add(i)
             new_objs.append(o)
         return new_objs
+    
+    def entries(self, **fields):
+        return {
+            'body': fields.pop('body'),
+            'author': fields.pop('author'),
+            'slug': fields.pop('slug'),
+            'title': fields.pop('title'),
+            'summary': fields.pop('tease'),
+            'pub_date': fields.get('pub_date'),
+            'pub_time': fields.get('pub_date'),
+        }
     
     def migrate_staff(self):
         return 'staff.staffmember', {
