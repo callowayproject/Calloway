@@ -6,7 +6,6 @@ from django.contrib.auth.models import User
 from django.db.models import get_model
 from categories.models import Category
 from staff.models import StaffMember
-from stories.models import Story
 import calloway
 
 class Command(BaseCommand):
@@ -35,6 +34,8 @@ class Command(BaseCommand):
         for obj in self.get_fixture(app):
             kw = attrs.copy()
             kw['pk'] = obj['pk']
+            print obj['fields'].keys()
+
             for old,new in mapping.items():
                 value = obj['fields'].get(old,None)
                 if new in filters:
@@ -48,7 +49,7 @@ class Command(BaseCommand):
             
             for k in rel:
                 kw.pop(k)
-                
+            
             if model == StaffMember:
                 kw['user'] = User.objects.get_or_create(
                         username = 'staff-%s' % kw['pk'],
@@ -56,14 +57,23 @@ class Command(BaseCommand):
                         email=kw['email'],
                         first_name=kw['first_name'],
                         last_name=kw['last_name'])[0]
-            elif model == Story:
-                kw
+
             o = model.objects.get_or_create(**kw)[0]
             for k,v in rel.items():
                 for i in v:
                     getattr(o, k).add(i)
             new_objs.append(o)
         return new_objs
+    
+    def migrate_entries(self):
+        return 'viewpoint.entry', {
+            'body': 'body',
+            'author': 'author',
+            'slug': 'slug',
+            'title': 'title',
+            'summary': 'tease',
+            'pub_date': 'pub_date',
+            }, {}, {}, {}
     
     def migrate_staff(self):
         return 'staff.staffmember', {
