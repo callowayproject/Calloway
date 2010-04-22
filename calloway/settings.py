@@ -128,6 +128,7 @@ APPS_UTILS = (
     'synagg',
     'uni_form',
     'critic',
+    'mailfriend',
 )
 APPS_REGISTRATION = (
     'registration',
