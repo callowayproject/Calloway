@@ -8,16 +8,27 @@ from categories.models import Category
 from staff.models import StaffMember
 from django.core.exceptions import ObjectDoesNotExist
 
+
+def fix():
+    from django.db import connection, transaction
+    cursor = connection.cursor()
+
+    # Data modifying operation - commit required
+    cursor.execute("""
+    SELECT setval('"staff_staffmember_id_seq"', coalesce(max("id"), 1), max("id") IS NOT null) FROM "staff_staffmember";
+    SELECT setval('"staff_staffmember_sites_id_seq"', coalesce(max("id"), 1), max("id") IS NOT null) FROM "staff_staffmember_sites";
+    """)
+    transaction.commit_unless_managed()
+    
 def getr(model):
+    if isinstance(model, basestring):
+        model = get_model(*model.split('.'))
     def inner(pk):
         try:
             return model.objects.get(pk=pk)
         except model.DoesNotExist:
             return
-    if isinstance(model, basestring):
-        model = get_model(*model.split('.'))
     return inner
-  
 
 class Command(BaseCommand):
     mapping = {
@@ -25,7 +36,7 @@ class Command(BaseCommand):
         'weblogs.entry': 'viewpoint.entry',
         'weblogs.blog': 'viewpoint.blog',
     }
-    order = ('staff','categories','blogs','entries','stories','images')
+    order = ('staff','categories','blogs','entries','stories','images','inlines')
     
     def handle(self, *apps, **options):
         if len(apps):
@@ -34,6 +45,8 @@ class Command(BaseCommand):
         for app in self.order:
             print 'Migrating %s...' % app.title()
             self.migrate(app)
+            if app == 'staff':
+                fix()
 
     def get_fixture(self, name):
         adir = 'fixtures'
@@ -115,11 +128,8 @@ class Command(BaseCommand):
     def blog(self, **fields):
         owners = []
         for o in fields['authors']:
-            user = getr(User)(o)
-            try:
-                owners.append(StaffMember.objects.get(user=user))
-            except StaffMember.DoesNotExist:
-                owners.append(StaffMember.objects.create(user=user))
+            user = getr('auth.user')(o)
+            owners.append(StaffMember.objects.get_or_create(user=user)[0])
         return {
             'slug': fields['slug'],
             'title': fields['title'],
