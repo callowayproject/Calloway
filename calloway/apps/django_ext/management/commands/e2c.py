@@ -3,22 +3,25 @@ from django.core.management.base import BaseCommand, CommandError
 from django.utils.simplejson import load
 from django.contrib.sites.models import Site
 from django.contrib.auth.models import User
+from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import get_model
+from django.conf import settings
+
 from categories.models import Category
 from staff.models import StaffMember
-from django.core.exceptions import ObjectDoesNotExist
 
 
 def fix():
-    from django.db import connection, transaction
-    cursor = connection.cursor()
-
-    # Data modifying operation - commit required
-    cursor.execute("""
-    SELECT setval('"staff_staffmember_id_seq"', coalesce(max("id"), 1), max("id") IS NOT null) FROM "staff_staffmember";
-    SELECT setval('"staff_staffmember_sites_id_seq"', coalesce(max("id"), 1), max("id") IS NOT null) FROM "staff_staffmember_sites";
-    """)
-    transaction.commit_unless_managed()
+    if settings.DATABASE_ENGINE == 'postgresql_psycopg2':
+        from django.db import connection, transaction
+        cursor = connection.cursor()
+    
+        # Data modifying operation - commit required
+        cursor.execute("""
+        SELECT setval('"staff_staffmember_id_seq"', coalesce(max("id"), 1), max("id") IS NOT null) FROM "staff_staffmember";
+        SELECT setval('"staff_staffmember_sites_id_seq"', coalesce(max("id"), 1), max("id") IS NOT null) FROM "staff_staffmember_sites";
+        """)
+        transaction.commit_unless_managed()
     
 def getr(model):
     if isinstance(model, basestring):
@@ -35,8 +38,10 @@ class Command(BaseCommand):
         'news.story': 'stories.story',
         'weblogs.entry': 'viewpoint.entry',
         'weblogs.blog': 'viewpoint.blog',
+        'news.storyinlinemapping': 'stories.storyrelation',
     }
-    order = ('staff','categories','blogs','entries','stories','images','inlines')
+    #order = ('staff','blogs','entries','stories','images','inlines')
+    order = ('inlines',)
     
     def handle(self, *apps, **options):
         if len(apps):
@@ -70,6 +75,8 @@ class Command(BaseCommand):
                 kw,rel = getattr(self, m[-1])(**obj['fields'])
             except AttributeError:
                 kw,rel = self.default(**obj['fields'])
+            except TypeError:
+                continue
             if kw == rel == None:
                 continue
             if not 'pk' in kw:
@@ -82,7 +89,22 @@ class Command(BaseCommand):
         return new_objs
     
     def default(self, **fields):
-        return fields,{}
+        return fields, {}
+        
+    def storyrelation(self, **fields):
+        from massmedia.models import Image
+        from django.contrib.contenttypes.models import ContentType
+        ctype = ContentType.objects.get_for_model(Image)
+        if fields['inline_type'] == 'photo':
+            story = getr('stories.story')(fields['story'])
+            if story is None:
+                return
+            return {
+                'story': story,
+                'content_type': ctype,
+                'object_id': fields['object_id'],
+                'relation_type': 'image'
+            }, {}
         
     def staffmember(self, **fields):
         try:
