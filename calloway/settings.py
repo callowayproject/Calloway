@@ -151,6 +151,7 @@ TINYMCE_DEFAULT_CONFIG = {
     'theme_advanced_statusbar_location' : "bottom",
     'width': "600",
     'height': "600",
+    'extended_valid_elements': "iframe[src|height|width|marginheight|scrolling|marginwidth|frameborder]",
 }
 
 TINYMCE_ADMIN_FIELDS = {
