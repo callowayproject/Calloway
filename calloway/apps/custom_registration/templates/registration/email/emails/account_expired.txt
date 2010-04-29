@@ -1,0 +1,6 @@
+Your account for {{ site.domain }} has expired!
+
+If you would like to keep using your account simply click the following link to verify your email address..
+
+http://{{ site.domain }}/registration/activate/{{ activation_key }}/
+

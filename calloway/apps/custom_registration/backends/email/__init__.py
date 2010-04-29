@@ -10,9 +10,10 @@ from django.contrib.auth.models import User
 from django.contrib.auth.backends import ModelBackend
 from django.template.loader import render_to_string
 from django.utils.hashcompat import sha_constructor
+from django.core.mail import send_mail
 
 from registration import signals
-from registration.models import RegistrationProfile
+from registration.models import RegistrationProfile, SHA1_RE
 from registration.backends.default import DefaultBackend
 from forms import EmailRegistrationForm
 
@@ -23,19 +24,57 @@ class EmailOrUserNameAuthenticationBackend(ModelBackend):
     def authenticate(self, username=None, password=None):
         try:
             user = User.objects.get(username=username)
-            if user.check_password(password):
-                return user
         except User.DoesNotExist:
             try:
                 user = User.objects.get(email__iexact=username)
-                if user.check_password(password):
-                    return user
             except User.DoesNotExist:
                 return None
+                
+        if user and user.check_password(password):
+            return user
         return None
 
 
 class EmailBackend(DefaultBackend):
+    """
+    Allow registration with email address. Upon suppling only an email
+    address, the user will have an active account and be logged in. User
+    will then have a certain amount of days in which there account will 
+    stay active.
+    
+    User's session will be set to 0 (browser close) timer, from which then
+    they will have to view the sent email to retrieve the generated password.
+    
+    User's account will become inactive after the specified days have passed.
+    From there they will need to click an activation link, sent initially with
+    there generated password, in order to keep account active.
+    
+    A managment command is provided to check if accounts have passed the
+    expiration date and will set user as inactive.
+    
+        [custom_registration.managment.commands.check_expired_accounts.py]
+        
+        ./manage.py check_expired_accounts
+    """
+    def activate(self, request, activation_key):
+        """
+        Override default activation process. This will activate the user
+        even if its passed its expiration date.
+        """  
+        if SHA1_RE.search(activation_key):
+            try:
+                profile = RegistrationProfile.objects.get(activation_key=activation_key)
+            except RegistrationProfile.DoesNotExist:
+                return False
+                
+            user = profile.user
+            user.is_active = True
+            user.save()
+            profile.activation_key = RegistrationProfile.ACTIVATED
+            profile.save()
+            return user
+        return False  
+    
     def register(self, request, **kwargs):
         """
         Create and immediately log in a new user.
@@ -72,11 +111,17 @@ class EmailBackend(DefaultBackend):
         # Create the registration profile, this is still needed because
         # the user still needs to activate there account for further users
         # after 3 days
-        registration_profile = RegistrationProfile.objects.create_profile(new_user)
+        registration_profile = RegistrationProfile.objects.create_profile(
+            new_user)
         
         # Authenticate and login the new user automatically
         auth_user = authenticate(username=username, password=password)
         login(request, auth_user)
+        
+        # Set the expiration to when the users browser closes so user
+        # is forced to log in upon next visit, this should force the user
+        # to check there email for there generated password.
+        request.session.set_expiry(0)
         
         # Create a profile instance for the new user if 
         # AUTH_PROFILE_MODULE is specified in settings
@@ -90,7 +135,8 @@ class EmailBackend(DefaultBackend):
                 profile.save()   
                 
         # Custom send activation email
-        self.send_activation_email(new_user, registration_profile, password, site)  
+        self.send_activation_email(
+            new_user, registration_profile, password, site)  
         
         # Send user_registered signal
         signals.user_registered.send(sender=self.__class__,
@@ -108,19 +154,19 @@ class EmailBackend(DefaultBackend):
                      'activation_key': profile.activation_key,
                      'expiration_days': settings.ACCOUNT_ACTIVATION_DAYS}
                      
-        subject = render_to_string('registration/email/emails/password_subject.txt',
-                                   ctx_dict)
+        subject = render_to_string(
+            'registration/email/emails/password_subject.txt',
+            ctx_dict)
         # Email subject *must not* contain newlines
         subject = ''.join(subject.splitlines())
         
         message = render_to_string('registration/email/emails/password.txt',
                                    ctx_dict)
                                    
-        print settings.DEFAULT_FROM_EMAIL
         try:
             user.email_user(subject, message, settings.DEFAULT_FROM_EMAIL)
-        except Exception, e:
-            print e
+        except:
+            pass
             
 
     def registration_allowed(self, request):
@@ -150,3 +196,31 @@ class EmailBackend(DefaultBackend):
         #return (user.get_absolute_url(), (), {})
 
 
+def handle_expired_accounts():
+    """
+    Check of expired accounts.
+    """        
+    for profile in RegistrationProfile.objects.all():
+        # if registration profile is expired, deactive user.
+        if profile.activation_key_expired():
+            user = profile.user
+            user.is_active = False
+            user.save()
+            
+            # Send an email notifing user of there account becoming inactive.
+            try:
+                site = Site.objects.get_current()
+                ctx_dict = { 'site': site, 
+                             'activation_key': profile.activation_key}
+                     
+                subject = render_to_string(
+                    'registration/email/emails/account_expired_subject.txt',
+                    ctx_dict)
+                subject = ''.join(subject.splitlines())
+        
+                message = render_to_string(
+                    'registration/email/emails/account_expired.txt',
+                    ctx_dict)
+                user.email_user(subject, message, settings.DEFAULT_FROM_EMAIL)
+            except:
+                pass

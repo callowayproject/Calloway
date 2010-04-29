@@ -26,6 +26,7 @@ django-massmedia
 viewpoint
 -e git+http://opensource.washingtontimes.com/git/public/pollit.git#egg=pollit
 -e git+http://opensource.washingtontimes.com/git/public/pullquote.git#egg=pullquote
+-e git+http://opensource.washingtontimes.com/git/public/sorl.git/#egg=sorl
 
 # search
 django-haystack
@@ -45,6 +46,7 @@ http://typogrify.googlecode.com/files/typogrify-1.0.tar.gz
 -e git+http://opensource.washingtontimes.com/git/public/offensivecontent.git#egg=offensivecontent
 -e git+http://opensource.washingtontimes.com/git/public/django-news-sitemaps.git/#egg=news_sitemaps
 -e git+http://opensource.washingtontimes.com/git/public/critic.git/#egg=critic
+-e git+http://github.com/lincolnloop/django-mailfriend.git#egg=mailfriend
   # rss
   # mobile
 
@@ -80,7 +82,6 @@ feedparser==4.1
 django-uni-form>=0.7
 
 # Media
-sorl-thumbnail
 setup/python-imaging_1.1.6-3.tar.gz
 -e git+http://opensource.washingtontimes.com/git/public/django-staticmediamgr.git/#egg=staticmedia
   # media_utils
