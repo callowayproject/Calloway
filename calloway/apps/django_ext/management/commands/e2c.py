@@ -120,6 +120,7 @@ class Command(BaseCommand):
                 email = fields['email'],
                 first_name = fields['first_name'],
                 last_name = fields['last_name'],
+                is_active = False, is_staff = True
             )
 
         return {
