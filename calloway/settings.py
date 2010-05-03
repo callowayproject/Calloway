@@ -22,10 +22,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.i18n',
     'django.core.context_processors.media',
     'django.core.context_processors.request',
-    "navbar.context_processors.crumbs",
-    "navbar.context_processors.navbar",
-    "navbar.context_processors.navtree",
-    "navbar.context_processors.navbars",
     'staticmediamgr.context_processor.static_url',
 )
 
@@ -126,7 +122,7 @@ APPS_UTILS = (
     'staticmediamgr',
     'typogrify',
     'google_analytics',
-    'navbar',
+    'hiermenu',
     'synagg',
     'uni_form',
     'critic',
