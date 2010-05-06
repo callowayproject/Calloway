@@ -49,7 +49,7 @@ class EmailBackend(DefaultBackend):
     From there they will need to click an activation link, sent initially with
     there generated password, in order to keep account active.
     
-    A managment command is provided to check if accounts have passed the
+    A managment command is provided to check if accounts have passed ther
     expiration date and will set user as inactive.
     
         [custom_registration.managment.commands.check_expired_accounts.py]
@@ -189,11 +189,15 @@ class EmailBackend(DefaultBackend):
 
     def post_registration_redirect(self, request, user):
         """
-        After registration, redirect to the user's account page.
+        After registration, redirect to the home page or supplied "next"
+        query string or hidden field value.
         
         """
-        return ("/", (), {})
-        #return (user.get_absolute_url(), (), {})
+        if "next" in request.GET:
+            next_url = request.GET.get("next", "/")
+        elif "next" in request.POST:
+            next_url = request.POST.get("next", "/")
+        return (next_url, (), {})
 
 
 def handle_expired_accounts():
