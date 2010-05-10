@@ -56,9 +56,9 @@ django-reversion==1.2.1
 http://typogrify.googlecode.com/files/typogrify-1.0.tar.gz
 -e svn+http://opensource.washingtontimes.com/projects/public/django-livevalidation/trunk/#egg=livevalidation
 -e git+http://opensource.washingtontimes.com/git/public/offensivecontent.git#egg=offensivecontent
--e git+http://opensource.washingtontimes.com/git/public/django-news-sitemaps.git/#egg=news_sitemaps
+django-news-sitemaps==0.1.1
 -e git+http://opensource.washingtontimes.com/git/public/critic.git/#egg=critic
--e git+http://github.com/lincolnloop/django-mailfriend.git#egg=mailfriend
+django-mailfriend==1.0
   # rss
   # mobile
 
@@ -67,22 +67,22 @@ http://typogrify.googlecode.com/files/typogrify-1.0.tar.gz
 ######
 django-categories
 django-tagging==0.3.1
--e svn+http://opensource.washingtontimes.com/projects/private/hiermenu/trunk/#egg=hiermenu
+hiermenu==0.1
 
 ######
 # Debugging
 ######
 django-debug-toolbar==0.8.3
-#-e git+http://github.com/justquick/django-logjam.git#egg=logjam
+django-logjam==0.1.1
 
 ######
 # Caching
 ######
 python-memcached==1.44
 django-memcache-status==1.0.1
--e git+http://github.com/ella/django-versionedcache.git#egg=versionedcache
--e git+http://github.com/justquick/python-varnish.git#egg=varnish
--e git+http://github.com/justquick/django-varnish.git#egg=varnishapp
+versionedcache==0.1.0dev
+django-varnish==0.1
+python-varnish==0.1
 
 ######
 # Misc Libraries
