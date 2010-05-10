@@ -112,7 +112,6 @@ APPS_FRONTEND_ADMIN = (
 APPS_MEDIA = (
     'massmedia',
     'tagging',
-    'sorl.thumbnail',
 )
 APPS_UTILS = (
     'robots',
