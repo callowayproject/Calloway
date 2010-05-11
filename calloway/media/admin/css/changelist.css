@@ -337,45 +337,45 @@ ul.date_hierarchy {
 	-webkit-border-bottom-right-radius: 4px;
 }
 
-img[src$="img/admin/icon-unknown.gif"] {
-	padding: 5px;
-	width: 0;
-	height: 0;
-	background: url('../img/icons/icon-unknown.png') 0 50% no-repeat;
+/*img[src$="img/admin/icon-unknown.gif"] {
+    padding: 5px;
+    width: 0;
+    height: 0;
+    background: url('../img/icons/icon-unknown.png') 0 50% no-repeat;
 }
 
 img[src$="img/admin/icon-no.gif"] {
-	padding: 5px;
-	width: 0;
-	height: 0;
-	background: url('../img/icons/icon-no.png') 0 50% no-repeat;
+    padding: 5px;
+    width: 0;
+    height: 0;
+    background: url('../img/icons/icon-no.png') 0 50% no-repeat;
 }
 
 img[src$="img/admin/icon-yes.gif"] {
-	padding: 5px;
-	width: 0;
-	height: 0;
-	background: url('../img/icons/icon-yes.png') 0 50% no-repeat;
+    padding: 5px;
+    width: 0;
+    height: 0;
+    background: url('../img/icons/icon-yes.png') 0 50% no-repeat;
 }
 
 .change-list form table img[src$="img/admin/icon-unknown.gif"] {
-	position: relative;
-	top: 2px;
-	vertical-align: top;
+    position: relative;
+    top: 2px;
+    vertical-align: top;
 }
 
 .change-list form table img[src$="img/admin/icon-no.gif"] {
-	position: relative;
-	top: 3px;
-	vertical-align: top;
+    position: relative;
+    top: 3px;
+    vertical-align: top;
 }
 
 .change-list form table img[src$="img/admin/icon-yes.gif"] {
-	position: relative;
-	top: 2px;
-	vertical-align: top;
+    position: relative;
+    top: 2px;
+    vertical-align: top;
 }
-
+*/
 #changelist-search input[type=submit] {
 	margin-left: 6px;
 	background: url("../img/admin/nav-bg.gif") repeat-x scroll center bottom white;
