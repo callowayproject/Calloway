@@ -55,7 +55,7 @@ django-tinymce==1.5.1beta1
 django-reversion==1.2.1
 http://typogrify.googlecode.com/files/typogrify-1.0.tar.gz
 django-livevalidation==0.1.1
-offensivecontent==0.2.1
+offensivecontent==0.2.3
 news_sitemaps==0.1.1
 critic==0.1.1
 django-mailfriend==1.0
