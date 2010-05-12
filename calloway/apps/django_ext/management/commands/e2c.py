@@ -83,6 +83,7 @@ class Command(BaseCommand):
                 continue
             if not 'pk' in kw:
                 kw['pk'] = obj['pk']
+            print kw
             o = model.objects.create(**kw)
             for k,v in rel.items():
                 for i in v:
