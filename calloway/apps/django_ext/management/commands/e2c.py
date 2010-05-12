@@ -40,8 +40,8 @@ class Command(BaseCommand):
         'weblogs.blog': 'viewpoint.blog',
         'news.storyinlinemapping': 'stories.storyrelation',
     }
-    #order = ('staff','blogs','entries','stories','images','inlines')
-    order = ('inlines',)
+    order = ('staff','blogs','entries','stories','images','inlines')
+    #order = ('inlines',)
     
     def handle(self, *apps, **options):
         if len(apps):
