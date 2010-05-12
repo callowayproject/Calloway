@@ -155,7 +155,8 @@ class Command(BaseCommand):
         owners = []
         for o in fields['authors']:
             user = getr('auth.user')(o)
-            owners.append(StaffMember.objects.get_or_create(user=user)[0])
+            if user:
+                owners.append(StaffMember.objects.get(user=user))
         return {
             'slug': fields['slug'],
             'title': fields['title'],
