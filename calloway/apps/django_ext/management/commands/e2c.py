@@ -62,6 +62,9 @@ class Command(BaseCommand):
     
     def migrate(self, app):
         new_objs = []
+        try:
+            fix()
+        except: pass
         for obj in self.get_fixture(app):
             if obj['model'] in self.mapping:
                 m = self.mapping[obj['model']].split('.')
