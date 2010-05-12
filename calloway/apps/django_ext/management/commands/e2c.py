@@ -118,13 +118,13 @@ class Command(BaseCommand):
                 last_name = fields['last_name'],
             )
         except (User.DoesNotExist, AssertionError):
-            user = User.objects.create(
-                username = 'staff-%d' % fields['pk'],
+            user = User.objects.get_or_create(
+                username = 'staffmember%d' % fields['pk'],
                 email = fields['email'],
                 first_name = fields['first_name'],
                 last_name = fields['last_name'],
                 is_active = False, is_staff = True
-            )
+            )[0]
 
         return {
             'bio': fields['bio'],
