@@ -83,7 +83,6 @@ class Command(BaseCommand):
                 continue
             if not 'pk' in kw:
                 kw['pk'] = obj['pk']
-            print kw
             o = model.objects.create(**kw)
             for k,v in rel.items():
                 for i in v:
@@ -156,7 +155,10 @@ class Command(BaseCommand):
         for o in fields['authors']:
             user = getr('auth.user')(o)
             if user:
-                owners.append(StaffMember.objects.get(user=user))
+                try:
+                    owners.append(StaffMember.objects.get(user=user))
+                except:
+                    return
         return {
             'slug': fields['slug'],
             'title': fields['title'],
