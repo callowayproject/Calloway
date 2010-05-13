@@ -9,7 +9,7 @@ setup(
     author = 'The Washington Times Web Devs',
     author_email = 'webdev@washingtontimes.com',
     description = 'A website builder from the Washington Times',
-    packages = find_packages,
+    packages = find_packages(),
     include_package_data = True,
     classifiers = [
         'Development Status :: 4 - Beta',
