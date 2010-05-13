@@ -119,7 +119,6 @@ APPS_UTILS = (
     'ban',
     'native_tags',
     'staticmediamgr',
-    'typogrify',
     'google_analytics',
     'hiermenu',
     'synagg',
