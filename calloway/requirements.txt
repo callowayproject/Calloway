@@ -30,7 +30,7 @@ django-stories==0.3.2
 django-robots==0.7.0
 django-frontendadmin==0.4
 django-synagg
-massmedia
+massmedia==0.4.4
 viewpoint
 pollit==0.1.1
 pullquote==0.1.1
