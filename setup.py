@@ -1,5 +1,5 @@
 import os, sys
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 setup(
@@ -8,8 +8,8 @@ setup(
     url = 'http://opensource.washingtontimes.com/projects/calloway/',
     author = 'The Washington Times Web Devs',
     author_email = 'webdev@washingtontimes.com',
-    description = 'A news website builder from the Washington Times',
-    packages = ['calloway'],
+    description = 'A website builder from the Washington Times',
+    packages = find_packages,
     include_package_data = True,
     classifiers = [
         'Development Status :: 4 - Beta',
