@@ -1,6 +1,13 @@
 import os, sys
 from setuptools import setup, find_packages
 
+def read_file(filename):
+    path = os.path.abspath(os.path.dirname(__file__))
+    filepath = os.path.join(path, filename)
+    try:
+        return open(filepath).read()
+    except:
+        return ''
 
 setup(
     name = "calloway",
@@ -9,8 +16,10 @@ setup(
     author = 'The Washington Times Web Devs',
     author_email = 'webdev@washingtontimes.com',
     description = 'A website builder from the Washington Times',
+    long_description = read_file('README'),
     packages = find_packages(),
     include_package_data = True,
+    install_requires = read_file('calloway/requirements.txt'),
     classifiers = [
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',

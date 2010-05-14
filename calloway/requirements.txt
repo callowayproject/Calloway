@@ -1,4 +1,4 @@
---extra-index-url=http://opensource.washingtontimes.com/pypi/
+#--extra-index-url=http://opensource.washingtontimes.com/pypi/
 
 ######
 # API
@@ -55,7 +55,7 @@ django-tinymce==1.5.1beta1
 django-reversion==1.2.1
 django-livevalidation==0.1.1
 offensivecontent==0.2.3
-news_sitemaps==0.1.1
+django-news-sitemaps==0.1.2
 critic==0.1.1
 django-mailfriend==1.0
 
