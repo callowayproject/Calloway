@@ -8,7 +8,7 @@ django-piston==0.2.2
 ######
 # User - Management
 ######
-django-staff==0.3
+django-staff==0.3.1
 django-ban==0.1
 ipcalc>=0.1
 django-profiles>=0.2
@@ -26,7 +26,7 @@ django-registration==0.8-alpha-1
 ######
 # Content
 ######
-django-stories==0.3.2
+django-stories==0.3.3
 django-robots==0.7.0
 django-frontendadmin==0.4
 django-synagg
@@ -62,7 +62,7 @@ django-mailfriend==1.0
 ######
 # Taxonomies
 ######
-django-categories==0.4.2
+django-categories==0.4.3
 django-tagging==0.3.1
 hiermenu==0.1
 
@@ -85,7 +85,7 @@ python-varnish==0.1
 # Misc Libraries
 ######
 django-mptt-2==0.3
-django==1.1.1
+django==1.1.2
 simplejson==2.0.9
 django-extensions==0.4.1
 django-admin-tools==0.2
