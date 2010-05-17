@@ -8,7 +8,7 @@ django-piston==0.2.2
 ######
 # User - Management
 ######
-django-staff==0.3.1
+django-staff==0.3.2
 django-ban==0.1
 ipcalc>=0.1
 django-profiles>=0.2
