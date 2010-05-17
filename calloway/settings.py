@@ -139,7 +139,7 @@ DJANGO_MEMCACHED_REQUIRE_STAFF = True
 TINYMCE_DEFAULT_CONFIG = {
     'theme': "advanced",
     'relative_urls': False,
-    'plugins': "safari,paste,advimage,advlink,preview,fullscreen,media,searchreplace",
+    'plugins': "safari,paste,advimage,advlink,preview,fullscreen,searchreplace",
     'theme_advanced_toolbar_location' : "top",
     'theme_advanced_toolbar_align' : "left",
     'theme_advanced_buttons1' : "bold,italic,underline,strikethrough,blockquote,|,bullist,numlist,|,link,unlink,|,charmap,image,media,pastetext,pasteword,search,replace,|,code,fullscreen,preview",
