@@ -54,7 +54,7 @@ kamasutra==0.1.1
 django-tinymce==1.5.1beta1
 django-reversion==1.2.1
 django-livevalidation==0.1.1
-offensivecontent==0.2.3
+offensivecontent==0.2.5
 django-news-sitemaps==0.1.2
 critic==0.1.1
 django-mailfriend==1.0
