@@ -12,6 +12,10 @@ Contents:
    :maxdepth: 2
    :glob:
 
+   getting_started
+   installation
+   introduction_to_calloway
+   template_projects
 
 Indices and tables
 ==================
