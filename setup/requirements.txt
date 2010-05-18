@@ -1,6 +1,4 @@
---extra-index-url=http://opensource.washingtontimes.com/pypi/
-
-calloway
+#--extra-index-url=http://opensource.washingtontimes.com/pypi/
 
 ######
 # API
