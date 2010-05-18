@@ -1,4 +1,4 @@
-#--extra-index-url=http://opensource.washingtontimes.com/pypi/
+--extra-index-url=http://opensource.washingtontimes.com/pypi/
 
 ######
 # API
