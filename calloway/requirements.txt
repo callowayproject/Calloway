@@ -26,7 +26,7 @@ django-registration==0.8-alpha-1
 ######
 # Content
 ######
-django-stories==0.3.3
+django-stories==0.3.4
 django-robots==0.7.0
 django-frontendadmin==0.4
 django-synagg
@@ -48,7 +48,7 @@ django-mptt-comments==0.1.1
 ######
 # Content Helpers
 ######
-django-native-tags==0.3
+django-native-tags==0.4
 django-pagination==1.0.5
 kamasutra==0.1.1
 django-tinymce==1.5.1beta1
