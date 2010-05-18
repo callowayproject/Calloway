@@ -124,7 +124,7 @@ if __name__ == '__main__':
         dest_dir = options.destination
     
     while not dest_dir:
-        dest_dir = raw_input('Destination directory (currently at %s): ' % (os.getcwd(),)) or os.getcwd()
+        dest_dir = raw_input('Destination directory [%s]: ' % (os.getcwd(),)) or os.getcwd()
     dest_dir =  os.path.realpath(os.path.expanduser(dest_dir))
     dest = os.path.join(dest_dir, repl['PROJECT_NAME'])
     
@@ -136,11 +136,12 @@ if __name__ == '__main__':
     templ_dir = os.path.realpath(os.path.expanduser(templ_dir))
     if templ_dir[-1] != '/':
         templ_dir = templ_dir + "/"
+    
     if options.virtenv:
         repl['virtenv'] = options.virtenv
-    
-    repl['virtenv'] = None
+    else:
+        repl['virtenv'] = None
     while not repl['virtenv']:
-        repl['virtenv'] = raw_input('Virtual environment name (e.g. %s): ' % repl['PROJECT_NAME']) or repl['PROJECT_NAME']
+        repl['virtenv'] = raw_input('Virtual environment name [%s]: ' % repl['PROJECT_NAME']) or repl['PROJECT_NAME']
     
     main(repl, dest, templ_dir)
