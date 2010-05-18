@@ -1,5 +1,7 @@
 --extra-index-url=http://opensource.washingtontimes.com/pypi/
 
+calloway
+
 ######
 # API
 ######
@@ -77,6 +79,7 @@ django-logjam==0.1.1
 ######
 python-memcached==1.44
 django-memcache-status==1.0.1
+django-memcached==0.1.2
 versionedcache==0.1.0dev
 django-varnish==0.1
 python-varnish==0.1
@@ -86,7 +89,6 @@ python-varnish==0.1
 ######
 django-mptt-2==0.3
 django==1.1.2
-simplejson==2.0.9
 django-extensions==0.4.1
 django-admin-tools==0.2
 python-dateutil==1.4.1
@@ -97,6 +99,7 @@ django-picklefield==0.1
 feedparser==4.1
 google_analytics==0.2
 django-uni-form>=0.7
+PIL
 
 ######
 # Media

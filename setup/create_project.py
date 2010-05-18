@@ -72,6 +72,13 @@ def main(repl, dest, templ_dir):
     ]
     subprocess.call([';'.join(create_env_cmds)], env=os.environ, executable='/bin/bash', shell=True)
     subprocess.call([';'.join(create_pa_cmd)], env=os.environ, executable='/bin/bash', shell=True)
+
+    print "Installing Calloway..."
+    calloway = os.path.join(os.path.dirname(__file__), '..')
+    subprocess.call(['$WORKON_HOME/%s/bin/pip install -r %s' \
+        % (repl['virtenv'], os.path.join(calloway, 'setup', 'requirements.txt'))],
+        env=os.environ, executable='/bin/bash', shell=True, cwd=calloway)
+
     print "Installing requirements..."
     subprocess.call(['$WORKON_HOME/%s/bin/pip install -r %s' \
         % (repl['virtenv'], os.path.join(dest, 'setup', 'requirements.txt'))],
