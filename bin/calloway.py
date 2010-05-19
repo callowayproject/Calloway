@@ -1,13 +1,18 @@
 #!/usr/bin/env python
 
-import os, random, subprocess, sys
+import os
+import sys
+import re
+from random import choice
+from subprocess import Popen, call, PIPE
 
-HAS_VENV = bool(subprocess.Popen(['which','virtualenv'], stdout=subprocess.PIPE).communicate()[0])
+
+HAS_VENV = bool(Popen(['which','virtualenv'], stdout=PIPE).communicate()[0])
 if not HAS_VENV:
     print "virtualenv is required to run this script. Please install it with\n  easy_install virtualenv\n\nor\n\n  pip virtualenv"
     sys.exit(1)
 
-HAS_VENVW = bool(subprocess.Popen(['which','virtualenvwrapper_bashrc'], stdout=subprocess.PIPE).communicate()[0])
+HAS_VENVW = bool(Popen(['which','virtualenvwrapper_bashrc'], stdout=PIPE).communicate()[0])
 if not HAS_VENVW:
     print "virtualenvwrapper is required to run this script. Please install it with\n  easy_install virtualenvwrapper\n\nor\n\n  pip virtualenvwrapper"
     sys.exit(1)
@@ -24,13 +29,17 @@ BLACKLIST = (
     '.hg',
 )
 
+email_re = re.compile(
+    r"(^[-!#$%&'*+/=?^_`{}|~0-9A-Z]+(\.[-!#$%&'*+/=?^_`{}|~0-9A-Z]+)*"  # dot-atom
+    r'|^"([\001-\010\013\014\016-\037!#-\[\]-\177]|\\[\001-011\013\014\016-\177])*"' # quoted-string
+    r')@(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+[A-Z]{2,6}\.?$', re.IGNORECASE)  # domain
+
 def replace(repl, text):
     text = text.replace('/gitignore', '/.gitignore')
     for key, value in repl.iteritems():
-        text = text.replace('$$$$%s$$$$' % (key,), value)
+        key,value = map(str,(key,value))
+        text = text.replace('$$$$%s$$$$' % key, value)
     return text
-
-
 
 def main(repl, dest, templ_dir):
     try:
@@ -70,17 +79,17 @@ def main(repl, dest, templ_dir):
         '<<END\n#!/bin/bash/\ncd %s\nEND\n'\
         'chmod +x $WORKON_HOME/%s/bin/postactivate' % (repl['virtenv'], dest,repl['virtenv'])
     ]
-    subprocess.call([';'.join(create_env_cmds)], env=os.environ, executable='/bin/bash', shell=True)
-    subprocess.call([';'.join(create_pa_cmd)], env=os.environ, executable='/bin/bash', shell=True)
+    call([';'.join(create_env_cmds)], env=os.environ, executable='/bin/bash', shell=True)
+    call([';'.join(create_pa_cmd)], env=os.environ, executable='/bin/bash', shell=True)
 
-    print "Installing Calloway..."
-    calloway = os.path.join(os.path.dirname(__file__), '..')
-    subprocess.call(['$WORKON_HOME/%s/bin/pip install -r %s' \
-        % (repl['virtenv'], os.path.join(calloway, 'setup', 'requirements.txt'))],
-        env=os.environ, executable='/bin/bash', shell=True, cwd=calloway)
+    #print "Installing Calloway..."
+    #calloway = os.path.join(os.path.dirname(__file__), '..')
+    #call(['$WORKON_HOME/%s/bin/pip install -r %s' \
+    #    % (repl['virtenv'], os.path.join(calloway, 'setup', 'requirements.txt'))],
+    #    env=os.environ, executable='/bin/bash', shell=True, cwd=calloway)
 
     print "Installing requirements..."
-    subprocess.call(['$WORKON_HOME/%s/bin/pip install -r %s' \
+    call(['$WORKON_HOME/%s/bin/pip install -r %s' \
         % (repl['virtenv'], os.path.join(dest, 'setup', 'requirements.txt'))],
         env=os.environ, executable='/bin/bash', shell=True, cwd=dest)
 
@@ -122,10 +131,10 @@ if __name__ == '__main__':
     if options.email_address:
         repl['EMAIL_ADDRESS'] = options.email_address
     
-    while not repl['EMAIL_ADDRESS']:
+    while (not repl['EMAIL_ADDRESS'] or email_re.match(repl['EMAIL_ADDRESS']) is None):
         repl['EMAIL_ADDRESS'] = raw_input('Administrator e-mail address: ')
     
-    repl['SECRET_KEY'] = ''.join([random.choice(CHARS) for i in xrange(50)])
+    repl['SECRET_KEY'] = ''.join([choice(CHARS) for i in xrange(50)])
     
     if options.destination:
         dest_dir = options.destination
@@ -149,6 +158,15 @@ if __name__ == '__main__':
     
     repl['virtenv'] = None
     while not repl['virtenv']:
-        repl['virtenv'] = raw_input('Virtual environment name (e.g. %s): ' % repl['PROJECT_NAME']) or repl['PROJECT_NAME']
+        repl['virtenv'] = raw_input('Virtual environment name [%s]: ' % repl['PROJECT_NAME']) or repl['PROJECT_NAME']
     
+    repl['PACKAGES'] = []
+    packages = ['Media','Admin','Comments','Staff','Stories','Blogs','Categories',
+                'Polls','Tagging','API','Utils','Registration','TinyMCE']
+    for p in packages:
+        i = raw_input('Install %s Package [Y/n]? ' % p) or True
+        if isinstance(i, basestring) and i.lower().startswith('n'):
+            continue
+        repl['PACKAGES'].append(p.lower())
+            
     main(repl, dest, templ_dir)
