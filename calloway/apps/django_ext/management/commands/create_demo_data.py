@@ -93,10 +93,10 @@ class Command(BaseCommand):
             # 25% chance of a subhead
             if random.randint(1,4) == 1:
                 story_data['subhead'] = " ".join(chain.random_output(20))
-            
+            now = datetime.datetime.now().replace(microsecond=0)
             story_data['teaser'] = " ".join(chain.random_output())
-            story_data['publish_date'] = datetime.datetime.now().date()
-            story_data['publish_time'] = datetime.datetime.now().time()
+            story_data['publish_date'] = now.date()
+            story_data['publish_time'] = now.time()
             story_data['site'] = Site.objects.get_current()
             story_data['primary_category'] = random.choice(categories)
             
