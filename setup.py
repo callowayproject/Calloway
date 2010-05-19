@@ -18,7 +18,7 @@ setup(
     author_email = 'webdev@washingtontimes.com',
     description = 'A website builder from the Washington Times',
     long_description = read_file('README'),
-    scripts = ['setup/calloway.py'],
+    scripts = ['bin/calloway.py'],
     packages = find_packages(),
     include_package_data = True,
     install_requires =r,
