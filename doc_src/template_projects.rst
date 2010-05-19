@@ -103,11 +103,54 @@ You an put your Django applications in many places. We recommend two (or possibl
 bin
 ***
 
-We use bin for helpful development scripts that are executed independently from the command line. For example, pulling changes to all installed packages.
+We use bin for helpful development scripts that are executed independently from the command line. For example, pulling changes to all installed packages. 
+
+``ext-status.sh``
+	This example script goes through pip "editable" packages and lists local changes.
+
+``install.sh``
+	A shortcut to install everything in a ``requirements.txt`` file as well as making a symlink from the "editable" packages directory to the local directory, and adds a ``postactivate`` script for ``virtualenvwrapper`` to switch to the appropriate directory upon activation.
+
+``pull-ext.sh``
+	If you are using "editable" packages (very nice for development) this script will attempt to update all the packages.
+
+``push-ext.sh``
+	The opposite of ``pull-ext.sh``\ , this pushes out all local commits. It currently only works with git.
+
+``upgrade.sh``
+	This example script uses git to pull down the latest changes and then executes the ``pull-ext.sh`` script.
 
 conf
 ****
 
 Any configuration file required to run your site sits in here. Here placeholders make all the difference. Since most of your projects probably use the same basic Apache, lighttpd, nginx, or wsgi configurations, with a few things changed, the placeholders from the ``create_project.py`` script takes care of these.
 
-You'll notice sample wsgi, apache2 and nginx configuration files that use placeholders in the file name, as well as within the files. We symlink these files to the appropriate configuration directory (for example the apache2 configuration is symlinked to ``/etc/apache2/sites-available/``\ ) so that updates are maintained in source control and automatically updated on production servers.
+You'll notice sample wsgi and apache2 configuration files that use placeholders in the file name, as well as within the files. We symlink these files to the appropriate configuration directory (for example the apache2 configuration is symlinked to ``/etc/apache2/sites-available/``\ ) so that updates are maintained in source control and automatically updated on production servers.
+
+``$$$$PROJECT_NAME$$$$.wsgi``
+	The default wsgi file to use with Apache and mod_wsgi. The placeholder renames the file to the project name (so in a project named "coolsite" the file becomes "coolsite.wsgi").
+	
+	There are also placeholders within the file to set up the paths. It adds the virtualenv's site-packages to the Python path with::
+	
+		site.addsitedir('/home/webdev/$$$$PROJECT_NAME$$$$/.virtualenvs/$$$$PROJECT_NAME$$$$/lib/python2.5/site-packages')
+
+``apache2-$$$$PROJECT_NAME$$$$``
+	For Apache deployment, this is the default configuration file. There are many placeholders used to specify various Apache configuration options and file paths.
+
+lib
+***
+
+Put any project-specific library packages in ``lib``\ . A library is any python package that doesn't require inclusion in Django's ``INSTALLED_APPS`` setting.
+
+static
+******
+
+This is where project-specific media files that don't change (often) such as CSS, images, and Javascript files. User uploaded files should be stored somewhere else, to mitigate the opportunity for malicious hacking.
+
+Calloway uses django-staticmediamgr to copy and combine media files from all installed apps and other specified sources to one directory. This is helpful for hosting media on a separate server.
+
+templates
+*********
+
+No, the name isn't deceiving; you put templates for your site in here. There are a few basic ones offered as a start. You *will* want to modify these and improve upon them.
+
