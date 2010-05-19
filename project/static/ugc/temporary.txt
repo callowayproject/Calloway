@@ -1,2 +1,0 @@
-This is where user-generated content goes. However, temporary.txt needs to be
-in here so that git will pick up the directory.
