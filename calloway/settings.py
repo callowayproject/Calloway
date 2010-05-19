@@ -62,7 +62,7 @@ REVERSION_MODELS = ('stories.story','flatpages.flatpage')
 
 VARNISH_WATCHED_MODELS = ('stories.story','flatpages.flatpage')
 
-VARNISH_MANAGEMENT_ADDRS = ()
+VARNISH_MANAGEMENT_ADDRS = ('localhost:61',)
 
 NATIVE_TAGS = (
     'native_tags.contrib.generic_content',
