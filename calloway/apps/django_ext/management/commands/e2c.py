@@ -39,6 +39,7 @@ class Command(BaseCommand):
         'weblogs.entry': 'viewpoint.entry',
         'weblogs.blog': 'viewpoint.blog',
         'news.storyinlinemapping': 'stories.storyrelation',
+        'media.photo': 'massmedia.image',
     }
     order = ('staff','blogs','entries','stories','images','inlines')
     #order = ('inlines',)
