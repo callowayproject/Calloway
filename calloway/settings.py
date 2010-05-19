@@ -67,7 +67,7 @@ APPS_CORE = ( # Suggested: APPS_TINYMCE, APPS_REVERSION (for flatpages)
     'django.contrib.redirects',
 )
 APPS_ADMIN = (
-    'massmedia',
+    'massmedia',  # keep me above admin
     'livevalidation', # keep me above admin
     'admin_tools', # for the media copying
     'admin_tools.theming', # keep me above admin
@@ -86,9 +86,7 @@ APPS_MPTT = ('mptt',)
 
 APPS_STAFF = ('staff',) # Suggested: APPS_TINYMCE
 
-APPS_REVERSION = (
-    'reversion',
-)
+APPS_REVERSION = ('reversion',)
 
 APPS_STORIES = ( # Suggested: APPS_TINYMCE, APPS_REVERSION
     'stories',

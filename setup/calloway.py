@@ -72,6 +72,13 @@ def main(repl, dest, templ_dir):
     ]
     subprocess.call([';'.join(create_env_cmds)], env=os.environ, executable='/bin/bash', shell=True)
     subprocess.call([';'.join(create_pa_cmd)], env=os.environ, executable='/bin/bash', shell=True)
+
+    print "Installing Calloway..."
+    calloway = os.path.join(os.path.dirname(__file__), '..')
+    subprocess.call(['$WORKON_HOME/%s/bin/pip install -r %s' \
+        % (repl['virtenv'], os.path.join(calloway, 'setup', 'requirements.txt'))],
+        env=os.environ, executable='/bin/bash', shell=True, cwd=calloway)
+
     print "Installing requirements..."
     subprocess.call(['$WORKON_HOME/%s/bin/pip install -r %s' \
         % (repl['virtenv'], os.path.join(dest, 'setup', 'requirements.txt'))],
@@ -131,8 +138,9 @@ if __name__ == '__main__':
     if options.template:
         templ_dir = options.template
     
+    default = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'projects', 'effingtontimes'))
     while not templ_dir:
-        templ_dir = raw_input('Project template directory: ')
+        templ_dir = raw_input('Project template directory [%s]: ' % default) or default
     templ_dir = os.path.realpath(os.path.expanduser(templ_dir))
     if templ_dir[-1] != '/':
         templ_dir = templ_dir + "/"
