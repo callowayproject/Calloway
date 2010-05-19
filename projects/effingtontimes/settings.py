@@ -14,11 +14,11 @@ TEMPLATE_DEBUG = DEBUG
 from calloway.settings import *
 
 ADMINS = (
-    ('%(NAME)s', '%(EMAIL_ADDRESS)s'),
+    ('$$$$NAME$$$$', '$$$$EMAIL_ADDRESS$$$$'),
 )
 MANAGERS = ADMINS
 
-SECRET_KEY = '%(SECRET_KEY)s'
+SECRET_KEY = '$$$$SECRET_KEY$$$$'
 
 DATABASE_ENGINE = 'sqlite3'    # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
 DATABASE_NAME = 'dev.db'       # Or path to database file if using sqlite3.
@@ -27,7 +27,7 @@ DATABASE_PASSWORD = ''         # Not used with sqlite3.
 DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
 DATABASE_PORT = ''             # Set to empty string for default. Not used with sqlite3.
 
-TIME_ZONE = 'America/New_York'
+TIME_ZONE = 'US/Eastern'
 LANGUAGE_CODE = 'en-us'
 USE_I18N = True
 
@@ -49,20 +49,6 @@ TEMPLATE_DIRS = (
 
 CACHE_BACKEND = 'versionedcache.backend://localhost:11211/'
 
-INSTALLED_APPS = APPS_CORE + \
-    APPS_ADMIN + \
-    APPS_STAFF + \
-    APPS_REVERSION + \
-    APPS_STORIES + \
-    APPS_CALLOWAY_DEFAULT + \
-    APPS_MPTT + \
-    APPS_CATEGORIES + \
-    APPS_COMMENT_UTILS + \
-    APPS_FRONTEND_ADMIN + \
-    APPS_MEDIA + \
-    APPS_UTILS + \
-    APPS_REGISTRATION + \
-    APPS_TINYMCE 
 
 ADMIN_TOOLS_THEMING_CSS = os.path.join(STATIC_ROOT, 'admin', 'css', 'theming.css')
 
@@ -79,9 +65,12 @@ STATIC_MEDIA_COMPRESS_CSS = False
 STATIC_MEDIA_COMPRESS_JS = False
 STATIC_MEDIA_APP_MEDIA_PATH = os.path.join(PROJECT_ROOT, 'media2')
 
+
 try:
     from local_settings import *
 except ImportError:
     pass
 
+INSTALLED_APPS = tuple(calloway.get_apps(DEBUG,$$$$PACKAGES$$$$))
+MIDDLEWARE = tuple(calloway.get_middleware(DEBUG,INSTALLED_APPS))
 VERSION = '0.1'
