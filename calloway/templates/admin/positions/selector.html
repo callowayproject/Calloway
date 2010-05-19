@@ -4,10 +4,10 @@
 <script type="text/javascript">
 	function update_positions(ct){
 		$("#selector").autocomplete({
-    		source:"/position_management/widget/data/{{ content_type_id}}/{{object_id}}/",
+    		source:"/admin/position_management/widget/data/{{ content_type_id}}/{{object_id}}/",
     		minLength: 2,
     		select: function(event, ui) {
-    		    $.get("/position_management/add/"+ ui.item.value +"/{{ content_type_id }}/{{ object_id }}/",function(){
+    		    $.get("/admin/position_management/add/"+ ui.item.value +"/{{ content_type_id }}/{{ object_id }}/",function(){
 					$('<div class="position"><span class="deletelink" id=pos_'+ui.item.value+'>&nbsp;</span>'+ui.item.value+'</div>').appendTo("#position-admin-widget-items");
 					update_positions($("#position-admin-widget-items div").size());
 					$("#selector").focus().val('');
@@ -30,7 +30,7 @@
 			var pos = id.replace('pos_','');
 			$(this).parent().remove();
 			update_positions($("#position-admin-widget-items div").size());
-			$.get("/position_management/remove/"+pos+"/{{ content_type_id }}/{{ object_id }}/");
+			$.get("/admin/position_management/remove/"+pos+"/{{ content_type_id }}/{{ object_id }}/");
 		});
 	}
     $(function() {
