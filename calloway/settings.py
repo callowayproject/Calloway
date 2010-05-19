@@ -25,29 +25,10 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'staticmediamgr.context_processor.static_url',
 )
 
-MIDDLEWARE_CLASSES = (
-    'django.middleware.cache.UpdateCacheMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django_ext.middleware.cookie.UsernameInCookieMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.middleware.gzip.GZipMiddleware',
-    'django.middleware.http.ConditionalGetMiddleware',
-    'django.middleware.doc.XViewMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
-    'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
-    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
-    'django.middleware.transaction.TransactionMiddleware',
-    'pagination.middleware.PaginationMiddleware',
-    'ban.middleware.DenyMiddleware',
-    'django.middleware.cache.FetchFromCacheMiddleware',
-)
-
 AUTHENTICATION_BACKENDS = (
     'django_ext.caseinsensitiveauth.CaseInsensitiveModelBackend',
     'django.contrib.auth.backends.ModelBackend',
 )
-
 
 ROOT_URLCONF = 'urls'
 
@@ -55,83 +36,6 @@ CALLOWAY_TEMPLATE_DIRS = (
     os.path.join(CALLOWAY_ROOT, 'templates'),
 )
 
-APPS_CORE = ( # Suggested: APPS_TINYMCE, APPS_REVERSION (for flatpages)
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.sites',
-    'django.contrib.flatpages',
-    'django.contrib.humanize',
-    'django.contrib.comments',
-    'django.contrib.markup',
-    'django.contrib.redirects',
-)
-APPS_ADMIN = (
-    'massmedia',  # keep me above admin
-    'livevalidation', # keep me above admin
-    'admin_tools', # for the media copying
-    'admin_tools.theming', # keep me above admin
-    'admin_tools.menu', # keep me above admin
-    'admin_tools.dashboard', # keep me above admin
-    'django.contrib.admin',
-)
-APPS_CALLOWAY_DEFAULT = (
-    'django_ext',
-    'django_memcached',
-    'pagination',
-    'django_extensions',
-    'versionedcache',
-)
-APPS_MPTT = ('mptt',)
-
-APPS_STAFF = ('staff',) # Suggested: APPS_TINYMCE
-
-APPS_REVERSION = ('reversion',)
-
-APPS_STORIES = ( # Suggested: APPS_TINYMCE, APPS_REVERSION
-    'stories',
-    'positions',
-    'news_sitemaps',
-    'viewpoint',
-    'pullquote',
-)
-APPS_CATEGORIES = ( # Requires APPS_MPTT
-    'categories',
-    'editor',
-)
-APPS_COMMENT_UTILS = ( # Requires APPS_MPTT
-    'mptt_comments',
-    'offensivecontent',
-    'pollit',
-)
-APPS_FRONTEND_ADMIN = (
-    'livevalidation',
-    'frontendadmin',
-)
-APPS_MEDIA = (
-    'tagging',
-)
-APPS_UTILS = (
-    'robots',
-    'piston',
-    'ban',
-    'native_tags',
-    'staticmediamgr',
-    'google_analytics',
-    'hiermenu',
-    'synagg',
-    'uni_form',
-    'critic',
-    'mailfriend',
-    'debug_toolbar',
-)
-APPS_REGISTRATION = (
-    'registration',
-    'custom_registration',
-)
-APPS_TINYMCE = (
-    'tinymce',
-)
 DJANGO_MEMCACHED_REQUIRE_STAFF = True
 
 TINYMCE_DEFAULT_CONFIG = {
