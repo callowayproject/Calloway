@@ -26,7 +26,7 @@ django-registration==0.8-alpha-1
 ######
 # Content
 ######
-django-stories==0.3.4
+django-stories==0.3.5
 django-robots==0.7.0
 django-frontendadmin==0.4
 django-synagg
