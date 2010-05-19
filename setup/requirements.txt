@@ -30,7 +30,7 @@ django-stories==0.3.4
 django-robots==0.7.0
 django-frontendadmin==0.4
 django-synagg
-massmedia==0.4.4
+massmedia==0.4.5
 viewpoint==0.3
 pollit==0.1.1
 pullquote==0.1.1
@@ -90,6 +90,7 @@ django==1.1.2
 django-extensions==0.4.1
 django-admin-tools==0.2
 python-dateutil==1.4.1
+simplejson
 BeautifulSoup
 lxml
 pytidylib
