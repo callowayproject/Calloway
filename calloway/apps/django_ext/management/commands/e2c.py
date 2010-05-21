@@ -39,6 +39,7 @@ class Command(BaseCommand):
         'weblogs.entry': 'viewpoint.entry',
         'weblogs.blog': 'viewpoint.blog',
         'news.storyinlinemapping': 'stories.storyrelation',
+        'media.photo': 'massmedia.image',
     }
     order = ('staff','blogs','entries','stories','images','inlines')
     #order = ('inlines',)
@@ -55,39 +56,54 @@ class Command(BaseCommand):
             if app == 'staff':
                 fix()
 
-    def get_fixture(self, name):
+    def get_fixtures(self, name):
         adir = 'fixtures'
         for f in os.listdir(adir):
             if f.startswith(name):
-                return load(open(os.path.join(adir, f)))
+                f = os.path.join(adir, f)
+                if os.path.isfile(f):
+                    return [open(f)]
+                elif os.path.isdir(f):
+                    l = [os.path.join(f,x) for x in os.listdir(f) if x.endswith('.json')]
+                    return sorted(map(open, l))
         raise IOError('Fixture %r not found' % name)
     
     def migrate(self, app):
         new_objs = []
-        for obj in self.get_fixture(app):
-            if obj['model'] in self.mapping:
-                m = self.mapping[obj['model']].split('.')
-            else:
-                m = obj['model'].split('.')
-            model = get_model(*m)
-            if not model:
-                continue
-            obj['fields'].update(pk=obj['pk'])
-            try:
-                kw,rel = getattr(self, m[-1])(**obj['fields'])
-            except AttributeError:
-                kw,rel = self.default(**obj['fields'])
-            except TypeError:
-                continue
-            if kw == rel == None:
-                continue
-            if not 'pk' in kw:
-                kw['pk'] = obj['pk']
-            o = model.objects.create(**kw)
-            for k,v in rel.items():
-                for i in v:
-                    getattr(o, k).add(i)
-            new_objs.append(o)
+        for fixture in self.get_fixtures(app):
+            print 'Loading %s...' % fixture
+            for obj in load(fixture):
+                if obj['model'] in self.mapping:
+                    m = self.mapping[obj['model']].split('.')
+                else:
+                    m = obj['model'].split('.')
+                model = get_model(*m)
+                if not model:
+                    continue
+                obj['fields'].update(pk=obj['pk'])
+                try:
+                    kw,rel = getattr(self, m[-1])(**obj['fields'])
+                except AttributeError:
+                    kw,rel = self.default(**obj['fields'])
+                except TypeError:
+                    continue
+                if kw == rel == None:
+                    continue
+                if not 'pk' in kw:
+                    kw['pk'] = obj['pk']
+                #if str(kw['pk']) in E:
+                #    continue
+                from massmedia.models import Image
+                try:
+                    Image.objects.get(pk=kw['pk'])
+                    continue
+                except Image.DoesNotExist:
+                    pass
+                o = model.objects.create(**kw)
+                for k,v in rel.items():
+                    for i in v:
+                        getattr(o, k).add(i)
+                new_objs.append(o)
         return new_objs
     
     def default(self, **fields):
@@ -96,17 +112,23 @@ class Command(BaseCommand):
     def storyrelation(self, **fields):
         from massmedia.models import Image
         from django.contrib.contenttypes.models import ContentType
+        from stories.models import StoryRelation
         ctype = ContentType.objects.get_for_model(Image)
         if fields['inline_type'] == 'photo':
             story = getr('stories.story')(fields['story'])
             if story is None:
                 return
-            return {
-                'story': story,
-                'content_type': ctype,
-                'object_id': fields['object_id'],
-                'relation_type': 'image'
-            }, {}
+            try:
+                StoryRelation.objects.get(pk=fields['pk'])
+                return
+            except StoryRelation.DoesNotExist:
+                return {
+                    'story': story,
+                    'content_type': ctype,
+                    'object_id': fields['object_id'],
+                    'relation_type': 'image'
+                }, {}
+            
         
     def staffmember(self, **fields):
         try:
@@ -158,12 +180,12 @@ class Command(BaseCommand):
                 try:
                     owners.append(StaffMember.objects.get(user=user))
                 except:
-                    return
+                    break 
         return {
             'slug': fields['slug'],
             'title': fields['title'],
             'description': fields['description'] or '',
-            'tease': fields['tagline'],
+            'tease': fields.get('tagline', 'none') or 'none',
             'photo': fields['header_image'],
             'creation_date': fields['created_date'],
             'public': fields['display'],
@@ -188,7 +210,7 @@ class Command(BaseCommand):
             'author': author,
             'slug': fields['slug'],
             'title': fields['title'],
-            'tease': fields['summary'],
+            'tease': fields['summary'] or 'None',
             'pub_date': fields['pub_date'].split()[0],
             'pub_time': fields['pub_date'].split()[1],
             'category': cat
@@ -196,7 +218,7 @@ class Command(BaseCommand):
     
     def story(self, **fields):
         return {
-            'headline': fields['headline'],
+            'headline': fields['headline'][:100],
             'publish_date': fields['pub_date'].split()[0],
             'publish_time': fields['pub_date'].split()[1],
             'body': fields['story'],
@@ -204,20 +226,20 @@ class Command(BaseCommand):
             'status': fields['status'],
             'subhead': fields['print_headline'],
             'teaser': fields['tease'],
-            'slug': fields['slug'],
-            'primary_category': getr(Category)(fields['primary_category']),
+            'slug': fields['slug'][:50],
+            'primary_category': getr(Category)(fields['primary_category'] or 37) or getr(Category)(37),
             'kicker': fields['kicker'],
         }, {
             'authors': map(getr(StaffMember), fields['bylines']),
-            'categories': map(getr(Category), fields['categories']),
+            'categories': filter(None, [getr(Category)(x or 37) for x in fields['categories']]),
         }
         
     def image(self, **fields):
         return {
             'creation_date': fields['creation_date'],
-            'author': fields['photographer'],
+            'author': getr(User)(fields['photographer']),
             'one_off_author': fields['one_off_photographer'],
-            'credit': fields['credit'],
+            #'credit': fields['credit'],
             'caption': fields['caption'],
             'file': fields['photo'],
             'width': fields['width'],
@@ -225,4 +247,22 @@ class Command(BaseCommand):
         }, {
             'sites': [Site.objects.get_current()],
             'categories': map(getr(Category), fields['categories']),
+        }
+
+    def profile(self, **fields):
+        ['display_address1', 'display_address2', 'display_state', 'job_industry', 'about_me', 'display_interests', 'display_activities', 'city', 'political_view', 'display_country', 'display_city', 'state', 'date_of_birth', 'income', 'pk', 'display_profile', 'zip_code', 'interests', 'activities', 'mobile_phone', 'update_date', 'address1', 'address2', 'display_blogs', 'display_mobile_phone', 'display_zip_code', 'display_political_view', 'company_size', 'gender', 'display_about_me', 'responsibility', 'avatar', 'display_comments', 'country', 'job_title']
+        n = fields.pop('newsletters',[])
+        fields.pop('display_mobile_provider')
+        fields.pop('display_usercontent')
+        fields.pop('mobile_provider')
+        fields.pop('display_blogs')
+        fields.pop('avatar')
+        fields.pop('display_comments')
+        for k in fields:
+            if k.startswith('display_'):
+                fields[k] = fields[k] or False
+        fields['phone'] = fields.pop('mobile_phone',None)
+        fields['display_phone'] = fields.pop('display_mobile_phone',False)
+        return fields,{
+            'newsletters': filter(None,map(getr('newsletters.newsletter'), n)),
         }
