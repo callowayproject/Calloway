@@ -38,7 +38,7 @@ STATIC_URL = '/media/'
 
 AUTH_PROFILE_MODULE = ''
 
-PUBLICATION_NAME = 'The Effington Times'
+PUBLICATION_NAME = '$$$$PROJECT_NAME$$$$'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -48,7 +48,6 @@ TEMPLATE_DIRS = (
 ) + CALLOWAY_TEMPLATE_DIRS
 
 CACHE_BACKEND = 'versionedcache.backend://localhost:11211/'
-
 
 ADMIN_TOOLS_THEMING_CSS = os.path.join(STATIC_ROOT, 'admin', 'css', 'theming.css')
 
@@ -65,12 +64,17 @@ STATIC_MEDIA_COMPRESS_CSS = False
 STATIC_MEDIA_COMPRESS_JS = False
 STATIC_MEDIA_APP_MEDIA_PATH = os.path.join(PROJECT_ROOT, 'media2')
 
+INSTALLED_APPS = (
+$$$$INSTALLED_APPS$$$$
+)
+
+MIDDLEWARE = (
+$$$$MIDDLEWARE$$$$
+)
 
 try:
     from local_settings import *
 except ImportError:
     pass
 
-INSTALLED_APPS = tuple(calloway.get_apps(DEBUG,$$$$PACKAGES$$$$))
-MIDDLEWARE = tuple(calloway.get_middleware(DEBUG,INSTALLED_APPS))
 VERSION = '0.1'

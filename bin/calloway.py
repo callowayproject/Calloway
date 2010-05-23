@@ -34,6 +34,120 @@ email_re = re.compile(
     r'|^"([\001-\010\013\014\016-\037!#-\[\]-\177]|\\[\001-011\013\014\016-\177])*"' # quoted-string
     r')@(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+[A-Z]{2,6}\.?$', re.IGNORECASE)  # domain
 
+def format(func):
+    def inner(*a):
+        return ''.join(('\t%s,\n' % _ for _ in func(*a)))
+    return inner
+
+@format
+def get_middleware(apps):
+    yield "'django.middleware.cache.UpdateCacheMiddleware'"
+    yield "'django.middleware.common.CommonMiddleware'"
+    yield "'django.contrib.sessions.middleware.SessionMiddleware'"
+    yield "'django_ext.middleware.cookie.UsernameInCookieMiddleware'"
+    yield "'django.contrib.auth.middleware.AuthenticationMiddleware'"
+    yield "'django.middleware.gzip.GZipMiddleware'"
+    yield "'django.middleware.http.ConditionalGetMiddleware'"
+    yield "'django.middleware.doc.XViewMiddleware'"
+    if 'debug_toolbar' in apps:
+        yield "'debug_toolbar.middleware.DebugToolbarMiddleware'"
+    yield "'django.contrib.redirects.middleware.RedirectFallbackMiddleware'"
+    yield "'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware'"
+    yield "'django.middleware.transaction.TransactionMiddleware'"
+    yield "'pagination.middleware.PaginationMiddleware'"
+    if 'ban' in apps:
+        yield "'ban.middleware.DenyMiddleware'"
+    yield "'django.middleware.cache.FetchFromCacheMiddleware'"
+    
+@format
+def get_apps(packages=None):
+    yield "'django.contrib.auth'"
+    yield "'django.contrib.contenttypes'"
+    yield "'django.contrib.sessions'"
+    yield "'django.contrib.sites'"
+    yield "'django.contrib.flatpages'"
+    yield "'django.contrib.humanize'"
+    yield "'django.contrib.comments'"
+    yield "'django.contrib.markup'"
+    yield "'django.contrib.redirects'"
+    
+    # Calloway
+    yield "'django_ext'"
+    yield "'django_memcached'"
+    yield "'pagination'"
+    yield "'django_extensions'"
+    yield "'versionedcache'"
+    yield "'reversion'"
+    yield "'frontendadmin'"
+
+    lookup = {
+        'media':['massmedia','staticmediamgr'],
+        'admin':['admin_tools','admin_tools.theming','admin_tools.menu','admin_tools.dashboard','django.contrib.admin'],
+        'comments':['mptt','mptt_comments','offensivecontent'],
+        'staff':['staff'],
+        'stories':['pullquote','stories'],
+        'blogs':['viewpoint'],
+        'categories':['categories','editor'],
+        'polls':['pollit'],
+        'tagging':['tagging'],
+        'api':['piston'],
+        'utils':['livevalidation','news_sitemaps','robots','ban','native_tags','google_analytics','hiermenu','synagg','uni_form','critic','mailfriend'],
+        'registration':['registration','custom_registration'],
+        'debug':['debug_toolbar'],
+        'tinymce':['tinymce'],
+    }
+    
+    if packages is None:
+        packages = lookup.keys()
+
+    for package, apps in lookup.items():
+        for app in apps:
+            yield "'%s'" % app
+        if package == 'blogs' and ('stories' in packages or 'blogs' in packages):
+            yield "'positions'"
+
+@format
+def get_urls(apps):
+    yield "(r'^cache/', include('django_memcached.urls'))"
+    yield "(r'^admin/log/', include('logjam.urls'))"
+    yield "(r'^admin/varnish/', include('varnishapp.urls'))"
+    yield "(r'^admin_tools/', include('admin_tools.urls'))"
+    yield "(r'^frontendadmin/', include('frontendadmin.urls'))"
+    yield "(r'^registration/', include('registration.backends.default.urls'))"
+    yield "(r'^accounts/', include('registration.urls'))"
+    yield "(r'^profile/', include('profiles.urls'))"
+    yield "url(r'^robots.txt', 'robots.views.rules_list', name='robots_rule_list')"
+    
+    if 'stories' in apps or 'blogs' in apps:
+        yield "(r'^position_management/', include('positions.urls'))"
+    if 'critic' in apps:
+        yield "(r'^critic/', include('critic.urls'))"
+    if 'api' in apps:
+        yield "(r'^api/', include('api.urls'))"
+    if 'synagg' in apps:
+        yield "(r'^syn/', include('synagg.urls'))"
+    if 'massmedia' in apps:
+        yield "(r'^multimedia/', include('massmedia.urls'))"
+    if 'news_sitemaps' in apps:
+        yield "(r'^sitemaps/', include('news_sitemaps.urls'))"
+    if 'stories' in apps:
+        yield "(r'^news/', include('stories.urls'))"
+    if 'mailfriend' in apps:
+        yield "(r'^mail-a-friend/', include('mailfriend.urls'))"
+    if 'categories' in apps:
+        yield "(r'^categories/', include('categories.urls'))"
+    if 'offensivecontent' in apps:
+        yield "(r'^moderator/', include('offensivecontent.urls'))"
+    if 'pollit' in apps:
+        yield "(r'^polls/', include('pollit.urls'))"
+    if 'staff' in apps:
+        yield "(r'^staff/', include('staff.urls'))"
+    if 'blogs' in apps:
+        yield "(r'^blog/', include('viewpoint.urls'))"
+    yield "(r'^$', 'django.views.generic.simple.direct_to_template', {'template':'homepage.html'})"
+
+print get_apps()
+
 def replace(repl, text):
     text = text.replace('/gitignore', '/.gitignore')
     for key, value in repl.iteritems():
@@ -147,7 +261,7 @@ if __name__ == '__main__':
     if options.template:
         templ_dir = options.template
     
-    default = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'projects', 'effingtontimes'))
+    default = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'project_template'))
     while not templ_dir:
         templ_dir = raw_input('Project template directory [%s]: ' % default) or default
     templ_dir = os.path.realpath(os.path.expanduser(templ_dir))
@@ -160,13 +274,16 @@ if __name__ == '__main__':
     while not repl['virtenv']:
         repl['virtenv'] = raw_input('Virtual environment name [%s]: ' % repl['PROJECT_NAME']) or repl['PROJECT_NAME']
     
-    repl['PACKAGES'] = []
-    packages = ['Media','Admin','Comments','Staff','Stories','Blogs','Categories',
-                'Polls','Tagging','API','Utils','Registration','TinyMCE']
-    for p in packages:
+    packages = []
+    for p in ['Media','Admin','Comments','Staff','Stories','Blogs','Categories',
+                'Debug','Polls','Tagging','API','Utils','Registration','TinyMCE']:
         i = raw_input('Install %s Package [Y/n]? ' % p) or True
         if isinstance(i, basestring) and i.lower().startswith('n'):
             continue
-        repl['PACKAGES'].append(p.lower())
+        packages.append(p.lower())
+        
+    repl['INSTALLED_APPS'] = get_apps(packages)
+    repl['MIDDLEWARE'] = get_middleware(repl['INSTALLED_APPS'])
+    repl['URLS'] = get_urls(repl['INSTALLED_APPS'])
             
     main(repl, dest, templ_dir)
