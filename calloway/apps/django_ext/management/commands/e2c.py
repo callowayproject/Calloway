@@ -47,12 +47,14 @@ class Command(BaseCommand):
     def handle(self, *apps, **options):
         if len(apps):
             for app in apps:
-                self.migrate(app)
+                for o in self.migrate(app):
+                    print '\t%s %s' % (o._meta.model, o.pk)
         for app in self.order:
             if app == 'staff':
                 fix()
             print 'Migrating %s...' % app.title()
-            self.migrate(app)
+            for o in self.migrate(app):
+                print '\t%s %s' % (o._meta.model, o.pk)
             if app == 'staff':
                 fix()
 
@@ -69,7 +71,6 @@ class Command(BaseCommand):
         raise IOError('Fixture %r not found' % name)
     
     def migrate(self, app):
-        new_objs = []
         for fixture in self.get_fixtures(app):
             print 'Loading %s...' % fixture
             for obj in load(fixture):
@@ -91,20 +92,16 @@ class Command(BaseCommand):
                     continue
                 if not 'pk' in kw:
                     kw['pk'] = obj['pk']
-                #if str(kw['pk']) in E:
-                #    continue
-                from massmedia.models import Image
                 try:
-                    Image.objects.get(pk=kw['pk'])
+                    model.objects.get(pk=kw['pk'])
                     continue
-                except Image.DoesNotExist:
+                except model.DoesNotExist:
                     pass
                 o = model.objects.create(**kw)
                 for k,v in rel.items():
                     for i in v:
                         getattr(o, k).add(i)
-                new_objs.append(o)
-        return new_objs
+                yield o
     
     def default(self, **fields):
         return fields, {}
@@ -250,14 +247,13 @@ class Command(BaseCommand):
         }
 
     def profile(self, **fields):
-        ['display_address1', 'display_address2', 'display_state', 'job_industry', 'about_me', 'display_interests', 'display_activities', 'city', 'political_view', 'display_country', 'display_city', 'state', 'date_of_birth', 'income', 'pk', 'display_profile', 'zip_code', 'interests', 'activities', 'mobile_phone', 'update_date', 'address1', 'address2', 'display_blogs', 'display_mobile_phone', 'display_zip_code', 'display_political_view', 'company_size', 'gender', 'display_about_me', 'responsibility', 'avatar', 'display_comments', 'country', 'job_title']
         n = fields.pop('newsletters',[])
-        fields.pop('display_mobile_provider')
-        fields.pop('display_usercontent')
         fields.pop('mobile_provider')
         fields.pop('display_blogs')
         fields.pop('avatar')
         fields.pop('display_comments')
+        fields.pop('display_mobile_provider')
+        fields.pop('display_usercontent')
         for k in fields:
             if k.startswith('display_'):
                 fields[k] = fields[k] or False
