@@ -10,6 +10,7 @@ from django.conf import settings
 from categories.models import Category
 from staff.models import StaffMember
 
+ORDER = ('staff','blogs','entries','stories','images','inlines')
 
 def fix():
     if settings.DATABASE_ENGINE == 'postgresql_psycopg2':
@@ -41,15 +42,13 @@ class Command(BaseCommand):
         'news.storyinlinemapping': 'stories.storyrelation',
         'media.photo': 'massmedia.image',
     }
-    order = ('staff','blogs','entries','stories','images','inlines')
-    #order = ('inlines',)
     
     def handle(self, *apps, **options):
         if len(apps):
             for app in apps:
                 for o in self.migrate(app):
                     print '\t%s %s' % (o._meta.model, o.pk)
-        for app in self.order:
+        for app in ORDER:
             if app == 'staff':
                 fix()
             print 'Migrating %s...' % app.title()
