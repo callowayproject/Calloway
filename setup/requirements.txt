@@ -31,7 +31,7 @@ django-robots==0.7.0
 django-frontendadmin==0.4
 django-synagg
 massmedia==0.4.5
-viewpoint==0.3
+viewpoint==0.4
 pollit==0.1.1
 pullquote==0.1.1
 
