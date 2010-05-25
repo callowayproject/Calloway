@@ -193,11 +193,10 @@ class EmailBackend(DefaultBackend):
         query string or hidden field value.
         
         """
-        next_url = "/"
-        if "next" in request.GET:
-            next_url = request.GET.get("next", "/")
-        elif "next" in request.POST:
-            next_url = request.POST.get("next", "/")
+        next_url = "/registration/register/complete/"
+        if "next" in request.GET or "next" in request.POST:
+            next_url = request.GET.get("next", None) or request.POST.get("next", None) or "/"
+            
         return (next_url, (), {})
 
 
