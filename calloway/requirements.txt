@@ -50,7 +50,7 @@ django-mptt-comments==0.1.1
 ######
 django-native-tags==0.4
 django-pagination==1.0.5
-kamasutra==0.1.1
+kamasutra==0.1.5
 django-tinymce==1.5.1beta1
 django-reversion==1.2.1
 django-livevalidation==0.1.1
