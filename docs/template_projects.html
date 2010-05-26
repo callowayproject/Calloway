@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Template Projects &mdash; Calloway v0.1.2 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Calloway v0.1.2 documentation" href="index.html" />
+    <link rel="prev" title="Introduction to Calloway" href="introduction_to_calloway.html" /> 
+  </head>
+  <body>
+<div id="docstitle">
+	<p>Calloway v0.1.2 documentation</p>
+</div>
+<div id="header">
+	<div id="title"><h1>Template Projects</h1></div>
+	<ul id="headerButtons">
+		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
+		<li id="page_buttons">
+			<div class="headerButton"><a href="genindex.html" title="General Index" accesskey="I">index</a></div>
+			<div class="headerButton"><a href="introduction_to_calloway.html" title="Introduction to Calloway" accesskey="P">previous</a></div>
+		</li>
+	</ul>
+</div>
+
+<div id="sphinxsidebar">
+  <div class="sphinxsidebarwrapper">
+	<ul><li class="toctree-l1"><a href="index.html">Main Page</a></li></ul>
+	<ul class="current">
+<li class="toctree-l1"><a class="reference external" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference external" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference external" href="introduction_to_calloway.html">Introduction to Calloway</a></li>
+<li class="toctree-l1 current"><a class="current reference external" href="">Template Projects</a><ul>
+<li class="toctree-l2"><a class="reference external" href="#the-create-project-script">The <tt class="docutils literal"><span class="pre">create_project</span></tt> script</a></li>
+<li class="toctree-l2"><a class="reference external" href="#before-running-the-script">Before running the script</a></li>
+<li class="toctree-l2"><a class="reference external" href="#running-the-script">Running the script</a></li>
+<li class="toctree-l2"><a class="reference external" href="#the-sample-project-template-structure">The Sample Project Template Structure</a></li>
+</ul>
+</li>
+</ul>
+
+    <div id="searchbox" style="display: none">
+      
+        <form class="search" action="search.html" method="get">
+			<div class="search-wrapper">
+			<span class="search-left"></span>
+			<input class="prettysearch" type="text" name="q" size="18" />
+			<span class="search-right">&nbsp;</span>
+			</div>
+          <input type="submit" value="Search" class="searchbutton" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+        <p class="searchtip" style="font-size: 90%">
+        Enter search terms or a module, class or function name.
+        </p>
+    </div>
+    <script type="text/javascript">$('#searchbox').show(0);</script>
+  </div>
+</div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="template-projects">
+<h1>Template Projects<a class="headerlink" href="#template-projects" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-create-project-script">
+<h2>The <tt class="docutils literal"><span class="pre">create_project</span></tt> script<a class="headerlink" href="#the-create-project-script" title="Permalink to this headline">¶</a></h2>
+<p>The first step in any Calloway project is using the <tt class="docutils literal"><span class="pre">create_project.py</span></tt> script. This script copies a project template to a specified directory and renames files and placeholders within files.</p>
+<p>You can have any number of template projects; the script asks you for the path at runtime. A sample template project is included in the repository.</p>
+</div>
+<div class="section" id="before-running-the-script">
+<h2>Before running the script<a class="headerlink" href="#before-running-the-script" title="Permalink to this headline">¶</a></h2>
+<p>The script does not require Calloway to run. Just Python and the python packages virtualenv and virtualenvwrapper.</p>
+<ol class="arabic">
+<li><p class="first">Install Python if necessary.</p>
+</li>
+<li><p class="first">Get the latest <tt class="docutils literal"><span class="pre">create_project.py</span></tt> script at
+<a class="reference external" href="http://www.callowayproject.com/downloads/create_project.py">http://www.callowayproject.com/downloads/create_project.py</a>.</p>
+</li>
+<li><p class="first">Install the python packages:</p>
+<div class="highlight-python"><pre>pip install virtualenv
+pip install virtualenvwrapper</pre>
+</div>
+<p>or</p>
+<div class="highlight-python"><pre>easy_install virtualenv
+easy_install virtualenvwrapper</pre>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="running-the-script">
+<h2>Running the script<a class="headerlink" href="#running-the-script" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">creat_project.py</span></tt> script defaults to an interactive prompt for information. There are command options, but none are required. Any option not specified by a command option is prompted. To run the script, change to the directory to which you downloaded the <tt class="docutils literal"><span class="pre">create_project.py</span></tt> and run it:</p>
+<div class="highlight-python"><pre>python create_project.py</pre>
+</div>
+<dl class="cmdoption">
+<dt id="cmdoption-create_project.py-a">
+<tt class="descname">-a</tt><tt class="descclassname"> &lt;adminstrator name&gt;</tt><tt class="descclassname">, </tt><tt class="descname">--admin</tt><tt class="descclassname"> &lt;administrator name&gt;</tt><a class="headerlink" href="#cmdoption-create_project.py-a" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Description</strong> The name of the administrator for the site.</p>
+<p><strong>Default</strong> It defaults to the current user&#8217;s login name.</p>
+<p><strong>Placeholder</strong> <tt class="docutils literal"><span class="pre">$$$$NAME$$$$</span></tt></p>
+</dd></dl>
+
+<dl class="cmdoption">
+<dt id="cmdoption-create_project.py-e">
+<tt class="descname">-e</tt><tt class="descclassname"> &lt;administrator email&gt;</tt><tt class="descclassname">, </tt><tt class="descname">--email</tt><tt class="descclassname"> &lt;administrator email&gt;</tt><a class="headerlink" href="#cmdoption-create_project.py-e" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Description</strong> The email address of the website administrator.</p>
+<p><strong>Default</strong> None</p>
+<p><strong>Placeholder</strong> <tt class="docutils literal"><span class="pre">$$$$EMAIL_ADDRESS$$$$</span></tt></p>
+</dd></dl>
+
+<dl class="cmdoption">
+<dt id="cmdoption-create_project.py-n">
+<tt class="descname">-n</tt><tt class="descclassname"> &lt;project name&gt;</tt><tt class="descclassname">, </tt><tt class="descname">--name</tt><tt class="descclassname"> &lt;project name&gt;</tt><a class="headerlink" href="#cmdoption-create_project.py-n" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Description</strong> The name of the project you are creating</p>
+<p><strong>Default</strong> None</p>
+<p><strong>Placeholder</strong> <tt class="docutils literal"><span class="pre">$$$$PROJECT_NAME$$$$</span></tt></p>
+</dd></dl>
+
+<dl class="cmdoption">
+<dt id="cmdoption-create_project.py-v">
+<tt class="descname">-v</tt><tt class="descclassname"> &lt;virtualenv name&gt;</tt><tt class="descclassname">, </tt><tt class="descname">--virtualenv</tt><tt class="descclassname"> &lt;virtualenv name&gt;</tt><a class="headerlink" href="#cmdoption-create_project.py-v" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Description</strong> The name of the Python virtualenv to create.</p>
+<p><strong>Default</strong> None, although the interactive prompt defaults to the project name.</p>
+<p><strong>Placeholder</strong> <tt class="docutils literal"><span class="pre">$$$$virtenv$$$$</span></tt></p>
+</dd></dl>
+
+<dl class="cmdoption">
+<dt id="cmdoption-create_project.py-d">
+<tt class="descname">-d</tt><tt class="descclassname"> &lt;destination path&gt;</tt><tt class="descclassname">, </tt><tt class="descname">--dest</tt><tt class="descclassname"> &lt;destination path&gt;</tt><a class="headerlink" href="#cmdoption-create_project.py-d" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Description</strong> Where to save the project. Relative paths are accepted.</p>
+<p><strong>Default</strong> None, although the interactive prompt defaults to the current working directory.</p>
+<p><strong>Placeholder</strong> None</p>
+</dd></dl>
+
+<dl class="cmdoption">
+<dt id="cmdoption-create_project.py-t">
+<tt class="descname">-t</tt><tt class="descclassname"> &lt;template path&gt;</tt><tt class="descclassname">, </tt><tt class="descname">--dest</tt><tt class="descclassname"> &lt;template path&gt;</tt><a class="headerlink" href="#cmdoption-create_project.py-t" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Description</strong> The path to the project template. Relative paths are accepted.</p>
+<p><strong>Default</strong> None</p>
+<p><strong>Placeholder</strong> None</p>
+</dd></dl>
+
+</div>
+<div class="section" id="the-sample-project-template-structure">
+<h2>The Sample Project Template Structure<a class="headerlink" href="#the-sample-project-template-structure" title="Permalink to this headline">¶</a></h2>
+<p>The sample project template directory structure is a recommended layout, but by no means required. We&#8217;ll go through the parts to explain how you might want to customize it for your needs.</p>
+<div class="section" id="apps">
+<h3>apps<a class="headerlink" href="#apps" title="Permalink to this headline">¶</a></h3>
+<p>You an put your Django applications in many places. We recommend two (or possibly three, if you count <tt class="docutils literal"><span class="pre">lib</span></tt>): <tt class="docutils literal"><span class="pre">apps</span></tt> and <tt class="docutils literal"><span class="pre">site-packages</span></tt>.</p>
+<p><tt class="docutils literal"><span class="pre">apps</span></tt> is for project-specific apps. These are apps that will only make sense in this project, like custom import and export applications. If your projects all need the same application, but it is always customized from a template, you could put the template code here in the project template. Then it is ready to customize for each project.</p>
+</div>
+<div class="section" id="bin">
+<h3>bin<a class="headerlink" href="#bin" title="Permalink to this headline">¶</a></h3>
+<p>We use bin for helpful development scripts that are executed independently from the command line. For example, pulling changes to all installed packages.</p>
+</div>
+<div class="section" id="conf">
+<h3>conf<a class="headerlink" href="#conf" title="Permalink to this headline">¶</a></h3>
+<p>Any configuration file required to run your site sits in here. Here placeholders make all the difference. Since most of your projects probably use the same basic Apache, lighttpd, nginx, or wsgi configurations, with a few things changed, the placeholders from the <tt class="docutils literal"><span class="pre">create_project.py</span></tt> script takes care of these.</p>
+<p>You&#8217;ll notice sample wsgi, apache2 and nginx configuration files that use placeholders in the file name, as well as within the files. We symlink these files to the appropriate configuration directory (for example the apache2 configuration is symlinked to <tt class="docutils literal"><span class="pre">/etc/apache2/sites-available/</span></tt>) so that updates are maintained in source control and automatically updated on production servers.</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">$$$$PROJECT_NAME$$$$.wsgi</span></tt></dt>
+<dd><p class="first">The default wsgi file to use with Apache and mod_wsgi. The placeholder renames the file to the project name (so in a project named &#8220;coolsite&#8221; the file becomes &#8220;coolsite.wsgi&#8221;).</p>
+<p>There are also placeholders within the file to set up the paths. It adds the virtualenv&#8217;s site-packages to the Python path with:</p>
+<div class="last highlight-python"><div class="highlight"><pre><span class="n">site</span><span class="o">.</span><span class="n">addsitedir</span><span class="p">(</span><span class="s">&#39;/home/webdev/$$$$PROJECT_NAME$$$$/.virtualenvs/$$$$PROJECT_NAME$$$$/lib/python2.5/site-packages&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">apache2-$$$$PROJECT_NAME$$$$</span></tt></dt>
+<dd>For Apache deployment, this is the default configuration file. There are many placeholders used to specify various Apache configuration options and file paths.</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+          </div> 
+        </div>
+      </div>
+    <div class="footer">
+    <p>
+      &copy; Copyright 2009-2010, The Washington Times.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+	</p>
+    </div>
+      <div class="clearer"></div>
+    </div>
+	<div id="breadcrumbs">
+		Template Projects
+		</ul>
+	</div>
+	<script type="text/javascript" charset="utf-8" src="_static/toc.js"></script>
+  </body>
+</html>
