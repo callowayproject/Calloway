@@ -26,12 +26,12 @@ django-registration==0.8-alpha-1
 ######
 # Content
 ######
-django-stories==0.3.5
+django-stories==0.3.6
 django-robots==0.7.0
 django-frontendadmin==0.4
 django-synagg
-massmedia==0.4.5
-viewpoint==0.4
+massmedia==0.5.1
+viewpoint==0.5
 pollit==0.1.1
 pullquote==0.1.1
 
@@ -54,7 +54,7 @@ kamasutra==0.1.5
 django-tinymce==1.5.1beta1
 django-reversion==1.2.1
 django-livevalidation==0.1.1
-offensivecontent==0.2.5
+offensivecontent==0.2.6
 django-news-sitemaps==0.1.2
 critic==0.1.1
 django-mailfriend==1.0
@@ -101,4 +101,4 @@ django-uni-form>=0.7
 ######
 # Media
 ######
-django-staticmediamgr==0.5.2
+django-staticmediamgr==0.5.3
