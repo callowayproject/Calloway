@@ -20,6 +20,7 @@ setup(
     packages = find_packages(),
     include_package_data = True,
     install_requires = read_file('calloway/requirements.txt'),
+    dependency_links=['http://opensource.washingtontimes.com/pypi/simple/',],
     classifiers = [
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
