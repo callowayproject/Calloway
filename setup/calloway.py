@@ -7,7 +7,7 @@ if not HAS_VENV:
     print "virtualenv is required to run this script. Please install it with\n  easy_install virtualenv\n\nor\n\n  pip virtualenv"
     sys.exit(1)
 
-HAS_VENVW = bool(subprocess.Popen(['which','virtualenvwrapper_bashrc'], stdout=subprocess.PIPE).communicate()[0])
+HAS_VENVW = bool(subprocess.Popen(['which','virtualenvwrapper.sh'], stdout=subprocess.PIPE).communicate()[0])
 if not HAS_VENVW:
     print "virtualenvwrapper is required to run this script. Please install it with\n  easy_install virtualenvwrapper\n\nor\n\n  pip virtualenvwrapper"
     sys.exit(1)
