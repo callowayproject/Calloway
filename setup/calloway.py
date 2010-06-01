@@ -59,13 +59,13 @@ def main(repl, dest, templ_dir):
     
     print "Making the virtual environment (%s)..." % repl['virtenv']
     create_env_cmds = [
-        'source virtualenvwrapper_bashrc', 
+        'source virtualenvwrapper.sh', 
         'cd %s' % dest,
         'mkvirtualenv --no-site-packages --distribute %s' % repl['virtenv'],
         'easy_install pip'
     ]
     create_pa_cmd = [
-        'source virtualenvwrapper_bashrc',
+        'source virtualenvwrapper.sh',
         'cat > $WORKON_HOME/%s/bin/postactivate '\
         '<<END\n#!/bin/bash/\ncd %s\nEND\n'\
         'chmod +x $WORKON_HOME/%s/bin/postactivate' % (repl['virtenv'], dest,repl['virtenv'])
