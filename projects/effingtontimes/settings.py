@@ -8,7 +8,11 @@ CALLOWAY_ROOT = os.path.abspath(os.path.dirname(calloway.__file__))
 sys.path.insert(0, os.path.join(CALLOWAY_ROOT, 'apps'))
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
-DEBUG = True
+try:
+    from local_settings import DEBUG as LOCAL_DEBUG
+    DEBUG = LOCAL_DEBUG
+except ImportError:
+    DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 from calloway.settings import *
@@ -33,10 +37,36 @@ TIME_ZONE = 'America/New_York'
 LANGUAGE_CODE = 'en-us'
 USE_I18N = True
 
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'media2')
-MEDIA_ROOT = os.path.join(STATIC_ROOT, 'ugc')
-MEDIA_URL = '/media/ugc/'
-STATIC_URL = '/media/'
+try:
+    from local_settings import MEDIA_URL_PREFIX
+except ImportError:
+    MEDIA_URL_PREFIX = "http://media.washtimes.com/"
+try:
+    from local_settings import MEDIA_ROOT_PREFIX
+except ImportError:
+    MEDIA_ROOT_PREFIX = '/nfs-media/twt/'
+try:
+    from local_settings import MEDIA_ROOT
+except ImportError:
+    MEDIA_ROOT = os.path.join(MEDIA_ROOT_PREFIX, 'ugc')
+try:
+    from local_settings import STATIC_ROOT
+except ImportError:
+    STATIC_ROOT = os.path.join(MEDIA_ROOT_PREFIX, 'static')
+    
+
+MEDIA_URL = '%sugc/' % MEDIA_URL_PREFIX
+STATIC_URL = "%sstatic/" % MEDIA_URL_PREFIX
+STATIC_MEDIA_APP_MEDIA_PATH = STATIC_ROOT
+STATIC_MEDIA_COPY_PATHS = (
+    {'from': os.path.join(CALLOWAY_ROOT, 'media'), 'to': STATIC_ROOT},
+    {'from': 'static', 'to': STATIC_ROOT},
+)
+STATIC_MEDIA_COMPRESS_CSS = not DEBUG
+STATIC_MEDIA_COMPRESS_JS = not DEBUG
+
+MMEDIA_DEFAULT_STORAGE = 'media_storage.MediaStorage'
+MMEDIA_IMAGE_UPLOAD_TO = 'image/%Y/%m/%d'
 
 AUTH_PROFILE_MODULE = ''
 
@@ -72,18 +102,7 @@ TINYMCE_JS_URL = '%sjs/tiny_mce/tiny_mce.js' % STATIC_URL
 
 TINYMCE_JS_ROOT = os.path.join(STATIC_ROOT, 'js/tiny_mce')
 
-STATIC_MEDIA_COPY_PATHS = (
-    {'from': os.path.join(CALLOWAY_ROOT, 'media'), 'to': 'media2'},
-    {'from': 'media', 'to': 'media2'},
-)
-
-STATIC_MEDIA_COMPRESS_CSS = False
-STATIC_MEDIA_COMPRESS_JS = False
-STATIC_MEDIA_APP_MEDIA_PATH = os.path.join(PROJECT_ROOT, 'media2')
-
 try:
     from local_settings import *
 except ImportError:
     pass
-
-VERSION = '0.1'
