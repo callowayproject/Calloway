@@ -1,11 +1,10 @@
 recursive-include doc_src *
 recursive-include docs *
 
-recursive-include calloway/apps *.sh *.html *.xml *.json *.gif *.png *.css *.txt *.py
+recursive-include calloway/apps *.txt *.py
 recursive-include calloway/bin *.sh
-recursive-include calloway/fixtures *.json
-recursive-include calloway/media *.html *.xml *.json *.gif *.png *.css *.txt
-recursive-include calloway/templates *.html *.xml *.json *.txt
+recursive-include calloway/media *.html *.gif *.png *.css *.txt
+recursive-include calloway/templates *.html *.xml
 
 include LICENSE
 include README
