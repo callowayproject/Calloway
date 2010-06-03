@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Introduction to Calloway &mdash; Calloway v0.1.2 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1.2',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Calloway v0.1.2 documentation" href="index.html" />
+    <link rel="next" title="Template Projects" href="template_projects.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
+  </head>
+  <body>
+<div id="docstitle">
+	<p>Calloway v0.1.2 documentation</p>
+</div>
+<div id="header">
+	<div id="title"><h1>Introduction to Calloway</h1></div>
+	<ul id="headerButtons">
+		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
+		<li id="page_buttons">
+			<div class="headerButton"><a href="genindex.html" title="General Index" accesskey="I">index</a></div>
+			<div class="headerButton"><a href="template_projects.html" title="Template Projects" accesskey="N">next</a></div>
+			<div class="headerButton"><a href="installation.html" title="Installation" accesskey="P">previous</a></div>
+		</li>
+	</ul>
+</div>
+
+<div id="sphinxsidebar">
+  <div class="sphinxsidebarwrapper">
+	<ul><li class="toctree-l1"><a href="index.html">Main Page</a></li></ul>
+	<ul class="current">
+<li class="toctree-l1"><a class="reference external" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference external" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference external" href="">Introduction to Calloway</a><ul>
+<li class="toctree-l2"><a class="reference external" href="#what-calloway-provides">What Calloway Provides</a></li>
+<li class="toctree-l2"><a class="reference external" href="#structure-of-a-calloway-project">Structure of a Calloway Project</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="template_projects.html">Template Projects</a></li>
+</ul>
+
+    <div id="searchbox" style="display: none">
+      
+        <form class="search" action="search.html" method="get">
+			<div class="search-wrapper">
+			<span class="search-left"></span>
+			<input class="prettysearch" type="text" name="q" size="18" />
+			<span class="search-right">&nbsp;</span>
+			</div>
+          <input type="submit" value="Search" class="searchbutton" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+        <p class="searchtip" style="font-size: 90%">
+        Enter search terms or a module, class or function name.
+        </p>
+    </div>
+    <script type="text/javascript">$('#searchbox').show(0);</script>
+  </div>
+</div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="introduction-to-calloway">
+<h1>Introduction to Calloway<a class="headerlink" href="#introduction-to-calloway" title="Permalink to this headline">¶</a></h1>
+<p>Calloway was dreamed up to be a fast way to get a web site going. Most web sites have an infrastructure that is painful to recreate each time. Our goal is to allow programmers to specify the functionality they want included, and then focus on the parts that make their website unique.</p>
+<p>The underlying framework upon which Calloway resides is Django. It is written in Python and promotes adding functionality in &#8220;Applications&#8221; that can be reused in other projects. This isolation of functionality is what Calloway uses to combine other open source projects together to create a cohesive infrastructure.</p>
+<div class="section" id="what-calloway-provides">
+<h2>What Calloway Provides<a class="headerlink" href="#what-calloway-provides" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Static media minification and migration to a separate media server</li>
+<li>IP address banning</li>
+<li>Use cookies for session identification</li>
+<li>Allow case-insensitive user login using a uesrname or e-mail address</li>
+<li>Multi-media asset management</li>
+<li>Customized admin with dashboard</li>
+<li>A versioned cache for allowing for website and other updates</li>
+<li>Staff profile management</li>
+<li>Stories with revision control and site-positioning</li>
+<li>Hierarchical categorization</li>
+<li>Threaded commenting with moderation</li>
+<li>Polls</li>
+<li>Multi-user blogs</li>
+<li>Robots.txt management</li>
+<li>Easy template tag creation library</li>
+<li>Hierarchical navigation menu</li>
+<li>Google Analytics management</li>
+<li>Voting</li>
+<li>Sharing</li>
+<li>User registration</li>
+</ul>
+</div>
+<div class="section" id="structure-of-a-calloway-project">
+<h2>Structure of a Calloway Project<a class="headerlink" href="#structure-of-a-calloway-project" title="Permalink to this headline">¶</a></h2>
+<p>A fundamental Calloway principle is progressive enhancement. By providing good defaults, you only override what you need. You have access to individual parts, as well as a combined whole.</p>
+<ol class="arabic simple">
+<li>You create a project using a project template.<ul>
+<li>A project template is included, but you can modify it to your defaults</li>
+<li>A script is used to walk you through the creation of the project</li>
+</ul>
+</li>
+<li>Your project includes Calloway as a dependency (that is typically defined already in the template project).</li>
+<li>The <tt class="docutils literal"><span class="pre">settings.py</span></tt> in your project brings in Calloway&#8217;s default settings, and specifies preset application bundles. Other applications or overrides of the defaults are also specified.</li>
+<li>The <tt class="docutils literal"><span class="pre">urls.py</span></tt> in your project brings in Calloway&#8217;s default routing, and overrides are added as necessary.</li>
+<li>The template project includes common server configurations, customized by the <tt class="docutils literal"><span class="pre">create_project</span></tt> script.</li>
+</ol>
+</div>
+</div>
+
+
+          </div> 
+        </div>
+      </div>
+    <div class="footer">
+    <p>
+      &copy; Copyright 2009-2010, The Washington Times.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+	</p>
+    </div>
+      <div class="clearer"></div>
+    </div>
+	<div id="breadcrumbs">
+		Introduction to Calloway
+		</ul>
+	</div>
+	<script type="text/javascript" charset="utf-8" src="_static/toc.js"></script>
+  </body>
+</html>
