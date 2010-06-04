@@ -86,7 +86,7 @@ python-varnish==0.1
 # Misc Libraries
 ######
 django-mptt-2==0.3
-django==1.1.2
+simplejson==2.0.9
 django-extensions==0.4.1
 django-admin-tools==0.2
 python-dateutil==1.4.1
