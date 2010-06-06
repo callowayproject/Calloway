@@ -138,7 +138,7 @@ if __name__ == '__main__':
     if options.template:
         templ_dir = options.template
     
-    default = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'projects', 'effingtontimes'))
+    default = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'project_tmpl'))
     while not templ_dir:
         templ_dir = raw_input('Project template directory [%s]: ' % default) or default
     templ_dir = os.path.realpath(os.path.expanduser(templ_dir))
