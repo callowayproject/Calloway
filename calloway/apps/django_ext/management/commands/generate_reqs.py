@@ -1,7 +1,7 @@
-from django.core.management.base import NoArgsCommand
-from django.db import transaction
-from django.conf import settings
 import os
+from optparse import make_option
+
+from django.core.management.base import BaseCommand
 
 mapping = {
     'admin_tools': ('django-admin-tools==0.2',),
@@ -17,10 +17,12 @@ mapping = {
     'editor': ('django-categories==0.4.3','django-mptt-2==0.3', ),
     'frontendadmin': ('django-frontendadmin==0.4', 'django-livevalidation==0.1.1',),
     'google_analytics': ('google_analytics==0.2',),
+    'haystack': ('django-haystack==1.0.1-final',),
     'hiermenu': ('hiermenu==0.1',),
     'livevalidation': ('django-livevalidation==0.1.1',),
     'mailfriend': ('django-mailfriend==1.0',),
     'massmedia': ('massmedia==0.5.1', 'django-tagging==0.3.1', 'IPTCInfo', 'hachoir-metadata', 'hachoir-core', 'hachoir-parser',),
+    'memcache_status': ('django-memcache-status==1.0.1',),
     'mptt': ('django-mptt-2==0.3',),
     'mptt_comments': ('django-mptt-comments==0.1.1','django-mptt-2==0.3',),
     'native_tags': ('django-native-tags==0.4',),
@@ -41,15 +43,11 @@ mapping = {
     'tagging': ('django-tagging==0.3.1',),
     'tinymce': ('django-tinymce==1.5.1beta1',),
     'uni_form': ('django-uni-form==0.7',),
+    'varnishapp': ('django-varnish==0.1', 'python-varnish==0.1',),
     'versionedcache': ('versionedcache==0.1.0dev',),
     'viewpoint': ('viewpoint==0.6.2',),
 }
 
-not_included = {
-    'memcache_status': ('django-memcache-status==1.0.1',),
-    'varnishapp': ('django-varnish==0.1', 'python-varnish==0.1',),
-    'haystack': ('django-haystack==1.0.1-final',),
-}
 unknown = {
     'python-dateutil': 'python-dateutil==1.4.1',
     'django-logjam': 'django-logjam==0.1.1',
@@ -59,23 +57,41 @@ unknown = {
     'lxml':'lxml',
 }
 
-
-class Command(NoArgsCommand):
-    help = "Prints out a requirements file"
-
-    def handle_noargs(self, **options):
-        # try:
-        #     reqs = open(os.path.join(settings.CALLOWAY_ROOT, 'requirements.txt')).read()
-        # except IOError, e:
-        #     print "Returned an error reading the requirements file: %s" % e
-        # 
-        # print reqs
-        from django.conf import settings
-        reqs = set()
-        
-        for app in settings.INSTALLED_APPS:
-            if app in mapping.keys():
-                reqs |= set(mapping[app])
+def generate_requirements(output_path=None):
+    """
+    Loop through the INSTALLED_APPS and create a set of requirements for pip.
+    
+    if output_path is ``None`` then write to standard out, otherwise write
+    to the path.
+    """
+    from django.conf import settings
+    reqs = set()
+    
+    for app in settings.INSTALLED_APPS:
+        if app in mapping.keys():
+            reqs |= set(mapping[app])
+    if output_path is None:
         print "--extra-index-url=http://opensource.washingtontimes.com/pypi/simple/"
         for item in reqs:
             print item
+    else:
+        try:
+            out_file = open(output_path, 'w')
+            out_file.write("--extra-index-url=http://opensource.washingtontimes.com/pypi/simple/\n")
+            for item in reqs:
+                out_file.write("%s\n" % item)
+        finally:
+            out_file.close()
+
+
+class Command(BaseCommand):
+    help = "Writes a requirements file for pip to standard out or a file."
+    can_import_settings = True
+
+    def handle(self, *args, **options):
+        if len(args) == 1:
+            generate_requirements(args[0])
+        elif len(args) == 0:
+            generate_requirements()
+        else:
+            raise CommandError("No more than one file path may be specified on the command.")
