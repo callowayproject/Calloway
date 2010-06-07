@@ -7,7 +7,7 @@ if not HAS_VENV:
     print "virtualenv is required to run this script. Please install it with\n  easy_install virtualenv\n\nor\n\n  pip virtualenv"
     sys.exit(1)
 
-HAS_VENVW = bool(subprocess.Popen(['which','virtualenvwrapper_bashrc'], stdout=subprocess.PIPE).communicate()[0])
+HAS_VENVW = bool(subprocess.Popen(['which','virtualenvwrapper.sh'], stdout=subprocess.PIPE).communicate()[0])
 if not HAS_VENVW:
     print "virtualenvwrapper is required to run this script. Please install it with\n  easy_install virtualenvwrapper\n\nor\n\n  pip virtualenvwrapper"
     sys.exit(1)
@@ -59,26 +59,20 @@ def main(repl, dest, templ_dir):
     
     print "Making the virtual environment (%s)..." % repl['virtenv']
     create_env_cmds = [
-        'source virtualenvwrapper_bashrc', 
+        'source virtualenvwrapper.sh', 
         'cd %s' % dest,
         'mkvirtualenv --no-site-packages --distribute %s' % repl['virtenv'],
         'easy_install pip'
     ]
     create_pa_cmd = [
-        'source virtualenvwrapper_bashrc',
+        'source virtualenvwrapper.sh',
         'cat > $WORKON_HOME/%s/bin/postactivate '\
         '<<END\n#!/bin/bash/\ncd %s\nEND\n'\
         'chmod +x $WORKON_HOME/%s/bin/postactivate' % (repl['virtenv'], dest,repl['virtenv'])
     ]
     subprocess.call([';'.join(create_env_cmds)], env=os.environ, executable='/bin/bash', shell=True)
     subprocess.call([';'.join(create_pa_cmd)], env=os.environ, executable='/bin/bash', shell=True)
-
-    print "Installing Calloway..."
-    calloway = os.path.join(os.path.dirname(__file__), '..')
-    subprocess.call(['$WORKON_HOME/%s/bin/pip install -r %s' \
-        % (repl['virtenv'], os.path.join(calloway, 'setup', 'requirements.txt'))],
-        env=os.environ, executable='/bin/bash', shell=True, cwd=calloway)
-
+    
     print "Installing requirements..."
     subprocess.call(['$WORKON_HOME/%s/bin/pip install -r %s' \
         % (repl['virtenv'], os.path.join(dest, 'setup', 'requirements.txt'))],
@@ -138,7 +132,7 @@ if __name__ == '__main__':
     if options.template:
         templ_dir = options.template
     
-    default = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'projects', 'effingtontimes'))
+    default = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'project_tmpl'))
     while not templ_dir:
         templ_dir = raw_input('Project template directory [%s]: ' % default) or default
     templ_dir = os.path.realpath(os.path.expanduser(templ_dir))

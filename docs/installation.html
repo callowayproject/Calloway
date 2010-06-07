@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,27 +6,28 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Installation &mdash; Calloway v0.1.2 documentation</title>
+    <title>Installation &mdash; Calloway v0.1.8 documentation</title>
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.1.2',
-        COLLAPSE_MODINDEX: false,
+        VERSION:     '0.1.8',
+        COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Calloway v0.1.2 documentation" href="index.html" />
-    <link rel="next" title="Introduction to Calloway" href="introduction_to_calloway.html" />
-    <link rel="prev" title="Getting Started" href="getting_started.html" /> 
+    <link rel="top" title="Calloway v0.1.8 documentation" href="index.html" />
+    <link rel="next" title="Getting Started" href="getting_started.html" />
+    <link rel="prev" title="Introduction to Calloway" href="introduction_to_calloway.html" /> 
   </head>
   <body>
 <div id="docstitle">
-	<p>Calloway v0.1.2 documentation</p>
+	<p>Calloway v0.1.8 documentation</p>
 </div>
 <div id="header">
 	<div id="title"><h1>Installation</h1></div>
@@ -33,8 +35,8 @@
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
 			<div class="headerButton"><a href="genindex.html" title="General Index" accesskey="I">index</a></div>
-			<div class="headerButton"><a href="introduction_to_calloway.html" title="Introduction to Calloway" accesskey="N">next</a></div>
-			<div class="headerButton"><a href="getting_started.html" title="Getting Started" accesskey="P">previous</a></div>
+			<div class="headerButton"><a href="getting_started.html" title="Getting Started" accesskey="N">next</a></div>
+			<div class="headerButton"><a href="introduction_to_calloway.html" title="Introduction to Calloway" accesskey="P">previous</a></div>
 		</li>
 	</ul>
 </div>
@@ -43,13 +45,15 @@
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="index.html">Main Page</a></li></ul>
 	<ul class="current">
-<li class="toctree-l1"><a class="reference external" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1 current"><a class="current reference external" href="">Installation</a><ul>
-<li class="toctree-l2"><a class="reference external" href="#dependencies">Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction_to_calloway.html">Introduction to Calloway</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#project-template">Project Template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calloway-application">Calloway Application</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference external" href="introduction_to_calloway.html">Introduction to Calloway</a></li>
-<li class="toctree-l1"><a class="reference external" href="template_projects.html">Template Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="template_projects.html">Template Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/index.html">Reference</a></li>
 </ul>
 
     <div id="searchbox" style="display: none">
@@ -81,13 +85,20 @@
             
   <div class="section" id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<p>I think we need a calloway_start project with the create_project.py script and the project template.</p>
+<p>There are two parts to the Calloway project that are not dependent upon each other, but work great in tandem.</p>
+<div class="section" id="project-template">
+<h2>Project Template<a class="headerlink" href="#project-template" title="Permalink to this headline">¶</a></h2>
+<p>The project template is the first part. It is based on code from Eric Florenzano. An example project template is included, but you can specify any directory you want as your template project.</p>
+<p>To install the project tempate:</p>
 <ol class="arabic simple">
-<li>Download the <tt class="docutils literal"><span class="pre">create_project.py</span></tt> script from ????</li>
-<li></li>
+<li>Download the <tt class="docutils literal"><span class="pre">project_tmpl</span></tt> script from <tt class="docutils literal"><span class="pre">www.callowayproject.com/downloads/project_tmpl.tar.gz</span></tt></li>
+<li>Decompress the file.</li>
 </ol>
-<div class="section" id="dependencies">
-<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="calloway-application">
+<h2>Calloway Application<a class="headerlink" href="#calloway-application" title="Permalink to this headline">¶</a></h2>
+<p>The Calloway application is just like any other Django application. You can install it in any typical way, although the suggested method is to include Calloway in the requirements file in your project.</p>
+<p>The example project template includes <tt class="docutils literal"><span class="pre">calloway</span></tt> as a requirement in <tt class="docutils literal"><span class="pre">setup/requirements.txt</span></tt>. When you execute <tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">setup/requirements.txt</span></tt>, <tt class="docutils literal"><span class="pre">pip</span></tt> will install all other requirements (Django, for example) as well as Calloway. You can add the specific version of Calloway to your requirements file (e.g. <tt class="docutils literal"><span class="pre">calloway==0.2</span></tt>) if you want. We didn&#8217;t want to tie the project template too closely with the Calloway Application version as the two parts will change at different rates.</p>
 </div>
 </div>
 
@@ -97,8 +108,8 @@
       </div>
     <div class="footer">
     <p>
-      &copy; Copyright 2009-2010, The Washington Times.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+      &copy; Copyright 2010, The Calloway Project.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0b2.
 	</p>
     </div>
       <div class="clearer"></div>
