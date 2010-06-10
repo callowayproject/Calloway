@@ -16,9 +16,8 @@ setup(
     url = 'http://opensource.washingtontimes.com/projects/calloway/',
     author = 'The Washington Times Web Devs',
     author_email = 'webdev@washingtontimes.com',
-    description = 'A website builder from the Washington Times',
+    description = 'A builder of boring stuff for opinionated developers',
     long_description = read_file('README'),
-    scripts = ['setup/calloway.py'],
     packages = find_packages(),
     include_package_data = True,
     classifiers = [
