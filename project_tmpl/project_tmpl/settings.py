@@ -7,6 +7,8 @@ import sys
 CALLOWAY_ROOT = os.path.abspath(os.path.dirname(calloway.__file__))
 sys.path.insert(0, os.path.join(CALLOWAY_ROOT, 'apps'))
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+sys.path.insert(0, os.path.join(PROJECT_ROOT, 'apps'))
+sys.path.insert(0, os.path.join(PROJECT_ROOT, 'lib'))
 
 try:
     from local_settings import DEBUG as LOCAL_DEBUG
@@ -96,7 +98,7 @@ INSTALLED_APPS = APPS_CORE + \
     APPS_REGISTRATION + \
     APPS_TINYMCE 
 
-ADMIN_TOOLS_THEMING_CSS = os.path.join(STATIC_ROOT, 'admin', 'css', 'theming.css')
+ADMIN_TOOLS_THEMING_CSS = 'admin/css/theming.css'
 
 TINYMCE_JS_URL = '%sjs/tiny_mce/tiny_mce.js' % STATIC_URL
 
