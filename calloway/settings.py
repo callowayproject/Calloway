@@ -1,5 +1,7 @@
 import os
 import sys
+import django
+django_version = django.VERSION
 
 CALLOWAY_ROOT = os.path.abspath(os.path.dirname(__file__))
 
@@ -24,15 +26,23 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
     'staticmediamgr.context_processor.static_url',
 )
+if django_version[1] == 2:
+    CSRF_VIEWMIDDLEWARE = ('django.middleware.csrf.CsrfViewMiddleware',)
+    CSRF_RESPONSEMIDDLEWARE = ('django.middleware.csrf.CsrfResponseMiddleware',)
+    MESSAGES_MIDDLEWARE = ('django.contrib.messages.middleware.MessageMiddleware',)
+else:
+    CSRF_VIEWMIDDLEWARE = ()
+    CSRF_RESPONSEMIDDLEWARE = ()
+    MESSAGES_MIDDLEWARE = ()
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',) + CSRF_VIEWMIDDLEWARE + (
     'django_ext.middleware.cookie.UsernameInCookieMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',) + MESSAGES_MIDDLEWARE + (
     'django.middleware.gzip.GZipMiddleware',
-    'django.middleware.http.ConditionalGetMiddleware',
+    'django.middleware.http.ConditionalGetMiddleware',) + CSRF_RESPONSEMIDDLEWARE + (
     'django.middleware.doc.XViewMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
