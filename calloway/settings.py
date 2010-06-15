@@ -77,7 +77,7 @@ APPS_CORE = ( # Suggested: APPS_TINYMCE, APPS_REVERSION (for flatpages)
     'django.contrib.redirects',
 )
 APPS_ADMIN = (
-    'massmedia',  # keep me above admin
+    #'massmedia',  # keep me above admin
     'livevalidation', # keep me above admin
     'admin_tools', # for the media copying
     'admin_tools.theming', # keep me above admin
@@ -87,9 +87,9 @@ APPS_ADMIN = (
 )
 APPS_CALLOWAY_DEFAULT = (
     'django_ext',
+)
+APPS_CACHING = (
     'django_memcached',
-    'pagination',
-    'django_extensions',
     'versionedcache',
 )
 APPS_MPTT = ('mptt',)
@@ -112,27 +112,30 @@ APPS_CATEGORIES = ( # Requires APPS_MPTT
 APPS_COMMENT_UTILS = ( # Requires APPS_MPTT
     'mptt_comments',
     'offensivecontent',
-    'pollit',
 )
 APPS_FRONTEND_ADMIN = ( # requires livevalidation in APPS_ADMIN
     'frontendadmin',
 )
 APPS_MEDIA = (
+    'massmedia',
     'tagging',
+    'staticmediamgr',
 )
 APPS_UTILS = (
     'robots',
     'piston',
     'ban',
     'native_tags',
-    'staticmediamgr',
     'google_analytics',
+    'django_extensions',
+    'pagination',
     'hiermenu',
     'synagg',
     'uni_form',
     'critic',
     'mailfriend',
     'debug_toolbar',
+    'pollit',
 )
 APPS_REGISTRATION = (
     'registration',
@@ -192,3 +195,6 @@ DEBUG_TOOLBAR_PANELS = (
     'debug_toolbar.panels.sql.SQLDebugPanel',
     'debug_toolbar.panels.logger.LoggingPanel',
 )
+DEBUG_TOOLBAR_CONFIG = {
+    'INTERCEPT_REDIRECTS': False
+}
