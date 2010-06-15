@@ -185,6 +185,8 @@ CATEGORIES_RELATION_MODELS = ['pollit.poll',]
 
 INTERNAL_IPS = ('127.0.0.1',)
 
+STATIC_MEDIA_PURGE_OLD_FILES = False
+
 DEBUG_TOOLBAR_PANELS = (
     'debug_toolbar.panels.version.VersionDebugPanel',
     'debug_toolbar.panels.timer.TimerDebugPanel',
