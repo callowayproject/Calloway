@@ -37,7 +37,7 @@ mapping = {
     'staff': ('django-staff==0.3.2',),
     'staticmediamgr': ('django-staticmediamgr==0.5.3',),
     'stories': ('django-stories==0.3.6', 'BeautifulSoup', 'pytidylib'),
-    'synagg': ('django-synagg', 'feedparser==4.1',),
+    'synagg': ('django-synagg', 'feedparser==4.1', 'django-picklefield==0.1', 'lxml==2.2.6', 'pytidylib'),
     'tagging': ('django-tagging==0.3.1',),
     'tinymce': ('django-tinymce==1.5.1beta1',),
     'uni_form': ('django-uni-form==0.7',),
@@ -49,10 +49,8 @@ mapping = {
 unknown = {
     'python-dateutil': 'python-dateutil==1.4.1',
     'django-logjam': 'django-logjam==0.1.1',
-    'django-picklefield': 'django-picklefield==0.1',
     'django-profiles': 'django-profiles>=0.2',
     'simplejson': 'simplejson==2.0.9',
-    'lxml':'lxml',
 }
 
 def generate_requirements(output_path=None):
@@ -84,6 +82,7 @@ def generate_requirements(output_path=None):
 
 if __name__ == "__main__":
     import sys
+    sys.path.insert(0, os.getcwd())
     args = sys.argv[1:]
     if len(args) == 1:
         generate_requirements(args[0])
