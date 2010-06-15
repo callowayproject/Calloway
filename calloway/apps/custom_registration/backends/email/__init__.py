@@ -1,4 +1,4 @@
-import random
+import random, datetime
 
 from django.db import models
 from django.conf import settings
@@ -203,28 +203,48 @@ class EmailBackend(DefaultBackend):
 def handle_expired_accounts():
     """
     Check of expired accounts.
-    """        
+    """
+    ACTIVATED = RegistrationProfile.ACTIVATED
+    expiration_date = datetime.timedelta(days=settings.ACCOUNT_ACTIVATION_DAYS)
+    
+    to_delete = []
+    print "Processing %s registration profiles..." % str(RegistrationProfile.objects.all().count())
     for profile in RegistrationProfile.objects.all():
         # if registration profile is expired, deactive user.
-        if profile.activation_key_expired():
+        print "Processing %s" % profile.user
+        # If profile has been activated already, set it to be removed
+        # and move on to next registration profile
+        if profile.activation_key == ACTIVATED:
+            print "Found Active"
+            to_delete.append(profile.pk)
+            continue
+            
+        # If the user has not activated their account and the activation
+        # days have passed, deactivate the user and send an email to user.
+        if profile.user.is_active and profile.user.date_joined + expiration_date <= datetime.datetime.now():
+            print "Found Expired"
             user = profile.user
             user.is_active = False
-            user.save()
             
             # Send an email notifing user of there account becoming inactive.
-            try:
-                site = Site.objects.get_current()
-                ctx_dict = { 'site': site, 
-                             'activation_key': profile.activation_key}
-                     
-                subject = render_to_string(
-                    'registration/email/emails/account_expired_subject.txt',
-                    ctx_dict)
-                subject = ''.join(subject.splitlines())
-        
-                message = render_to_string(
-                    'registration/email/emails/account_expired.txt',
-                    ctx_dict)
-                user.email_user(subject, message, settings.DEFAULT_FROM_EMAIL)
-            except:
-                pass
+            site = Site.objects.get_current()
+            ctx_dict = { 'site': site, 
+                         'activation_key': profile.activation_key}
+                 
+            subject = render_to_string(
+                'registration/email/emails/account_expired_subject.txt',
+                ctx_dict)
+            subject = ''.join(subject.splitlines())
+    
+            message = render_to_string(
+                'registration/email/emails/account_expired.txt',
+                ctx_dict)
+            user.email_user(subject, message, settings.DEFAULT_FROM_EMAIL)
+            
+            # Only save the user instance after the email is sent.
+            user.save()
+            
+    # Delete the registration profiles that were set to be deleted, aka
+    # user has already activated their account.
+    print "Deleting %s registration profiles." % str(len(to_delete))
+    RegistrationProfile.objects.filter(pk__in=to_delete).delete()
