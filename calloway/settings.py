@@ -1,5 +1,7 @@
 import os
 import sys
+import django
+django_version = django.VERSION
 
 CALLOWAY_ROOT = os.path.abspath(os.path.dirname(__file__))
 
@@ -24,15 +26,23 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
     'staticmediamgr.context_processor.static_url',
 )
+if django_version[1] == 2:
+    CSRF_VIEWMIDDLEWARE = ('django.middleware.csrf.CsrfViewMiddleware',)
+    CSRF_RESPONSEMIDDLEWARE = ('django.middleware.csrf.CsrfResponseMiddleware',)
+    MESSAGES_MIDDLEWARE = ('django.contrib.messages.middleware.MessageMiddleware',)
+else:
+    CSRF_VIEWMIDDLEWARE = ()
+    CSRF_RESPONSEMIDDLEWARE = ()
+    MESSAGES_MIDDLEWARE = ()
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',) + CSRF_VIEWMIDDLEWARE + (
     'django_ext.middleware.cookie.UsernameInCookieMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',) + MESSAGES_MIDDLEWARE + (
     'django.middleware.gzip.GZipMiddleware',
-    'django.middleware.http.ConditionalGetMiddleware',
+    'django.middleware.http.ConditionalGetMiddleware',) + CSRF_RESPONSEMIDDLEWARE + (
     'django.middleware.doc.XViewMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
@@ -67,7 +77,7 @@ APPS_CORE = ( # Suggested: APPS_TINYMCE, APPS_REVERSION (for flatpages)
     'django.contrib.redirects',
 )
 APPS_ADMIN = (
-    'massmedia',  # keep me above admin
+    #'massmedia',  # keep me above admin
     'livevalidation', # keep me above admin
     'admin_tools', # for the media copying
     'admin_tools.theming', # keep me above admin
@@ -77,9 +87,9 @@ APPS_ADMIN = (
 )
 APPS_CALLOWAY_DEFAULT = (
     'django_ext',
+)
+APPS_CACHING = (
     'django_memcached',
-    'pagination',
-    'django_extensions',
     'versionedcache',
 )
 APPS_MPTT = ('mptt',)
@@ -102,27 +112,30 @@ APPS_CATEGORIES = ( # Requires APPS_MPTT
 APPS_COMMENT_UTILS = ( # Requires APPS_MPTT
     'mptt_comments',
     'offensivecontent',
-    'pollit',
 )
 APPS_FRONTEND_ADMIN = ( # requires livevalidation in APPS_ADMIN
     'frontendadmin',
 )
 APPS_MEDIA = (
+    'massmedia',
     'tagging',
+    'staticmediamgr',
 )
 APPS_UTILS = (
     'robots',
     'piston',
     'ban',
     'native_tags',
-    'staticmediamgr',
     'google_analytics',
+    'django_extensions',
+    'pagination',
     'hiermenu',
     'synagg',
     'uni_form',
     'critic',
     'mailfriend',
     'debug_toolbar',
+    'pollit',
 )
 APPS_REGISTRATION = (
     'registration',
@@ -172,6 +185,8 @@ CATEGORIES_RELATION_MODELS = ['pollit.poll',]
 
 INTERNAL_IPS = ('127.0.0.1',)
 
+STATIC_MEDIA_PURGE_OLD_FILES = False
+
 DEBUG_TOOLBAR_PANELS = (
     'debug_toolbar.panels.version.VersionDebugPanel',
     'debug_toolbar.panels.timer.TimerDebugPanel',
@@ -182,3 +197,6 @@ DEBUG_TOOLBAR_PANELS = (
     'debug_toolbar.panels.sql.SQLDebugPanel',
     'debug_toolbar.panels.logger.LoggingPanel',
 )
+DEBUG_TOOLBAR_CONFIG = {
+    'INTERCEPT_REDIRECTS': False
+}
