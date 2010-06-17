@@ -163,7 +163,7 @@ NATIVE_TAGS = (
     'native_tags.contrib.generic_content',
 )
 
-ADMIN_TOOLS_MENU = 'calloway.menu.CustomMenu'
+ADMIN_TOOLS_MENU = 'calloway.menu.DefaultMenu'
 
 STORY_RELATION_MODELS = ['massmedia.audio', 'massmedia.image', 'massmedia.document',
     'massmedia.video', 'massmedia.collection', 'stories.story','viewpoint.entry','viewpoint.blog','pollit.poll',]
