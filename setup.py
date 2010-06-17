@@ -19,6 +19,8 @@ setup(
     long_description = read_file('README'),
     packages = find_packages(),
     include_package_data = True,
+    
+    
     scripts = ['calloway/bin/generate_reqs.py',],
     classifiers = [
         'Development Status :: 4 - Beta',
