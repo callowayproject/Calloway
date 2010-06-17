@@ -8,7 +8,6 @@ def read_file(filename):
         return open(filepath).read()
     except:
         return ''
-r =  [x for x in read_file('setup/requirements.txt').splitlines() if not x.lstrip().startswith('#') and x]
 
 setup(
     name = "calloway",
@@ -20,6 +19,8 @@ setup(
     long_description = read_file('README'),
     packages = find_packages(),
     include_package_data = True,
+    install_requires = read_file('calloway/requirements.txt'),
+    dependency_links=['http://opensource.washingtontimes.com/pypi/simple/',],
     classifiers = [
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
