@@ -6,13 +6,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Installation &mdash; v0.1.10 documentation</title>
+    <title>Installation &mdash; v0.1.11beta1 documentation</title>
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.1.10',
+        VERSION:     '0.1.11beta1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -21,13 +21,13 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="v0.1.10 documentation" href="index.html" />
+    <link rel="top" title="v0.1.11beta1 documentation" href="index.html" />
     <link rel="next" title="Getting Started" href="getting_started.html" />
     <link rel="prev" title="Introduction to Calloway" href="introduction_to_calloway.html" /> 
   </head>
   <body>
 <div id="docstitle">
-	<p>v0.1.10 documentation</p>
+	<p>v0.1.11beta1 documentation</p>
 </div>
 <div id="header">
 	<div id="title"><h1>Installation</h1></div>
@@ -47,6 +47,7 @@
 	<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction_to_calloway.html">Introduction to Calloway</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#start-project-py-script">start_project.py script</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#project-template">Project Template</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#calloway-application">Calloway Application</a></li>
 </ul>
@@ -85,19 +86,38 @@
             
   <div class="section" id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<p>There are two parts to the Calloway project that are not dependent upon each other, but work great in tandem.</p>
+<p>There are several parts to the Calloway project that are not dependent upon each other, but work great in tandem.</p>
+<div class="section" id="start-project-py-script">
+<span id="installation-start-project-script"></span><h2>start_project.py script<a class="headerlink" href="#start-project-py-script" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">start_project.py</span></tt> script is an interactive command-line program for building a Django project from a template project, based on code from <a class="reference external" href="http://www.eflorenzano.com/">Eric Florenzano</a>. The template project isn&#8217;t anything special except that any placeholders for certain variables are replaced during the project creation.</p>
+<p>View the script at <a class="reference external" href="http://gist.github.com/444408">http://gist.github.com/444408</a> or download the script directly from <a class="reference external" href="http://gist.github.com/gists/444408/download">http://gist.github.com/gists/444408/download</a>. Once you download the script, you will need to decompress it.</p>
+<div class="highlight-python"><pre>$ curl http://gist.github.com/gists/444408/download | tar -zxv
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+102  2058  102  2058    0     0   7629      0 --:--:-- --:--:-- --:--:--  9942
+x gist444408-597f127451c5cd81e599753224b4e9fb133bd3eb/
+x gist444408-597f127451c5cd81e599753224b4e9fb133bd3eb/start_project.py</pre>
+</div>
+<p>You can move the script anywhere you want from here.</p>
+</div>
 <div class="section" id="project-template">
-<h2>Project Template<a class="headerlink" href="#project-template" title="Permalink to this headline">¶</a></h2>
-<p>The project template is the first part. It is based on code from Eric Florenzano. An example project template is included, but you can specify any directory you want as your template project.</p>
-<p>To install the project tempate:</p>
-<ol class="arabic simple">
-<li>Download the <tt class="docutils literal"><span class="pre">project_tmpl</span></tt> script from <tt class="docutils literal"><span class="pre">www.callowayproject.com/downloads/project_tmpl.tar.gz</span></tt></li>
-<li>Decompress the file.</li>
-</ol>
+<span id="installation-project-template"></span><h2>Project Template<a class="headerlink" href="#project-template" title="Permalink to this headline">¶</a></h2>
+<p>The example project template is meant to be a starting point. It is likely that you will have several templates for different types of sites or deployments. Download the <tt class="docutils literal"><span class="pre">project_tmpl</span></tt> code from
+<a class="reference external" href="http://github.com/callowayproject/project_tmpl/downloads">github</a> and decompress it. Alternatively, you can clone it using <tt class="docutils literal"><span class="pre">git</span></tt> if you wish to keep up-to-date with any changes we make to it.</p>
+<div class="highlight-python"><pre>$ curl -L -O http://github.com/downloads/callowayproject/project_tmpl/project_tmpl-20100621.tar.gz
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 61440  100 61440    0     0   254k      0 --:--:-- --:--:-- --:--:--  254k
+
+$ tar -zxvf project_tmpl-20100621.tar.gz</pre>
+</div>
+<p>Make any changes you wish. It&#8217;s <em>your</em> project template now.</p>
 </div>
 <div class="section" id="calloway-application">
-<h2>Calloway Application<a class="headerlink" href="#calloway-application" title="Permalink to this headline">¶</a></h2>
-<p>The Calloway application is just like any other Django application. You can install it in any typical way, although the suggested method is to include Calloway in the requirements file in your project.</p>
+<span id="installation-calloway-application"></span><h2>Calloway Application<a class="headerlink" href="#calloway-application" title="Permalink to this headline">¶</a></h2>
+<p>The Calloway application is just like any other Django application. You can install it in any typical way, using <tt class="docutils literal"><span class="pre">pip</span></tt> or <tt class="docutils literal"><span class="pre">easy_install</span></tt> although the suggested method is to include Calloway in the requirements file in your project.</p>
 <p>The example project template includes <tt class="docutils literal"><span class="pre">calloway</span></tt> as a requirement in <tt class="docutils literal"><span class="pre">setup/requirements.txt</span></tt>. When you execute <tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">setup/requirements.txt</span></tt>, <tt class="docutils literal"><span class="pre">pip</span></tt> will install all other requirements (Django, for example) as well as Calloway. You can add the specific version of Calloway to your requirements file (e.g. <tt class="docutils literal"><span class="pre">calloway==0.2</span></tt>) if you want. We didn&#8217;t want to tie the project template too closely with the Calloway Application version as the two parts will change at different rates.</p>
 </div>
 </div>
