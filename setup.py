@@ -21,7 +21,7 @@ setup(
     include_package_data = True,
     
     
-    scripts = ['calloway/bin/generate_reqs.py',],
+    scripts = ['calloway/bin/generate_reqs'],
     classifiers = [
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
