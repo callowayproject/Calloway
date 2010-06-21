@@ -30,7 +30,7 @@ mapping = {
     'pagination': ('django-pagination==1.0.8',),
     'piston': ('django-piston==0.2.2',),
     'pollit': ('pollit==0.1.1',),
-    'positions': ('kamasutra==0.1.5',),
+    'positions': ('kamasutra==0.1.5','simplejson==2.0.9',),
     'pullquote': ('pullquote==0.1.1',),
     'registration': ('django-registration==0.8-alpha-1',),
     'reversion': ('django-reversion==1.2.1',),
@@ -54,6 +54,10 @@ unknown = {
     'simplejson': 'simplejson==2.0.9',
 }
 
+always_required = (
+	'python-memcached==1.45',
+)
+
 def generate_requirements(output_path=None):
     """
     Loop through the INSTALLED_APPS and create a set of requirements for pip.
@@ -62,7 +66,7 @@ def generate_requirements(output_path=None):
     to the path.
     """
     import settings
-    reqs = set()
+    reqs = set(always_required)
     
     for app in settings.INSTALLED_APPS:
         if app in mapping.keys():
