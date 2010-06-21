@@ -1,10 +1,58 @@
 @font-face {
-	font-family: 'BusoramaRegular';
-	src: url('busorama-webfont.eot');
-	src: local('☺'), url('busorama-webfont.woff') format('woff'), url('busorama-webfont.ttf') format('truetype'), url('busorama-webfont.svg#webfontOCe3nvDf') format('svg');
+	font-family: 'DroidSansRegular';
+	src: url('type/DroidSans-webfont.eot');
+	src: local('☺'), 
+	    url('type/DroidSans-webfont.woff') format('woff'), 
+	    url('type/DroidSans-webfont.ttf') format('truetype'), 
+	    url('type/DroidSans-webfont.svg#webfont') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
+
+@font-face {
+	font-family: 'DroidSansBold';
+	src: url('type/DroidSans-Bold-webfont.eot');
+	src: local('☺'), 
+	    url('type/DroidSans-Bold-webfont.woff') format('woff'), 
+	    url('type/DroidSans-Bold-webfont.ttf') format('truetype'), 
+	    url('type/DroidSans-Bold-webfont.svg#webfont') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'DroidSansMonoRegular';
+	src: url('type/DroidSansMono-webfont.eot');
+	src: local('☺'), 
+	    url('type/DroidSansMono-webfont.woff') format('woff'), 
+	    url('type/DroidSansMono-webfont.ttf') format('truetype'), 
+	    url('type/DroidSansMono-webfont.svg#webfont') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GraublauWeb';
+	src: url('graublauweb-webfont.eot');
+	src: local('☺'), 
+	    url('type/graublauweb-webfont.woff') format('woff'), 
+	    url('type/graublauweb-webfont.ttf') format('truetype'), 
+	    url('type/graublauweb-webfont.svg#webfonty806eVE3') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GraublauWeb';
+	src: url('graublauwebbold-webfont.eot');
+	src: local('☺'), 
+	    url('type/graublauwebbold-webfont.woff') format('woff'), 
+	    url('type/graublauwebbold-webfont.ttf') format('truetype'), 
+	    url('type/graublauwebbold-webfont.svg#webfontYymBpngJ') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+
 
 h3 {
      color:#000000;
@@ -63,7 +111,7 @@ div.clearer {
     height: 20px;
     padding: 4px 15px;
     border-left: 1px solid #ACACAC;
-    font-family:'Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
+    font-family:'DroidSansRegular','Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
     color: black;
 }
 .headerButton a:hover {
@@ -79,7 +127,7 @@ li#toc_button {
 li#toc_button .headerButton a {
     width:198px;
     padding-top: 4px;
-    font-family:'Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
+    font-family:'DroidSansRegular','Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
     color: black;
     float: left;
     padding-left:15px;
@@ -204,6 +252,7 @@ img {
 }
 
 #sphinxsidebar li.toctree-l1 a {
+    font-family:'GraublauWeb','Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
     font-weight: bold;
     color: #000;
     text-decoration: none;
@@ -391,7 +440,7 @@ p.topic-title {
     margin:30px;
 }
 .admonition p { 
-    font: 12px 'Lucida Grande', Geneva, Helvetica, Arial, sans-serif;
+    font: 12px 'DroidSansRegular','Lucida Grande', Geneva, Helvetica, Arial, sans-serif;
     margin-top: 7px;
     margin-bottom: 0px;
 }
@@ -555,7 +604,7 @@ pre {
     background-color:#F1F5F9;
     border:1px solid #C9D1D7;
     border-spacing:0;
-    font-family:"Bitstream Vera Sans Mono",Monaco,"Lucida Console",Courier,Consolas,monospace;
+    font-family:'DroidSansMonoRegular',"Bitstream Vera Sans Mono",Monaco,"Lucida Console",Courier,Consolas,monospace;
     font-size:11px;
     padding: 10px;
 }
@@ -576,7 +625,7 @@ table.highlighttable td {
 }
 
 tt {
-	font-family:"Bitstream Vera Sans Mono",Monaco,"Lucida Console",Courier,Consolas,monospace;
+	font-family:'DroidSansMonoRegular',"Bitstream Vera Sans Mono",Monaco,"Lucida Console",Courier,Consolas,monospace;
 
 }
 
@@ -632,7 +681,7 @@ span.eqno {
 }
 
 body {
-    font-family:'Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
+    font-family:'DroidSansRegular','Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
 }
 
 dl.class dt {
@@ -714,7 +763,7 @@ white-space:nowrap;
 h1 {
 -x-system-font:none;
 color:#000000;
-font-family:'Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
+font-family:'GraublauWeb','Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
 font-size:30px;
 font-size-adjust:none;
 font-stretch:normal;
@@ -736,7 +785,7 @@ font-size:10px;
 
 p {
 -x-system-font:none;
-font-family:'Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
+font-family:'DroidSansRegular','Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
 font-size:12px;
 font-size-adjust:none;
 font-stretch:normal;
@@ -749,6 +798,8 @@ margin-top:0;
 }
 
 h2 {
+font-family:'GraublauWeb','Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
+font-weight: bold;
 border-bottom:1px solid #919699;
 color:#000000;
 font-size:24px;
@@ -775,7 +826,7 @@ padding:0 0 12px 6px;
 }
 li {
 margin-top:7px;
-font-family:'Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
+font-family:'DroidSansRegular','Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
 font-size:12px;
 font-size-adjust:none;
 font-stretch:normal;
