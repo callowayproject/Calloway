@@ -23,7 +23,7 @@ class DefaultMenu(Menu):
         if 'pollit' in APPS:
             content_children.append(MenuItem(title='Polls', url=reverse('admin:pollit_poll_changelist')))
             
-        if 'viewpoint' in APS:
+        if 'viewpoint' in APPS:
             content_children.append(MenuItem(title='Blog Entries', url=reverse('admin:viewpoint_entry_changelist')))
             organize_children.append(MenuItem(title='Blogs', url=reverse('admin:viewpoint_blog_changelist')))
         
