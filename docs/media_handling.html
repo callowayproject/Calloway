@@ -1,0 +1,210 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Media Configuration &mdash; v0.1.11beta2 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1.11beta2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="v0.1.11beta2 documentation" href="index.html" />
+    <link rel="next" title="Reference" href="reference/index.html" />
+    <link rel="prev" title="Template Projects" href="template_projects.html" /> 
+  </head>
+  <body>
+<div id="docstitle">
+	<p>v0.1.11beta2 documentation</p>
+</div>
+<div id="header">
+	<div id="title"><h1>Media Configuration</h1></div>
+	<ul id="headerButtons">
+		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
+		<li id="page_buttons">
+			<div class="headerButton"><a href="genindex.html" title="General Index" accesskey="I">index</a></div>
+			<div class="headerButton"><a href="reference/index.html" title="Reference" accesskey="N">next</a></div>
+			<div class="headerButton"><a href="template_projects.html" title="Template Projects" accesskey="P">previous</a></div>
+		</li>
+	</ul>
+</div>
+
+<div id="sphinxsidebar">
+  <div class="sphinxsidebarwrapper">
+	<ul><li class="toctree-l1"><a href="index.html">Main Page</a></li></ul>
+	<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction_to_calloway.html">Introduction to Calloway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="template_projects.html">Template Projects</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Media Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#three-different-kinds-of-media">Three Different Kinds of Media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#media-management-in-calloway">Media Management in Calloway</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reference/index.html">Reference</a></li>
+</ul>
+
+    <div id="searchbox" style="display: none">
+      
+        <form class="search" action="search.html" method="get">
+			<div class="search-wrapper">
+			<span class="search-left"></span>
+			<input class="prettysearch" type="text" name="q" size="18" />
+			<span class="search-right">&nbsp;</span>
+			</div>
+          <input type="submit" value="Search" class="searchbutton" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+        <p class="searchtip" style="font-size: 90%">
+        Enter search terms or a module, class or function name.
+        </p>
+    </div>
+    <script type="text/javascript">$('#searchbox').show(0);</script>
+  </div>
+</div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="media-configuration">
+<h1>Media Configuration<a class="headerlink" href="#media-configuration" title="Permalink to this headline">¶</a></h1>
+<p>Calloway allows for a range of media serving options. While many Django users are used to having a single directory in which everything resides, others may need to have media hosted somewhere else, and if you allow for user uploads, you may want those stored somewhere different from your regular media.</p>
+<div class="section" id="three-different-kinds-of-media">
+<h2>Three Different Kinds of Media<a class="headerlink" href="#three-different-kinds-of-media" title="Permalink to this headline">¶</a></h2>
+<p>All media is not created equal, and you may want to handle different media, well, differently. Here are a few types we&#8217;ve identified.</p>
+<dl class="docutils">
+<dt><strong>assets</strong></dt>
+<dd>Assets are files that your staff uploads, such as photos, documents and audio recordings. Django 1.1 or greater allows for custom media storage, which Calloway can use to separate the staff uploads from applications such as Massmedia from user uploads from applications like a user profile.</dd>
+<dt><strong>static</strong></dt>
+<dd>Static files are files specifically for the website, such as CSS, Javascript, and images. You should store these files in your repository. Many times you will want to combine some and minify or otherwise optimize others.</dd>
+<dt><strong>uploads</strong></dt>
+<dd>You might not allow user uploads, but if you ever do, you will want to keep these files separate from others.</dd>
+</dl>
+</div>
+<div class="section" id="media-management-in-calloway">
+<h2>Media Management in Calloway<a class="headerlink" href="#media-management-in-calloway" title="Permalink to this headline">¶</a></h2>
+<p>By default, Django wants to store all media in the same place. Segregating different types of media requires a bit of reconfiguration to make it work. The settings here assumes that static or website media is stored in the repository in a directory named <tt class="docutils literal"><span class="pre">static</span></tt>. Assets and uploads are stored in directories within a directory named <tt class="docutils literal"><span class="pre">media</span></tt> where <tt class="docutils literal"><span class="pre">media</span></tt> is <em>not</em> in the repository.</p>
+<img alt="_images/callowaymediahandling.png" src="_images/callowaymediahandling.png" />
+<div class="section" id="media-url-prefix-and-media-root-prefix-settings">
+<h3><tt class="docutils literal"><span class="pre">MEDIA_URL_PREFIX</span></tt> and <tt class="docutils literal"><span class="pre">MEDIA_ROOT_PREFIX</span></tt> settings<a class="headerlink" href="#media-url-prefix-and-media-root-prefix-settings" title="Permalink to this headline">¶</a></h3>
+<p>These settings aren&#8217;t standard Django settings, but it makes it easier to configure the multiple urls we need. If you are going to store production media on a separate server or location from your development media.</p>
+<p>The sample project template configures these:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">local_settings</span> <span class="kn">import</span> <span class="n">MEDIA_URL_PREFIX</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">MEDIA_URL_PREFIX</span> <span class="o">=</span> <span class="s">&quot;http://media.example.com/&quot;</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">local_settings</span> <span class="kn">import</span> <span class="n">MEDIA_ROOT_PREFIX</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">MEDIA_ROOT_PREFIX</span> <span class="o">=</span> <span class="s">&#39;/nfs-media/website/&#39;</span>
+</pre></div>
+</div>
+<p>This configuration allows for media to be handled differently during development than deployment, and allows for custom media storage to utilize them.</p>
+</div>
+<div class="section" id="media-root-and-media-url-settings">
+<h3><tt class="docutils literal"><span class="pre">MEDIA_ROOT</span></tt> and <tt class="docutils literal"><span class="pre">MEDIA_URL</span></tt> settings<a class="headerlink" href="#media-root-and-media-url-settings" title="Permalink to this headline">¶</a></h3>
+<p>This is the default place that Django looks for media. We are going to use this for user-generated content.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">local_settings</span> <span class="kn">import</span> <span class="n">MEDIA_ROOT</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">MEDIA_ROOT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">MEDIA_ROOT_PREFIX</span><span class="p">,</span> <span class="s">&#39;ugc&#39;</span><span class="p">)</span>
+<span class="n">MEDIA_URL</span> <span class="o">=</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s">ugc/&#39;</span> <span class="o">%</span> <span class="n">MEDIA_URL_PREFIX</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="static-media-and-static-url-settings">
+<h3><tt class="docutils literal"><span class="pre">STATIC_MEDIA</span></tt> and <tt class="docutils literal"><span class="pre">STATIC_URL</span></tt> settings<a class="headerlink" href="#static-media-and-static-url-settings" title="Permalink to this headline">¶</a></h3>
+<p>This is a proposed addition to Django&#8217;s default settings. Other projects, such as <a class="reference external" href="http://pinaxproject.com/">Pinax</a>, are already using this convention for their website media. Static Media Manager has a context processor that makes <tt class="docutils literal"><span class="pre">STATIC_URL</span></tt> available to the template.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">local_settings</span> <span class="kn">import</span> <span class="n">STATIC_ROOT</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">STATIC_ROOT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">MEDIA_ROOT_PREFIX</span><span class="p">,</span> <span class="s">&#39;static&#39;</span><span class="p">)</span>
+<span class="n">STATIC_URL</span> <span class="o">=</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s">static/&quot;</span> <span class="o">%</span> <span class="n">MEDIA_URL_PREFIX</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="massmedia-storage-setup">
+<h3>Massmedia storage setup<a class="headerlink" href="#massmedia-storage-setup" title="Permalink to this headline">¶</a></h3>
+<p>Massmedia allows for the configuration of a default storage system to be used for all types of media, and separate configurations to override the default for each type of media. In the <tt class="docutils literal"><span class="pre">apps</span></tt> directory is <tt class="docutils literal"><span class="pre">media_storage.py</span></tt>. This contains a custom file storage system for django. The following setting sets the correct storage place using the <tt class="docutils literal"><span class="pre">MEDIA_URL_PREFIX</span></tt> and <tt class="docutils literal"><span class="pre">MEDIA_ROOT_PREFIX</span></tt> settings.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">MMEDIA_DEFAULT_STORAGE</span> <span class="o">=</span> <span class="s">&#39;media_storage.MediaStorage&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="staticmediamgr-settings">
+<h3>StaticMediaMgr settings<a class="headerlink" href="#staticmediamgr-settings" title="Permalink to this headline">¶</a></h3>
+<p>The tool we developed for managing application static media as well as site-specific static media is StaticMediaMgr. It can copy, compress, minify and join files in a configurable way.</p>
+<p>First, we need to handle application media. StaticMediaMgr looks in every application in <tt class="docutils literal"><span class="pre">INSTALLED_APPS</span></tt> for a <tt class="docutils literal"><span class="pre">media</span></tt> directory. All of these directories need a place to copy. We will set it to the destination static media directory.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This media is copied <em>before</em> the items in the <tt class="docutils literal"><span class="pre">static</span></tt> directory. This allows us to override a specific media&#8217;s items similarly to overriding templates.</p>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">STATIC_MEDIA_APP_MEDIA_PATH</span> <span class="o">=</span> <span class="n">STATIC_ROOT</span>
+</pre></div>
+</div>
+<p>We can have StaticMediaMgr recursively copy multiple directories to different places.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">STATIC_MEDIA_COPY_PATHS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">{</span><span class="s">&#39;from&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">CALLOWAY_ROOT</span><span class="p">,</span> <span class="s">&#39;media&#39;</span><span class="p">),</span> <span class="s">&#39;to&#39;</span><span class="p">:</span> <span class="n">STATIC_ROOT</span><span class="p">},</span>
+    <span class="p">{</span><span class="s">&#39;from&#39;</span><span class="p">:</span> <span class="s">&#39;static&#39;</span><span class="p">,</span> <span class="s">&#39;to&#39;</span><span class="p">:</span> <span class="n">STATIC_ROOT</span><span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Last, but not least, we must configure the compression. During development, we don&#8217;t want it, but we do want it for production:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">STATIC_MEDIA_COMPRESS_CSS</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">DEBUG</span>
+<span class="n">STATIC_MEDIA_COMPRESS_JS</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">DEBUG</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ignoring-the-right-things">
+<h3>Ignoring the right things<a class="headerlink" href="#ignoring-the-right-things" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="docutils literal"><span class="pre">.gitignore</span></tt> file should contain several things:</p>
+<div class="highlight-python"><pre>*.pyc
+.svn
+.DS_Store
+local_settings.py
+externals
+pip-log.txt
+dev.db
+media2/
+media/</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div> 
+        </div>
+      </div>
+    <div class="footer">
+    <p>
+      &copy; Copyright 2010, The Calloway Project.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0b2.
+	</p>
+    </div>
+      <div class="clearer"></div>
+    </div>
+	<div id="breadcrumbs">
+		Media Configuration
+		</ul>
+	</div>
+	<script type="text/javascript" charset="utf-8" src="_static/toc.js"></script>
+  </body>
+</html>
