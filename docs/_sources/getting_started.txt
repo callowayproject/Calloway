@@ -158,4 +158,3 @@ Getting Started
 
 	./manage.py syncdb
 
-

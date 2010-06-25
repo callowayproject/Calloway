@@ -13,6 +13,7 @@ Contents:
    installation
    getting_started
    template_projects
+   media_handling
    reference/index
 
 Indices and tables
