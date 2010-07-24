@@ -14,6 +14,7 @@ Contents:
    getting_started
    template_projects
    media_handling
+   applications
    reference/index
 
 Indices and tables

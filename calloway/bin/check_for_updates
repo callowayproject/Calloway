@@ -1,0 +1,51 @@
+#! /usr/bin/env python
+
+import pip
+import sys, xmlrpclib
+from cStringIO import StringIO
+from distutils.version import StrictVersion, LooseVersion
+
+def get_local_packages():
+    sys.stdout = mystdout = StringIO()
+    pip.main(['freeze', 'l'])
+    sys.stdout = sys.__stdout__
+    
+    pkgs = mystdout.getvalue().split('\n')
+    return [p.split('==') for p in pkgs]
+
+def find_current_version(pkg, index_urls=['http://pypi.python.org/pypi',]):
+    cur_version = '0'
+    cur_index = ''
+    for index_url in index_urls:
+        pypi = xmlrpclib.ServerProxy(index_url, xmlrpclib.Transport())
+        try:
+            pypi_hits = pypi.package_releases(pkg)
+        except Exception, e:
+            print "Received error checking %s on %s: %s" % (pkg, index_url, e)
+            continue
+        if len(pypi_hits) > 0:
+            if compare_versions(pypi_hits[0], cur_version) == 1:
+                cur_version = pypi_hits[0]
+                cur_index = index_url
+    
+    return cur_index, cur_version
+
+def compare_versions(version1, version2):
+    try:
+        return cmp(StrictVersion(version1), StrictVersion(version2))
+    # in case of abnormal version number, fall back to LooseVersion
+    except ValueError:
+        return cmp(LooseVersion(version1), LooseVersion(version2))
+
+if __name__ == '__main__':
+    import sys
+    indexes = ['http://pypi.python.org/pypi',]
+    indexes.extend(sys.argv[1:])
+    print "Packages with newer versions:"
+    for pkg in get_local_packages():
+        if len(pkg) < 2:
+            continue
+        index, current_version = find_current_version(pkg[0], index_urls=indexes)
+        if current_version and compare_versions(str(current_version), pkg[1]) == 1:
+            print '%s==%s via %s. Currently %s.' % (pkg[0], current_version, index, pkg[1])
+

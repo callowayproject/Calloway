@@ -7,48 +7,48 @@ mapping = {
     'admin_tools.dashboard': ('django-admin-tools==0.2',),
     'admin_tools.menu': ('django-admin-tools==0.2',),
     'admin_tools.theming': ('django-admin-tools==0.2',),
-    'ban': ('django-ban==0.1', 'ipcalc>=0.1', ),
-    'categories': ('django-categories==0.4.3','django-mptt-2==0.3', ),
+    'ban': ('django-ban==0.1.2', 'ipcalc>=0.1', ),
+    'categories': ('django-categories==0.4.5','django-mptt-2==0.3.1', ),
     'critic': ('critic==0.1.1',),
     'debug_toolbar': ('django-debug-toolbar==0.8.3',),
-    'django_extensions': ('django-extensions==0.4.1',),
+    'django_extensions': ('django-extensions==0.5',),
     'django_memcached': ('django-memcached==0.1.2', 'python-memcached==1.44',),
-    'editor': ('django-categories==0.4.3','django-mptt-2==0.3', ),
+    'editor': ('django-categories==0.4.5','django-mptt-2==0.3.1', ),
     'frontendadmin': ('django-frontendadmin==0.4', 'django-livevalidation==0.1.1',),
     'google_analytics': ('google_analytics==0.2',),
     'haystack': ('django-haystack==1.0.1-final',),
     'hiermenu': ('hiermenu==0.1',),
     'livevalidation': ('django-livevalidation==0.1.1',),
     'mailfriend': ('django-mailfriend==1.0',),
-    'massmedia': ('massmedia==0.5.1', 'django-tagging==0.3.1', 'IPTCInfo', 'hachoir-metadata', 'hachoir-core', 'hachoir-parser',),
+    'massmedia': ('massmedia==0.5.6', 'django-tagging==0.3.1', 'IPTCInfo', 'hachoir-metadata', 'hachoir-core', 'hachoir-parser',),
     'memcache_status': ('django-memcache-status==1.0.1',),
-    'mptt': ('django-mptt-2==0.3',),
-    'mptt_comments': ('django-mptt-comments==0.1.1','django-mptt-2==0.3',),
+    'mptt': ('django-mptt-2==0.3.1',),
+    'mptt_comments': ('django-mptt-comments==0.1.4','django-mptt-2==0.3.1',),
     'native_tags': ('django-native-tags==0.4',),
-    'news_sitemaps': ('django-news-sitemaps==0.1.2',),
+    'news_sitemaps': ('django-news-sitemaps==0.1.4',),
     'offensivecontent': ('offensivecontent==0.2.6',),
-    'pagination': ('django-pagination==1.0.8',),
+    'pagination': ('django-pagination==1.0.9',),
     'piston': ('django-piston==0.2.2',),
-    'pollit': ('pollit==0.1.1',),
+    'pollit': ('pollit==0.1.3',),
     'positions': ('kamasutra==0.1.5','simplejson==2.0.9',),
     'pullquote': ('pullquote==0.1.1',),
     'registration': ('django-registration==0.8-alpha-1',),
-    'reversion': ('django-reversion==1.2.1',),
-    'robots': ('django-robots==0.7.0',),
-    'staff': ('django-staff==0.3.2',),
-    'staticmediamgr': ('django-staticmediamgr==0.5.3',),
-    'stories': ('django-stories==0.3.6', 'BeautifulSoup', 'pytidylib'),
-    'synagg': ('django-synagg', 'feedparser==4.1', 'django-picklefield==0.1', 'lxml==2.2.6', 'pytidylib'),
+    'reversion': ('django-reversion==1.3.1',),
+    'robots': ('django-robots==0.8.0',),
+    'staff': ('django-staff==0.3.3',),
+    'staticmediamgr': ('django-staticmediamgr==0.6',),
+    'stories': ('django-stories==0.4', 'BeautifulSoup', 'pytidylib'),
+    'synagg': ('django-synagg', 'feedparser==4.1', 'django-picklefield==0.1.6', 'lxml==2.2.6', 'pytidylib'),
     'tagging': ('django-tagging==0.3.1',),
     'tinymce': ('django-tinymce==1.5.1beta1',),
     'uni_form': ('django-uni-form==0.7',),
     'varnishapp': ('django-varnish==0.1', 'python-varnish==0.1',),
     'versionedcache': ('versionedcache==0.1.0dev',),
-    'viewpoint': ('viewpoint==0.6.2',),
+    'viewpoint': ('viewpoint==0.6.8',),
 }
 
 unknown = {
-    'python-dateutil': 'python-dateutil==1.4.1',
+    'python-dateutil': 'python-dateutil==1.5',
     'django-logjam': 'django-logjam==0.1.1',
     'django-profiles': 'django-profiles>=0.2',
     'simplejson': 'simplejson==2.0.9',
@@ -58,7 +58,31 @@ always_required = (
 	'python-memcached==1.45',
 )
 
-def generate_requirements(output_path=None):
+def parse_req_files(req_files=None):
+    """
+    Parse a requirements file and return a set of apps.
+    
+    Works recursively if a -r is encountered
+    """
+    import os
+    
+    perm_cwd = os.getcwd()
+    items = set()
+    
+    for req_file in req_files:
+        lines = open(req_file).readlines()
+        cwd = os.path.join(perm_cwd, os.path.dirname(req_file))
+        for line in lines:
+            line = line.strip('\n\t\r ')
+            if line.startswith('-r'):
+                filename = line.split(' ')[1]
+                filepath = os.path.join(cwd, filename)
+                items |= parse_req_files((filepath,))
+            if line and line[0] not in ['#', '-']:
+                items.add(line.replace(' ', ''))
+    return items
+
+def generate_requirements(output_path=None, req_files=None):
     """
     Loop through the INSTALLED_APPS and create a set of requirements for pip.
     
@@ -68,9 +92,12 @@ def generate_requirements(output_path=None):
     import settings
     reqs = set(always_required)
     
+    excluded = parse_req_files(req_files)
+    
     for app in settings.INSTALLED_APPS:
         if app in mapping.keys():
             reqs |= set(mapping[app])
+    reqs = reqs - excluded
     if output_path is None:
         print "--extra-index-url=http://opensource.washingtontimes.com/pypi/simple/"
         for item in reqs:
@@ -86,12 +113,24 @@ def generate_requirements(output_path=None):
 
 
 if __name__ == "__main__":
+    from optparse import OptionParser
     import sys
+    
+    parser = OptionParser()
+    
+    parser.add_option(
+        "-r", 
+        "--requirements", 
+        dest="req_file", 
+        help="Don't duplicate entries in this requirements FILE. You can pass in several files.",
+        metavar="FILE",
+        action="append",
+    )
     sys.path.insert(0, os.getcwd())
-    args = sys.argv[1:]
+    (options, args) = parser.parse_args()
     if len(args) == 1:
-        generate_requirements(args[0])
+        generate_requirements(args[0], req_files=options.req_file)
     elif len(args) == 0:
-        generate_requirements()
+        generate_requirements(req_files=options.req_file)
     else:
         raise CommandError("No more than one file path may be specified on the command.")
