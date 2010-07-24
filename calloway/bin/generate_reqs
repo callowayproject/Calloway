@@ -58,7 +58,31 @@ always_required = (
 	'python-memcached==1.45',
 )
 
-def generate_requirements(output_path=None):
+def parse_req_files(req_files=None):
+    """
+    Parse a requirements file and return a set of apps.
+    
+    Works recursively if a -r is encountered
+    """
+    import os
+    
+    perm_cwd = os.getcwd()
+    items = set()
+    
+    for req_file in req_files:
+        lines = open(req_file).readlines()
+        cwd = os.path.join(perm_cwd, os.path.dirname(req_file))
+        for line in lines:
+            line = line.strip('\n\t\r ')
+            if line.startswith('-r'):
+                filename = line.split(' ')[1]
+                filepath = os.path.join(cwd, filename)
+                items |= parse_req_files((filepath,))
+            if line and line[0] not in ['#', '-']:
+                items.add(line.replace(' ', ''))
+    return items
+
+def generate_requirements(output_path=None, req_files=None):
     """
     Loop through the INSTALLED_APPS and create a set of requirements for pip.
     
@@ -68,9 +92,12 @@ def generate_requirements(output_path=None):
     import settings
     reqs = set(always_required)
     
+    excluded = parse_req_files(req_files)
+    
     for app in settings.INSTALLED_APPS:
         if app in mapping.keys():
             reqs |= set(mapping[app])
+    reqs = reqs - excluded
     if output_path is None:
         print "--extra-index-url=http://opensource.washingtontimes.com/pypi/simple/"
         for item in reqs:
@@ -86,12 +113,24 @@ def generate_requirements(output_path=None):
 
 
 if __name__ == "__main__":
+    from optparse import OptionParser
     import sys
+    
+    parser = OptionParser()
+    
+    parser.add_option(
+        "-r", 
+        "--requirements", 
+        dest="req_file", 
+        help="Don't duplicate entries in this requirements FILE. You can pass in several files.",
+        metavar="FILE",
+        action="append",
+    )
     sys.path.insert(0, os.getcwd())
-    args = sys.argv[1:]
+    (options, args) = parser.parse_args()
     if len(args) == 1:
-        generate_requirements(args[0])
+        generate_requirements(args[0], req_files=options.req_file)
     elif len(args) == 0:
-        generate_requirements()
+        generate_requirements(req_files=options.req_file)
     else:
         raise CommandError("No more than one file path may be specified on the command.")
