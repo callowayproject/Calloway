@@ -3,53 +3,42 @@
 Introduction to Calloway
 ========================
 
-Calloway was dreamed up to be a fast way to get a web site going. Most web sites have an infrastructure that is painful to recreate each time. Our goal is to allow programmers to specify the functionality they want included, and then focus on the parts that make their website unique.
+The underlying framework upon which Calloway resides is Django. It is written in Python and promotes adding functionality in pluggable "Applications" that can be reused in other projects. This isolation of functionality is what Calloway uses to combine other open source projects together to create a cohesive infrastructure.
 
-The underlying framework upon which Calloway resides is Django. It is written in Python and promotes adding functionality in "Applications" that can be reused in other projects. This isolation of functionality is what Calloway uses to combine other open source projects together to create a cohesive infrastructure.
+Design Principles
+=================
+
+Calloway is based on four principles:
+
+* **Integration without dependency** Django pluggable apps should do one thing and only one thing and do it well. For example, a blog app, should not include tagging, categories, authors, and other things that might augment the core functionality of the blog. It should manage blogs and entries and make it easy to write them and deliver them.
+  
+  This allows you to build the core infrastructure like building blocks, adding in the functionality that you need in the way you need it.
+
+* **User interface for content managers is important** The Django admin has spoiled us developers. While it is great in many respects, where it is lacking is often overlooked by developers. The content managers, the ones who keep your site up-to-date with the stuff users want, suffer.
+  
+  We want to promote and provide methods to improve the user experience for content managers, and promote applications that do so as well.
+
+* **Easy customization through overrides and fallbacks** The methods that Django uses for handling settings and templates nails this idea. Templates are easily overridden one at a time, and it is easy to provide template to fallback on if no other is there.
+
+* **Simple enough for a designer to do it** This is not meant to be derogatory, but a workflow advantage. A designer that is comfortable with the command line should be able to bootstrap a project, pick the building blocks of functionality and start designing the front end.
+
+Don't Assume. It makes an ass out of you ... and someone else
+=============================================================
+
+We've been frustrated attempting to get supposed "pluggable" applications to work together; even our own. We realized that most of the time, it is because the application was written with some assumptions that are either not communicated, or don't work in a different situation.
+
+Calloway aims to be assumption free. But it probably isn't right now. That's because *you* haven't tried it in *your* situation to discover an assumption not yet realized and fixed.
 
 What Calloway Provides
 ======================
 
-* Static media minification and migration to a separate media server
+* **Lists of application "bundles" that are known to work together.** Some of them we've written, most are really good third-party applications from the community. The application bundles are merely shortcuts and not required.
+  
+  You can see the list of application bundles at :ref:`application_bundles_in_settings`\ .
 
-* IP address banning
+* **Dependency management.** With the applications that it knows about, it can generate a requirements file for ``pip`` to make installation of the packages easy.
 
-* Use cookies for session identification
-
-* Allow case-insensitive user login using a uesrname or e-mail address
-
-* Multi-media asset management
-
-* Customized admin with dashboard
-
-* A versioned cache for allowing for website and other updates
-
-* Staff profile management
-
-* Stories with revision control and site-positioning
-
-* Hierarchical categorization
-
-* Threaded commenting with moderation
-
-* Polls
-
-* Multi-user blogs
-
-* Robots.txt management
-
-* Easy template tag creation library
-
-* Hierarchical navigation menu
-
-* Google Analytics management
-
-* Voting
-
-* Sharing
-
-* User registration
-
+* **Project templating.** The Django ``startproject`` command is nice for beginners, but is missing many things that you probably need and want. We provide an example project template, but encourage you to customize it to your heart's desire.
 
 Structure of a Calloway Project
 ===============================
