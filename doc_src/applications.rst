@@ -1,3 +1,5 @@
+.. _application_bundles_in_settings:
+
 ===============================
 Application bundles in settings
 ===============================
