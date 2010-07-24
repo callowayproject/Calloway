@@ -6,13 +6,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Calloway &mdash; v0.1.11beta2 documentation</title>
+    <title>Calloway &mdash; v0.2 documentation</title>
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.1.11beta2',
+        VERSION:     '0.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -21,12 +21,12 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="v0.1.11beta2 documentation" href="#" />
+    <link rel="top" title="v0.2 documentation" href="#" />
     <link rel="next" title="Introduction to Calloway" href="introduction_to_calloway.html" /> 
   </head>
   <body>
 <div id="docstitle">
-	<p>v0.1.11beta2 documentation</p>
+	<p>v0.2 documentation</p>
 </div>
 <div id="header">
 	<div id="title"><h1>Calloway</h1></div>
@@ -48,6 +48,7 @@
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="template_projects.html">Template Projects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="media_handling.html">Media Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="applications.html">Application bundles in settings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reference/index.html">Reference</a></li>
 </ul>
 
@@ -84,6 +85,8 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="introduction_to_calloway.html">Introduction to Calloway</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction_to_calloway.html#design-principles">Design Principles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction_to_calloway.html#don-t-assume-it-makes-an-ass-out-of-you-and-someone-else">Don&#8217;t Assume. It makes an ass out of you ... and someone else</a></li>
 <li class="toctree-l2"><a class="reference internal" href="introduction_to_calloway.html#what-calloway-provides">What Calloway Provides</a></li>
 <li class="toctree-l2"><a class="reference internal" href="introduction_to_calloway.html#structure-of-a-calloway-project">Structure of a Calloway Project</a></li>
 </ul>
@@ -102,6 +105,24 @@
 <li class="toctree-l1"><a class="reference internal" href="media_handling.html">Media Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="media_handling.html#three-different-kinds-of-media">Three Different Kinds of Media</a></li>
 <li class="toctree-l2"><a class="reference internal" href="media_handling.html#media-management-in-calloway">Media Management in Calloway</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="applications.html">Application bundles in settings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="applications.html#calloway-settings-apps-core"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_CORE</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="applications.html#calloway-settings-apps-admin"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_ADMIN</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="applications.html#calloway-settings-apps-calloway-default"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_CALLOWAY_DEFAULT</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="applications.html#calloway-settings-apps-mptt"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_MPTT</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="applications.html#calloway-settings-apps-staff"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_STAFF</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="applications.html#calloway-settings-apps-reversion"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_REVERSION</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="applications.html#calloway-settings-apps-stories"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_STORIES</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="applications.html#calloway-settings-apps-categories"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_CATEGORIES</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="applications.html#calloway-settings-apps-comment-utils"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_COMMENT_UTILS</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="applications.html#calloway-settings-apps-frontend-admin"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_FRONTEND_ADMIN</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="applications.html#calloway-settings-apps-media"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_MEDIA</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="applications.html#calloway-settings-apps-utils"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_UTILS</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="applications.html#calloway-settings-apps-caching"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_CACHING</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="applications.html#calloway-settings-apps-registration"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_REGISTRATION</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="applications.html#calloway-settings-apps-tinymce"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_TINYMCE</span></tt></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="reference/index.html">Reference</a><ul>

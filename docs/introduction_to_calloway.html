@@ -6,13 +6,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Introduction to Calloway &mdash; v0.1.11beta2 documentation</title>
+    <title>Introduction to Calloway &mdash; v0.2 documentation</title>
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.1.11beta2',
+        VERSION:     '0.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -21,13 +21,13 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="v0.1.11beta2 documentation" href="index.html" />
+    <link rel="top" title="v0.2 documentation" href="index.html" />
     <link rel="next" title="Installation" href="installation.html" />
     <link rel="prev" title="Calloway" href="index.html" /> 
   </head>
   <body>
 <div id="docstitle">
-	<p>v0.1.11beta2 documentation</p>
+	<p>v0.2 documentation</p>
 </div>
 <div id="header">
 	<div id="title"><h1>Introduction to Calloway</h1></div>
@@ -46,6 +46,8 @@
 	<ul><li class="toctree-l1"><a href="index.html">Main Page</a></li></ul>
 	<ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="">Introduction to Calloway</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#design-principles">Design Principles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#don-t-assume-it-makes-an-ass-out-of-you-and-someone-else">Don&#8217;t Assume. It makes an ass out of you ... and someone else</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#what-calloway-provides">What Calloway Provides</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#structure-of-a-calloway-project">Structure of a Calloway Project</a></li>
 </ul>
@@ -86,31 +88,38 @@
             
   <div class="section" id="introduction-to-calloway">
 <h1>Introduction to Calloway<a class="headerlink" href="#introduction-to-calloway" title="Permalink to this headline">¶</a></h1>
-<p>Calloway was dreamed up to be a fast way to get a web site going. Most web sites have an infrastructure that is painful to recreate each time. Our goal is to allow programmers to specify the functionality they want included, and then focus on the parts that make their website unique.</p>
-<p>The underlying framework upon which Calloway resides is Django. It is written in Python and promotes adding functionality in &#8220;Applications&#8221; that can be reused in other projects. This isolation of functionality is what Calloway uses to combine other open source projects together to create a cohesive infrastructure.</p>
+<p>The underlying framework upon which Calloway resides is Django. It is written in Python and promotes adding functionality in pluggable &#8220;Applications&#8221; that can be reused in other projects. This isolation of functionality is what Calloway uses to combine other open source projects together to create a cohesive infrastructure.</p>
+<div class="section" id="design-principles">
+<h2>Design Principles<a class="headerlink" href="#design-principles" title="Permalink to this headline">¶</a></h2>
+<p>Calloway is based on four principles:</p>
+<ul>
+<li><p class="first"><strong>Integration without dependency</strong> Django pluggable apps should do one thing and only one thing and do it well. For example, a blog app, should not include tagging, categories, authors, and other things that might augment the core functionality of the blog. It should manage blogs and entries and make it easy to write them and deliver them.</p>
+<p>This allows you to build the core infrastructure like building blocks, adding in the functionality that you need in the way you need it.</p>
+</li>
+<li><p class="first"><strong>User interface for content managers is important</strong> The Django admin has spoiled us developers. While it is great in many respects, where it is lacking is often overlooked by developers. The content managers, the ones who keep your site up-to-date with the stuff users want, suffer.</p>
+<p>We want to promote and provide methods to improve the user experience for content managers, and promote applications that do so as well.</p>
+</li>
+<li><p class="first"><strong>Easy customization through overrides and fallbacks</strong> The methods that Django uses for handling settings and templates nails this idea. Templates are easily overridden one at a time, and it is easy to provide template to fallback on if no other is there.</p>
+</li>
+<li><p class="first"><strong>Simple enough for a designer to do it</strong> This is not meant to be derogatory, but a workflow advantage. A designer that is comfortable with the command line should be able to bootstrap a project, pick the building blocks of functionality and start designing the front end.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="don-t-assume-it-makes-an-ass-out-of-you-and-someone-else">
+<h2>Don&#8217;t Assume. It makes an ass out of you ... and someone else<a class="headerlink" href="#don-t-assume-it-makes-an-ass-out-of-you-and-someone-else" title="Permalink to this headline">¶</a></h2>
+<p>We&#8217;ve been frustrated attempting to get supposed &#8220;pluggable&#8221; applications to work together; even our own. We realized that most of the time, it is because the application was written with some assumptions that are either not communicated, or don&#8217;t work in a different situation.</p>
+<p>Calloway aims to be assumption free. But it probably isn&#8217;t right now. That&#8217;s because <em>you</em> haven&#8217;t tried it in <em>your</em> situation to discover an assumption not yet realized and fixed.</p>
+</div>
 <div class="section" id="what-calloway-provides">
 <h2>What Calloway Provides<a class="headerlink" href="#what-calloway-provides" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Static media minification and migration to a separate media server</li>
-<li>IP address banning</li>
-<li>Use cookies for session identification</li>
-<li>Allow case-insensitive user login using a uesrname or e-mail address</li>
-<li>Multi-media asset management</li>
-<li>Customized admin with dashboard</li>
-<li>A versioned cache for allowing for website and other updates</li>
-<li>Staff profile management</li>
-<li>Stories with revision control and site-positioning</li>
-<li>Hierarchical categorization</li>
-<li>Threaded commenting with moderation</li>
-<li>Polls</li>
-<li>Multi-user blogs</li>
-<li>Robots.txt management</li>
-<li>Easy template tag creation library</li>
-<li>Hierarchical navigation menu</li>
-<li>Google Analytics management</li>
-<li>Voting</li>
-<li>Sharing</li>
-<li>User registration</li>
+<ul>
+<li><p class="first"><strong>Lists of application &#8220;bundles&#8221; that are known to work together.</strong> Some of them we&#8217;ve written, most are really good third-party applications from the community. The application bundles are merely shortcuts and not required.</p>
+<p>You can see the list of application bundles at <a class="reference internal" href="applications.html#application-bundles-in-settings"><em>Application bundles in settings</em></a>.</p>
+</li>
+<li><p class="first"><strong>Dependency management.</strong> With the applications that it knows about, it can generate a requirements file for <tt class="docutils literal"><span class="pre">pip</span></tt> to make installation of the packages easy.</p>
+</li>
+<li><p class="first"><strong>Project templating.</strong> The Django <tt class="docutils literal"><span class="pre">startproject</span></tt> command is nice for beginners, but is missing many things that you probably need and want. We provide an example project template, but encourage you to customize it to your heart&#8217;s desire.</p>
+</li>
 </ul>
 </div>
 <div class="section" id="structure-of-a-calloway-project">

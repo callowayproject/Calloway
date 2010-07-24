@@ -555,7 +555,7 @@ dl {
 
 dd p {
     margin-top: 0px;
-    font-size: 0.875em;
+/*    font-size: 0.875em;*/
 }
 
 dd ul, dd table {
@@ -566,7 +566,7 @@ dd {
     margin-top: 3px;
     margin-bottom: 10px;
     margin-left: 30px;
-    font-size: 0.875em;
+/*    font-size: 0.875em;*/
 }
 
 dt:target, .highlight {
@@ -575,11 +575,11 @@ dt:target, .highlight {
 
 dl.glossary dt {
     font-weight: bold;
-    font-size: 0.875em;
+/*    font-size: 0.875em;*/
 }
 
 dl.glossary dd {
-	font-size:0.875em;
+/*  font-size:0.875em;*/
 	line-height:140%;
 }
 .field-list ul {
@@ -627,8 +627,8 @@ pre {
     border:1px solid #C9D1D7;
     border-spacing:0;
     font-family:'M+1mregular',"Bitstream Vera Sans Mono",Monaco,"Lucida Console",Courier,Consolas,monospace;
-    font-size:0.875em;
-    line-height: 140%;
+/*    font-size:0.875em;*/
+/*    line-height: 140%;*/
     padding: 10px;
 }
 
@@ -655,7 +655,7 @@ tt {
 tt.descname {
     background-color: transparent;
     font-weight: bold;
-    font-size: 1em;
+/*    font-size: 1em;*/
 }
 
 tt.descclassname {
@@ -777,6 +777,7 @@ z-index:900;
 
 #header h1 {
 font-size:.7em;
+font-family:'Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
 margin:0;
 padding:5px 0 0 10px;
 text-shadow:0 1px 0 #D5D5D5;
@@ -848,7 +849,7 @@ padding:0 0 12px 6px;
 li {
 margin-top:7px;
 font-family:'DroidSansRegular','Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
-font-size:12px;
+font-size:.875em;
 font-size-adjust:none;
 font-stretch:normal;
 font-style:normal;
@@ -856,9 +857,11 @@ font-variant:normal;
 font-weight:normal;
 line-height:normal;
 }
-li > p {
+/*li > p {
 display:inline;
 }
+*/
 li p {
 margin-top:8px;
+font-size: 1em;
 }
