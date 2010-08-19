@@ -70,7 +70,7 @@ Prepend your local apps with the bundles like so::
 Now you can adjust your media settings.
 Below is an example of how to setup the media where the ``static`` folder
 contains all of your project's assets and the ``media`` folder is where the new media is copied into for serving. 
-For more information on media handling, checkout :ref:`media_handling`::
+For more information on media handling, checkout :ref:`media_handling` ::
 
     try:
         from local_settings import MEDIA_URL_PREFIX
