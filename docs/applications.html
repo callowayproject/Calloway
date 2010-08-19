@@ -21,7 +21,9 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="v0.2 documentation" href="index.html" /> 
+    <link rel="top" title="v0.2 documentation" href="index.html" />
+    <link rel="next" title="Reference" href="reference/index.html" />
+    <link rel="prev" title="Media Configuration" href="media_handling.html" /> 
   </head>
   <body>
 <div id="docstitle">
@@ -33,6 +35,8 @@
 		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
 		<li id="page_buttons">
 			<div class="headerButton"><a href="genindex.html" title="General Index" accesskey="I">index</a></div>
+			<div class="headerButton"><a href="reference/index.html" title="Reference" accesskey="N">next</a></div>
+			<div class="headerButton"><a href="media_handling.html" title="Media Configuration" accesskey="P">previous</a></div>
 		</li>
 	</ul>
 </div>
@@ -40,12 +44,31 @@
 <div id="sphinxsidebar">
   <div class="sphinxsidebarwrapper">
 	<ul><li class="toctree-l1"><a href="index.html">Main Page</a></li></ul>
-	<ul>
+	<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction_to_calloway.html">Introduction to Calloway</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="migration.html">Migrating an Existing Django Project to Calloway</a></li>
 <li class="toctree-l1"><a class="reference internal" href="template_projects.html">Template Projects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="media_handling.html">Media Configuration</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Application bundles in settings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#calloway-settings-apps-core"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_CORE</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calloway-settings-apps-admin"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_ADMIN</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calloway-settings-apps-calloway-default"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_CALLOWAY_DEFAULT</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calloway-settings-apps-mptt"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_MPTT</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calloway-settings-apps-staff"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_STAFF</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calloway-settings-apps-reversion"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_REVERSION</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calloway-settings-apps-stories"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_STORIES</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calloway-settings-apps-categories"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_CATEGORIES</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calloway-settings-apps-comment-utils"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_COMMENT_UTILS</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calloway-settings-apps-frontend-admin"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_FRONTEND_ADMIN</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calloway-settings-apps-media"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_MEDIA</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calloway-settings-apps-utils"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_UTILS</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calloway-settings-apps-caching"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_CACHING</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calloway-settings-apps-registration"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_REGISTRATION</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calloway-settings-apps-tinymce"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_TINYMCE</span></tt></a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="reference/index.html">Reference</a></li>
 </ul>
 
@@ -227,7 +250,7 @@
     <div class="footer">
     <p>
       &copy; Copyright 2010, The Calloway Project.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0b2.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.2.
 	</p>
     </div>
       <div class="clearer"></div>

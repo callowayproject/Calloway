@@ -1,3 +1,4 @@
+.. _media_handling:
 
 ===================
 Media Configuration

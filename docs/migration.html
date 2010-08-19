@@ -1,0 +1,255 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Migrating an Existing Django Project to Calloway &mdash; v0.2 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="v0.2 documentation" href="index.html" />
+    <link rel="next" title="Template Projects" href="template_projects.html" />
+    <link rel="prev" title="Getting Started" href="getting_started.html" /> 
+  </head>
+  <body>
+<div id="docstitle">
+	<p>v0.2 documentation</p>
+</div>
+<div id="header">
+	<div id="title"><h1>Migrating an Existing Django Project to Calloway</h1></div>
+	<ul id="headerButtons">
+		<li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
+		<li id="page_buttons">
+			<div class="headerButton"><a href="genindex.html" title="General Index" accesskey="I">index</a></div>
+			<div class="headerButton"><a href="template_projects.html" title="Template Projects" accesskey="N">next</a></div>
+			<div class="headerButton"><a href="getting_started.html" title="Getting Started" accesskey="P">previous</a></div>
+		</li>
+	</ul>
+</div>
+
+<div id="sphinxsidebar">
+  <div class="sphinxsidebarwrapper">
+	<ul><li class="toctree-l1"><a href="index.html">Main Page</a></li></ul>
+	<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction_to_calloway.html">Introduction to Calloway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Migrating an Existing Django Project to Calloway</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#for-starters">For Starters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#settings">Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#urls">URLs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="template_projects.html">Template Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media_handling.html">Media Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="applications.html">Application bundles in settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/index.html">Reference</a></li>
+</ul>
+
+    <div id="searchbox" style="display: none">
+      
+        <form class="search" action="search.html" method="get">
+			<div class="search-wrapper">
+			<span class="search-left"></span>
+			<input class="prettysearch" type="text" name="q" size="18" />
+			<span class="search-right">&nbsp;</span>
+			</div>
+          <input type="submit" value="Search" class="searchbutton" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+        <p class="searchtip" style="font-size: 90%">
+        Enter search terms or a module, class or function name.
+        </p>
+    </div>
+    <script type="text/javascript">$('#searchbox').show(0);</script>
+  </div>
+</div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="migrating-an-existing-django-project-to-calloway">
+<span id="migration"></span><h1>Migrating an Existing Django Project to Calloway<a class="headerlink" href="#migrating-an-existing-django-project-to-calloway" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="for-starters">
+<h2>For Starters<a class="headerlink" href="#for-starters" title="Permalink to this headline">¶</a></h2>
+<p>To start off, make sure you are using <tt class="docutils literal"><span class="pre">virtualenv</span></tt> and <tt class="docutils literal"><span class="pre">virtualenvwrapper</span></tt>. If you have not already done so, install them:</p>
+<div class="highlight-python"><pre>pip install virtualenv virtualenvwrapper</pre>
+</div>
+<p>Then create a new virtual environment for your new Calloway based project:</p>
+<div class="highlight-python"><pre>mkvirtualenv newproject</pre>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Make sure to change your the shbang (first line) in your project&#8217;s <tt class="docutils literal"><span class="pre">manage.py</span></tt> to point to the newly installed copy of python in your virtual environment. It should be something like: <tt class="docutils literal"><span class="pre">#!/home/user/.virtualenvs/newproject/bin/python</span></tt></p>
+</div>
+<p>Activate your new virtual environment and install the Calloway app:</p>
+<div class="highlight-python"><pre>workon newproject
+pip install calloway</pre>
+</div>
+<p>This will install a load of dependencies along with it. To see the full list for future reference, you can generate a requirements file:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">generate_reqs</span> <span class="o">&gt;</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="settings">
+<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
+<p>In your project&#8217;s <tt class="docutils literal"><span class="pre">settings.py</span></tt> make the following changes.
+Add this bit to the top of the file so that the Calloway apps are on your <tt class="docutils literal"><span class="pre">sys.path</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">calloway</span>
+
+<span class="n">CALLOWAY_ROOT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">calloway</span><span class="o">.</span><span class="n">__file__</span><span class="p">))</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">CALLOWAY_ROOT</span><span class="p">,</span> <span class="s">&#39;apps&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Then import the default Calloway settings:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">calloway.settings</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p>Now you can alter your <tt class="docutils literal"><span class="pre">INSTALLED_APPS</span></tt> setting to include the Calloway application bundles.
+Prepend your local apps with the bundles like so:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="n">APPS_CORE</span> <span class="o">+</span> \
+    <span class="n">APPS_ADMIN</span> <span class="o">+</span> \
+    <span class="n">APPS_STAFF</span> <span class="o">+</span> \
+    <span class="n">APPS_REVERSION</span> <span class="o">+</span> \
+    <span class="n">APPS_STORIES</span> <span class="o">+</span> \
+    <span class="n">APPS_CALLOWAY_DEFAULT</span> <span class="o">+</span> \
+    <span class="n">APPS_MPTT</span> <span class="o">+</span> \
+    <span class="n">APPS_CATEGORIES</span> <span class="o">+</span> \
+    <span class="n">APPS_COMMENT_UTILS</span> <span class="o">+</span> \
+    <span class="n">APPS_FRONTEND_ADMIN</span> <span class="o">+</span> \
+    <span class="n">APPS_MEDIA</span> <span class="o">+</span> \
+    <span class="n">APPS_UTILS</span> <span class="o">+</span> \
+    <span class="n">APPS_REGISTRATION</span> <span class="o">+</span> \
+    <span class="n">APPS_TINYMCE</span> <span class="o">+</span> \
+    <span class="p">(</span> <span class="c"># Local apps here</span>
+        <span class="s">&quot;cheese_shop&quot;</span><span class="p">,</span>
+        <span class="s">&quot;dead_parrot&quot;</span><span class="p">,</span>
+        <span class="s">&quot;holy_grail&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p>Now you can adjust your media settings.
+Below is an example of how to setup the media where the <tt class="docutils literal"><span class="pre">static</span></tt> folder
+contains all of your project&#8217;s assets and the <tt class="docutils literal"><span class="pre">media</span></tt> folder is where the new media is copied into for serving.
+For more information on media handling, checkout <a class="reference internal" href="media_handling.html#media-handling"><em>Media Configuration</em></a></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">local_settings</span> <span class="kn">import</span> <span class="n">MEDIA_URL_PREFIX</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">MEDIA_URL_PREFIX</span> <span class="o">=</span> <span class="s">&quot;http://media.example.com/&quot;</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">local_settings</span> <span class="kn">import</span> <span class="n">MEDIA_ROOT_PREFIX</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">MEDIA_ROOT_PREFIX</span> <span class="o">=</span> <span class="s">&#39;/var/www/media&#39;</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">local_settings</span> <span class="kn">import</span> <span class="n">MEDIA_ROOT</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">MEDIA_ROOT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">MEDIA_ROOT_PREFIX</span><span class="p">,</span> <span class="s">&#39;ugc&#39;</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">local_settings</span> <span class="kn">import</span> <span class="n">STATIC_ROOT</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">STATIC_ROOT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">MEDIA_ROOT_PREFIX</span><span class="p">,</span> <span class="s">&#39;static&#39;</span><span class="p">)</span>
+
+
+<span class="n">MEDIA_URL</span> <span class="o">=</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s">ugc/&#39;</span> <span class="o">%</span> <span class="n">MEDIA_URL_PREFIX</span>
+<span class="n">STATIC_URL</span> <span class="o">=</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s">static/&quot;</span> <span class="o">%</span> <span class="n">MEDIA_URL_PREFIX</span>
+<span class="n">STATIC_MEDIA_APP_MEDIA_PATH</span> <span class="o">=</span> <span class="n">STATIC_ROOT</span>
+<span class="n">STATIC_MEDIA_COPY_PATHS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">{</span><span class="s">&#39;from&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">CALLOWAY_ROOT</span><span class="p">,</span> <span class="s">&#39;media&#39;</span><span class="p">),</span> <span class="s">&#39;to&#39;</span><span class="p">:</span> <span class="n">STATIC_ROOT</span><span class="p">},</span>
+    <span class="p">{</span><span class="s">&#39;from&#39;</span><span class="p">:</span> <span class="s">&#39;static&#39;</span><span class="p">,</span> <span class="s">&#39;to&#39;</span><span class="p">:</span> <span class="n">STATIC_ROOT</span><span class="p">},</span>
+<span class="p">)</span>
+<span class="n">STATIC_MEDIA_COMPRESS_CSS</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">DEBUG</span>
+<span class="n">STATIC_MEDIA_COMPRESS_JS</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">DEBUG</span>
+<span class="n">STATIC_MEDIA_PURGE_OLD_FILES</span> <span class="o">=</span> <span class="bp">False</span>
+</pre></div>
+</div>
+<p>The last bits you need to consider is middleware. Again here is an example of
+<tt class="docutils literal"><span class="pre">MIDDLEWARE_CLASSES</span></tt> that play nicely with Calloway:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">MIDDLEWARE_CLASSES</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s">&#39;django.middleware.cache.UpdateCacheMiddleware&#39;</span><span class="p">,</span>
+    <span class="s">&#39;django.middleware.common.CommonMiddleware&#39;</span><span class="p">,</span>
+    <span class="s">&#39;django.contrib.sessions.middleware.SessionMiddleware&#39;</span><span class="p">,</span>
+    <span class="s">&#39;django.contrib.auth.middleware.AuthenticationMiddleware&#39;</span><span class="p">,</span>
+    <span class="s">&#39;django.middleware.gzip.GZipMiddleware&#39;</span><span class="p">,</span>
+    <span class="s">&#39;django.middleware.http.ConditionalGetMiddleware&#39;</span><span class="p">,</span>
+    <span class="s">&#39;django.middleware.doc.XViewMiddleware&#39;</span><span class="p">,</span>
+    <span class="s">&#39;django.contrib.redirects.middleware.RedirectFallbackMiddleware&#39;</span><span class="p">,</span>
+    <span class="s">&#39;django.contrib.flatpages.middleware.FlatpageFallbackMiddleware&#39;</span><span class="p">,</span>
+    <span class="s">&#39;pagination.middleware.PaginationMiddleware&#39;</span><span class="p">,</span>
+    <span class="s">&#39;django.middleware.transaction.TransactionMiddleware&#39;</span><span class="p">,</span>
+    <span class="s">&#39;ban.middleware.DenyMiddleware&#39;</span><span class="p">,</span>
+    <span class="s">&#39;django.middleware.cache.FetchFromCacheMiddleware&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>And finally there are some settings you could define in <tt class="docutils literal"><span class="pre">local_settings.py</span></tt>
+which should make life a bit easier including media:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">CACHE_BACKEND</span> <span class="o">=</span> <span class="s">&quot;dummy:///&quot;</span>
+<span class="n">MEDIA_ROOT_PREFIX</span> <span class="o">=</span> <span class="s">&#39;media&#39;</span>
+<span class="n">MEDIA_URL_PREFIX</span> <span class="o">=</span> <span class="s">&#39;/media/&#39;</span>
+<span class="n">MEDIA_ROOT</span> <span class="o">=</span> <span class="s">&#39;uploads&#39;</span>
+<span class="n">ADMIN_MEDIA_PREFIX</span> <span class="o">=</span> <span class="s">&#39;/media/static/admin/&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="urls">
+<h2>URLs<a class="headerlink" href="#urls" title="Permalink to this headline">¶</a></h2>
+<p>Now you can add the Calloway urlpatterns onto your existing patterns in <tt class="docutils literal"><span class="pre">urls.py</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">calloway.urls</span> <span class="kn">import</span> <span class="n">urlpatterns</span> <span class="k">as</span> <span class="n">calloway_patterns</span>
+
+<span class="n">urlpatterns</span> <span class="o">+=</span> <span class="n">calloway_patterns</span>
+</pre></div>
+</div>
+<p>If you also want the catch all categories app to start at the site root, add this line:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">urlpatterns</span> <span class="o">+=</span> <span class="n">patterns</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s">&#39;categories.urls&#39;</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>Lastly you can setup a development media server to host your assets:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">:</span>
+    <span class="n">urlpatterns</span> <span class="o">+=</span> <span class="n">patterns</span><span class="p">(</span><span class="s">&#39;django.views.static&#39;</span><span class="p">,</span>
+        <span class="p">(</span><span class="s">r&#39;^media/static/(?P&lt;path&gt;.*)$&#39;</span><span class="p">,</span> <span class="s">&#39;serve&#39;</span><span class="p">,</span>
+            <span class="p">{</span><span class="s">&#39;document_root&#39;</span><span class="p">:</span> <span class="n">settings</span><span class="o">.</span><span class="n">STATIC_ROOT</span><span class="p">,</span> <span class="s">&#39;show_indexes&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">}),</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div> 
+        </div>
+      </div>
+    <div class="footer">
+    <p>
+      &copy; Copyright 2010, The Calloway Project.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.2.
+	</p>
+    </div>
+      <div class="clearer"></div>
+    </div>
+	<div id="breadcrumbs">
+		Migrating an Existing Django Project to Calloway
+		</ul>
+	</div>
+	<script type="text/javascript" charset="utf-8" src="_static/toc.js"></script>
+  </body>
+</html>
