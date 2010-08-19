@@ -101,6 +101,13 @@ For more information on media handling, checkout :ref:`media_handling` ::
     STATIC_MEDIA_COMPRESS_JS = not DEBUG
     STATIC_MEDIA_PURGE_OLD_FILES = False
     
+Then make sure you add the default Calloway templates::
+
+    TEMPLATE_DIRS = (
+        'templates',
+        ...
+    ) + CALLOWAY_TEMPLATE_DIRS
+    
 The last bits you need to consider is middleware. Again here is an example of
 ``MIDDLEWARE_CLASSES`` that play nicely with Calloway::
 

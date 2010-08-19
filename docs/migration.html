@@ -182,6 +182,13 @@ For more information on media handling, checkout <a class="reference internal" h
 <span class="n">STATIC_MEDIA_PURGE_OLD_FILES</span> <span class="o">=</span> <span class="bp">False</span>
 </pre></div>
 </div>
+<p>Then make sure you add the default Calloway templates:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">TEMPLATE_DIRS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s">&#39;templates&#39;</span><span class="p">,</span>
+    <span class="o">...</span>
+<span class="p">)</span> <span class="o">+</span> <span class="n">CALLOWAY_TEMPLATE_DIRS</span>
+</pre></div>
+</div>
 <p>The last bits you need to consider is middleware. Again here is an example of
 <tt class="docutils literal"><span class="pre">MIDDLEWARE_CLASSES</span></tt> that play nicely with Calloway:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">MIDDLEWARE_CLASSES</span> <span class="o">=</span> <span class="p">(</span>
