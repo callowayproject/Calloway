@@ -58,7 +58,7 @@ always_required = (
 	'python-memcached==1.45',
 )
 
-def parse_req_files(req_files=None):
+def parse_req_files(req_files=()):
     """
     Parse a requirements file and return a set of apps.
     
@@ -82,7 +82,7 @@ def parse_req_files(req_files=None):
                 items.add(line.replace(' ', ''))
     return items
 
-def generate_requirements(output_path=None, req_files=None):
+def generate_requirements(output_path=None, req_files=()):
     """
     Loop through the INSTALLED_APPS and create a set of requirements for pip.
     
@@ -110,6 +110,7 @@ def generate_requirements(output_path=None, req_files=None):
                 out_file.write("%s\n" % item)
         finally:
             out_file.close()
+            print "Wrote requirements to %s" % output_path
 
 
 if __name__ == "__main__":
@@ -129,7 +130,7 @@ if __name__ == "__main__":
     sys.path.insert(0, os.getcwd())
     (options, args) = parser.parse_args()
     if len(args) == 1:
-        generate_requirements(args[0], req_files=options.req_file)
+        generate_requirements(args[0], req_files=options.req_file or ())
     elif len(args) == 0:
         generate_requirements(req_files=options.req_file)
     else:

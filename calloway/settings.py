@@ -2,201 +2,160 @@ import os
 import sys
 import django
 django_version = django.VERSION
+from django.conf import settings
 
 CALLOWAY_ROOT = os.path.abspath(os.path.dirname(__file__))
 
-SITE_ID = 1
-APPEND_SLASH = True
+#from calloway.default_settings import SITE_ID, APPEND_SLASH, MEDIA_URL, \
+from default_settings import *
 
-MEDIA_URL = 'http://127.0.0.1:8000/media/'
-STATIC_URL = MEDIA_URL
-ADMIN_MEDIA_PREFIX = '/admin-media/'
+class DynamicList(list):
+    """Allows for the dynamic list created based on a base set of items, the
+    django version and what apps are installed"""
+    DEFAULT_ITEMS = []
+    DJANGO_VERS_MAPPING = {
+        0: [],
+        1: [],
+        2: [],
+    }
+    APP_MAPPING = {
+    }
+    
+    def __init__(self, *args):
+        if len(args) > 1:
+            self.DEFAULT_ITEMS = args[:]
+        elif args and isinstance(args[0], basestring):
+            self.DEFAULT_ITEMS = [args[0],]
+        elif args:
+            self.DEFAULT_ITEMS = args[0]
+        self.data = None
+    
+    def _build_list(self):
+        from django.conf import settings 
+        INSTALLED_APPS = settings.INSTALLED_APPS[:]
+        from django import VERSION
+        
+        items = self.DEFAULT_ITEMS[:]
+        items.extend(self.DJANGO_VERS_MAPPING[VERSION[1]])
+        
+        for app, val in self.APP_MAPPING.items():
+            if app in INSTALLED_APPS:
+                items.extend(val)
+        self.data = items
+    
+    def __len__(self):
+        if self.data is None:
+            self._build_list()
+        return len(self.data)
+    
+    def __getitem__(self, key):
+        if self.data is None:
+            self._build_list()
+        return self.data[key]
+    
+    def __iter__(self):
+        if self.data is None:
+            self._build_list()
+        return self.data.__iter__()
+    
+    def __contains__(self, item):
+        if self.data is None:
+            self._build_list()
+        return self.data.__contains__(item)
+    
+    def __repr__(self):
+        if self.data is None:
+            self._build_list()
+        return self.data.__repr__()
 
-# List of callables that know how to import templates from various sources.
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.load_template_source',
-    'django.template.loaders.app_directories.load_template_source',
-)
+class TemplateContextProcs(DynamicList):
+    DEFAULT_ITEMS = [
+        'django.core.context_processors.auth',
+        'django.core.context_processors.debug',
+        'django.core.context_processors.i18n',
+        'django.core.context_processors.media',
+        'django.core.context_processors.request',
+    ]
+    APP_MAPPING = {
+        'staticmediamgr': ['staticmediamgr.context_processor.static_url',],
+    }
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.core.context_processors.auth',
-    'django.core.context_processors.debug',
-    'django.core.context_processors.i18n',
-    'django.core.context_processors.media',
-    'django.core.context_processors.request',
-    'staticmediamgr.context_processor.static_url',
-)
-if django_version[1] == 2:
-    CSRF_VIEWMIDDLEWARE = ('django.middleware.csrf.CsrfViewMiddleware',)
-    CSRF_RESPONSEMIDDLEWARE = ('django.middleware.csrf.CsrfResponseMiddleware',)
-    MESSAGES_MIDDLEWARE = ('django.contrib.messages.middleware.MessageMiddleware',)
-else:
-    CSRF_VIEWMIDDLEWARE = ()
-    CSRF_RESPONSEMIDDLEWARE = ()
-    MESSAGES_MIDDLEWARE = ()
+TEMPLATE_CONTEXT_PROCESSORS = TemplateContextProcs()
 
-MIDDLEWARE_CLASSES = (
-    'django.middleware.cache.UpdateCacheMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',) + CSRF_VIEWMIDDLEWARE + (
-    'django_ext.middleware.cookie.UsernameInCookieMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',) + MESSAGES_MIDDLEWARE + (
-    'django.middleware.gzip.GZipMiddleware',
-    'django.middleware.http.ConditionalGetMiddleware',) + CSRF_RESPONSEMIDDLEWARE + (
-    'django.middleware.doc.XViewMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
-    'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
-    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
-    'django.middleware.transaction.TransactionMiddleware',
-    'pagination.middleware.PaginationMiddleware',
-    'ban.middleware.DenyMiddleware',
-    'django.middleware.cache.FetchFromCacheMiddleware',
-)
+class AuthenticationBackends(DynamicList):
+    DEFAULT_ITEMS = [
+        'django.contrib.auth.backends.ModelBackend',
+    ]
+    APP_MAPPING = {
+        'django_ext': ['django_ext.caseinsensitiveauth.CaseInsensitiveModelBackend',]
+    }
 
-AUTHENTICATION_BACKENDS = (
-    'django_ext.caseinsensitiveauth.CaseInsensitiveModelBackend',
-    'django.contrib.auth.backends.ModelBackend',
-)
+AUTHENTICATION_BACKENDS = AuthenticationBackends()
 
+class Middleware(DynamicList):
+    """
+    Since the placement of the middleware class is important, and the predecessor
+    and successor are or can be unknown we are using a tuple consisting of a rank
+    and value.
+    
+    The default classes are each ranked in multiples of 10. This allows plenty 
+    room for other apps to insert their class(es) between them.
+    
+    The DJANGO_VER_MAPPING looks at the minor version number of Django to 
+    dynamically insert version-specific middleware classes.
+    
+    Each application in the APP_MAPPING dictionary has a value that is a list
+    of rank-class tuples that can extend the DEFAULT_CLASSES list.
+    """
+    # Maps the minor version number of Django (1.0, 1.1, 1.2)
+    DJANGO_VERS_MAPPING = {
+        0 : [],
+        1 : [],
+        2 : [
+            (34, 'django.middleware.csrf.CsrfViewMiddleware',),
+            (44, 'django.contrib.messages.middleware.MessageMiddleware',),
+            (64, 'django.middleware.csrf.CsrfResponseMiddleware',),
+        ]
+    }
+    
+    APP_MAPPING = {
+        'django_ext': [(36, 'django_ext.middleware.cookie.UsernameInCookieMiddleware',)],
+        'debug_toolbar': [(75, 'debug_toolbar.middleware.DebugToolbarMiddleware',)],
+        'pagination': [(103, 'pagination.middleware.PaginationMiddleware',)],
+        'ban': [(106, 'ban.middleware.DenyMiddleware',)],
+    }
+    
+    DEFAULT_ITEMS = [
+        (10, 'django.middleware.cache.UpdateCacheMiddleware',),
+        (20, 'django.middleware.common.CommonMiddleware',),
+        (30, 'django.contrib.sessions.middleware.SessionMiddleware',),
+        (40, 'django.contrib.auth.middleware.AuthenticationMiddleware',),
+        (50, 'django.middleware.gzip.GZipMiddleware',),
+        (60, 'django.middleware.http.ConditionalGetMiddleware',),
+        (70, 'django.middleware.doc.XViewMiddleware',),
+        (80, 'django.contrib.redirects.middleware.RedirectFallbackMiddleware',),
+        (90, 'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',),
+        (100, 'django.middleware.transaction.TransactionMiddleware',),
+        (110, 'django.middleware.cache.FetchFromCacheMiddleware',),
+    ]
+    
+    def _build_list(self):
+        super(Middleware, self)._build_list()
+        self.data.sort(cmp=lambda x,y: cmp(x[0], y[0]))
+        self.data = [x[1] for x in self.data]
 
-ROOT_URLCONF = 'urls'
+MIDDLEWARE_CLASSES = Middleware()
 
-CALLOWAY_TEMPLATE_DIRS = (
-    os.path.join(CALLOWAY_ROOT, 'templates'),
-)
-
-APPS_CORE = ( # Suggested: APPS_TINYMCE, APPS_REVERSION (for flatpages)
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.sites',
-    'django.contrib.flatpages',
-    'django.contrib.humanize',
-    'django.contrib.comments',
-    'django.contrib.markup',
-    'django.contrib.redirects',
-)
-APPS_ADMIN = (
-    #'massmedia',  # keep me above admin
-    'livevalidation', # keep me above admin
-    'admin_tools', # for the media copying
-    'admin_tools.theming', # keep me above admin
-    'admin_tools.menu', # keep me above admin
-    'admin_tools.dashboard', # keep me above admin
-    'django.contrib.admin',
-)
-APPS_CALLOWAY_DEFAULT = (
-    'django_ext',
-)
-APPS_CACHING = (
-    'django_memcached',
-    'versionedcache',
-)
-APPS_MPTT = ('mptt',)
-
-APPS_STAFF = ('staff',) # Suggested: APPS_TINYMCE
-
-APPS_REVERSION = ('reversion',)
-
-APPS_STORIES = ( # Suggested: APPS_TINYMCE, APPS_REVERSION
-    'stories',
-    'positions',
-    'news_sitemaps',
-    'viewpoint',
-    'pullquote',
-)
-APPS_CATEGORIES = ( # Requires APPS_MPTT
-    'categories',
-    'editor',
-)
-APPS_COMMENT_UTILS = ( # Requires APPS_MPTT
-    'mptt_comments',
-    'offensivecontent',
-)
-APPS_FRONTEND_ADMIN = ( # requires livevalidation in APPS_ADMIN
-    'frontendadmin',
-)
-APPS_MEDIA = (
-    'massmedia',
-    'tagging',
-    'staticmediamgr',
-)
-APPS_UTILS = (
-    'robots',
-    'piston',
-    'ban',
-    'native_tags',
-    'google_analytics',
-    'django_extensions',
-    'pagination',
-    'hiermenu',
-    'synagg',
-    'uni_form',
-    'critic',
-    'mailfriend',
-    'debug_toolbar',
-    'pollit',
-)
-APPS_REGISTRATION = (
-    'registration',
-    'custom_registration',
-)
-APPS_TINYMCE = (
-    'tinymce',
-)
-DJANGO_MEMCACHED_REQUIRE_STAFF = True
-
-TINYMCE_DEFAULT_CONFIG = {
-    'theme': "advanced",
-    'relative_urls': False,
-    'plugins': "safari,paste,advimage,advlink,preview,fullscreen,searchreplace",
-    'theme_advanced_toolbar_location' : "top",
-    'theme_advanced_toolbar_align' : "left",
-    'theme_advanced_buttons1' : "bold,italic,underline,strikethrough,blockquote,|,bullist,numlist,|,link,unlink,|,charmap,image,media,pastetext,pasteword,search,replace,|,code,fullscreen,preview",
-    'theme_advanced_buttons2' : "",
-    'theme_advanced_buttons3' : "",
-    'theme_advanced_statusbar_location' : "bottom",
-    'width': "600",
-    'height': "600",
-}
-
-TINYMCE_ADMIN_FIELDS = {
-    'stories.story': ('body',),
-    'staff.staffmember': ('bio',),
-    'flatpages.flatpage': ('content',),
-}
-
-REVERSION_MODELS = ('stories.story','flatpages.flatpage')
-
-VARNISH_WATCHED_MODELS = ('stories.story','flatpages.flatpage')
-
-VARNISH_MANAGEMENT_ADDRS = ()
-
-NATIVE_TAGS = (
-    'native_tags.contrib.generic_content',
-)
-
-ADMIN_TOOLS_MENU = 'calloway.menu.DefaultMenu'
-
-STORY_RELATION_MODELS = ['massmedia.audio', 'massmedia.image', 'massmedia.document',
-    'massmedia.video', 'massmedia.collection', 'stories.story','viewpoint.entry','viewpoint.blog','pollit.poll',]
-
-CATEGORIES_RELATION_MODELS = ['pollit.poll',]
-
-INTERNAL_IPS = ('127.0.0.1',)
-
-STATIC_MEDIA_PURGE_OLD_FILES = False
-
-DEBUG_TOOLBAR_PANELS = (
-    'debug_toolbar.panels.version.VersionDebugPanel',
-    'debug_toolbar.panels.timer.TimerDebugPanel',
-    'debug_toolbar.panels.settings_vars.SettingsVarsDebugPanel',
-    'debug_toolbar.panels.headers.HeaderDebugPanel',
-    'debug_toolbar.panels.request_vars.RequestVarsDebugPanel',
-    'debug_toolbar.panels.template.TemplateDebugPanel',
-    'debug_toolbar.panels.sql.SQLDebugPanel',
-    'debug_toolbar.panels.logger.LoggingPanel',
-)
-DEBUG_TOOLBAR_CONFIG = {
-    'INTERCEPT_REDIRECTS': False
-}
+__all__ = [
+    'SITE_ID', 'APPEND_SLASH', 'MEDIA_URL', 'STATIC_URL', 'ADMIN_MEDIA_PREFIX',
+    'TEMPLATE_LOADERS', 'ROOT_URLCONF', 'CALLOWAY_TEMPLATE_DIRS', 'APPS_CORE',
+    'APPS_ADMIN','APPS_CALLOWAY_DEFAULT','APPS_CACHING','APPS_MPTT','APPS_STAFF',
+    'APPS_REVERSION','APPS_STORIES','APPS_CATEGORIES','APPS_COMMENT_UTILS',
+    'APPS_FRONTEND_ADMIN','APPS_MEDIA','APPS_UTILS','APPS_REGISTRATION',
+    'APPS_TINYMCE','DJANGO_MEMCACHED_REQUIRE_STAFF','TINYMCE_DEFAULT_CONFIG',
+    'TINYMCE_ADMIN_FIELDS','REVERSION_MODELS','VARNISH_WATCHED_MODELS',
+    'VARNISH_MANAGEMENT_ADDRS','NATIVE_TAGS','ADMIN_TOOLS_MENU',
+    'STORY_RELATION_MODELS','CATEGORIES_RELATION_MODELS','INTERNAL_IPS',
+    'STATIC_MEDIA_PURGE_OLD_FILES','DEBUG_TOOLBAR_PANELS','DEBUG_TOOLBAR_CONFIG',
+    'MIDDLEWARE_CLASSES','TEMPLATE_CONTEXT_PROCESSORS', 'AUTHENTICATION_BACKENDS'
+    ]
