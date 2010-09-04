@@ -20,7 +20,7 @@ mapping = {
     'hiermenu': ('hiermenu==0.1',),
     'livevalidation': ('django-livevalidation==0.1.1',),
     'mailfriend': ('django-mailfriend==1.0',),
-    'massmedia': ('massmedia==0.5.6', 'django-tagging==0.3.1', 'IPTCInfo', 'hachoir-metadata', 'hachoir-core', 'hachoir-parser',),
+    'massmedia': ('massmedia==0.6', 'django-tagging==0.3.1', 'IPTCInfo', 'hachoir-metadata', 'hachoir-core', 'hachoir-parser',),
     'memcache_status': ('django-memcache-status==1.0.1',),
     'mptt': ('django-mptt-2==0.3.1',),
     'mptt_comments': ('django-mptt-comments==0.1.4','django-mptt-2==0.3.1',),
