@@ -99,13 +99,13 @@ def generate_requirements(output_path=None, req_files=()):
             reqs |= set(mapping[app])
     reqs = reqs - excluded
     if output_path is None:
-        print "--extra-index-url=http://opensource.washingtontimes.com/pypi/simple/"
+        print "--extra-index-url=http://opensource.washingtontimes.com/simple/"
         for item in reqs:
             print item
     else:
         try:
             out_file = open(output_path, 'w')
-            out_file.write("--extra-index-url=http://opensource.washingtontimes.com/pypi/simple/\n")
+            out_file.write("--extra-index-url=http://opensource.washingtontimes.com/simple/\n")
             for item in reqs:
                 out_file.write("%s\n" % item)
         finally:
