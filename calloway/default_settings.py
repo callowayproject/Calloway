@@ -134,9 +134,6 @@ NATIVE_TAGS = (
 
 ADMIN_TOOLS_MENU = 'calloway.menu.DefaultMenu'
 
-STORY_RELATION_MODELS = ['massmedia.audio', 'massmedia.image', 'massmedia.document',
-    'massmedia.video', 'massmedia.collection', 'stories.story','viewpoint.entry','viewpoint.blog','pollit.poll',]
-
 CATEGORIES_RELATION_MODELS = ['pollit.poll',]
 
 INTERNAL_IPS = ('127.0.0.1',)
