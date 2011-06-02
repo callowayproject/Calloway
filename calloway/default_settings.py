@@ -22,6 +22,30 @@ CALLOWAY_TEMPLATE_DIRS = (
     os.path.join(CALLOWAY_ROOT, 'templates'),
 )
 
+APPS_DJANGO_BASE = (
+	'django.contrib.auth',
+	'django.contrib.contenttypes',
+	'django.contrib.sessions',
+	'django.contrib.sites',
+    'django.contrib.flatpages',
+)
+
+APPS_DJANGO13_BASE = (
+	'django.contrib.auth',
+	'django.contrib.contenttypes',
+	'django.contrib.sessions',
+	'django.contrib.sites',
+    'django.contrib.flatpages',
+	'django.contrib.messages',
+	'django.contrib.staticfiles',
+)
+APPS_DJANGO_TEMPLATE_UTILS = (
+	'django.contrib.humanize',
+	'django.contrib.markup',
+	'django.contrib.webdesign',
+)
+
+# APPS_CORE is deprecated
 APPS_CORE = ( # Suggested: APPS_TINYMCE, APPS_REVERSION (for flatpages)
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -33,8 +57,11 @@ APPS_CORE = ( # Suggested: APPS_TINYMCE, APPS_REVERSION (for flatpages)
     'django.contrib.markup',
     'django.contrib.redirects',
 )
+APPS_MESSAGES = ( # Django 1.3
+	'django.contrib.messages',
+)
 APPS_ADMIN = (
-    'livevalidation', # keep me above admin
+    #'livevalidation', # keep me above admin
     'admin_tools', # for the media copying
     'admin_tools.theming', # keep me above admin
     'admin_tools.menu', # keep me above admin
@@ -58,8 +85,9 @@ APPS_STORIES = ( # Suggested: APPS_TINYMCE, APPS_REVERSION
     'stories',
     'positions',
     'news_sitemaps',
+)
+APPS_BLOGGING = ( # Suggested: APPS_TINYMCE, APPS_REVERSION
     'viewpoint',
-    'pullquote',
 )
 APPS_CATEGORIES = ( # Requires APPS_MPTT
     'categories',
@@ -74,8 +102,9 @@ APPS_FRONTEND_ADMIN = ( # requires livevalidation in APPS_ADMIN
 )
 APPS_MEDIA = (
     'massmedia',
+)
+APPS_TAGGING = (
     'tagging',
-    'staticmediamgr',
 )
 APPS_UTILS = (
     'robots',
@@ -92,6 +121,7 @@ APPS_UTILS = (
     'mailfriend',
     'debug_toolbar',
     'pollit',
+    'pullquote',
 )
 APPS_REGISTRATION = (
     'registration',

@@ -71,7 +71,6 @@ class DynamicList(list):
 
 class TemplateContextProcs(DynamicList):
     DEFAULT_ITEMS = [
-        'django.core.context_processors.auth',
         'django.core.context_processors.debug',
         'django.core.context_processors.i18n',
         'django.core.context_processors.media',
@@ -80,6 +79,14 @@ class TemplateContextProcs(DynamicList):
     APP_MAPPING = {
         'staticmediamgr': ['staticmediamgr.context_processor.static_url',],
     }
+	DJANGO_VERS_MAPPING = {
+		0: ['django.core.context_processors.auth',],
+		1: ['django.core.context_processors.auth',],
+		2: ['django.core.context_processors.auth',],
+		3: ['django.contrib.auth.context_processors.auth',
+			'django.core.context_processors.static',
+		    'django.contrib.messages.context_processors.messages',],
+	}
 
 TEMPLATE_CONTEXT_PROCESSORS = TemplateContextProcs()
 
@@ -110,13 +117,15 @@ class Middleware(DynamicList):
     """
     # Maps the minor version number of Django (1.0, 1.1, 1.2)
     DJANGO_VERS_MAPPING = {
-        0 : [],
-        1 : [],
-        2 : [
-            (34, 'django.middleware.csrf.CsrfViewMiddleware',),
+        0: [(10, 'django.middleware.cache.UpdateCacheMiddleware',),
+			(110, 'django.middleware.cache.FetchFromCacheMiddleware',),],
+        1: [(10, 'django.middleware.cache.UpdateCacheMiddleware',),
+			(110, 'django.middleware.cache.FetchFromCacheMiddleware',),],
+        2: [(34, 'django.middleware.csrf.CsrfViewMiddleware',),
             (44, 'django.contrib.messages.middleware.MessageMiddleware',),
-            (64, 'django.middleware.csrf.CsrfResponseMiddleware',),
-        ]
+            (64, 'django.middleware.csrf.CsrfResponseMiddleware',),],
+        3: [(34, 'django.middleware.csrf.CsrfViewMiddleware',),
+            (44, 'django.contrib.messages.middleware.MessageMiddleware',),],
     }
     
     APP_MAPPING = {
@@ -127,7 +136,6 @@ class Middleware(DynamicList):
     }
     
     DEFAULT_ITEMS = [
-        (10, 'django.middleware.cache.UpdateCacheMiddleware',),
         (20, 'django.middleware.common.CommonMiddleware',),
         (30, 'django.contrib.sessions.middleware.SessionMiddleware',),
         (40, 'django.contrib.auth.middleware.AuthenticationMiddleware',),
@@ -137,7 +145,7 @@ class Middleware(DynamicList):
         (80, 'django.contrib.redirects.middleware.RedirectFallbackMiddleware',),
         (90, 'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',),
         (100, 'django.middleware.transaction.TransactionMiddleware',),
-        (110, 'django.middleware.cache.FetchFromCacheMiddleware',),
+        
     ]
     
     def _build_list(self):
