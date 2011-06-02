@@ -12,11 +12,11 @@ start_project.py script
 
 The ``start_project.py`` script is an interactive command-line program for building a Django project from a template project, based on code from `Eric Florenzano <http://www.eflorenzano.com/>`_. The template project isn't anything special except that any placeholders for certain variables are replaced during the project creation.
 
-View the script at http://gist.github.com/444408 or download the script directly from http://gist.github.com/gists/444408/download\ . Once you download the script, you will need to decompress it.
+View the script at https://gist.github.com/444408 or download the script directly from https://gist.github.com/gists/444408/download\ . Once you download the script, you will need to decompress it.
 
 ::
 
-	$ curl http://gist.github.com/gists/444408/download | tar -zxv
+	$ curl https://gist.github.com/gists/444408/download | tar -zxv
 	
 	  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
 	                                 Dload  Upload   Total   Spent    Left  Speed
@@ -33,11 +33,11 @@ Project Template
 ================
 
 The example project template is meant to be a starting point. It is likely that you will have several templates for different types of sites or deployments. Download the ``project_tmpl`` code from 
-`github <http://github.com/callowayproject/project_tmpl/downloads>`_ and decompress it. Alternatively, you can clone it using ``git`` if you wish to keep up-to-date with any changes we make to it.
+`github <https://github.com/callowayproject/project_tmpl/downloads>`_ and decompress it. Alternatively, you can clone it using ``git`` if you wish to keep up-to-date with any changes we make to it.
 
 ::
 
-	$ curl -L -O http://github.com/downloads/callowayproject/project_tmpl/project_tmpl-20100621.tar.gz
+	$ curl -L -O https://github.com/downloads/callowayproject/project_tmpl/project_tmpl-20100621.tar.gz
 	
 	  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
 	                                 Dload  Upload   Total   Spent    Left  Speed

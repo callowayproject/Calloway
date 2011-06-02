@@ -6,13 +6,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Getting Started &mdash; v0.2 documentation</title>
+    <title>Getting Started &mdash; v0.4 documentation</title>
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.2',
+        VERSION:     '0.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -21,13 +21,13 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="v0.2 documentation" href="index.html" />
+    <link rel="top" title="v0.4 documentation" href="index.html" />
     <link rel="next" title="Migrating an Existing Django Project to Calloway" href="migration.html" />
     <link rel="prev" title="Installation" href="installation.html" /> 
   </head>
   <body>
 <div id="docstitle">
-	<p>v0.2 documentation</p>
+	<p>v0.4 documentation</p>
 </div>
 <div id="header">
 	<div id="title"><h1>Getting Started</h1></div>
@@ -166,7 +166,7 @@ Installing collected packages: calloway
     changing mode of /Users/coordt/.virtualenvs/sampleproject/bin/generate_reqs.py to 755
 Successfully installed calloway
 Downloading/unpacking Django
-  Downloading Django-1.2.1.tar.gz (6.2Mb): 6.2Mb downloaded
+  Downloading Django-1.3.tar.gz (6.2Mb): 6.2Mb downloaded
   Running setup.py egg_info for package Django
     warning: no files found matching '*' under directory 'examples'
 Installing collected packages: Django
@@ -184,7 +184,7 @@ Cleaning up...</pre>
 </div>
 </li>
 <li><p class="first">Customize the <tt class="docutils literal"><span class="pre">settings.py</span></tt> file, specifically changing the application bundles included in the <tt class="docutils literal"><span class="pre">INSTALLED_APPS</span></tt> setting. The example template uses:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="n">APPS_CORE</span> <span class="o">+</span> \
+<div class="highlight-python"><div class="highlight"><pre><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="n">APPS_DJANGO13_BASE</span> <span class="o">+</span> \
     <span class="n">APPS_ADMIN</span> <span class="o">+</span> \
     <span class="n">APPS_STAFF</span> <span class="o">+</span> \
     <span class="n">APPS_REVERSION</span> <span class="o">+</span> \
@@ -226,10 +226,6 @@ Cleaning up...</pre>
 Cleaning up...</pre>
 </div>
 </li>
-<li><p class="first">If you don&#8217;t have the Python Imaging Library installed, you will need to install it separately. Its packaging makes it difficult to include in a requirements file, making it a manual install.</p>
-<div class="highlight-python"><pre>pip install http://dist.repoze.org/PIL-1.1.6.tar.gz</pre>
-</div>
-</li>
 <li><p class="first">Synchronize your database, as you normally would:</p>
 <div class="highlight-python"><pre>./manage.py syncdb</pre>
 </div>
@@ -244,7 +240,7 @@ Cleaning up...</pre>
     <div class="footer">
     <p>
       &copy; Copyright 2010, The Calloway Project.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.2.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
 	</p>
     </div>
       <div class="clearer"></div>

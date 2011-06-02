@@ -88,7 +88,7 @@ Getting Started
 	    changing mode of /Users/coordt/.virtualenvs/sampleproject/bin/generate_reqs.py to 755
 	Successfully installed calloway
 	Downloading/unpacking Django
-	  Downloading Django-1.2.1.tar.gz (6.2Mb): 6.2Mb downloaded
+	  Downloading Django-1.3.tar.gz (6.2Mb): 6.2Mb downloaded
 	  Running setup.py egg_info for package Django
 	    warning: no files found matching '*' under directory 'examples'
 	Installing collected packages: Django
@@ -108,7 +108,7 @@ Getting Started
 
 #. Customize the ``settings.py`` file, specifically changing the application bundles included in the ``INSTALLED_APPS`` setting. The example template uses::
 
-	INSTALLED_APPS = APPS_CORE + \
+	INSTALLED_APPS = APPS_DJANGO13_BASE + \
 	    APPS_ADMIN + \
 	    APPS_STAFF + \
 	    APPS_REVERSION + \
@@ -149,10 +149,6 @@ Getting Started
 
 	Successfully installed BeautifulSoup critic django-admin-tools ...
 	Cleaning up...
-
-#. If you don't have the Python Imaging Library installed, you will need to install it separately. Its packaging makes it difficult to include in a requirements file, making it a manual install. ::
-
-	pip install http://dist.repoze.org/PIL-1.1.6.tar.gz
 
 #. Synchronize your database, as you normally would::
 

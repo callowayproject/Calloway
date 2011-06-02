@@ -15,6 +15,9 @@ Application bundles are only for convenience. Feel free to mix and match applica
 ``calloway.settings.APPS_CORE``
 ===============================
 
+.. warning::
+   As of version 0.4 this application bundle is deprecated. In order to better handle core Django apps in different versions, this bundle has been broken into :ref:`apps_django_base`\ , :ref:`apps_django13_base`\ , and :ref:`apps_django_template_utils`\ .
+
 These applications are considered core to any project and consist of Django ``contrib`` applictions.
 
 
@@ -31,7 +34,54 @@ Suggested application bundles: ``APPS_TINYMCE``\ , ``APPS_REVERSION`` (for flatp
 * ``django.contrib.markup``
 * ``django.contrib.redirects``
 
+.. _apps_django_base:
 
+``calloway.settings.APPS_DJANGO_BASE``
+======================================
+
+.. note:: New in version 0.4
+
+These are the core contrib apps included in the default settings for Django 1.0 - 1.2.
+
+Suggested application bundles: ``APPS_TINYMCE``\ , ``APPS_REVERSION`` (for flatpages)
+
+* ``django.contrib.auth``
+* ``django.contrib.contenttypes``
+* ``django.contrib.sessions``
+* ``django.contrib.sites``
+* ``django.contrib.flatpages``
+
+.. _apps_django13_base:
+
+``calloway.settings.APPS_DJANGO13_BASE``
+========================================
+
+.. note:: New in version 0.4
+
+These are the core contrib apps included in the default settings for Django 1.3.
+
+Suggested application bundles: ``APPS_TINYMCE``\ , ``APPS_REVERSION`` (for flatpages)
+
+* ``django.contrib.auth``
+* ``django.contrib.contenttypes``
+* ``django.contrib.sessions``
+* ``django.contrib.sites``
+* ``django.contrib.flatpages``
+* ``django.contrib.messages``
+* ``django.contrib.staticfiles``
+
+.. _apps_django_template_utils:
+
+``calloway.settings.APPS_DJANGO_TEMPLATE_UTILS``
+================================================
+
+.. note:: New in version 0.4
+
+When you want special help with templates, these contrib apps can help out.
+
+* ``django.contrib.humanize``
+* ``django.contrib.markup``
+* ``django.contrib.webdesign``
 
 .. _apps_admin:
 
@@ -40,7 +90,9 @@ Suggested application bundles: ``APPS_TINYMCE``\ , ``APPS_REVERSION`` (for flatp
 
 The admin area of the project requires several apps. The ``livevalidation`` application provides real-time validation of forms, including the admin forms. ``django-admin-tools`` provides the custom skin.
 
-* `livevalidation <http://opensource.washingtontimes.com/projects/django-livevalidation/>`_
+.. warning::
+   In version 0.4, livevalidation has been removed from this bundle.
+
 * `admin_tools <http://bitbucket.org/izi/django-admin-tools/wiki/Home>`_
 * `admin_tools.theming <http://bitbucket.org/izi/django-admin-tools/wiki/Home>`_
 * `admin_tools.menu <http://bitbucket.org/izi/django-admin-tools/wiki/Home>`_
@@ -65,10 +117,7 @@ Calloway includes no real applications, except ``django_ext`` which are small ex
 
 Django MPTT is an application that enhances other applications' ability to manage hierarchical data. It is required in :ref:`APPS_CATEGORIES <apps_categories>` and :ref:`APPS_COMMENT_UTILS <apps_comment_utils>`\ .
 
-We specify an updated and Django 1.x compatible version named `django-mptt-2 <http://github.com/batiste/django-mptt>`_\ .
-
-
-* `mptt <http://github.com/batiste/django-mptt>`_
+* `mptt <https://github.com/django-mptt/django-mptt>`_
 
 
 .. _apps_staff:
@@ -81,7 +130,7 @@ A specialized profile for staff members.
 
 Suggested application bundles: :ref:`APPS_TINYMCE <apps_tinymce>`
 
-* `staff <http://opensource.washingtontimes.com/projects/django-staff/>`_
+* `staff <https://github.com/callowayproject/django-staff>`_
 
 
 .. _apps_reversion:
@@ -101,17 +150,30 @@ Django Reversion is an app that enhances other applications. It allows you to vi
 ``calloway.settings.APPS_STORIES``
 ==================================
 
+.. warning:: 
+   Changed in version 0.4: Django Viewpoint (a blogging app) and Django Pullquote (for storing quotations) were removed.
+
 A bundle of applications for creating news.
 
 Suggested application bundles: :ref:`APPS_TINYMCE <apps_tinymce>`\ , :ref:`APPS_REVERSION <apps_reversion>`
 
 
-* `stories <http://opensource.washingtontimes.com/projects/django-stories/>`_
-* `positions <http://opensource.washingtontimes.com/projects/django-kamasutra/>`_
-* `news_sitemaps <http://opensource.washingtontimes.com/projects/django-news-sitemaps/>`_
-* `viewpoint <http://opensource.washingtontimes.com/projects/viewpoint/>`_
-* `pullquote <http://opensource.washingtontimes.com/projects/pullquote/>`_
+* `stories <https://github.com/callowayproject/django-stories>`_
+* `positions <https://github.com/callowayproject/django-kamasutra>`_
+* `news_sitemaps <https://github.com/callowayproject/django-news-sitemaps>`_
 
+.. _apps_blogging:
+
+``calloway.settings.APPS_BLOGGING``
+===================================
+
+.. note:: New in version 0.4
+
+A blogging platform for one blog or many blogs.
+
+Suggested application bundles: :ref:`APPS_TINYMCE <apps_tinymce>`\ , :ref:`APPS_REVERSION <apps_reversion>`
+
+* `viewpoint <https://github.com/callowayproject/django-viewpoint>`_
 
 
 .. _apps_categories:
@@ -121,8 +183,8 @@ Suggested application bundles: :ref:`APPS_TINYMCE <apps_tinymce>`\ , :ref:`APPS_
 
 A hierarchical category manager. Requires ``:ref:`APPS_MPTT <apps_mptt>```.
 
-* `categories <http://opensource.washingtontimes.com/projects/django-categories/>`_
-* `editor <http://opensource.washingtontimes.com/projects/django-categories/>`_
+* `categories <https://github.com/callowayproject/django-categories>`_
+* `editor <https://github.com/callowayproject/django-categories>`_
 
 
 .. _apps_comment_utils:
@@ -134,7 +196,7 @@ Utilities for adding threaded comments to the default Django comments app and ma
 
 
 * `mptt_comments <http://bitbucket.org/justquick/django-mptt-comments>`_
-* `offensivecontent <http://opensource.washingtontimes.com/projects/offensivecontent/>`_
+* `offensivecontent <https://github.com/callowayproject/django-offensivecontent>`_
 
 
 .. _apps_frontend_admin:
@@ -151,12 +213,15 @@ Allows using your admin forms in a regular template. Requires livevalidation in 
 ``calloway.settings.APPS_MEDIA``
 ================================
 
+.. warning:: 
+   Changed in version 0.4: Django Tagging was moved to :ref:`apps_tagging`.
 
-* `massmedia <http://opensource.washingtontimes.com/projects/massmedia/>`_
+* `massmedia <https://github.com/callowayproject/django-massmedia>`_
+
+.. _apps_tagging:
+
+``calloway.settings.APPS_TAGGING``
 * `tagging <http://code.google.com/p/django-tagging/>`_
-* `staticmediamgr <http://opensource.washingtontimes.com/projects/django-staticmediamgr/>`_
-
-
 
 .. _apps_utils:
 
@@ -171,10 +236,11 @@ Allows using your admin forms in a regular template. Requires livevalidation in 
 * ``hiermenu``
 * ``synagg``
 * `uni_form <http://github.com/pydanny/django-uni-form>`_
-* `critic <http://opensource.washingtontimes.com/projects/critic/>`_
+* `critic <https://github.com/callowayproject/django-critic>`_
 * ``mailfriend``
 * `debug_toolbar <http://github.com/robhudson/django-debug-toolbar>`_
-* `pollit <http://opensource.washingtontimes.com/projects/pollit/>`_
+* `pollit <https://github.com/callowayproject/django-pollit>`_
+* `pullquote <https://github.com/callowayproject/django-pullquote>`_
 
 
 
@@ -203,5 +269,5 @@ Allows using your admin forms in a regular template. Requires livevalidation in 
 ``calloway.settings.APPS_TINYMCE``
 ==================================
 
-* `tinymce <http://code.google.com/p/django-tinymce/>`_
+* `tinymce <https://github.com/justquick/django-tinymce>`_
 
