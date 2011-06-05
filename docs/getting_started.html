@@ -85,19 +85,15 @@
   <div class="section" id="getting-started">
 <h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
 <ol class="arabic">
-<li><p class="first">Create a directory named <tt class="docutils literal"><span class="pre">quickstart</span></tt> to hold everything, and change into it</p>
-<div class="highlight-python"><pre>$ mkdir quickstart
-$ cd quickstart</pre>
+<li><p class="first">Download the <a class="reference internal" href="installation.html#installation-start-project-script"><em>start_project.py script</em></a></p>
+<div class="highlight-python"><pre>$ curl http://gist.github.com/gists/444408/download | tar -zxv
+$ mv gist444408-597f127451c5cd81e599753224b4e9fb133bd3eb project_template
+$ cd project_template</pre>
 </div>
 </li>
 <li><p class="first">Download the example <a class="reference internal" href="installation.html#installation-project-template"><em>Project Template</em></a></p>
-<div class="highlight-python"><pre>$ curl -L -O http://github.com/downloads/callowayproject/project_tmpl/project_tmpl-20100621.tar.gz
-$ tar -zxvf project_tmpl-20100621.tar.gz</pre>
-</div>
-</li>
-<li><p class="first">Download the <a class="reference internal" href="installation.html#installation-start-project-script"><em>start_project.py script</em></a></p>
-<div class="highlight-python"><pre>$ curl http://gist.github.com/gists/444408/download | tar -zxv
-$ mv gist444408-597f127451c5cd81e599753224b4e9fb133bd3eb/start_project.py .</pre>
+<div class="highlight-python"><pre>$ curl -L  https://github.com/callowayproject/project_tmpl/tarball/master | tar -zvx
+$ mv callowayproject-project_tmpl-0dcbf69 project_tmpl</pre>
 </div>
 </li>
 <li><p class="first">Execute:</p>
@@ -107,7 +103,7 @@ $ mv gist444408-597f127451c5cd81e599753224b4e9fb133bd3eb/start_project.py .</pre
 <div class="highlight-python"><pre>$ python start_project.py
 Project name: sampleproject
 Administrator e-mail address: admin@sampleproject.com
-Destination directory (currently at /home/demo/quickstart):
+Destination directory (currently at /home/demo/project_template):
 Project template directory [/home/demo/project_tmpl]: ./project_tmpl
 Virtual environment name (e.g. sampleproject):
 Copying /home/demo/quickstart/project_tmpl/__init__.py to /home/demo/quickstart/sampleproject/__init__.py
