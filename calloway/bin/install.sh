@@ -8,13 +8,6 @@ fi
 PWD=`pwd`
 POSTACTIVATE=$VIRTUAL_ENV/bin/postactivate
 
-if [ -e externals ]; then
-    echo 'Externals link exists.'
-else
-    echo 'Creating link: externals.'
-    ln -s $VIRTUAL_ENV/src externals
-fi
-
 if [ -e $POSTACTIVATE ]; then
     echo 'Postactivate script exists.'
 else

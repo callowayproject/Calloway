@@ -3,20 +3,16 @@
 Getting Started
 ===============
 
-#. Create a directory named ``quickstart`` to hold everything, and change into it ::
-
-	$ mkdir quickstart
-	$ cd quickstart
-
-#. Download the example :ref:`installation_project_template` ::
-
-	$ curl -L -O http://github.com/downloads/callowayproject/project_tmpl/project_tmpl-20100621.tar.gz
-	$ tar -zxvf project_tmpl-20100621.tar.gz
-
 #. Download the :ref:`installation_start_project_script` ::
 
 	$ curl http://gist.github.com/gists/444408/download | tar -zxv
-	$ mv gist444408-597f127451c5cd81e599753224b4e9fb133bd3eb/start_project.py .
+	$ mv gist444408-597f127451c5cd81e599753224b4e9fb133bd3eb project_template
+	$ cd project_template
+
+#. Download the example :ref:`installation_project_template` ::
+
+	$ curl -L  https://github.com/callowayproject/project_tmpl/tarball/master | tar -zvx
+	$ mv callowayproject-project_tmpl-0dcbf69 project_tmpl
 	
 #. Execute::
 
@@ -29,7 +25,7 @@ Getting Started
 	$ python start_project.py 
 	Project name: sampleproject
 	Administrator e-mail address: admin@sampleproject.com
-	Destination directory (currently at /home/demo/quickstart): 
+	Destination directory (currently at /home/demo/project_template): 
 	Project template directory [/home/demo/project_tmpl]: ./project_tmpl
 	Virtual environment name (e.g. sampleproject): 
 	Copying /home/demo/quickstart/project_tmpl/__init__.py to /home/demo/quickstart/sampleproject/__init__.py
@@ -88,7 +84,7 @@ Getting Started
 	    changing mode of /Users/coordt/.virtualenvs/sampleproject/bin/generate_reqs.py to 755
 	Successfully installed calloway
 	Downloading/unpacking Django
-	  Downloading Django-1.2.1.tar.gz (6.2Mb): 6.2Mb downloaded
+	  Downloading Django-1.3.tar.gz (6.2Mb): 6.2Mb downloaded
 	  Running setup.py egg_info for package Django
 	    warning: no files found matching '*' under directory 'examples'
 	Installing collected packages: Django
@@ -108,7 +104,7 @@ Getting Started
 
 #. Customize the ``settings.py`` file, specifically changing the application bundles included in the ``INSTALLED_APPS`` setting. The example template uses::
 
-	INSTALLED_APPS = APPS_CORE + \
+	INSTALLED_APPS = APPS_DJANGO13_BASE + \
 	    APPS_ADMIN + \
 	    APPS_STAFF + \
 	    APPS_REVERSION + \
@@ -149,10 +145,6 @@ Getting Started
 
 	Successfully installed BeautifulSoup critic django-admin-tools ...
 	Cleaning up...
-
-#. If you don't have the Python Imaging Library installed, you will need to install it separately. Its packaging makes it difficult to include in a requirements file, making it a manual install. ::
-
-	pip install http://dist.repoze.org/PIL-1.1.6.tar.gz
 
 #. Synchronize your database, as you normally would::
 

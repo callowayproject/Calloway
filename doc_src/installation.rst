@@ -24,7 +24,10 @@ View the script at https://gist.github.com/444408 or download the script directl
 	x gist444408-597f127451c5cd81e599753224b4e9fb133bd3eb/
 	x gist444408-597f127451c5cd81e599753224b4e9fb133bd3eb/start_project.py
 
-You can move the script anywhere you want from here.
+You can move the script anywhere you want from here, however it is handy to rename the folder containing the script and download the :ref:`installation_project_template` into it. ::
+
+	$ mv gist444408-597f127451c5cd81e599753224b4e9fb133bd3eb project_template
+	$ cd project_template
 
 
 .. _installation_project_template:
@@ -37,15 +40,18 @@ The example project template is meant to be a starting point. It is likely that 
 
 ::
 
-	$ curl -L -O https://github.com/downloads/callowayproject/project_tmpl/project_tmpl-20100621.tar.gz
+	$ curl -L  https://github.com/callowayproject/project_tmpl/tarball/master | tar -zvx
 	
 	  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
 	                                 Dload  Upload   Total   Spent    Left  Speed
 	100 61440  100 61440    0     0   254k      0 --:--:-- --:--:-- --:--:--  254k
 	
-	$ tar -zxvf project_tmpl-20100621.tar.gz
+	x callowayproject-project_tmpl-0dcbf69/
+	x callowayproject-project_tmpl-0dcbf69/.gitignore
+	x callowayproject-project_tmpl-0dcbf69/__init__.py
+	...
 
-Make any changes you wish. It's *your* project template now.
+Make any changes to this template you wish. It's *your* project template now.
 
 
 .. _installation_calloway_application:

@@ -6,13 +6,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Application bundles in settings &mdash; v0.2 documentation</title>
+    <title>Application bundles in settings &mdash; v0.4 documentation</title>
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.2',
+        VERSION:     '0.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -21,13 +21,13 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="v0.2 documentation" href="index.html" />
+    <link rel="top" title="v0.4 documentation" href="index.html" />
     <link rel="next" title="Reference" href="reference/index.html" />
     <link rel="prev" title="Media Configuration" href="media_handling.html" /> 
   </head>
   <body>
 <div id="docstitle">
-	<p>v0.2 documentation</p>
+	<p>v0.4 documentation</p>
 </div>
 <div id="header">
 	<div id="title"><h1>Application bundles in settings</h1></div>
@@ -53,12 +53,16 @@
 <li class="toctree-l1"><a class="reference internal" href="media_handling.html">Media Configuration</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Application bundles in settings</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#calloway-settings-apps-core"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_CORE</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calloway-settings-apps-django-base"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_DJANGO_BASE</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calloway-settings-apps-django13-base"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_DJANGO13_BASE</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calloway-settings-apps-django-template-utils"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_DJANGO_TEMPLATE_UTILS</span></tt></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#calloway-settings-apps-admin"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_ADMIN</span></tt></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#calloway-settings-apps-calloway-default"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_CALLOWAY_DEFAULT</span></tt></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#calloway-settings-apps-mptt"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_MPTT</span></tt></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#calloway-settings-apps-staff"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_STAFF</span></tt></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#calloway-settings-apps-reversion"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_REVERSION</span></tt></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#calloway-settings-apps-stories"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_STORIES</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calloway-settings-apps-blogging"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_BLOGGING</span></tt></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#calloway-settings-apps-categories"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_CATEGORIES</span></tt></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#calloway-settings-apps-comment-utils"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_COMMENT_UTILS</span></tt></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#calloway-settings-apps-frontend-admin"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_FRONTEND_ADMIN</span></tt></a></li>
@@ -105,6 +109,10 @@
 <p>Application bundles are only for convenience. Feel free to mix and match applications.</p>
 <div class="section" id="calloway-settings-apps-core">
 <h2><tt class="docutils literal"><span class="pre">calloway.settings.APPS_CORE</span></tt><a class="headerlink" href="#calloway-settings-apps-core" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">As of version 0.4 this application bundle is deprecated. In order to better handle core Django apps in different versions, this bundle has been broken into <a class="reference internal" href="#apps-django-base"><em>calloway.settings.APPS_DJANGO_BASE</em></a>, <a class="reference internal" href="#apps-django13-base"><em>calloway.settings.APPS_DJANGO13_BASE</em></a>, and <a class="reference internal" href="#apps-django-template-utils"><em>calloway.settings.APPS_DJANGO_TEMPLATE_UTILS</em></a>.</p>
+</div>
 <p>These applications are considered core to any project and consist of Django <tt class="docutils literal"><span class="pre">contrib</span></tt> applictions.</p>
 <p>Suggested application bundles: <tt class="docutils literal"><span class="pre">APPS_TINYMCE</span></tt>, <tt class="docutils literal"><span class="pre">APPS_REVERSION</span></tt> (for flatpages)</p>
 <ul class="simple">
@@ -119,11 +127,61 @@
 <li><tt class="docutils literal"><span class="pre">django.contrib.redirects</span></tt></li>
 </ul>
 </div>
+<div class="section" id="calloway-settings-apps-django-base">
+<span id="apps-django-base"></span><h2><tt class="docutils literal"><span class="pre">calloway.settings.APPS_DJANGO_BASE</span></tt><a class="headerlink" href="#calloway-settings-apps-django-base" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">New in version 0.4</p>
+</div>
+<p>These are the core contrib apps included in the default settings for Django 1.0 - 1.2.</p>
+<p>Suggested application bundles: <tt class="docutils literal"><span class="pre">APPS_TINYMCE</span></tt>, <tt class="docutils literal"><span class="pre">APPS_REVERSION</span></tt> (for flatpages)</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">django.contrib.auth</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">django.contrib.contenttypes</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">django.contrib.sessions</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">django.contrib.sites</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">django.contrib.flatpages</span></tt></li>
+</ul>
+</div>
+<div class="section" id="calloway-settings-apps-django13-base">
+<span id="apps-django13-base"></span><h2><tt class="docutils literal"><span class="pre">calloway.settings.APPS_DJANGO13_BASE</span></tt><a class="headerlink" href="#calloway-settings-apps-django13-base" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">New in version 0.4</p>
+</div>
+<p>These are the core contrib apps included in the default settings for Django 1.3.</p>
+<p>Suggested application bundles: <tt class="docutils literal"><span class="pre">APPS_TINYMCE</span></tt>, <tt class="docutils literal"><span class="pre">APPS_REVERSION</span></tt> (for flatpages)</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">django.contrib.auth</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">django.contrib.contenttypes</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">django.contrib.sessions</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">django.contrib.sites</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">django.contrib.flatpages</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">django.contrib.messages</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">django.contrib.staticfiles</span></tt></li>
+</ul>
+</div>
+<div class="section" id="calloway-settings-apps-django-template-utils">
+<span id="apps-django-template-utils"></span><h2><tt class="docutils literal"><span class="pre">calloway.settings.APPS_DJANGO_TEMPLATE_UTILS</span></tt><a class="headerlink" href="#calloway-settings-apps-django-template-utils" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">New in version 0.4</p>
+</div>
+<p>When you want special help with templates, these contrib apps can help out.</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">django.contrib.humanize</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">django.contrib.markup</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">django.contrib.webdesign</span></tt></li>
+</ul>
+</div>
 <div class="section" id="calloway-settings-apps-admin">
 <span id="apps-admin"></span><h2><tt class="docutils literal"><span class="pre">calloway.settings.APPS_ADMIN</span></tt><a class="headerlink" href="#calloway-settings-apps-admin" title="Permalink to this headline">¶</a></h2>
 <p>The admin area of the project requires several apps. The <tt class="docutils literal"><span class="pre">livevalidation</span></tt> application provides real-time validation of forms, including the admin forms. <tt class="docutils literal"><span class="pre">django-admin-tools</span></tt> provides the custom skin.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">In version 0.4, livevalidation has been removed from this bundle.</p>
+</div>
 <ul class="simple">
-<li><a class="reference external" href="http://opensource.washingtontimes.com/projects/django-livevalidation/">livevalidation</a></li>
 <li><a class="reference external" href="http://bitbucket.org/izi/django-admin-tools/wiki/Home">admin_tools</a></li>
 <li><a class="reference external" href="http://bitbucket.org/izi/django-admin-tools/wiki/Home">admin_tools.theming</a></li>
 <li><a class="reference external" href="http://bitbucket.org/izi/django-admin-tools/wiki/Home">admin_tools.menu</a></li>
@@ -141,9 +199,8 @@
 <div class="section" id="calloway-settings-apps-mptt">
 <span id="apps-mptt"></span><h2><tt class="docutils literal"><span class="pre">calloway.settings.APPS_MPTT</span></tt><a class="headerlink" href="#calloway-settings-apps-mptt" title="Permalink to this headline">¶</a></h2>
 <p>Django MPTT is an application that enhances other applications&#8217; ability to manage hierarchical data. It is required in <a class="reference internal" href="#apps-categories"><em>APPS_CATEGORIES</em></a> and <a class="reference internal" href="#apps-comment-utils"><em>APPS_COMMENT_UTILS</em></a>.</p>
-<p>We specify an updated and Django 1.x compatible version named <a class="reference external" href="http://github.com/batiste/django-mptt">django-mptt-2</a>.</p>
 <ul class="simple">
-<li><a class="reference external" href="http://github.com/batiste/django-mptt">mptt</a></li>
+<li><a class="reference external" href="https://github.com/django-mptt/django-mptt">mptt</a></li>
 </ul>
 </div>
 <div class="section" id="calloway-settings-apps-staff">
@@ -151,7 +208,7 @@
 <p>A specialized profile for staff members.</p>
 <p>Suggested application bundles: <a class="reference internal" href="#apps-tinymce"><em>APPS_TINYMCE</em></a></p>
 <ul class="simple">
-<li><a class="reference external" href="http://opensource.washingtontimes.com/projects/django-staff/">staff</a></li>
+<li><a class="reference external" href="https://github.com/callowayproject/django-staff">staff</a></li>
 </ul>
 </div>
 <div class="section" id="calloway-settings-apps-reversion">
@@ -163,22 +220,36 @@
 </div>
 <div class="section" id="calloway-settings-apps-stories">
 <span id="apps-stories"></span><h2><tt class="docutils literal"><span class="pre">calloway.settings.APPS_STORIES</span></tt><a class="headerlink" href="#calloway-settings-apps-stories" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Changed in version 0.4: Django Viewpoint (a blogging app) and Django Pullquote (for storing quotations) were removed.</p>
+</div>
 <p>A bundle of applications for creating news.</p>
 <p>Suggested application bundles: <a class="reference internal" href="#apps-tinymce"><em>APPS_TINYMCE</em></a>, <a class="reference internal" href="#apps-reversion"><em>APPS_REVERSION</em></a></p>
 <ul class="simple">
-<li><a class="reference external" href="http://opensource.washingtontimes.com/projects/django-stories/">stories</a></li>
-<li><a class="reference external" href="http://opensource.washingtontimes.com/projects/django-kamasutra/">positions</a></li>
-<li><a class="reference external" href="http://opensource.washingtontimes.com/projects/django-news-sitemaps/">news_sitemaps</a></li>
-<li><a class="reference external" href="http://opensource.washingtontimes.com/projects/viewpoint/">viewpoint</a></li>
-<li><a class="reference external" href="http://opensource.washingtontimes.com/projects/pullquote/">pullquote</a></li>
+<li><a class="reference external" href="https://github.com/callowayproject/django-stories">stories</a></li>
+<li><a class="reference external" href="https://github.com/callowayproject/django-kamasutra">positions</a></li>
+<li><a class="reference external" href="https://github.com/callowayproject/django-news-sitemaps">news_sitemaps</a></li>
+</ul>
+</div>
+<div class="section" id="calloway-settings-apps-blogging">
+<span id="apps-blogging"></span><h2><tt class="docutils literal"><span class="pre">calloway.settings.APPS_BLOGGING</span></tt><a class="headerlink" href="#calloway-settings-apps-blogging" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">New in version 0.4</p>
+</div>
+<p>A blogging platform for one blog or many blogs.</p>
+<p>Suggested application bundles: <a class="reference internal" href="#apps-tinymce"><em>APPS_TINYMCE</em></a>, <a class="reference internal" href="#apps-reversion"><em>APPS_REVERSION</em></a></p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/callowayproject/django-viewpoint">viewpoint</a></li>
 </ul>
 </div>
 <div class="section" id="calloway-settings-apps-categories">
 <span id="apps-categories"></span><h2><tt class="docutils literal"><span class="pre">calloway.settings.APPS_CATEGORIES</span></tt><a class="headerlink" href="#calloway-settings-apps-categories" title="Permalink to this headline">¶</a></h2>
 <p>A hierarchical category manager. Requires <tt class="docutils literal"><span class="pre">:ref:`APPS_MPTT</span> <span class="pre">&lt;apps_mptt&gt;`</span></tt>.</p>
 <ul class="simple">
-<li><a class="reference external" href="http://opensource.washingtontimes.com/projects/django-categories/">categories</a></li>
-<li><a class="reference external" href="http://opensource.washingtontimes.com/projects/django-categories/">editor</a></li>
+<li><a class="reference external" href="https://github.com/callowayproject/django-categories">categories</a></li>
+<li><a class="reference external" href="https://github.com/callowayproject/django-categories">editor</a></li>
 </ul>
 </div>
 <div class="section" id="calloway-settings-apps-comment-utils">
@@ -186,7 +257,7 @@
 <p>Utilities for adding threaded comments to the default Django comments app and management of offensive comments. Requires <a class="reference internal" href="#apps-mptt"><em>APPS_MPTT</em></a></p>
 <ul class="simple">
 <li><a class="reference external" href="http://bitbucket.org/justquick/django-mptt-comments">mptt_comments</a></li>
-<li><a class="reference external" href="http://opensource.washingtontimes.com/projects/offensivecontent/">offensivecontent</a></li>
+<li><a class="reference external" href="https://github.com/callowayproject/django-offensivecontent">offensivecontent</a></li>
 </ul>
 </div>
 <div class="section" id="calloway-settings-apps-frontend-admin">
@@ -198,11 +269,15 @@
 </div>
 <div class="section" id="calloway-settings-apps-media">
 <span id="apps-media"></span><h2><tt class="docutils literal"><span class="pre">calloway.settings.APPS_MEDIA</span></tt><a class="headerlink" href="#calloway-settings-apps-media" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Changed in version 0.4: Django Tagging was moved to <em class="xref std std-ref">apps_tagging</em>.</p>
+</div>
 <ul class="simple">
-<li><a class="reference external" href="http://opensource.washingtontimes.com/projects/massmedia/">massmedia</a></li>
-<li><a class="reference external" href="http://code.google.com/p/django-tagging/">tagging</a></li>
-<li><a class="reference external" href="http://opensource.washingtontimes.com/projects/django-staticmediamgr/">staticmediamgr</a></li>
+<li><a class="reference external" href="https://github.com/callowayproject/django-massmedia">massmedia</a></li>
 </ul>
+<p id="apps-tagging"><tt class="docutils literal"><span class="pre">calloway.settings.APPS_TAGGING</span></tt>
+* <a class="reference external" href="http://code.google.com/p/django-tagging/">tagging</a></p>
 </div>
 <div class="section" id="calloway-settings-apps-utils">
 <span id="apps-utils"></span><h2><tt class="docutils literal"><span class="pre">calloway.settings.APPS_UTILS</span></tt><a class="headerlink" href="#calloway-settings-apps-utils" title="Permalink to this headline">¶</a></h2>
@@ -215,10 +290,11 @@
 <li><tt class="docutils literal"><span class="pre">hiermenu</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">synagg</span></tt></li>
 <li><a class="reference external" href="http://github.com/pydanny/django-uni-form">uni_form</a></li>
-<li><a class="reference external" href="http://opensource.washingtontimes.com/projects/critic/">critic</a></li>
+<li><a class="reference external" href="https://github.com/callowayproject/django-critic">critic</a></li>
 <li><tt class="docutils literal"><span class="pre">mailfriend</span></tt></li>
 <li><a class="reference external" href="http://github.com/robhudson/django-debug-toolbar">debug_toolbar</a></li>
-<li><a class="reference external" href="http://opensource.washingtontimes.com/projects/pollit/">pollit</a></li>
+<li><a class="reference external" href="https://github.com/callowayproject/django-pollit">pollit</a></li>
+<li><a class="reference external" href="https://github.com/callowayproject/django-pullquote">pullquote</a></li>
 </ul>
 </div>
 <div class="section" id="calloway-settings-apps-caching">
@@ -238,7 +314,7 @@
 <div class="section" id="calloway-settings-apps-tinymce">
 <span id="apps-tinymce"></span><h2><tt class="docutils literal"><span class="pre">calloway.settings.APPS_TINYMCE</span></tt><a class="headerlink" href="#calloway-settings-apps-tinymce" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="http://code.google.com/p/django-tinymce/">tinymce</a></li>
+<li><a class="reference external" href="https://github.com/justquick/django-tinymce">tinymce</a></li>
 </ul>
 </div>
 </div>
@@ -250,7 +326,7 @@
     <div class="footer">
     <p>
       &copy; Copyright 2010, The Calloway Project.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.2.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
 	</p>
     </div>
       <div class="clearer"></div>

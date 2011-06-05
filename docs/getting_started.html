@@ -6,13 +6,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Getting Started &mdash; v0.2 documentation</title>
+    <title>Getting Started &mdash; v0.4 documentation</title>
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.2',
+        VERSION:     '0.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -21,13 +21,13 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="v0.2 documentation" href="index.html" />
+    <link rel="top" title="v0.4 documentation" href="index.html" />
     <link rel="next" title="Migrating an Existing Django Project to Calloway" href="migration.html" />
     <link rel="prev" title="Installation" href="installation.html" /> 
   </head>
   <body>
 <div id="docstitle">
-	<p>v0.2 documentation</p>
+	<p>v0.4 documentation</p>
 </div>
 <div id="header">
 	<div id="title"><h1>Getting Started</h1></div>
@@ -85,19 +85,15 @@
   <div class="section" id="getting-started">
 <h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
 <ol class="arabic">
-<li><p class="first">Create a directory named <tt class="docutils literal"><span class="pre">quickstart</span></tt> to hold everything, and change into it</p>
-<div class="highlight-python"><pre>$ mkdir quickstart
-$ cd quickstart</pre>
+<li><p class="first">Download the <a class="reference internal" href="installation.html#installation-start-project-script"><em>start_project.py script</em></a></p>
+<div class="highlight-python"><pre>$ curl http://gist.github.com/gists/444408/download | tar -zxv
+$ mv gist444408-597f127451c5cd81e599753224b4e9fb133bd3eb project_template
+$ cd project_template</pre>
 </div>
 </li>
 <li><p class="first">Download the example <a class="reference internal" href="installation.html#installation-project-template"><em>Project Template</em></a></p>
-<div class="highlight-python"><pre>$ curl -L -O http://github.com/downloads/callowayproject/project_tmpl/project_tmpl-20100621.tar.gz
-$ tar -zxvf project_tmpl-20100621.tar.gz</pre>
-</div>
-</li>
-<li><p class="first">Download the <a class="reference internal" href="installation.html#installation-start-project-script"><em>start_project.py script</em></a></p>
-<div class="highlight-python"><pre>$ curl http://gist.github.com/gists/444408/download | tar -zxv
-$ mv gist444408-597f127451c5cd81e599753224b4e9fb133bd3eb/start_project.py .</pre>
+<div class="highlight-python"><pre>$ curl -L  https://github.com/callowayproject/project_tmpl/tarball/master | tar -zvx
+$ mv callowayproject-project_tmpl-0dcbf69 project_tmpl</pre>
 </div>
 </li>
 <li><p class="first">Execute:</p>
@@ -107,7 +103,7 @@ $ mv gist444408-597f127451c5cd81e599753224b4e9fb133bd3eb/start_project.py .</pre
 <div class="highlight-python"><pre>$ python start_project.py
 Project name: sampleproject
 Administrator e-mail address: admin@sampleproject.com
-Destination directory (currently at /home/demo/quickstart):
+Destination directory (currently at /home/demo/project_template):
 Project template directory [/home/demo/project_tmpl]: ./project_tmpl
 Virtual environment name (e.g. sampleproject):
 Copying /home/demo/quickstart/project_tmpl/__init__.py to /home/demo/quickstart/sampleproject/__init__.py
@@ -166,7 +162,7 @@ Installing collected packages: calloway
     changing mode of /Users/coordt/.virtualenvs/sampleproject/bin/generate_reqs.py to 755
 Successfully installed calloway
 Downloading/unpacking Django
-  Downloading Django-1.2.1.tar.gz (6.2Mb): 6.2Mb downloaded
+  Downloading Django-1.3.tar.gz (6.2Mb): 6.2Mb downloaded
   Running setup.py egg_info for package Django
     warning: no files found matching '*' under directory 'examples'
 Installing collected packages: Django
@@ -184,7 +180,7 @@ Cleaning up...</pre>
 </div>
 </li>
 <li><p class="first">Customize the <tt class="docutils literal"><span class="pre">settings.py</span></tt> file, specifically changing the application bundles included in the <tt class="docutils literal"><span class="pre">INSTALLED_APPS</span></tt> setting. The example template uses:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="n">APPS_CORE</span> <span class="o">+</span> \
+<div class="highlight-python"><div class="highlight"><pre><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="n">APPS_DJANGO13_BASE</span> <span class="o">+</span> \
     <span class="n">APPS_ADMIN</span> <span class="o">+</span> \
     <span class="n">APPS_STAFF</span> <span class="o">+</span> \
     <span class="n">APPS_REVERSION</span> <span class="o">+</span> \
@@ -226,10 +222,6 @@ Cleaning up...</pre>
 Cleaning up...</pre>
 </div>
 </li>
-<li><p class="first">If you don&#8217;t have the Python Imaging Library installed, you will need to install it separately. Its packaging makes it difficult to include in a requirements file, making it a manual install.</p>
-<div class="highlight-python"><pre>pip install http://dist.repoze.org/PIL-1.1.6.tar.gz</pre>
-</div>
-</li>
 <li><p class="first">Synchronize your database, as you normally would:</p>
 <div class="highlight-python"><pre>./manage.py syncdb</pre>
 </div>
@@ -244,7 +236,7 @@ Cleaning up...</pre>
     <div class="footer">
     <p>
       &copy; Copyright 2010, The Calloway Project.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.2.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
 	</p>
     </div>
       <div class="clearer"></div>
