@@ -23,26 +23,26 @@ CALLOWAY_TEMPLATE_DIRS = (
 )
 
 APPS_DJANGO_BASE = (
-	'django.contrib.auth',
-	'django.contrib.contenttypes',
-	'django.contrib.sessions',
-	'django.contrib.sites',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.flatpages',
 )
 
 APPS_DJANGO13_BASE = (
-	'django.contrib.auth',
-	'django.contrib.contenttypes',
-	'django.contrib.sessions',
-	'django.contrib.sites',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.flatpages',
-	'django.contrib.messages',
-	'django.contrib.staticfiles',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
 )
 APPS_DJANGO_TEMPLATE_UTILS = (
-	'django.contrib.humanize',
-	'django.contrib.markup',
-	'django.contrib.webdesign',
+    'django.contrib.humanize',
+    'django.contrib.markup',
+    'django.contrib.webdesign',
 )
 
 # APPS_CORE is deprecated
@@ -58,7 +58,7 @@ APPS_CORE = ( # Suggested: APPS_TINYMCE, APPS_REVERSION (for flatpages)
     'django.contrib.redirects',
 )
 APPS_MESSAGES = ( # Django 1.3
-	'django.contrib.messages',
+    'django.contrib.messages',
 )
 APPS_ADMIN = (
     #'livevalidation', # keep me above admin
@@ -163,8 +163,6 @@ NATIVE_TAGS = (
 )
 
 ADMIN_TOOLS_MENU = 'calloway.menu.DefaultMenu'
-
-CATEGORIES_RELATION_MODELS = ['pollit.poll',]
 
 INTERNAL_IPS = ('127.0.0.1',)
 

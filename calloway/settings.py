@@ -79,14 +79,14 @@ class TemplateContextProcs(DynamicList):
     APP_MAPPING = {
         'staticmediamgr': ['staticmediamgr.context_processor.static_url',],
     }
-	DJANGO_VERS_MAPPING = {
-		0: ['django.core.context_processors.auth',],
-		1: ['django.core.context_processors.auth',],
-		2: ['django.core.context_processors.auth',],
-		3: ['django.contrib.auth.context_processors.auth',
-			'django.core.context_processors.static',
-		    'django.contrib.messages.context_processors.messages',],
-	}
+    DJANGO_VERS_MAPPING = {
+        0: ['django.core.context_processors.auth',],
+        1: ['django.core.context_processors.auth',],
+        2: ['django.core.context_processors.auth',],
+        3: ['django.contrib.auth.context_processors.auth',
+            'django.core.context_processors.static',
+            'django.contrib.messages.context_processors.messages',],
+    }
 
 TEMPLATE_CONTEXT_PROCESSORS = TemplateContextProcs()
 
@@ -118,9 +118,9 @@ class Middleware(DynamicList):
     # Maps the minor version number of Django (1.0, 1.1, 1.2)
     DJANGO_VERS_MAPPING = {
         0: [(10, 'django.middleware.cache.UpdateCacheMiddleware',),
-			(110, 'django.middleware.cache.FetchFromCacheMiddleware',),],
+            (110, 'django.middleware.cache.FetchFromCacheMiddleware',),],
         1: [(10, 'django.middleware.cache.UpdateCacheMiddleware',),
-			(110, 'django.middleware.cache.FetchFromCacheMiddleware',),],
+            (110, 'django.middleware.cache.FetchFromCacheMiddleware',),],
         2: [(34, 'django.middleware.csrf.CsrfViewMiddleware',),
             (44, 'django.contrib.messages.middleware.MessageMiddleware',),
             (64, 'django.middleware.csrf.CsrfResponseMiddleware',),],
@@ -164,7 +164,7 @@ __all__ = [
     'APPS_TINYMCE','DJANGO_MEMCACHED_REQUIRE_STAFF','TINYMCE_DEFAULT_CONFIG',
     'TINYMCE_ADMIN_FIELDS','REVERSION_MODELS','VARNISH_WATCHED_MODELS',
     'VARNISH_MANAGEMENT_ADDRS','NATIVE_TAGS','ADMIN_TOOLS_MENU',
-    'CATEGORIES_RELATION_MODELS','INTERNAL_IPS',
-    'STATIC_MEDIA_PURGE_OLD_FILES','DEBUG_TOOLBAR_PANELS','DEBUG_TOOLBAR_CONFIG',
-    'MIDDLEWARE_CLASSES','TEMPLATE_CONTEXT_PROCESSORS', 'AUTHENTICATION_BACKENDS'
+    'INTERNAL_IPS', 'STATIC_MEDIA_PURGE_OLD_FILES','DEBUG_TOOLBAR_PANELS',
+    'DEBUG_TOOLBAR_CONFIG','MIDDLEWARE_CLASSES','TEMPLATE_CONTEXT_PROCESSORS', 
+    'AUTHENTICATION_BACKENDS'
     ]
