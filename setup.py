@@ -12,9 +12,9 @@ def read_file(filename):
 setup(
     name = "calloway",
     version = __import__('calloway').get_version().replace(' ', '-'),
-    url = 'http://opensource.washingtontimes.com/projects/calloway/',
-    author = 'The Washington Times Web Devs',
-    author_email = 'webdev@washingtontimes.com',
+    url = 'https://github.com/callowayproject/Calloway',
+    author = 'Calloway Project Devs',
+    author_email = 'webmaster@callowayproject.com',
     description = 'A builder of boring stuff for opinionated developers',
     long_description = read_file('README'),
     packages = find_packages(),
