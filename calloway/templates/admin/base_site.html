@@ -6,10 +6,10 @@
 {{ block.super }}
 {% render_theming_css %}
 {% admin_tools_render_menu_css %}
-<link rel="stylesheet" href="{{ MEDIA_URL }}admin/css/admin_base.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="{{ STATIC_URL }}calloway/admin/css/admin_base.css" type="text/css" media="screen" />
 {% endblock %}
 {% block extrahead %}
-	<link rel="stylesheet" href="{{ MEDIA_URL }}admin/css/changelist.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="{{ STATIC_URL }}calloway/admin/css/changelist.css" type="text/css" media="screen" />
 {% endblock %}
 
 {% block branding %}
