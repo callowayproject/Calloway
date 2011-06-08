@@ -3,7 +3,7 @@ recursive-include docs *
 
 recursive-include calloway/apps *.txt *.py
 recursive-include calloway/bin *.sh
-recursive-include calloway/media *.html *.gif *.png *.css *.txt
+recursive-include calloway/static *.html *.gif *.png *.css *.txt *.js
 recursive-include calloway/templates *.html *.xml
 
 include LICENSE

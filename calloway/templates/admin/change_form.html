@@ -3,12 +3,12 @@
 
 {% block extrahead %}{{ block.super }}
 
-<link rel="stylesheet" href="/media/admin/css/smoothness/jquery-ui-1.8rc3.custom.css" type="text/css" media="screen" title="no title" charset="utf-8">
-<link rel="stylesheet" href="/media/admin/css/positions.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="{{ STATIC_URL }}calloway/admin/css/smoothness/jquery-ui-1.8rc3.custom.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="{{ STATIC_URL }}calloway/admin/css/positions.css" type="text/css" media="screen" title="no title" charset="utf-8">
 
 <script type="text/javascript" src="../../../jsi18n/"></script>
-<script src="/media/admin/js/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="/media/admin/js/jquery-ui-1.8rc3.custom.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{ STATIC_URL }}calloway/admin/js/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{ STATIC_URL }}calloway/admin/js/jquery-ui-1.8rc3.custom.min.js" type="text/javascript" charset="utf-8"></script>
 
 {{ media }}
 {% endblock %}
@@ -20,12 +20,12 @@
 {% block bodyclass %}{{ opts.app_label }}-{{ opts.object_name.lower }} change-form{% endblock %}
 
 {% block breadcrumbs %}{% if not is_popup %}
-{# <div class="breadcrumbs"> #}
-{#     <a href="../../../">{% trans "Home" %}</a> &rsaquo; #}
-{#     <a href="../../">{{ app_label|capfirst|escape }}</a> &rsaquo;  #}
-{#     {% if has_change_permission %}<a href="../">{{ opts.verbose_name_plural|capfirst }}</a>{% else %}{{ opts.verbose_name_plural|capfirst }}{% endif %} &rsaquo;  #}
-{#     {% if add %}{% trans "Add" %} {{ opts.verbose_name }}{% else %}{{ original|truncatewords:"18" }}{% endif %} #}
-{# </div> #}
+<div class="breadcrumbs"> #}
+    <a href="../../../">{% trans "Home" %}</a> &rsaquo;
+    <a href="../../">{{ app_label|capfirst|escape }}</a> &rsaquo; 
+    {% if has_change_permission %}<a href="../">{{ opts.verbose_name_plural|capfirst }}</a>{% else %}{{ opts.verbose_name_plural|capfirst }}{% endif %} &rsaquo; 
+    {% if add %}{% trans "Add" %} {{ opts.verbose_name }}{% else %}{{ original|truncatewords:"18" }}{% endif %}
+</div>
 {% endif %}{% endblock %}
 
 {% block content %}<div id="content-main">
@@ -37,7 +37,7 @@
  </ul>
 {% endif %}{% endif %}
 {% endblock %}
-<form {% if has_file_field %}enctype="multipart/form-data" {% endif %}action="{{ form_url }}" method="post" id="{{ opts.module_name }}_form">{% block form_top %}{% endblock %}
+<form {% if has_file_field %}enctype="multipart/form-data" {% endif %}action="{{ form_url }}" method="post" id="{{ opts.module_name }}_form">{% csrf_token %}{% block form_top %}{% endblock %}
 <div>
 {% if is_popup %}<input type="hidden" name="_popup" value="1" />{% endif %}
 {% if save_on_top %}{% submit_row %}{% endif %}
