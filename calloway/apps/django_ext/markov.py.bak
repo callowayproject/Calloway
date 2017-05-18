@@ -16,7 +16,7 @@ class DynamicDie(collections.defaultdict):
     def roll(self):
         random_num = random.randint(0, self.total_sides())
         total_pos = 0
-        for side, qty in list(self.items()):
+        for side, qty in self.items():
             total_pos += qty
             if random_num <= total_pos:
                 return side

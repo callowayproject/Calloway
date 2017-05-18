@@ -25,7 +25,7 @@ def fix():
         transaction.commit_unless_managed()
     
 def getr(model):
-    if isinstance(model, str):
+    if isinstance(model, basestring):
         model = get_model(*model.split('.'))
     def inner(pk):
         try:
@@ -47,13 +47,13 @@ class Command(BaseCommand):
         if len(apps):
             for app in apps:
                 for o in self.migrate(app):
-                    print('\t%s %s' % (o._meta.model, o.pk))
+                    print '\t%s %s' % (o._meta.model, o.pk)
         for app in ORDER:
             if app == 'staff':
                 fix()
-            print('Migrating %s...' % app.title())
+            print 'Migrating %s...' % app.title()
             for o in self.migrate(app):
-                print('\t%s %s' % (o._meta.model, o.pk))
+                print '\t%s %s' % (o._meta.model, o.pk)
             if app == 'staff':
                 fix()
 
@@ -71,7 +71,7 @@ class Command(BaseCommand):
     
     def migrate(self, app):
         for fixture in self.get_fixtures(app):
-            print('Loading %s...' % fixture)
+            print 'Loading %s...' % fixture
             for obj in load(fixture):
                 if obj['model'] in self.mapping:
                     m = self.mapping[obj['model']].split('.')
@@ -97,7 +97,7 @@ class Command(BaseCommand):
                 except model.DoesNotExist:
                     pass
                 o = model.objects.create(**kw)
-                for k,v in list(rel.items()):
+                for k,v in rel.items():
                     for i in v:
                         getattr(o, k).add(i)
                 yield o
@@ -195,7 +195,7 @@ class Command(BaseCommand):
             author = StaffMember.objects.get(user=user)
         except StaffMember.DoesNotExist:
             author = StaffMember.objects.create(user=user)
-        cat = [_f for _f in map(getr(Category), fields['categories']) if _f]
+        cat = filter(None, map(getr(Category), fields['categories']))
         if len(cat):
             cat = cat[0]
         else:
@@ -226,8 +226,8 @@ class Command(BaseCommand):
             'primary_category': getr(Category)(fields['primary_category'] or 37) or getr(Category)(37),
             'kicker': fields['kicker'],
         }, {
-            'authors': list(map(getr(StaffMember), fields['bylines'])),
-            'categories': [_f for _f in [getr(Category)(x or 37) for x in fields['categories']] if _f],
+            'authors': map(getr(StaffMember), fields['bylines']),
+            'categories': filter(None, [getr(Category)(x or 37) for x in fields['categories']]),
         }
         
     def image(self, **fields):
@@ -242,7 +242,7 @@ class Command(BaseCommand):
             'height': fields['height'],
         }, {
             'sites': [Site.objects.get_current()],
-            'categories': list(map(getr(Category), fields['categories'])),
+            'categories': map(getr(Category), fields['categories']),
         }
 
     def profile(self, **fields):
@@ -259,5 +259,5 @@ class Command(BaseCommand):
         fields['phone'] = fields.pop('mobile_phone',None)
         fields['display_phone'] = fields.pop('display_mobile_phone',False)
         return fields,{
-            'newsletters': [_f for _f in map(getr('newsletters.newsletter'), n) if _f],
+            'newsletters': filter(None,map(getr('newsletters.newsletter'), n)),
         }

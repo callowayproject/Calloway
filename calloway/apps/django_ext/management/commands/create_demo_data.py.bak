@@ -32,13 +32,13 @@ class Command(BaseCommand):
             {"name": "Topics", "parent": None, "title": "Collections of stories on popular topics", "url": "/topics/", "user_type": "E", "path_type": "A", "order": 40}
         ]
         for item in nav:
-            print("Creating Nav Bar Entry: %s" % (item['name']))
+            print "Creating Nav Bar Entry: %s" % (item['name'])
             nav_entry = NavBarEntry(**item)
             nav_entry.save()
     
     def create_categories(self):
         test_file = os.path.abspath(os.path.join(fixtures_path, 'demo_categories.txt'))
-        print("Creating categories from %s" % test_file)
+        print "Creating categories from %s" % test_file
         import_categories_cmd().execute(test_file)
     
     def create_staff(self):
@@ -55,7 +55,7 @@ class Command(BaseCommand):
             lname = random.choice(last_names)
             username = '%s%s' % (fname[0].lower(), lname.lower())
             email = '%s@example.com' % username
-            print("Creating %s (%s %s)" % (username, fname, lname))
+            print "Creating %s (%s %s)" % (username, fname, lname)
             try:
                 user = User.objects.create_user(username, email, 'password')
                 user.is_staff = True
@@ -63,8 +63,8 @@ class Command(BaseCommand):
                 user.last_name = lname
                 user.save()
                 update_staff_member(user, user, True)
-            except Exception as e:
-                print('Skipping due to conflict.')
+            except Exception, e:
+                print 'Skipping due to conflict.'
     
     def create_stories(self):
         import datetime

@@ -5,15 +5,14 @@ import sys
 import tempfile
 from django.conf import settings
 import hotshot, hotshot.stats
-from functools import reduce
 try:
     from core.log import logger
 except ImportError:
     import logging as logger
 try:
-    from io import StringIO
+    from cStringIO import StringIO
 except ImportError:
-    from io import StringIO
+    from StringIO import StringIO
 
 class SQLMiddleware:
     """
@@ -77,7 +76,7 @@ class ProfileMiddleware(object):
                 return name[0]
 
     def get_summary(self, results_dict, sum):
-        list = [ (item[1], item[0]) for item in list(results_dict.items()) ]
+        list = [ (item[1], item[0]) for item in results_dict.items() ]
         list.sort( reverse = True )
         list = list[:40]
 

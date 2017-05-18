@@ -4,7 +4,7 @@ from django.db.models.signals import pre_save
 
 from re import _alphanum
 
-CHARS = getattr(settings, 'ALLOWED_USERNAME_CHARS', ''.join(list(_alphanum.keys())) + '-_')
+CHARS = getattr(settings, 'ALLOWED_USERNAME_CHARS', ''.join(_alphanum.keys()) + '-_')
 
 class CaseInsensitiveModelBackend(object):
     def authenticate(self, username=None, password=None):

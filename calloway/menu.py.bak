@@ -48,19 +48,19 @@ class DefaultMenu(Menu):
         """
         Returns the reversed url given a string or dict and prints errors if MENU_DEBUG is enabled
         """
-        if isinstance(url_or_dict, str):
+        if isinstance(url_or_dict, basestring):
             url_or_dict = {'viewname': url_or_dict}
         try:
             return reverse(**url_or_dict)
         except NoReverseMatch:
             if MENU_DEBUG:
-                print('Unable to reverse URL with kwargs %s' % url_or_dict, file=stderr)
+                print >>stderr,'Unable to reverse URL with kwargs %s' % url_or_dict
                 
     def __init__(self, **kwargs):
         super(DefaultMenu, self).__init__(**kwargs)
         
         for section,item in MENU_ITEMS:
-            if isinstance(item, str):
+            if isinstance(item, basestring):
                 self.children.append(MenuItem(title=section, url=reverse(item)))
             else:
                 children = []

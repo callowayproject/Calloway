@@ -68,12 +68,12 @@ def generate_requirements(output_path=None):
     reqs = set()
     
     for app in settings.INSTALLED_APPS:
-        if app in list(mapping.keys()):
+        if app in mapping.keys():
             reqs |= set(mapping[app])
     if output_path is None:
-        print("--extra-index-url=http://opensource.washingtontimes.com/pypi/simple/")
+        print "--extra-index-url=http://opensource.washingtontimes.com/pypi/simple/"
         for item in reqs:
-            print(item)
+            print item
     else:
         try:
             out_file = open(output_path, 'w')
