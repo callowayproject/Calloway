@@ -16,7 +16,7 @@ class URLNode(template.Node):
         from django.core.urlresolvers import reverse, NoReverseMatch
         args = [arg.resolve(context) for arg in self.args]
         kwargs = dict([(smart_str(k,'ascii'), v.resolve(context))
-                       for k, v in list(self.kwargs.items())])
+                       for k, v in self.kwargs.items()])
 
         # Try to look up the URL twice: once given the view name, and again
         # relative to what we guess is the "main" app. If they both fail,
@@ -84,7 +84,7 @@ def fburl(parser, token):
         bits = iter(bits[2:])
         for bit in bits:
             if bit == 'as':
-                asvar = next(bits)
+                asvar = bits.next()
                 break
             else:
                 for arg in bit.split(","):

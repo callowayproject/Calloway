@@ -7,7 +7,7 @@ from django.conf import settings
 CALLOWAY_ROOT = os.path.abspath(os.path.dirname(__file__))
 
 #from calloway.default_settings import SITE_ID, APPEND_SLASH, MEDIA_URL, \
-from .default_settings import *
+from default_settings import *
 
 class DynamicList(list):
     """Allows for the dynamic list created based on a base set of items, the
@@ -25,7 +25,7 @@ class DynamicList(list):
     def __init__(self, *args):
         if len(args) > 1:
             self.DEFAULT_ITEMS = args[:]
-        elif args and isinstance(args[0], str):
+        elif args and isinstance(args[0], basestring):
             self.DEFAULT_ITEMS = [args[0],]
         elif args:
             self.DEFAULT_ITEMS = args[0]
@@ -39,7 +39,7 @@ class DynamicList(list):
         items = self.DEFAULT_ITEMS[:]
         items.extend(self.DJANGO_VERS_MAPPING[VERSION[1]])
         
-        for app, val in list(self.APP_MAPPING.items()):
+        for app, val in self.APP_MAPPING.items():
             if app in INSTALLED_APPS:
                 items.extend(val)
         self.data = items

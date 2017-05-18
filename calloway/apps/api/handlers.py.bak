@@ -8,7 +8,7 @@ class TagHandler(BaseHandler):
     
     def read(self, request):
         if 'referer' in request.GET:
-            bits = [_f for _f in request.GET['referer'].replace('/admin/','').split('/') if _f]
+            bits = filter(None, request.GET['referer'].replace('/admin/','').split('/'))
             model = get_model(*bits[:2])
 
             if len(bits) == 2:
